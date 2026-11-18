@@ -1,0 +1,156 @@
+<!doctype html>
+<!--
+DESIGN PLAN — Needham Florist (concept by Sam & Banks)
+Concept: "Family-owned on Great Plain Ave since 1995." A confident neighborhood-shop page: deep green, marigold and cream, big photos of arrangements from their own Instagram, and their 17 years of #1 awards turned into a proof section instead of a text list.
+Fonts: Fraunces (headlines) / Figtree (body).
+Sections: top bar (phone, hours) · hero · award proof · order board (their real eFlorist product pages and prices) · work gallery (their Instagram) · delivery towns · sympathy · visit · footer.
+Ordering is unchanged: every Order button goes to needhamflorist.net.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Needham Florist · Family-owned since 1995</title>
+<meta name="description" content="Family-owned florist at 1091 Great Plain Ave, Needham MA since 1995. Same-day delivery to Needham, Newton, Wellesley, Dover and more. Call (781) 449-8484.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Figtree:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--green:#1f4a38;--mari:#f0a81c;--cream:#fbf7ee;--ink:#1c2420;--mute:#5d665f;--red:#a3302f;--serif:"Fraunces",Georgia,serif;--sans:"Figtree",system-ui,sans-serif;--pad:clamp(18px,5vw,60px)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:100px;-webkit-text-size-adjust:100%}
+body{background:var(--cream);color:var(--ink);font:400 17px/1.6 var(--sans);overflow-x:hidden}
+img{display:block;max-width:100%;height:auto}a{color:inherit}
+.wrap{padding-inline:var(--pad);max-width:1240px;margin-inline:auto}
+.top{background:var(--green);color:#fff;font-size:14px}
+.top .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding-block:8px}
+.top a{font-weight:700;text-decoration:none}
+header{position:sticky;top:0;z-index:20;background:var(--cream);border-bottom:1px solid #e5dcc9}
+header .wrap{display:flex;justify-content:space-between;align-items:center;height:64px;gap:14px}
+.logo{font:700 24px var(--serif);color:var(--green);text-decoration:none}
+.logo small{font:500 11px var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--mute);margin-left:8px}
+nav{display:flex;gap:22px;font-weight:500;font-size:15px}nav a{text-decoration:none}nav a:hover{color:var(--red)}
+.call{background:var(--mari);color:#2a1d00;padding:10px 18px;border-radius:6px;text-decoration:none;font-weight:700;white-space:nowrap}
+@media(max-width:820px){nav,.logo small{display:none}}
+.hero{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,4vw,56px);align-items:center;padding-block:clamp(28px,5vw,64px)}
+.kick{font-size:13px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:var(--red)}
+h1{font:700 clamp(42px,6.5vw,84px)/1 var(--serif);color:var(--green);margin:12px 0 16px}
+.lede{color:var(--mute);font-size:19px;max-width:46ch}
+.btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.btn{display:inline-block;padding:14px 26px;border-radius:6px;text-decoration:none;font-weight:700;border:2px solid var(--green)}
+.btn.fill{background:var(--green);color:#fff}.btn:hover{background:var(--mari);border-color:var(--mari);color:#2a1d00}
+.hero-img{display:grid;grid-template-columns:1.1fr .9fr;gap:12px}
+.hero-img img{width:100%;height:100%;object-fit:cover;border-radius:10px}
+.hero-img img:first-child{aspect-ratio:4/5}
+.hero-img img:last-child{aspect-ratio:4/5;margin-top:34px}
+@media(max-width:860px){.hero{grid-template-columns:1fr}}
+.proof{background:var(--green);color:#fff;padding:34px 0}
+.proof .wrap{display:grid;grid-template-columns:auto 1fr;gap:clamp(18px,4vw,50px);align-items:center}
+.proof .big{font:700 clamp(56px,10vw,120px)/1 var(--serif);color:var(--mari)}
+.proof p{max-width:60ch}
+.proof small{display:block;margin-top:8px;opacity:.75;font-size:14px}
+@media(max-width:700px){.proof .wrap{grid-template-columns:1fr}}
+.sec{padding:clamp(50px,8vw,100px) 0}
+h2{font:700 clamp(32px,4.6vw,54px)/1.05 var(--serif);color:var(--green);margin-bottom:10px}
+.sub{color:var(--mute);max-width:58ch;margin-bottom:30px}
+.board{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:22px}
+.item{background:#131a16;color:#f5efe0;border:1px solid #131a16;border-radius:10px;overflow:hidden;text-decoration:none;display:flex;flex-direction:column}
+.item img{aspect-ratio:4/5;object-fit:contain;width:100%;background:#000}
+.item div{padding:14px 16px 18px;display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.item b{font:700 19px/1.2 var(--serif)}
+.item span{font-weight:700;color:var(--mari)}
+.item em{display:block;padding:0 16px 16px;font-style:normal;font-size:13px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--mari)}
+.item:hover{border-color:var(--mari)}
+.gal{columns:4 210px;column-gap:12px}
+.gal img{width:100%;margin-bottom:12px;border-radius:8px;break-inside:avoid}
+.towns{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.towns span{background:#fff;border:1px solid #e0d6c0;padding:6px 14px;border-radius:99px;font-size:15px}
+.towns .home{background:var(--green);color:#fff;border-color:var(--green)}
+.care{background:#efe7d4}
+.care .wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,60px);align-items:center}
+.care img{border-radius:10px;width:100%;aspect-ratio:4/3;object-fit:cover}
+@media(max-width:820px){.care .wrap{grid-template-columns:1fr}}
+.visit{background:var(--ink);color:#f2ecde}
+.visit .wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:30px}
+.visit h3{font:700 24px var(--serif);margin-bottom:8px;color:var(--mari)}
+.visit li{list-style:none;display:flex;justify-content:space-between;max-width:260px;font-size:15px}
+.visit a{color:#f2ecde}
+footer{background:#101512;color:#9aa49c;padding:22px 0;font-size:13px}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
+</style>
+</head>
+<body>
+<div class="top"><div class="wrap"><span>1091 Great Plain Ave, Needham · Open Mon–Fri 8:30–5, Sat 9–5 · Open every major holiday</span><a href="tel:+17814498484">(781) 449-8484</a></div></div>
+<header><div class="wrap">
+  <a class="logo" href="#top">Needham Florist<small>Since 1995</small></a>
+  <nav aria-label="Main"><a href="#order">Order</a><a href="#work">Our work</a><a href="#delivery">Delivery</a><a href="#sympathy">Sympathy</a><a href="#visit">Visit</a></nav>
+  <a class="call" href="tel:+17814498484">Call the shop</a>
+</div></header>
+<main id="top">
+<section class="wrap hero">
+  <div>
+    <span class="kick">Family-owned · Needham, MA</span>
+    <h1>Your local florist, since 1995.</h1>
+    <p class="lede">Hand-picked flowers, designed in the shop on Great Plain Ave. Same-day delivery to Needham, Newton, Wellesley, Dover and beyond, and a staff that treats everyone like family.</p>
+    <div class="btns"><a class="btn fill" href="#order">Order flowers</a><a class="btn" href="tel:+17814498484">Call (781) 449-8484</a></div>
+  </div>
+  <div class="hero-img"><img src="img/nf20.jpg" alt="A tall arrangement of sunflowers, orange roses and yellow lilies on a wooden table" fetchpriority="high"><img src="img/nf08.jpg" alt="A lilac, plum and white arrangement of roses and stock" loading="lazy"></div>
+</section>
+
+<section class="proof"><div class="wrap">
+  <div class="big" aria-hidden="true">#1</div>
+  <div><p><b>Voted Needham's #1 florist, year after year.</b> Readers' Choice from 2009, Hometown Best through 2025, and a Chamber of Commerce Customer Service Business of the Year in 2021.</p><small>Straight from the awards listed on your About page.</small></div>
+</div></section>
+
+<section class="sec" id="order"><div class="wrap">
+  <h2>Order for delivery.</h2>
+  <p class="sub">Tap any arrangement to order through the same secure shop you use today. Prices are your current listed prices.</p>
+  <div class="board">
+    <a class="item" href="https://www.needhamflorist.net/flower-arrangement/nature-in-new-england/prod13410116"><img src="img/pr-nature.jpg" alt="Nature in New England arrangement" loading="lazy"><div><b>Nature in New England</b><span>$110</span></div><em>Order →</em></a>
+    <a class="item" href="https://www.needhamflorist.net/flower-arrangement/new-england-blooming-orchard/de-786755"><img src="img/pr-orchard.jpg" alt="New England Blooming Orchard arrangement" loading="lazy"><div><b>New England Blooming Orchard</b><span>$125</span></div><em>Order →</em></a>
+    <a class="item" href="https://www.needhamflorist.net/flower-arrangement/local-farmers-assorted-wild-flowers/prod14281138"><img src="img/pr-farmer.jpg" alt="Local Farmer's Assorted Wild Flowers" loading="lazy"><div><b>Local Farmer's Assorted Wild Flowers</b><span>$155</span></div><em>Order →</em></a>
+    <a class="item" href="https://www.needhamflorist.net/flower-arrangement/burst-of-beauty/prod15950704"><img src="img/pr-burst.jpg" alt="Burst of Beauty arrangement of orange gerbera and roses" loading="lazy"><div><b>Burst of Beauty</b><span>$85</span></div><em>Order →</em></a>
+    <a class="item" href="https://www.needhamflorist.net/flower-arrangement/narragansett-sunrise/prod14980186"><img src="img/pr-narr.jpg" alt="Narragansett Sunrise wrapped bouquet of sunflowers and blue hydrangea" loading="lazy"><div><b>Narragansett Sunrise</b><span>$85</span></div><em>Order →</em></a>
+    <a class="item" href="https://www.needhamflorist.net/flower-arrangement/new-england-harvest/prod12460001"><img src="img/pr-harvest.jpg" alt="New England Harvest arrangement" loading="lazy"><div><b>New England Harvest</b><span>$125</span></div><em>Order →</em></a>
+    <a class="item" href="https://www.needhamflorist.net/flower-arrangement/new-england-cranberry-bog/prod5040117"><img src="img/pr-cranberry.jpg" alt="New England Cranberry Bog arrangement" loading="lazy"><div><b>New England Cranberry Bog</b><span>$110</span></div><em>Order →</em></a>
+    <a class="item" href="https://www.needhamflorist.net/flower-arrangement/whimsical-autumn/prod15950707"><img src="img/pr-whimsical.jpg" alt="Whimsical Autumn arrangement" loading="lazy"><div><b>Whimsical Autumn</b><span>$140</span></div><em>Order →</em></a>
+  </div>
+  <p class="sub" style="margin-top:24px">Looking for sympathy, anniversary, birthday or wedding flowers? <a href="https://www.needhamflorist.net/">See everything at needhamflorist.net</a>.</p>
+</div></section>
+
+<section class="sec" id="work" style="padding-top:0"><div class="wrap">
+  <h2>Made in the shop.</h2>
+  <p class="sub">Real arrangements from your Instagram, not catalog photos. 2,258 posts and counting.</p>
+  <div class="gal">
+    <img src="img/nf00.jpg" alt="A large red and burgundy arrangement in a glass vase" loading="lazy">
+    <img src="img/nf02.jpg" alt="Orange gerbera, green hydrangea and ranunculus up close" loading="lazy">
+    <img src="img/nf10.jpg" alt="Lavender roses and plum gerbera" loading="lazy">
+    <img src="img/nf22.jpg" alt="A fall arrangement of lilies and sunflowers on a rug" loading="lazy">
+    <img src="img/nf04.jpg" alt="Purple, plum and green flowers with pincushion proteas" loading="lazy">
+    <img src="img/nf12.jpg" alt="Lavender and burgundy roses with white ranunculus" loading="lazy">
+    <img src="img/nf16.jpg" alt="Lavender roses and dark plum ranunculus" loading="lazy">
+    <img src="img/nf23.jpg" alt="Orange and yellow arrangement in a silver urn" loading="lazy">
+  </div>
+</div></section>
+
+<section class="sec" id="delivery" style="padding-top:0"><div class="wrap">
+  <h2>Same-day delivery.</h2>
+  <p class="sub">Same-day is always available. Delivering to hospitals, funeral homes, offices and homes across the area.</p>
+  <div class="towns"><span class="home">Needham</span><span>Newton</span><span>Wellesley</span><span>Dover</span><span>West Roxbury</span><span>Chestnut Hill</span><span>Dedham</span><span>Norwood</span><span>Westwood</span><span>Sharon</span><span>Canton</span><span>Medfield</span><span>Brookline</span></div>
+</div></section>
+
+<section class="sec care" id="sympathy"><div class="wrap">
+  <div><h2>When it matters most.</h2><p style="margin-bottom:14px">Sympathy and funeral flowers, designed with care and delivered on time. An answering service picks up after hours for urgent funeral orders.</p><div class="btns"><a class="btn fill" href="https://www.needhamflorist.net/sympathy-funeral/cat5300006">Sympathy flowers</a><a class="btn" href="tel:+17814498484">Call</a></div></div>
+  <img src="img/nf14.jpg" alt="A standing spray of white and pink flowers in a chapel" loading="lazy">
+</div></section>
+
+<section class="sec visit" id="visit"><div class="wrap">
+  <div><h3>Visit the shop</h3><p>Needham Florist<br>1091 Great Plain Ave<br>Needham, MA 02492</p></div>
+  <div><h3>Hours</h3><ul><li><span>Mon–Fri</span><span>8:30–5:00</span></li><li><span>Saturday</span><span>9:00–5:00</span></li><li><span>Sunday</span><span>Varies</span></li></ul></div>
+  <div><h3>Contact</h3><p><a href="tel:+17814498484">(781) 449-8484</a><br><a href="mailto:needhamflorist@aol.com">needhamflorist@aol.com</a><br><a href="https://www.instagram.com/needhamflorist/">Instagram @needhamflorist</a></p></div>
+</div></section>
+</main>
+<footer><div class="wrap"><span>© Needham Florist · Family owned and operated since 1995</span><span>Concept by Sam &amp; Banks — not affiliated with Needham Florist yet.</span></div></footer>
+</body>
+</html>

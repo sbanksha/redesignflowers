@@ -1,0 +1,489 @@
+<!doctype html>
+<!--
+DESIGN PLAN — CASA AZAHAR, Estudio Floral (Col. Americana, Guadalajara)
+1. Concept: walking through a Barragán house. Every section is a wall, a flat plane of saturated color; photos are windows and arches cut into those walls.
+2. Palette: rosa #E25A8C · ocre #EBAA3A · verde #2F6852 · buganvilia #8F1D52 · tinta #26121C · cal (lime plaster, text only + one wall) #F6E8E0.
+3. Type: Gloock (high-contrast display serif, big Latin warmth, handles á é ñ ¿ ¡) + Schibsted Grotesk (body, letter-spaced caps labels, tabular prices).
+4. Grid: 12 columns, 24px gutter, clamp(16px, 4vw, 64px) margins; asymmetric spans, overlapping arches, giant vs. tiny type.
+5. Signature 1, El sol: page scroll = time of day. A light shaft crosses the hero wall and every arch/window casts a hard shadow that swings and skews as you scroll.
+6. Signature 2, Muros: sections arrive as color planes sliding across the previous wall (alternating direction); catalog tabs swap the wall color behind the cards.
+7. Signature 3, WhatsApp-first catalog: tabs (Arreglos · Ramos · Preservadas · Bodas · Talleres), MXN prices, every "Pedir por WhatsApp" opens wa.me pre-filled with item + price, in the active language. Arch-shaped floating WhatsApp button on mobile.
+8. Language: native Mexican Spanish by default; ES/EN toggle swaps every string (English lives in data-en attributes).
+9. Sections: Nav + live "abierto/cerrado" clock · Hero · Manifiesto · Cómo pedir (giant typographic 1-2-3 + chat) · Catálogo · Bodas y eventos (+ WhatsApp quote form) · Talleres (dates + seat meters) · Visítanos · Footer.
+10. Motion budget: hero arch rises on load, the sun, the plane wipes. Nothing else moves. Reduced-motion / no-JS: everything static and visible.
+-->
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Casa Azahar — Estudio Floral, Guadalajara</title>
+<meta name="description" content="Casa Azahar, estudio floral en la Colonia Americana, Guadalajara. Arreglos, ramos, preservadas, bodas y talleres. Pide por WhatsApp; si escribes antes de la 1 pm, llega hoy.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23E25A8C'/%3E%3Cpath d='M9 32V15a7 7 0 0 1 14 0v17z' fill='%2326121C'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gloock&family=Schibsted+Grotesk:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="wa" viewBox="0 0 24 24">
+    <path d="M12 2.2a9.8 9.8 0 0 0-8.4 14.9L2.3 21.8l4.8-1.3A9.8 9.8 0 1 0 12 2.2z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+    <path d="M8.6 7.3c.3-.5.6-.5.9-.5h.6c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.4 0 .6l-.5.7c-.1.2-.2.3 0 .6.6 1.1 1.6 2 2.7 2.6.3.1.4.1.6-.1l.7-.8c.2-.2.3-.2.6-.1l1.8.9c.3.1.4.2.4.4 0 .4-.1 1.3-.7 1.8-.6.5-1.4.8-2.4.6-1.3-.3-3-1-4.4-2.4-1.5-1.5-2.3-3.2-1.9-4.8.1-.6.4-1.1.8-1.4z" fill="currentColor"/>
+  </symbol>
+</svg>
+
+<a class="skip" href="#catalogo" data-en="Skip to catalog">Saltar al catálogo</a>
+
+<header class="nav" id="top">
+  <a class="nav__brand" href="#top" aria-label="Casa Azahar, inicio">
+    <span class="nav__mark" aria-hidden="true"></span>
+    <span>Casa Azahar</span>
+  </a>
+  <nav class="nav__links" aria-label="Principal" id="navlinks">
+    <a href="#pedir" data-en="How to order">Cómo pedir</a>
+    <a href="#catalogo" data-en="Catalog">Catálogo</a>
+    <a href="#bodas" data-en="Weddings">Bodas</a>
+    <a href="#talleres" data-en="Workshops">Talleres</a>
+    <a href="#visitanos" data-en="Visit">Visítanos</a>
+  </nav>
+  <div class="nav__right">
+    <div class="lang" role="group" aria-label="Idioma / Language">
+      <button type="button" data-lang="es" aria-pressed="true">ES</button>
+      <button type="button" data-lang="en" aria-pressed="false">EN</button>
+    </div>
+    <a class="nav__wa" href="https://wa.me/5213300000000" target="_blank" rel="noopener" data-wa="general">
+      <svg aria-hidden="true"><use href="#wa"/></svg><span class="js-wa-display">33 0000 0000</span>
+    </a>
+    <button class="nav__menu" type="button" aria-expanded="false" aria-controls="navlinks" data-en="Menu">Menú</button>
+  </div>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="hero wall wall--rosa" aria-labelledby="hero-title">
+  <div class="sunlight" aria-hidden="true"></div>
+  <div class="hero__grid">
+    <p class="hero__eyebrow label" data-en="Floral studio — Col. Americana, Guadalajara">Estudio floral — Col. Americana, Guadalajara</p>
+    <h1 class="hero__title" id="hero-title">
+      <span class="hero__line">Casa</span>
+      <span class="hero__line hero__line--2">Azahar</span>
+    </h1>
+    <figure class="hero__win win win--arch">
+      <div class="win__frame">
+        <img src="img/mex-12.jpg" width="1600" height="2478" alt="Puerta rosa bajo una cascada de buganvilia magenta" fetchpriority="high">
+      </div>
+      <figcaption class="cap" data-en="Pink door on Lerdo de Tejada, 7:40 am. ‘Barbara Karst’ bougainvillea.">Puerta en Lerdo de Tejada, 7:40 am. Buganvilia ‘Barbara Karst’.</figcaption>
+    </figure>
+    <div class="hero__copy">
+      <p class="hero__lede" data-en="Market flowers, arranged with opinions, ordered over WhatsApp. Pick here, message us, and it arrives <em>today</em> if you order before 1&nbsp;pm.">Flores del mercado, acomodadas con criterio y pedidas por WhatsApp. Escoge aquí, escríbenos, y llega <em>hoy</em> si pides antes de la 1&nbsp;pm.</p>
+      <div class="hero__ctas">
+        <a class="btn btn--ink" href="#catalogo" data-en="See the catalog">Ver catálogo</a>
+        <a class="btn btn--line" href="https://wa.me/5213300000000" target="_blank" rel="noopener" data-wa="general"><svg aria-hidden="true"><use href="#wa"/></svg><span data-en="Message us">Escríbenos</span></a>
+      </div>
+    </div>
+    <p class="hero__status label" aria-live="polite"><span class="dot"></span><span class="js-status" data-en="Open Mon–Sat in Guadalajara">Abierto de lunes a sábado en Guadalajara</span></p>
+  </div>
+</section>
+
+<!-- MANIFIESTO -->
+<section class="manif wall wall--ocre" data-prev="rosa" data-dir="r" aria-labelledby="manif-title">
+  <div class="plane" aria-hidden="true"></div>
+  <div class="manif__grid">
+    <figure class="manif__win win win--rect">
+      <div class="win__frame"><img src="img/sm/mex-70.jpg" width="800" height="534" loading="lazy" alt="Sombra de una palmera sobre un muro coral, junto a una franja naranja"></div>
+      <figcaption class="cap" data-en="The back wall of the patio, 4 pm.">El muro del patio, 4 pm.</figcaption>
+    </figure>
+    <h2 class="manif__title" id="manif-title" data-en="No roses in acrylic boxes here.">Aquí no hay rosas en caja de acrílico.</h2>
+    <p class="manif__body" data-en="We buy at the Mercado de Abastos on Tuesdays and Fridays at six in the morning. What arrives is what we have: dahlias from Atlixco, baby’s breath, callas, Japanese ranunculus when we’re lucky. If it isn’t beautiful, we don’t sell it.">Compramos en el Mercado de Abastos los martes y viernes a las seis de la mañana. Lo que llega es lo que hay: dalias de Atlixco, nube, alcatraz, ranúnculo japonés cuando hay suerte. Si algo no está bonito, no lo vendemos.</p>
+    <dl class="manif__facts">
+      <div><dt class="num">2</dt><dd data-en="market runs a week">idas al mercado por semana</dd></div>
+      <div><dt class="num">0</dt><dd data-en="floral foam. Chicken wire and moss.">espuma floral. Usamos malla y musgo.</dd></div>
+      <div><dt class="num">212</dt><dd data-en="deliveries last Feb 14. We survived.">entregas el 14 de febrero pasado. Sobrevivimos.</dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- CÓMO PEDIR -->
+<section class="pedir wall wall--verde" id="pedir" data-prev="ocre" data-dir="l" aria-labelledby="pedir-title">
+  <div class="plane" aria-hidden="true"></div>
+  <div class="pedir__grid">
+    <h2 class="label pedir__label" id="pedir-title" data-en="How to order — three steps, zero Instagram highlights">Cómo pedir — tres pasos, cero historias destacadas</h2>
+    <ol class="steps">
+      <li class="step">
+        <span class="step__n">1</span>
+        <span class="step__word" data-en="Pick.">Elige.</span>
+        <p class="step__txt" data-en="The whole catalog is right here, with prices. No more scrolling forty story highlights to find out what a bouquet costs.">Todo el catálogo está aquí, con precio. Ya no tienes que revisar cuarenta historias destacadas para saber cuánto cuesta un ramo.</p>
+      </li>
+      <li class="step">
+        <span class="step__n">2</span>
+        <span class="step__word" data-en="Text us.">Escríbenos.</span>
+        <p class="step__txt" data-en="Every button opens WhatsApp with the arrangement already typed in. You just tell us who it’s for and where it goes.">Cada botón abre WhatsApp con el nombre del arreglo ya escrito. Tú nomás nos dices para quién es y a qué dirección.</p>
+      </li>
+      <li class="step">
+        <span class="step__n">3</span>
+        <span class="step__word" data-en="Done.">Recibe.</span>
+        <p class="step__txt" data-en="Order before 1 pm and it arrives today, between 4 and 7. We send you a photo before it leaves the studio.">Pide antes de la 1 pm y llega hoy, entre 4 y 7. Te mandamos foto antes de que salga del taller.</p>
+      </li>
+    </ol>
+    <div class="chat" aria-label="Ejemplo de conversación por WhatsApp">
+      <div class="chat__head"><span class="chat__av" aria-hidden="true"></span><div><strong>Casa Azahar</strong><small data-en="online">en línea</small></div></div>
+      <p class="msg msg--out" data-en="Hi! I’d like the <b>Abastos</b> arrangement ($1,180). Can you do today?<time>11:02</time>">Hola, quiero el arreglo <b>Abastos</b> ($1,180). ¿Lo tienen para hoy?<time>11:02</time></p>
+      <p class="msg msg--in" data-en="Hi! Yes we do. Which neighborhood?<time>11:03</time>">¡Hola! Sí hay. ¿A qué colonia va?<time>11:03</time></p>
+      <p class="msg msg--out" data-en="Providencia. It’s for my mom, she turns 60.<time>11:03</time>">Providencia. Es para mi mamá, cumple 60.<time>11:03</time></p>
+      <p class="msg msg--in" data-en="Love it. Delivery is $120. We’ll send a photo before it leaves at 4.<time>11:04</time>">Qué bonito. El envío es de $120. Te mandamos foto antes de salir, a las 4.<time>11:04</time></p>
+    </div>
+  </div>
+</section>
+
+<!-- CATÁLOGO -->
+<section class="cat wall wall--cal" id="catalogo" data-prev="verde" data-dir="r" aria-labelledby="cat-title">
+  <div class="plane" aria-hidden="true"></div>
+  <div class="cat__head">
+    <h2 class="cat__title" id="cat-title" data-en="Catalog">Catálogo</h2>
+    <p class="cat__note" data-en="Prices in Mexican pesos, tax included. Delivery from $120. Everything changes with the season. If something’s gone, we’ll tell you on WhatsApp and suggest its cousin.">Precios en pesos, IVA incluido. Envío desde $120. Todo cambia con la temporada: si algo se acabó, te lo decimos por WhatsApp y te proponemos a su primo.</p>
+    <div class="tabs" role="tablist" aria-label="Categorías">
+      <button role="tab" type="button" id="t-arreglos" aria-controls="p-arreglos" aria-selected="true" data-wall="rosa" data-en="Arrangements">Arreglos</button>
+      <button role="tab" type="button" id="t-ramos" aria-controls="p-ramos" aria-selected="false" data-wall="ocre" data-en="Bouquets">Ramos</button>
+      <button role="tab" type="button" id="t-preservadas" aria-controls="p-preservadas" aria-selected="false" data-wall="verde" data-en="Dried">Preservadas</button>
+      <button role="tab" type="button" id="t-bodas" aria-controls="p-bodas" aria-selected="false" data-wall="buganvilia" data-en="Weddings">Bodas</button>
+      <button role="tab" type="button" id="t-talleres" aria-controls="p-talleres" aria-selected="false" data-wall="tinta" data-en="Workshops">Talleres</button>
+    </div>
+  </div>
+
+  <div class="cat__stage">
+    <div class="cat__wall" aria-hidden="true"><span></span></div>
+
+    <div class="panel" role="tabpanel" id="p-arreglos" aria-labelledby="t-arreglos" data-wall="rosa">
+      <h3 class="panel__h" data-en="Arrangements">Arreglos</h3>
+      <article class="card">
+        <div class="win win--arch"><div class="win__frame"><img src="img/sm/mex-62.jpg" width="800" height="839" loading="lazy" alt="Alstroemeria amarilla en jarrón de talavera azul sobre muro rojo"></div></div>
+        <div class="card__body">
+          <p class="card__sku">A–01</p>
+          <h4 class="card__name">Tlaquepaque</h4>
+          <p class="card__desc" data-en="Yellow alstroemeria and hypericum in a talavera vase you keep. 25 stems.">Alstroemeria amarilla e hypericum en jarrón de talavera que te quedas. 25 tallos.</p>
+          <p class="card__price">$1,450</p>
+          <a class="wa-btn" href="https://wa.me/5213300000000" target="_blank" rel="noopener" data-item="Arreglo Tlaquepaque" data-item-en="Tlaquepaque arrangement" data-price="1,450"><svg aria-hidden="true"><use href="#wa"/></svg><span data-en="Order on WhatsApp">Pedir por WhatsApp</span></a>
+        </div>
+      </article>
+      <article class="card">
+        <div class="win win--rect"><div class="win__frame"><img src="img/sm/mex-55.jpg" width="800" height="800" loading="lazy" alt="Dalias rojas y blancas en jarra verde de cerámica sobre mesa de madera"></div></div>
+        <div class="card__body">
+          <p class="card__sku">A–02</p>
+          <h4 class="card__name">Doña Lupe</h4>
+          <p class="card__desc" data-en="Red and white dahlias, chrysanthemums, eucalyptus, in a celadon jug. For a table that’s seen everything.">Dalias rojas y blancas, crisantemo y eucalipto en jarra verde. Para la mesa que ya lo ha visto todo.</p>
+          <p class="card__price">$980</p>
+          <a class="wa-btn" href="https://wa.me/5213300000000" target="_blank" rel="noopener" data-item="Arreglo Doña Lupe" data-item-en="Doña Lupe arrangement" data-price="980"><svg aria-hidden="true"><use href="#wa"/></svg><span data-en="Order on WhatsApp">Pedir por WhatsApp</span></a>
+        </div>
+      </article>
+      <article class="card">
+        <div class="win win--arch"><div class="win__frame"><img src="img/sm/mex-47.jpg" width="800" height="1200" loading="lazy" alt="Dalias naranjas y rojas en florero blanco"></div></div>
+        <div class="card__body">
+          <p class="card__sku">A–03</p>
+          <h4 class="card__name">Abastos</h4>
+          <p class="card__desc" data-en="Whatever orange came in Tuesday: dahlias, zinnias, marigold. Loud on purpose.">Todo lo naranja que llegó el martes: dalias, zinnias, cempasúchil. Escandaloso a propósito.</p>
+          <p class="card__price">$1,180</p>
+          <a class="wa-btn" href="https://wa.me/5213300000000" target="_blank" rel="noopener" data-item="Arreglo Abastos" data-item-en="Abastos arrangement" data-price="1,180"><svg aria-hidden="true"><use href="#wa"/></svg><span data-en="Order on WhatsApp">Pedir por WhatsApp</span></a>
+        </div>
+      </article>
+      <article class="card">
+        <div class="win win--rect"><div class="win__frame"><img src="img/sm/mex-57.jpg" width="800" height="1200" loading="lazy" alt="Ranúnculos blancos en vaso de vidrio sobre fondo verde"></div></div>
+        <div class="card__body">
+          <p class="card__sku">A–04</p>
+          <h4 class="card__name">Nube</h4>
+          <p class="card__desc" data-en="White ranunculus and lisianthus in a hand-blown Tlaquepaque glass. Quiet. 12 stems.">Ranúnculo blanco y lisianthus en vaso soplado de Tlaquepaque. Callado. 12 tallos.</p>
+          <p class="card__price">$720</p>
+          <a class="wa-btn" href="https://wa.me/5213300000000" target="_blank" rel="noopener" data-item="Arreglo Nube" data-item-en="Nube arrangement" data-price="720"><svg aria-hidden="true"><use href="#wa"/></svg><span data-en="Order on WhatsApp">Pedir por WhatsApp</span></a>
+        </div>
+      </article>
+      <p class="panel__note"><span data-en="Don’t see it? Give us a budget and we’ll build it from whatever came in today.">¿No ves lo que buscas? Danos un presupuesto y lo armamos con lo que llegó hoy.</span><br><a href="https://wa.me/5213300000000" target="_blank" rel="noopener" data-wa="custom" data-en="Ask for a custom one →">Pedir uno a la medida →</a></p>
+    </div>
+
+    <div class="panel" role="tabpanel" id="p-ramos" aria-labelledby="t-ramos" data-wall="ocre">
+      <h3 class="panel__h" data-en="Bouquets">Ramos</h3>
+      <article class="card">
+        <div class="win win--arch"><div class="win__frame"><img src="img/mex-36.jpg" width="1600" height="1201" loading="lazy" alt="Dalias rosas y durazno acomodadas sobre una mesa blanca junto a unas tijeras"></div></div>
+        <div class="card__body">
+          <p class="card__sku">R–01</p>
+          <h4 class="card__name">Café au Lait</h4>
+          <p class="card__desc" data-en="‘Café au Lait’ and ‘Sylvia’ dahlias, wrapped in kraft paper. 12 stems. Our best seller since 2021.">Dalias ‘Café au Lait’ y ‘Sylvia’, envueltas en papel kraft. 12 tallos. El más pedido desde 2021.</p>
+          <p class="card__price">$890</p>
+          <a class="wa-btn" href="https://wa.me/5213300000000" target="_blank" rel="noopener" data-item="Ramo Café au Lait" data-item-en="Café au Lait bouquet" data-price="890"><svg aria-hidden="true"><use href="#wa"/></svg><span data-en="Order on WhatsApp">Pedir por WhatsApp</span></a>
+        </div>
+      </article>
+      <article class="card">
+        <div class="win win--rect"><div class="win__frame"><img src="img/sm/mex-35.jpg" width="800" height="534" loading="lazy" alt="Dalias pompón color coral en una cubeta"></div></div>
+        <div class="card__body">
+          <p class="card__sku">R–02</p>
+          <h4 class="card__name">Coral</h4>
+          <p class="card__desc" data-en="Coral pompon dahlias, 15 stems. The one people order “for no reason.”">Dalias pompón coral, 15 tallos. El que la gente pide “porque sí”.</p>
+          <p class="card__price">$760</p>
+          <a class="wa-btn" href="https://wa.me/5213300000000" target="_blank" rel="noopener" data-item="Ramo Coral" data-item-en="Coral bouquet" data-price="760"><svg aria-hidden="true"><use href="#wa"/></svg><span data-en="Order on WhatsApp">Pedir por WhatsApp</span></a>
+        </div>
+      </article>
+      <article class="card">
+        <div class="win win--arch"><div class="win__frame"><img src="img/sm/mex-34.jpg" width="800" height="800" loading="lazy" alt="Una mano sostiene una sola dalia rosa gigante"></div></div>
+        <div class="card__body">
+          <p class="card__sku">R–03</p>
+          <h4 class="card__name" data-en="Just one">Una sola</h4>
+          <p class="card__desc" data-en="One dinner-plate dahlia, the size of your face. For when one is enough.">Una dalia del tamaño de tu cara. Para cuando una basta.</p>
+          <p class="card__price">$180</p>
+          <a class="wa-btn" href="https://wa.me/5213300000000" target="_blank" rel="noopener" data-item="Una sola dalia" data-item-en="Just one dahlia" data-price="180"><svg aria-hidden="true"><use href="#wa"/></svg><span data-en="Order on WhatsApp">Pedir por WhatsApp</span></a>
+        </div>
+      </article>
+      <article class="card">
+        <div class="win win--rect"><div class="win__frame"><img src="img/sm/mex-39.jpg" width="800" height="1067" loading="lazy" alt="Dalias color vino, blancas y rosas muy juntas"></div></div>
+        <div class="card__body">
+          <p class="card__sku">R–04</p>
+          <h4 class="card__name">Tinto</h4>
+          <p class="card__desc" data-en="Wine and blush dahlias, ‘Ivanetti’ and ‘Hapet Daydream’. 20 stems. Anniversary territory.">Dalias vino y palo de rosa, ‘Ivanetti’ y ‘Hapet Daydream’. 20 tallos. Territorio de aniversario.</p>
+          <p class="card__price">$1,240</p>
+          <a class="wa-btn" href="https://wa.me/5213300000000" target="_blank" rel="noopener" data-item="Ramo Tinto" data-item-en="Tinto bouquet" data-price="1,240"><svg aria-hidden="true"><use href="#wa"/></svg><span data-en="Order on WhatsApp">Pedir por WhatsApp</span></a>
+        </div>
+      </article>
+      <p class="panel__note"><span data-en="Don’t see it? Give us a budget and we’ll build it from whatever came in today.">¿No ves lo que buscas? Danos un presupuesto y lo armamos con lo que llegó hoy.</span><br><a href="https://wa.me/5213300000000" target="_blank" rel="noopener" data-wa="custom" data-en="Ask for a custom one →">Pedir uno a la medida →</a></p>
+    </div>
+
+    <div class="panel" role="tabpanel" id="p-preservadas" aria-labelledby="t-preservadas" data-wall="verde">
+      <h3 class="panel__h" data-en="Dried">Preservadas</h3>
+      <article class="card">
+        <div class="win win--arch"><div class="win__frame"><img src="img/sm/mex-56.jpg" width="800" height="1208" loading="lazy" alt="Pastos secos y piñas en jarrones azules contra un muro naranja"></div></div>
+        <div class="card__body">
+          <p class="card__sku">P–01</p>
+          <h4 class="card__name">Pastizal</h4>
+          <p class="card__desc" data-en="Pampas, wheat and dried palm in a blue jar. Lasts a year if you keep it out of the sun.">Pampas, trigo y palma seca en tibor azul. Dura un año si no le da el sol directo.</p>
+          <p class="card__price">$1,350</p>
+          <a class="wa-btn" href="https://wa.me/5213300000000" target="_blank" rel="noopener" data-item="Preservada Pastizal" data-item-en="Pastizal dried arrangement" data-price="1,350"><svg aria-hidden="true"><use href="#wa"/></svg><span data-en="Order on WhatsApp">Pedir por WhatsApp</span></a>
+        </div>
+      </article>
+      <article class="card">
+        <div class="win win--rect"><div class="win__frame"><img src="img/sm/mex-54.jpg" width="800" height="534" loading="lazy" alt="Ramita de eucalipto en una maceta pequeña de barro sobre mesa blanca"></div></div>
+        <div class="card__body">
+          <p class="card__sku">P–02</p>
+          <h4 class="card__name">Eucalipto</h4>
+          <p class="card__desc" data-en="Preserved eucalyptus in a little clay pot. The desk gift that doesn’t die on you.">Eucalipto preservado en macetita de barro. El regalo de escritorio que no se te muere.</p>
+          <p class="card__price">$540</p>
+          <a class="wa-btn" href="https://wa.me/5213300000000" target="_blank" rel="noopener" data-item="Preservada Eucalipto" data-item-en="Preserved eucalyptus" data-price="540"><svg aria-hidden="true"><use href="#wa"/></svg><span data-en="Order on WhatsApp">Pedir por WhatsApp</span></a>
+        </div>
+      </article>
+      <article class="card">
+        <div class="win win--arch"><div class="win__frame"><img src="img/sm/mex-48.jpg" width="800" height="1200" loading="lazy" alt="Florero de barro naranja acanalado sobre fondo negro"></div></div>
+        <div class="card__body">
+          <p class="card__sku">P–03</p>
+          <h4 class="card__name">Tonalá</h4>
+          <p class="card__desc" data-en="Fluted burnished-clay vase, made in Tonalá. Sold empty; we’ll fill it if you ask.">Florero de barro bruñido acanalado, hecho en Tonalá. Se vende solo; si quieres, lo llenamos.</p>
+          <p class="card__price">$690</p>
+          <a class="wa-btn" href="https://wa.me/5213300000000" target="_blank" rel="noopener" data-item="Florero Tonalá" data-item-en="Tonalá vase" data-price="690"><svg aria-hidden="true"><use href="#wa"/></svg><span data-en="Order on WhatsApp">Pedir por WhatsApp</span></a>
+        </div>
+      </article>
+    </div>
+
+    <div class="panel" role="tabpanel" id="p-bodas" aria-labelledby="t-bodas" data-wall="buganvilia">
+      <h3 class="panel__h" data-en="Weddings">Bodas</h3>
+      <article class="card">
+        <div class="win win--arch"><div class="win__frame"><img src="img/sm/mex-40.jpg" width="800" height="1203" loading="lazy" alt="Dalia durazno gigante en primer plano"></div></div>
+        <div class="card__body">
+          <p class="card__sku">B–01</p>
+          <h4 class="card__name" data-en="Bridal bouquet">Ramo de novia</h4>
+          <p class="card__desc" data-en="Built around one hero flower you choose with us. Includes a fitting the week before.">Armado alrededor de una flor protagonista que escoges con nosotras. Incluye prueba la semana anterior.</p>
+          <p class="card__price"><small data-en="from">desde</small> $3,800</p>
+          <a class="wa-btn" href="https://wa.me/5213300000000" target="_blank" rel="noopener" data-item="Ramo de novia" data-item-en="Bridal bouquet" data-price="3,800"><svg aria-hidden="true"><use href="#wa"/></svg><span data-en="Ask on WhatsApp">Cotizar por WhatsApp</span></a>
+        </div>
+      </article>
+      <article class="card">
+        <div class="win win--rect"><div class="win__frame"><img src="img/sm/mex-51.jpg" width="800" height="1200" loading="lazy" alt="Lilis blancos en florero de barro sobre camino de mesa rosa"></div></div>
+        <div class="card__body">
+          <p class="card__sku">B–02</p>
+          <h4 class="card__name" data-en="Centerpieces">Centros de mesa</h4>
+          <p class="card__desc" data-en="Clay, linen, white lilies, olive. Minimum 10 tables. Rentals of vases included.">Barro, lino, lilis blancos y olivo. Mínimo 10 mesas. Renta de floreros incluida.</p>
+          <p class="card__price"><small data-en="from">desde</small> $1,100 <small data-en="each">c/u</small></p>
+          <a class="wa-btn" href="https://wa.me/5213300000000" target="_blank" rel="noopener" data-item="Centros de mesa para boda" data-item-en="Wedding centerpieces" data-price="1,100"><svg aria-hidden="true"><use href="#wa"/></svg><span data-en="Ask on WhatsApp">Cotizar por WhatsApp</span></a>
+        </div>
+      </article>
+      <article class="card">
+        <div class="win win--arch"><div class="win__frame"><img src="img/mex-24.jpg" width="1600" height="1067" loading="lazy" alt="Muro cubierto de rosas rosas y blancas"></div></div>
+        <div class="card__body">
+          <p class="card__sku">B–03</p>
+          <h4 class="card__name" data-en="Flower wall">Muro floral</h4>
+          <p class="card__desc" data-en="2.4 × 3 m, roughly 1,400 roses. Mounted the morning of, gone by 2 am.">2.4 × 3 m, unas 1,400 rosas. Se monta en la mañana y a las 2 am ya no está.</p>
+          <p class="card__price"><small data-en="from">desde</small> $28,000</p>
+          <a class="wa-btn" href="https://wa.me/5213300000000" target="_blank" rel="noopener" data-item="Muro floral" data-item-en="Flower wall" data-price="28,000"><svg aria-hidden="true"><use href="#wa"/></svg><span data-en="Ask on WhatsApp">Cotizar por WhatsApp</span></a>
+        </div>
+      </article>
+    </div>
+
+    <div class="panel" role="tabpanel" id="p-talleres" aria-labelledby="t-talleres" data-wall="tinta">
+      <h3 class="panel__h" data-en="Workshops">Talleres</h3>
+      <article class="card">
+        <div class="win win--arch"><div class="win__frame"><img src="img/sm/mex-49.jpg" width="800" height="1200" loading="lazy" alt="Flores de temporada sobre una mesa con fondo verde"></div></div>
+        <div class="card__body">
+          <p class="card__sku">T–01</p>
+          <h4 class="card__name" data-en="Market bouquet">Ramo de mercado</h4>
+          <p class="card__desc" data-en="Three hours, coffee, pan dulce, and you leave with a 30-stem bouquet you made yourself.">Tres horas, café, pan dulce y te vas con un ramo de 30 tallos que hiciste tú.</p>
+          <p class="card__price">$1,200 <small data-en="per person">por persona</small></p>
+          <a class="wa-btn" href="https://wa.me/5213300000000" target="_blank" rel="noopener" data-item="Taller Ramo de mercado" data-item-en="Market bouquet workshop" data-price="1,200"><svg aria-hidden="true"><use href="#wa"/></svg><span data-en="Save a seat">Apartar lugar</span></a>
+        </div>
+      </article>
+      <article class="card">
+        <div class="win win--rect"><div class="win__frame"><img src="img/sm/mex-60.jpg" width="800" height="534" loading="lazy" alt="Dos macetas de barro colgadas en un muro ocre con plantas"></div></div>
+        <div class="card__body">
+          <p class="card__sku">T–02</p>
+          <h4 class="card__name" data-en="Wall planters">Macetas de muro</h4>
+          <p class="card__desc" data-en="Hang clay pots with succulents and tillandsias, the Guadalajara-patio way. Bring a drill if you have one.">Macetas de barro colgadas con suculentas y tillandsias, como en los patios tapatíos. Si tienes taladro, tráelo.</p>
+          <p class="card__price">$950 <small data-en="per person">por persona</small></p>
+          <a class="wa-btn" href="https://wa.me/5213300000000" target="_blank" rel="noopener" data-item="Taller Macetas de muro" data-item-en="Wall planters workshop" data-price="950"><svg aria-hidden="true"><use href="#wa"/></svg><span data-en="Save a seat">Apartar lugar</span></a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- BODAS -->
+<section class="bodas wall wall--buganvilia" id="bodas" data-prev="cal" data-dir="l" aria-labelledby="bodas-title">
+  <div class="plane" aria-hidden="true"></div>
+  <div class="bodas__grid">
+    <h2 class="bodas__title" id="bodas-title"><span data-en="Weddings">Bodas</span><small data-en="&amp; events">y eventos</small></h2>
+    <figure class="bodas__win win win--arch">
+      <div class="win__frame"><img src="img/mex-21.jpg" width="1600" height="2396" loading="lazy" alt="Muro ocre con tres arcos tapiados y buganvilia magenta encima"></div>
+      <figcaption class="cap" data-en="Hacienda wall, Tequila. Ceremony for 180, October.">Muro de hacienda, Tequila. Ceremonia para 180, octubre.</figcaption>
+    </figure>
+    <p class="bodas__lede" data-en="We take two weddings a weekend. Not three. Haciendas in Tequila, gardens in Tlaquepaque, lakeside terraces in Chapala. Book 6 to 10 months out.">Tomamos dos bodas por fin de semana. No tres. Haciendas en Tequila, jardines en Tlaquepaque, terrazas frente al lago en Chapala. Agenda con 6 a 10 meses.</p>
+    <ol class="chapters">
+      <li><span class="num">01</span><b data-en="Talk">Plática</b><span data-en="Coffee at the studio. Bring photos, or nothing.">Café en el taller. Trae fotos, o nada.</span></li>
+      <li><span class="num">02</span><b data-en="Proposal">Propuesta</b><span data-en="Quote and moodboard in 5 working days.">Cotización y moodboard en 5 días hábiles.</span></li>
+      <li><span class="num">03</span><b data-en="Install">Montaje</b><span data-en="We arrive first, leave last, and take every petal with us.">Llegamos primero, nos vamos al final y no dejamos ni un pétalo.</span></li>
+    </ol>
+    <figure class="bodas__win2 win win--rect">
+      <div class="win__frame"><img src="img/sm/mex-58.jpg" width="800" height="1200" loading="lazy" alt="Mesas con floreros de barro y flores naranjas bajo una carpa"></div>
+      <figcaption class="cap" data-en="Long table, Chapala. Clay, marigold, lilies.">Mesa imperial, Chapala. Barro, cempasúchil, lilis.</figcaption>
+    </figure>
+    <blockquote class="quote">
+      <p data-en="“They got to the hacienda at 6 am, left at 1 in the morning, and I never once had to call them.”">“Llegaron a la hacienda a las 6 de la mañana, se fueron a la una y nunca tuve que marcarles.”</p>
+      <footer data-en="Mariana Ochoa, wedding planner, Zapopan">Mariana Ochoa, wedding planner, Zapopan</footer>
+    </blockquote>
+    <form class="qform" id="qform" novalidate>
+      <p class="label" data-en="Quote in 30 seconds — it goes out by WhatsApp">Cotiza en 30 segundos — se manda por WhatsApp</p>
+      <div class="qform__row">
+        <label><span data-en="Date">Fecha</span><input type="text" name="fecha" placeholder="14 ago 2027" data-en-ph="Aug 14, 2027"></label>
+        <label><span data-en="Venue">Lugar</span><input type="text" name="lugar" placeholder="Hacienda, jardín, Chapala…" data-en-ph="Hacienda, garden, Chapala…"></label>
+        <label><span data-en="Guests">Invitados</span><input type="number" name="invitados" min="10" placeholder="150"></label>
+      </div>
+      <fieldset class="chips">
+        <legend data-en="Flower budget (MXN)">Presupuesto en flores (MXN)</legend>
+        <label><input type="radio" name="pres" value="< $40k"><span>&lt; $40k</span></label>
+        <label><input type="radio" name="pres" value="$40–80k"><span>$40–80k</span></label>
+        <label><input type="radio" name="pres" value="$80–150k" checked><span>$80–150k</span></label>
+        <label><input type="radio" name="pres" value="$150k+"><span>$150k +</span></label>
+      </fieldset>
+      <button class="btn btn--cal" type="submit"><svg aria-hidden="true"><use href="#wa"/></svg><span data-en="Send on WhatsApp">Mandar por WhatsApp</span></button>
+      <p class="qform__ok" role="status" hidden data-en="Done. WhatsApp opened with your details. We answer within 24 hours, usually much sooner.">Listo. Se abrió WhatsApp con tus datos. Te contestamos en menos de 24 horas, casi siempre mucho antes.</p>
+    </form>
+  </div>
+</section>
+
+<!-- PAUSA -->
+<figure class="pause">
+  <img src="img/mex-65.jpg" width="1600" height="1614" loading="lazy" alt="Un muro rosa enorme con una ventana pequeña y una persona diminuta caminando al pie">
+  <figcaption class="cap" data-en="Across the street. Monday, 5:12 pm. The color we stole for the logo.">La pared de enfrente. Lunes, 5:12 pm. De aquí sacamos el rosa del logo.</figcaption>
+</figure>
+
+<!-- TALLERES -->
+<section class="talleres wall wall--ocre" id="talleres" data-prev="rosa" data-dir="r" aria-labelledby="talleres-title">
+  <div class="plane" aria-hidden="true"></div>
+  <div class="talleres__grid">
+    <div class="talleres__intro">
+      <h2 class="talleres__title" id="talleres-title" data-en="Workshops">Talleres</h2>
+      <p data-en="Saturdays in the patio, 10 am to 1 pm. Twelve people max, coffee and pan dulce from the bakery on the corner. You leave with flowers and dirty hands.">Sábados en el patio, de 10 am a 1 pm. Máximo doce personas, café y pan dulce de la panadería de la esquina. Te vas con flores y las manos sucias.</p>
+      <figure class="talleres__win win win--arch">
+        <div class="win__frame"><img src="img/sm/mex-63.jpg" width="800" height="800" loading="lazy" alt="Patio con ollas de barro, macetas y flores blancas"></div>
+      </figure>
+    </div>
+    <ul class="sessions">
+      <li class="session">
+        <p class="session__date"><span data-en="Sat">sáb</span><b>28</b><span data-en="Nov">nov</span></p>
+        <div class="session__info"><h3 data-en="Market bouquet">Ramo de mercado</h3><p data-en="30 stems, spiral technique, kraft wrap">30 tallos, técnica en espiral, envoltura kraft</p></div>
+        <p class="session__price">$1,200</p>
+        <div class="seats" style="--taken:9"><span class="seats__bar"></span><span class="seats__txt" data-en="3 seats left">Quedan 3 lugares</span></div>
+        <a class="wa-btn" href="https://wa.me/5213300000000" target="_blank" rel="noopener" data-item="Taller Ramo de mercado, sábado 28 de noviembre" data-item-en="Market bouquet workshop, Saturday Nov 28" data-price="1,200"><svg aria-hidden="true"><use href="#wa"/></svg><span data-en="Save a seat">Apartar lugar</span></a>
+      </li>
+      <li class="session">
+        <p class="session__date"><span data-en="Sat">sáb</span><b>5</b><span data-en="Dec">dic</span></p>
+        <div class="session__info"><h3 data-en="Pine &amp; eucalyptus wreath">Corona de pino y eucalipto</h3><p data-en="For the door. Smells like December for weeks.">Para la puerta. Huele a diciembre por semanas.</p></div>
+        <p class="session__price">$1,450</p>
+        <div class="seats" style="--taken:5"><span class="seats__bar"></span><span class="seats__txt" data-en="7 seats left">Quedan 7 lugares</span></div>
+        <a class="wa-btn" href="https://wa.me/5213300000000" target="_blank" rel="noopener" data-item="Taller Corona de pino y eucalipto, sábado 5 de diciembre" data-item-en="Pine & eucalyptus wreath workshop, Saturday Dec 5" data-price="1,450"><svg aria-hidden="true"><use href="#wa"/></svg><span data-en="Save a seat">Apartar lugar</span></a>
+      </li>
+      <li class="session is-full">
+        <p class="session__date"><span data-en="Sat">sáb</span><b>12</b><span data-en="Dec">dic</span></p>
+        <div class="session__info"><h3 data-en="A centerpiece for Christmas Eve">Centro de mesa para la cena del 24</h3><p data-en="Nochebuena, candles, cedar. Sold out in two days.">Nochebuena, velas y cedro. Se llenó en dos días.</p></div>
+        <p class="session__price">$1,350</p>
+        <div class="seats" style="--taken:12"><span class="seats__bar"></span><span class="seats__txt" data-en="Sold out">Agotado</span></div>
+        <a class="wa-btn wa-btn--ghost" href="https://wa.me/5213300000000" target="_blank" rel="noopener" data-item="Lista de espera, taller del 12 de diciembre" data-item-en="Waitlist, Dec 12 workshop" data-price="1,350"><svg aria-hidden="true"><use href="#wa"/></svg><span data-en="Waitlist">Lista de espera</span></a>
+      </li>
+      <li class="session">
+        <p class="session__date"><span data-en="Sat">sáb</span><b>16</b><span data-en="Jan">ene</span></p>
+        <div class="session__info"><h3 data-en="Dahlias in Tonalá clay">Dalias en barro de Tonalá</h3><p data-en="You keep the vase. Just opened.">Te quedas con el florero. Recién abierto.</p></div>
+        <p class="session__price">$1,100</p>
+        <div class="seats" style="--taken:0"><span class="seats__bar"></span><span class="seats__txt" data-en="12 seats left">Quedan 12 lugares</span></div>
+        <a class="wa-btn" href="https://wa.me/5213300000000" target="_blank" rel="noopener" data-item="Taller Dalias en barro de Tonalá, sábado 16 de enero" data-item-en="Dahlias in Tonalá clay workshop, Saturday Jan 16" data-price="1,100"><svg aria-hidden="true"><use href="#wa"/></svg><span data-en="Save a seat">Apartar lugar</span></a>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- VISÍTANOS -->
+<section class="visit wall wall--rosa" id="visitanos" data-prev="ocre" data-dir="l" aria-labelledby="visit-title">
+  <div class="plane" aria-hidden="true"></div>
+  <div class="visit__grid">
+    <h2 class="visit__title" id="visit-title" data-en="Come by">Visítanos</h2>
+    <figure class="visit__win win win--rect">
+      <div class="win__frame"><img src="img/sm/mex-64.jpg" width="800" height="1067" loading="lazy" alt="Puerta de madera con marco amarillo en un muro durazno, con sombras de plantas"></div>
+      <figcaption class="cap" data-en="Look for the yellow frame. Ring twice.">Busca el marco amarillo. Toca dos veces.</figcaption>
+    </figure>
+    <address class="visit__addr">
+      Av. Libertad 1871<br>Col. Americana<br>44160 Guadalajara, Jal.
+      <a href="https://maps.google.com/?q=Colonia+Americana+Guadalajara" target="_blank" rel="noopener" class="ulink" data-en="Open in Maps →">Abrir en Maps →</a>
+    </address>
+    <div class="visit__hours">
+      <h3 class="label" data-en="Hours">Horario</h3>
+      <dl class="hours">
+        <div><dt data-en="Mon – Fri">Lun – Vie</dt><dd>10:00 – 19:00</dd></div>
+        <div><dt data-en="Saturday">Sábado</dt><dd>9:00 – 15:00</dd></div>
+        <div><dt data-en="Sunday">Domingo</dt><dd data-en="Closed. We go to the tianguis.">Cerrado. Nos vamos al tianguis.</dd></div>
+      </dl>
+      <p class="visit__now label"><span class="dot"></span><span class="js-status" data-en="Open Mon–Sat in Guadalajara">Abierto de lunes a sábado en Guadalajara</span></p>
+    </div>
+    <div class="visit__zones">
+      <h3 class="label" data-en="Delivery">Envíos</h3>
+      <dl class="hours">
+        <div><dt>Americana, Lafayette, Providencia, Chapalita</dt><dd>$120</dd></div>
+        <div><dt>Zapopan, Tlaquepaque, Jardines del Bosque</dt><dd>$180</dd></div>
+        <div><dt>Tlajomulco, Tonalá, El Salto</dt><dd>$250</dd></div>
+      </dl>
+      <p class="visit__tip" data-en="Park on Libertad, not on Chapultepec. They <em>will</em> ticket you there.">Estaciónate en Libertad, no en Chapultepec. Ahí sí te multan.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot wall wall--tinta">
+  <div class="foot__grid">
+    <p class="foot__mark">Casa Azahar</p>
+    <div class="foot__cols">
+      <a href="https://wa.me/5213300000000" target="_blank" rel="noopener" data-wa="general">WhatsApp <span class="js-wa-display">33 0000 0000</span></a>
+      <a href="#top">@casaazahar.gdl</a>
+      <a href="#catalogo" data-en="Catalog">Catálogo</a>
+      <a href="#talleres" data-en="Workshops">Talleres</a>
+    </div>
+    <p class="foot__credit">A concept study by <a href="../../index.html">Sam &amp; Banks</a>. Casa Azahar is a fictional florist.</p>
+  </div>
+</footer>
+
+<a class="fab" href="https://wa.me/5213300000000" target="_blank" rel="noopener" data-wa="general" aria-label="Escríbenos por WhatsApp" data-en-aria="Message us on WhatsApp"><svg aria-hidden="true"><use href="#wa"/></svg></a>
+
+<script src="main.js"></script>
+</body>
+</html>

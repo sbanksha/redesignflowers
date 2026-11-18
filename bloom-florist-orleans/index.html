@@ -1,0 +1,268 @@
+<!doctype html>
+<!--
+  DESIGN PLAN — Bloom Florist & Gift Shop (concept by Sam & Banks)
+  Concept: "Sea fog & beach roses." Outer Cape calm, not nautical kitsch. Kristy's own work, big. ONE phone number, impossible to miss.
+  Palette: sea-fog #E6ECEC, harbor ink #0F2236, sign green #2D6A62 (from the old Bloom sign), beach-rose #D3336A as the only accent.
+  Fonts: Castoro (display + italics, a sturdy Caslon with salt in it) / Work Sans (body, labels).
+  Grid: 12-col editorial, asymmetric photo stack, generous fog.
+  Signature moments: (1) the number band, digits roll in once; (2) Cape Cod map that draws itself on scroll, towns light up from the list; (3) live open/closed status from real hours.
+  Sections: status strip · nav · hero · the number · lately (her work) · let Kristy pick · shop (→ FSN pages) · delivery map · weddings teaser · reviews · visit · footer.
+  Shop links go to her existing FlowerShopNetwork product pages. Nothing about ordering changes.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Bloom Florist & Gift Shop · Orleans, Cape Cod</title>
+<meta name="description" content="Family-owned florist in Orleans, MA. Garden-style arrangements by Kristy Normann, weddings by consultation, delivery across the Lower and Outer Cape. Call (508) 255-0400.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230F2236'/%3E%3Ctext x='32' y='46' font-family='Georgia' font-size='42' fill='%23E6ECEC' text-anchor='middle'%3EB%3C/text%3E%3Ccircle cx='48' cy='16' r='6' fill='%23D3336A'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Castoro:ital@0;1&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="strip">
+  <div class="wrap">
+    <span><span class="dot" data-dot></span><span data-status>Open daily · Mon–Fri 10–4, Sat–Sun 10–3</span></span>
+    <span class="where">Orleans, Cape Cod</span>
+    <a href="tel:+15082550400" class="tnum">(508) 255-0400</a>
+  </div>
+</div>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="mark" href="index.html" aria-label="Bloom Florist & Gift Shop, home"><b>Bloom</b><span>Florist &amp;<br>Gift Shop</span></a>
+    <nav aria-label="Main"><ul>
+      <li><a href="#shop">Shop</a></li>
+      <li><a href="weddings.html">Weddings</a></li>
+      <li><a href="#delivery">Delivery</a></li>
+      <li><a href="#visit">Visit</a></li>
+    </ul></nav>
+    <a class="callbtn tnum" href="tel:+15082550400"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2"/></svg>(508) 255-0400</a>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-copy">
+      <span class="label">Florist &amp; gift shop · Orleans, Massachusetts</span>
+      <h1>Big, loose, <em>garden-style</em> flowers. Made in Orleans.</h1>
+      <p class="hero-sub">Family-owned, designed by Kristy Normann, delivered from Barnstable to Provincetown. Birthdays, sympathy, Cape weddings, and plenty of “no reason.”</p>
+      <div class="hero-ctas">
+        <a class="callbtn tnum" href="tel:+15082550400"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2"/></svg>Call (508) 255-0400</a>
+        <a class="ghost" href="#shop">Order online</a>
+      </div>
+    </div>
+    <figure class="hero-photo">
+      <svg class="stamp" viewBox="0 0 120 120" aria-hidden="true"><defs><path id="c" d="M60,60 m-44,0 a44,44 0 1,1 88,0 a44,44 0 1,1 -88,0"/></defs><text font-family="Work Sans" font-weight="600" font-size="10.5" fill="currentColor"><textPath href="#c" textLength="272" lengthAdjust="spacing">ORLEANS · CAPE COD · MASSACHUSETTS · 02653 ·</textPath></text><circle cx="60" cy="60" r="7" fill="currentColor"/></svg>
+      <img src="img/snapdragon-bubble-vase.jpg" width="1600" height="2134" alt="A tall arrangement of pink and white snapdragons, white hydrangea, blush spray roses and red carnations in a round glass vase" fetchpriority="high">
+      <figcaption>Snapdragons, hydrangea, red carnations. November.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="number" id="call" aria-labelledby="num-h">
+  <div class="wrap">
+    <span class="label">The only number you need</span>
+    <h2 id="num-h">Orders, delivery questions, sympathy, weddings. One shop line.</h2>
+    <a class="bignum tnum" href="tel:+15082550400" aria-label="Call (508) 255-0400"><span class="d">(</span><span class="d">5</span><span class="d">0</span><span class="d">8</span><span class="d">)</span> <span class="d">2</span><span class="d">5</span><span class="d">5</span><span class="d">-</span><span class="d">0</span><span class="d">4</span><span class="d">0</span><span class="d">0</span></a>
+    <div class="number-foot">
+      <p><b>Talk to a person</b>Not sure what to send? Call. Kristy will ask who it’s for and take it from there.</p>
+      <p><b>Same-day, most days</b>Order early in the day for same-day delivery on the Cape. Ask about cutoffs for unusual flowers.</p>
+      <p><b>Open seven days</b><span data-hours-line>Mon–Fri 10 am–4 pm · Sat &amp; Sun 10 am–3 pm</span></p>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="lately" aria-labelledby="lately-h">
+  <div class="wrap">
+    <div class="head">
+      <span class="label">Lately, from the shop</span>
+      <h2 id="lately-h">Real arrangements. Not catalog photos.</h2>
+      <p>Every picture on this site came off Kristy’s bench. What you order will look like Bloom, because it is Bloom.</p>
+    </div>
+    <div class="work">
+      <figure class="w1"><img src="img/protea-sunflower-centerpiece.jpg" width="1600" height="2134" loading="lazy" alt="A low centerpiece with a pink king protea, sunflowers, red roses, purple stock, bells of Ireland and stalks of wheat on a wooden table"><figcaption>King protea, sunflowers, bells of Ireland, wheat <span>OCT ’26</span></figcaption></figure>
+      <figure class="w2"><img src="img/sm/peony-lisianthus.jpg" width="800" height="1067" loading="lazy" alt="Close-up of a pink peony with purple lisianthus, white lilies and yellow yarrow"><figcaption>Peony, lisianthus, yarrow <span>MAY ’26</span></figcaption></figure>
+      <div class="quoteblock">
+        <p>“I have ordered from Bloom multiple times. They have consistently raved about the arrangements. I always go with designer’s choice!”</p>
+        <cite>Elizabeth L., New York, ordering for family near Orleans</cite>
+      </div>
+      <figure class="w4"><img src="img/sm/roses-peony-closeup.jpg" width="800" height="1067" loading="lazy" alt="Orange roses, peach alstroemeria, blue delphinium and a magenta bloom packed tightly together"><figcaption>Orange roses, alstroemeria, delphinium <span>OCT ’26</span></figcaption></figure>
+      <figure class="w5"><img src="img/sm/lily-bird-of-paradise.jpg" width="800" height="1067" loading="lazy" alt="A tall arrangement with bird of paradise, white lilies, yellow roses and orange waxflower"><figcaption>Bird of paradise &amp; lilies <span>NOV ’26</span></figcaption></figure>
+      <figure class="w6"><img src="img/fall-rose-hydrangea.jpg" width="1600" height="2133" loading="lazy" alt="Red rose, purple lisianthus, yellow roses and green hydrangea with silver foliage"><figcaption>Red rose, lisianthus, green hydrangea <span>OCT ’26</span></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="choice" aria-labelledby="choice-h">
+  <div class="wrap">
+    <figure class="choice-photo"><img src="img/summer-hydrangea-mix.jpg" width="1600" height="2134" loading="lazy" alt="A big summer arrangement: white hydrangea, yellow yarrow, red spray roses, daisies and tall greens in a glass vase"></figure>
+    <div class="choice-copy">
+      <span class="label">Designer’s choice</span>
+      <h2 id="choice-h">Can’t decide? <em>Let Kristy pick.</em></h2>
+      <p>Tell us the budget, the person and the occasion. We use what’s best in the cooler that day. It’s what our regulars order, and it’s what looks most like the photos on this page.</p>
+      <ul>
+        <li><a href="https://www.bloomfloristorleans.com/custom_orders.php"><b>Custom designer’s choice</b></a><span>Your budget</span></li>
+        <li><a href="https://www.bloomfloristorleans.com/product/pdc520121/thanksgiving-floral-beauty"><b>Thanksgiving designer’s choice</b></a><span class="tnum">$95–$115</span></li>
+      </ul>
+      <a class="btn-light" href="https://www.bloomfloristorleans.com/custom_orders.php">Order designer’s choice →</a>
+      <div class="reviews">
+        <blockquote>“Selected designers choice and was not disappointed! My mother was thrilled with the arrangement and went on about it for days!”<cite>ELIZABETH M., MAY 2023</cite></blockquote>
+        <blockquote>“I told them to use their discretion in making an appropriate arrangement, and the recipient loved it.”<cite>JAMES M., FEB 2024</cite></blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="shop" aria-labelledby="shop-h">
+  <div class="wrap">
+    <div class="head">
+      <span class="label">Shop</span>
+      <h2 id="shop-h">Order online, any hour.</h2>
+      <p>Checkout runs through our existing secure shop. Prefer a human? <a href="tel:+15082550400" class="tnum">(508) 255-0400</a>.</p>
+    </div>
+    <div class="occasions">
+      <a class="occ o1" href="https://www.bloomfloristorleans.com/thanksgiving-flowers-usa.php"><img src="img/sm/cornucopia-alstroemeria.jpg" width="800" height="1422" loading="lazy" alt="A woven cornucopia spilling pink alstroemeria, hypericum berries and fall greens"><span>Thanksgiving <i>Thu, Nov 26</i></span></a>
+      <a class="occ o2" href="https://www.bloomfloristorleans.com/birthday.php"><img src="img/sm/carnation-hydrangea-detail.jpg" width="640" height="1136" loading="lazy" alt="Coral carnations, yellow roses and green hydrangea with green hypericum berries"><span>Birthday <i>Shop →</i></span></a>
+      <a class="occ o3 occ-type" href="https://www.bloomfloristorleans.com/sympathy-flowers" data-bg="ink"><span>Sympathy &amp; funeral<i>Daily delivery to local funeral homes</i></span></a>
+      <a class="occ o4 occ-type" href="https://www.bloomfloristorleans.com/plants.php" data-bg="sea"><span>Plants<i>Green &amp; blooming</i></span></a>
+      <a class="occ o5 occ-type" href="https://www.bloomfloristorleans.com/best-sellers.php" data-bg="rose"><span>Best sellers<i>What the Cape orders</i></span></a>
+    </div>
+
+    <div class="season">
+      <h3>In the shop for Thanksgiving<small>Centerpieces book up the week of. Order ahead, or call and we’ll talk it through.</small></h3>
+      <ol class="tnum">
+        <li><a href="https://www.bloomfloristorleans.com/product/dc071820/thanksgiving-florals"><b>Thanksgiving Florals</b><i>Centerpiece</i><span>$80</span></a></li>
+        <li><a href="https://www.bloomfloristorleans.com/product/va03207/harvest-rhapsody"><b>Harvest Rhapsody</b><i>Arrangement</i><span>$95</span></a></li>
+        <li><a href="https://www.bloomfloristorleans.com/product/va0109023/wild-amber"><b>Wild Amber</b><i>Arrangement</i><span>$135</span></a></li>
+        <li><a href="https://www.bloomfloristorleans.com/product/va03206/autumn-affection"><b>Autumn Affection</b><i>Arrangement</i><span>$65</span></a></li>
+        <li><a href="https://www.bloomfloristorleans.com/product/va01610/hot--spicy"><b>Hot &amp; Spicy</b><i>Red roses, orange carnations</i><span>$65–$85</span></a></li>
+        <li><a href="https://www.bloomfloristorleans.com/product/va00516/ivy-rose-bouquet"><b>Ivy Rose Bouquet</b><i>Bouquet</i><span>$70</span></a></li>
+      </ol>
+      <div class="more">
+        <a class="ghost" href="https://www.bloomfloristorleans.com/fall-flowers.php">All fall flowers</a>
+        <a class="ghost" href="https://www.bloomfloristorleans.com/any_occasion.php">Every occasion</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec deliver" id="delivery" aria-labelledby="del-h">
+  <div class="wrap">
+    <div class="deliver-copy">
+      <span class="label">Delivery</span>
+      <h2 id="del-h">From the elbow to the tip.</h2>
+      <p>We deliver from Orleans across the Lower and Outer Cape, and as far as Barnstable. Daily runs to local funeral homes and hospitals. Sending from off-Cape? Order online or call, and we’ll handle it.</p>
+      <ul class="towns" data-towns>
+        <li class="home" data-t="Orleans">Orleans</li>
+        <li data-t="Eastham">Eastham</li>
+        <li data-t="Wellfleet">Wellfleet</li>
+        <li data-t="Truro">Truro</li>
+        <li data-t="Provincetown">Provincetown</li>
+        <li data-t="Chatham">Chatham</li>
+        <li data-t="Harwich">Harwich</li>
+        <li data-t="Brewster">Brewster</li>
+        <li data-t="Dennis">Dennis</li>
+        <li data-t="Yarmouth Port">Yarmouth Port</li>
+        <li data-t="Barnstable">Barnstable</li>
+      </ul>
+    </div>
+    <div class="map">
+      <svg viewBox="40 0 720 600" role="img" aria-label="Map of Cape Cod showing Bloom's delivery towns, with Orleans at the elbow" data-map>
+        <g class="grat">
+          <line x1="40" y1="110" x2="760" y2="110"/><line x1="40" y1="310" x2="760" y2="310"/>
+          <line x1="556.4" y1="0" x2="556.4" y2="600"/><line x1="258.4" y1="0" x2="258.4" y2="600"/>
+        </g>
+        <text class="coord" x="46" y="104">42°00′N</text><text class="coord" x="46" y="304">41°48′N</text>
+        <text class="coord" x="562" y="594">70°00′W</text><text class="coord" x="264" y="594">70°24′W</text>
+        <text class="coord water-w" x="210" y="210" style="letter-spacing:.3em">CAPE COD BAY</text>
+        <text class="coord" x="640" y="200" style="letter-spacing:.3em">ATLANTIC</text>
+        <text class="coord" x="300" y="545" style="letter-spacing:.3em">NANTUCKET SOUND</text>
+        <path class="land" data-land d="M94.5,370.0 C105.7,355.0 144.2,335.3 161.5,330.0 C178.9,324.7 182.7,332.7 198.8,338.0 C214.9,343.3 239.8,357.0 258.4,362.0 C277.0,367.0 294.4,366.2 310.6,368.0 C326.7,369.8 349.7,369.0 355.3,373.0 C360.8,377.0 337.9,389.5 344.1,392.0 C350.3,394.5 377.0,393.0 392.5,388.0 C408.0,383.0 419.8,369.3 437.2,362.0 C454.6,354.7 476.9,351.3 496.8,344.0 C516.7,336.7 545.8,330.3 556.4,318.0 C567.0,305.7 560.7,283.8 560.1,270.0 C559.5,256.2 557.0,245.0 552.7,235.0 C548.3,225.0 539.0,220.0 534.0,210.0 C529.1,200.0 526.6,186.7 522.9,175.0 C519.1,163.3 515.4,151.3 511.7,140.0 C508.0,128.7 506.7,117.8 500.5,107.0 C494.3,96.2 483.8,83.3 474.4,75.0 C465.1,66.7 454.6,58.8 444.6,57.0 C434.7,55.2 416.7,60.5 414.9,64.0 C413.0,67.5 434.7,73.7 433.5,78.0 C432.2,82.3 414.8,91.3 407.4,90.0 C399.9,88.7 394.1,77.7 388.8,70.0 C383.4,62.3 368.5,50.7 375.4,44.0 C382.2,37.3 412.0,30.3 429.7,30.0 C447.5,29.7 468.2,36.2 481.9,42.0 C495.6,47.8 504.2,53.7 511.7,65.0 C519.1,76.3 516.7,90.8 526.6,110.0 C536.5,129.2 562.0,161.7 571.3,180.0 C580.6,198.3 578.7,208.3 582.5,220.0 C586.2,231.7 590.2,235.0 593.6,250.0 C597.1,265.0 600.9,286.7 603.3,310.0 C605.8,333.3 610.2,368.7 608.5,390.0 C606.9,411.3 601.1,411.3 593.6,438.0 C586.2,464.7 571.3,538.0 563.9,550.0 C556.4,562.0 548.3,527.0 548.9,510.0 C549.6,493.0 576.3,458.8 567.6,448.0 C558.9,437.2 514.8,443.8 496.8,445.0 C478.8,446.2 470.7,452.2 459.6,455.0 C448.4,457.8 450.9,457.5 429.7,462.0 C408.6,466.5 361.5,475.3 332.9,482.0 C304.3,488.7 279.5,491.0 258.4,502.0 C237.3,513.0 229.8,537.7 206.2,548.0 C182.7,558.3 141.7,557.8 116.8,564.0 C92.0,570.2 64.7,594.0 57.2,585.0 C49.8,576.0 67.2,530.8 72.1,510.0 C77.1,489.2 83.3,475.0 87.1,460.0 C90.8,445.0 93.3,435.0 94.5,420.0 C95.7,405.0 83.3,385.0 94.5,370.0Z"/>
+        <g class="town home" data-t="Orleans"><circle class="ring" cx="575" cy="318" r="9"/><circle cx="575" cy="318" r="6"/><text x="622" y="325">Orleans</text><text x="623" y="345" class="coord" style="font-size:10.5px;fill:#D3336A">41°47′N 69°59′W</text></g>
+        <g class="town" data-t="Eastham"><circle cx="576" cy="270" r="4.5"/><text x="622" y="274">Eastham</text></g>
+        <g class="town" data-t="Wellfleet"><circle cx="545" cy="175" r="4.5"/><text x="590" y="179">Wellfleet</text></g>
+        <g class="town" data-t="Truro"><circle cx="519" cy="113" r="4.5"/><text x="548" y="117">Truro</text></g>
+        <g class="town" data-t="Provincetown"><circle cx="420" cy="47" r="4.5"/><text x="420" y="20" text-anchor="middle">Provincetown</text></g>
+        <g class="town" data-t="Chatham"><circle cx="585" cy="425" r="4.5"/><text x="622" y="429">Chatham</text></g>
+        <g class="town mid" data-t="Harwich"><circle cx="500" cy="420" r="4.5"/><text x="500" y="440" text-anchor="middle">Harwich</text></g>
+        <g class="town" data-t="Brewster"><circle cx="497" cy="366" r="4.5"/><text x="478" y="350" text-anchor="end">Brewster</text></g>
+        <g class="town mid" data-t="Dennis"><circle cx="422" cy="410" r="4.5"/><text x="432" y="414">Dennis</text></g>
+        <g class="town mid" data-t="Yarmouth Port"><circle cx="370" cy="410" r="4.5"/><text x="372" y="434" text-anchor="middle">Yarmouth Port</text></g>
+        <g class="town mid" data-t="Barnstable"><circle cx="318" cy="425" r="4.5"/><text x="310" y="452" text-anchor="end">Barnstable</text></g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="wed" aria-labelledby="wed-h">
+  <img src="img/white-hydrangea-window.jpg" width="1600" height="2134" loading="lazy" alt="A tall all-white arrangement of hydrangea and roses in front of a window with summer trees outside">
+  <div class="wrap">
+    <h2 id="wed-h">Getting married on the Cape?</h2>
+    <div class="wed-copy">
+      <span class="label">Weddings, by consultation</span>
+      <p>Bouquets, boutonnieres, ceremony and reception flowers. Tell us the date and the town first, then we sit down and plan it.</p>
+      <a class="btn-light" href="weddings.html">Plan your wedding flowers →</a>
+    </div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="kind-h">
+  <div class="wrap">
+    <div class="head"><span class="label">What people say</span><h2 id="kind-h" class="sr" style="position:absolute;left:-9999px">Reviews</h2></div>
+    <div class="kind">
+      <blockquote class="k1"><p>“Bloom is our favorite florist! Kristy has incredible taste and creativity.”</p><cite>A Bloom regular, from our reviews</cite></blockquote>
+      <blockquote class="k2"><p>“Absolutely beautiful flowers every single time! Fresh, unique, and made with so much care.”</p><cite>Bailey K., Massachusetts · Mar 2026</cite></blockquote>
+      <blockquote class="k3"><p>“Substantial vase holds enough water for the beautiful and long-lasting flowers; pleasant deliveryman.”</p><cite>Sue M., Massachusetts · May 2023</cite></blockquote>
+    </div>
+  </div>
+</section>
+
+<section class="sec visit" id="visit" aria-labelledby="visit-h">
+  <div class="wrap">
+    <div class="visit-head">
+      <h2 id="visit-h">Come by the shop.</h2>
+      <p>Bloom Florist &amp; Gift Shop, Orleans, MA 02653. Flowers, plants, candles, plush and gift baskets. Open every day of the week.</p>
+    </div>
+    <ul class="hours tnum" data-hours>
+      <li data-day="1"><span>Monday</span><span>10–4</span></li>
+      <li data-day="2"><span>Tuesday</span><span>10–4</span></li>
+      <li data-day="3"><span>Wednesday</span><span>10–4</span></li>
+      <li data-day="4"><span>Thursday</span><span>10–4</span></li>
+      <li data-day="5"><span>Friday</span><span>10–4</span></li>
+      <li data-day="6"><span>Saturday</span><span>10–3</span></li>
+      <li data-day="0"><span>Sunday</span><span>10–3</span></li>
+    </ul>
+    <div class="contact">
+      <div><span class="label">Call</span><a class="tel tnum" href="tel:+15082550400">(508) 255-0400</a></div>
+      <div><span class="label">Order online</span><a href="#shop">Shop arrangements →</a></div>
+      <div><span class="label">Follow</span><a href="https://www.instagram.com/bloomcapecodflorist/">Instagram @bloomcapecodflorist</a><br><a href="https://www.facebook.com/bloomcapecodflorist">Facebook</a></div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© Bloom Florist &amp; Gift Shop, Orleans, Cape Cod</span>
+    <span>Concept by Sam &amp; Banks — not affiliated with Bloom Florist &amp; Gift Shop yet.</span>
+  </div>
+</footer>
+
+<nav class="callbar" aria-label="Quick actions">
+  <a href="tel:+15082550400" class="tnum"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2"/></svg>(508) 255-0400</a>
+  <a href="#shop">Shop</a>
+</nav>
+
+<script src="main.js"></script>
+</body>
+</html>

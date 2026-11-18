@@ -1,0 +1,238 @@
+<!doctype html>
+<!--
+  DESIGN PLAN — Hudson Florist (concept by Sam & Banks)
+  Concept: "Bergen Ave storefront." A 35-year family flower shop that looks like a confident neighborhood sign, not a marketplace template.
+  Palette: storefront black #16130F, logo marigold #F2B21B (from their own logo), brownstone #7A3B2E, limestone #F1EFEA.
+  Fonts: Sofia Sans Extra Condensed (signage headlines, prices) / Source Serif 4 (body, captions).
+  Grid: 12-col; phone number pinned in a yellow bar on every scroll position.
+  Signature moments: (1) live OPEN/CLOSED sign from real hours; (2) "the stoop" gallery that steps down like brownstone stairs; (3) zip-code delivery checker; (4) order board with dotted leaders (→ their BloomNation product pages).
+  Sections: phone bar · hero · ticker · the stoop (their photos) · order board · delivery · weddings/events/plantscapes + inquiry · family since 1991 · new gifts · reviews · visit · footer.
+  All photos are Hudson Florist's own Instagram posts. Ordering is unchanged: every Order link goes to hudsonfloristonline.com.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Hudson Florist · Jersey City Flowers Since 1991</title>
+<meta name="description" content="Family-owned flower shop at 741A Bergen Ave, Jersey City, since 1991. Same-day delivery in Jersey City, weddings, corporate events and plantscapes. Call (201) 433-2868.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-50 -50 100 100'%3E%3Crect x='-50' y='-50' width='100' height='100' fill='%2316130F'/%3E%3Cg fill='%23F2B21B'%3E%3Cellipse rx='11' ry='34' cy='-1'/%3E%3Cellipse rx='11' ry='34' transform='rotate(60)'/%3E%3Cellipse rx='11' ry='34' transform='rotate(120)'/%3E%3C/g%3E%3Ccircle r='8' fill='%2316130F'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sofia+Sans+Extra+Condensed:wght@700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="bar">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="Hudson Florist, home">
+      <svg viewBox="-50 -50 100 100" aria-hidden="true"><g fill="#16130F"><ellipse rx="11" ry="40"/><ellipse rx="11" ry="40" transform="rotate(60)"/><ellipse rx="11" ry="40" transform="rotate(120)"/></g><circle r="9" fill="#F2B21B"/></svg>
+      <b>Hudson <span>Florist</span></b>
+    </a>
+    <nav aria-label="Main">
+      <a href="#order">Order</a><a href="#events">Weddings &amp; Events</a><a href="#delivery">Delivery</a><a href="#story">Since 1991</a><a href="#visit">Visit</a>
+    </nav>
+    <a class="call num" href="tel:+12014332868"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2"/></svg>(201) 433-2868</a>
+  </div>
+</header>
+
+<main id="main">
+<section class="hero" id="top">
+  <div class="wrap">
+    <div class="hero-copy">
+      <div class="status"><span class="sign" data-sign>Open</span><span data-status>Mon 9–4 · Tue–Fri 9–5 · Sat 9–3</span></div>
+      <div>
+        <h1>Fresh flowers on <em>Bergen Ave.</em><span class="since">Family-owned since 1991.</span></h1>
+        <p class="hero-sub">Jersey City’s neighborhood flower shop. Same-day delivery across Jersey City and Hudson County, plus weddings, corporate events and plantscapes.</p>
+        <div class="ctas">
+          <a class="bigcall num" href="tel:+12014332868"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2"/></svg>Call (201) 433-2868</a>
+          <a class="textlink" href="#order">Order online</a>
+        </div>
+      </div>
+    </div>
+    <figure class="hero-photo">
+      <img src="img/stoop-pink-roses.jpg" width="1600" height="2000" alt="A dome of hot pink, blush and cream roses with lisianthus in a green vase, set on a brownstone stoop" fetchpriority="high">
+      <figcaption>Pink roses on the stoop, December</figcaption>
+    </figure>
+  </div>
+</section>
+
+<div class="tick" aria-hidden="true"><div class="tick-in">
+  <span>Garden roses</span><span>Sunflowers</span><span>Calla lilies</span><span>Anemones</span><span>Blue thistle</span><span>Snapdragons</span><span>Terrariums</span><span>Event palms</span><span>Same-day in Jersey City</span>
+  <span>Garden roses</span><span>Sunflowers</span><span>Calla lilies</span><span>Anemones</span><span>Blue thistle</span><span>Snapdragons</span><span>Terrariums</span><span>Event palms</span><span>Same-day in Jersey City</span>
+</div></div>
+
+<section class="sec" aria-labelledby="stoop-h">
+  <div class="wrap">
+    <div class="stoop-head">
+      <h2 class="h2" id="stoop-h"><span class="kick lab">Our flowers, our photos</span>Made here. Shot on the stoop.</h2>
+      <p>Every arrangement on this page came out of our shop at 741A Bergen Ave. No catalog pictures, no stock photos. What you see is what we make.</p>
+    </div>
+    <div class="steps">
+      <figure><img src="img/sm/stoop-peach-roses-thistle.jpg" width="800" height="934" loading="lazy" alt="Peach roses and blue eryngium thistle in a clear glass vase on brownstone steps"><figcaption>Peach roses &amp; blue thistle <b>FEB ’25</b></figcaption></figure>
+      <figure><img src="img/sm/stoop-white-anemone.jpg" width="800" height="1063" loading="lazy" alt="An all-white arrangement of roses, anemones with dark centers and white stock on brownstone steps"><figcaption>White roses, anemones, stock <b>OCT ’25</b></figcaption></figure>
+      <figure><img src="img/sm/garden-roses-pink.jpg" width="800" height="942" loading="lazy" alt="Coral and pink garden roses packed in a low arrangement"><figcaption>Pretty in pink: garden roses <b>OCT ’26</b></figcaption></figure>
+    </div>
+    <div class="more-work">
+      <figure><img src="img/sm/calla-rose-trio.jpg" width="800" height="838" loading="lazy" alt="Three arrangements of white roses, burgundy calla lilies, green hydrangea and eucalyptus on a wooden deck"><figcaption>White roses, burgundy callas, green hydrangea · Sept ’26</figcaption></figure>
+      <figure><img src="img/sm/sunflowers-bergen-window.jpg" width="800" height="1067" loading="lazy" alt="A big bunch of sunflowers in the shop window with Bergen Avenue's brick buildings outside"><figcaption>“It’s always sunny on Bergen Avenue”</figcaption></figure>
+      <figure><img src="img/sm/shop-mixed-vase.jpg" width="800" height="1063" loading="lazy" alt="A tall mixed vase of peach roses, pink lilies, snapdragons and yellow solidago inside the shop"><figcaption>End-of-summer mix, in the shop</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="sec board" id="order" aria-labelledby="order-h">
+  <div class="wrap board-grid">
+    <div class="board-head">
+      <span class="kick lab">Order for delivery</span>
+      <h2 class="h2" id="order-h">Today’s board.</h2>
+      <p>Tap any item to order through our secure online shop, same as always. Want something that isn’t here? Call and tell us your colors.</p>
+      <a class="bigcall num" href="tel:+12014332868">(201) 433-2868</a>
+    </div>
+    <ol class="menu num">
+      <li><a href="https://hudsonfloristonline.com/jersey-city-hudson-florist/citrus-sunset.html"><b>Citrus Sunset</b><i></i><span>$59.99</span></a></li>
+      <li><a href="https://hudsonfloristonline.com/jersey-city-hudson-florist/pops-of-pink.html"><b>Pops of Pink</b><i></i><span>$64.99</span></a></li>
+      <li><a href="https://hudsonfloristonline.com/jersey-city-hudson-florist/birthday-brights.html"><b>Birthday Brights</b><i></i><span>$69.99</span></a></li>
+      <li><a href="https://hudsonfloristonline.com/jersey-city-hudson-florist/modern-sage.html"><b>Modern Sage</b><i></i><span>$74.99</span></a></li>
+      <li><a href="https://hudsonfloristonline.com/jersey-city-hudson-florist/celebrating-you.html"><b>Celebrating You</b><i></i><span>$89.99</span></a></li>
+      <li><a href="https://hudsonfloristonline.com/jersey-city-hudson-florist/punch-of-color.html"><b>Punch of Color</b><i></i><span>$97.00</span></a></li>
+      <li><a href="https://hudsonfloristonline.com/jersey-city-hudson-florist/leafy-trails.html"><b>Leafy Trails</b><i></i><span>$99.99</span></a></li>
+      <li><a href="https://hudsonfloristonline.com/jersey-city-hudson-florist/pastel-party.html"><b>Pastel Party</b><i></i><span>$99.99</span></a></li>
+      <li><a href="https://hudsonfloristonline.com/flower-subscriptions/"><b>Flower subscription</b><i></i><span>$150</span></a><small>Designer’s choice, weekly to yearly. Pause or change by phone.</small></li>
+    </ol>
+    <div class="cats">
+      <a href="https://hudsonfloristonline.com/jersey-city-florist-flower-delivery/occasions/birthday/">Birthday</a>
+      <a href="https://hudsonfloristonline.com/jersey-city-florist-flower-delivery/sympathy-and-funeral-flowers/">Sympathy</a>
+      <a href="https://hudsonfloristonline.com/jersey-city-florist-flower-delivery/thanksgiving-flowers/">Thanksgiving</a>
+      <a href="https://hudsonfloristonline.com/jersey-city-florist-flower-delivery/plants/">Plants</a>
+      <a href="https://hudsonfloristonline.com/custom-flower-arrangements/">Custom</a>
+      <a href="https://hudsonfloristonline.com/jersey-city-florist-flower-delivery/">See everything</a>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="delivery" aria-labelledby="del-h">
+  <div class="wrap deliver">
+    <div class="deliver-l">
+      <span class="kick lab">Delivery</span>
+      <h2 class="h2" id="del-h">Same-day in Jersey City.</h2>
+      <p>Our drivers know every block of Jersey City, and we cover Hudson County too. Homes, hospitals, offices, funeral homes, venues. The exact delivery fee shows at checkout.</p>
+    </div>
+    <form class="zip" data-zip>
+      <label for="zipin">Do we deliver to you?</label>
+      <div class="zip-row"><input id="zipin" inputmode="numeric" maxlength="5" placeholder="07306" autocomplete="postal-code" aria-describedby="zipout"><button type="submit">Check</button></div>
+      <output id="zipout" aria-live="polite">Type your zip code. We’ll tell you straight.</output>
+    </form>
+    <p class="towns" aria-label="Areas we deliver to"><span class="jc">Jersey City</span><span>Hoboken</span><span>Bayonne</span><span>Union City</span><span>West New York</span><span>Weehawken</span><span>North Bergen</span><span>Secaucus</span><span>Kearny</span><span>Harrison</span><span>Guttenberg</span><span>Edgewater</span><span>Cliffside Park</span></p>
+  </div>
+</section>
+
+<section class="sec events" id="events" aria-labelledby="ev-h">
+  <div class="wrap ev-grid">
+    <figure class="ev-photo"><img src="img/sm/event-palms-setup.jpg" width="800" height="719" loading="lazy" alt="A Hudson Florist team member watering a row of tall palms in glass vases at an event setup"><figcaption>Setting up palms for a FIFA Club World Cup event, summer 2025</figcaption></figure>
+    <div class="ev-copy">
+      <span class="kick lab">Weddings · Corporate · Plantscapes</span>
+      <h2 class="h2" id="ev-h">Bigger jobs, same shop.</h2>
+      <p>Erika and George have designed large-scale weddings and corporate events, and small intimate dinners too. Our team is hands-on from the first call to the last vase.</p>
+      <ul class="ev-list">
+        <li><b>Weddings</b><span>Bouquets, ceremony and reception flowers.</span></li>
+        <li><b>Corporate</b><span>Events, lobbies and standing weekly flowers. House accounts available.</span></li>
+        <li><b>Plantscapes</b><span>Indoor and outdoor plants, plus gardening and landscaping: planting, hedges, weeding, power washing.</span></li>
+      </ul>
+    </div>
+    <div class="ev-form" data-form-wrap>
+      <h3>Tell us about it.</h3>
+      <p>We’ll call you back. Or skip the form: <a class="num" href="tel:+12014332868">(201) 433-2868</a>.</p>
+      <form class="f" name="event-inquiry" method="POST" action="#events" data-netlify="true" netlify-honeypot="company">
+        <input type="hidden" name="form-name" value="event-inquiry">
+        <p class="hp"><label>Leave empty <input name="company" tabindex="-1" autocomplete="off"></label></p>
+        <div><label for="e1">Name</label><input id="e1" name="name" autocomplete="name" required></div>
+        <div><label for="e2">Phone</label><input id="e2" type="tel" name="phone" autocomplete="tel" required></div>
+        <div><label for="e3">Email</label><input id="e3" type="email" name="email" autocomplete="email"></div>
+        <div><label for="e4">What is it?</label><select id="e4" name="type"><option>Wedding</option><option>Corporate event</option><option>Weekly office flowers</option><option>Plantscape / gardening</option><option>Something else</option></select></div>
+        <div><label for="e5">Date</label><input id="e5" type="date" name="date"></div>
+        <div><label for="e6">Where</label><input id="e6" name="venue" placeholder="Venue or neighborhood"></div>
+        <div class="full"><label for="e7">Details</label><textarea id="e7" name="message" placeholder="Guest count, colors, anything you’ve got."></textarea></div>
+        <button type="submit">Send it</button>
+      </form>
+      <div class="done" role="status" aria-live="polite"><h4>Got it. Thank you.</h4><p>We’ll call you back during shop hours. In a hurry? <a class="num" href="tel:+12014332868">(201) 433-2868</a>.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="story" aria-labelledby="story-h">
+  <div class="wrap family">
+    <div class="fam-year num" aria-hidden="true">1991</div>
+    <div class="fam-copy">
+      <span class="kick lab">Our family business</span>
+      <h2 id="story-h">First Bouquets &amp; Baskets. Then Hudson Florist.</h2>
+      <p>We opened in 1991 and we’re still family-owned. A lot of our flowers and plants are picked out at local greenhouses by our designers and staff, and everything is arranged by hand in the shop.</p>
+      <p>Contemporary or classic, a birthday bunch or a ballroom: it all comes off the same counter on Bergen Ave.</p>
+    </div>
+    <div class="dog">
+      <figure><img src="img/sm/shop-dog-golden.jpg" width="800" height="1067" loading="lazy" alt="A fluffy golden dog sitting on the shop rug beside a vase of flowers and wooden shelves"><figcaption>Our social media supervisor takes the job very seriously.</figcaption></figure>
+      <figure><img src="img/sm/shop-dog-window.jpg" width="800" height="875" loading="lazy" alt="The shop dog wearing a pink hat behind the window display of red roses"><figcaption>Adopted from AHS Newark. Window duty.</figcaption></figure>
+      <p class="note">Come say hi.<small>The shop dog is usually on the floor. The flowers are usually in the window.</small></p>
+    </div>
+  </div>
+</section>
+
+<section class="sec gifts" aria-labelledby="gift-h">
+  <div class="wrap">
+    <div class="gifts-copy">
+      <span class="kick lab">New on the shelves</span>
+      <h2 id="gift-h">Gifts that aren’t flowers.</h2>
+      <p>We’ve added gifts and home goods: terrariums, geodes, fossil bookends, and yes, a T-Rex skull. Come in and look around.</p>
+      <a class="textlink" href="https://hudsonfloristonline.com/jersey-city-florist-flower-delivery/?attribute_2=gifts">Shop gifts</a>
+    </div>
+    <figure><img src="img/sm/terrariums.jpg" width="800" height="602" loading="lazy" alt="Glass terrariums with succulents and driftwood on a rustic shelf"><figcaption>Terrariums, in stock</figcaption></figure>
+    <figure><img src="img/sm/trex-geode-shelf.jpg" width="800" height="602" loading="lazy" alt="A T-Rex skull sculpture and blue agate geode bookends on a shelf" style="aspect-ratio:3/4;object-position:70% 50%"><figcaption>The T-Rex, as promised</figcaption></figure>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="rev-h">
+  <div class="wrap">
+    <div class="rev-top">
+      <h2 class="h2" id="rev-h">What Jersey City says.</h2>
+      <div class="score num">4.49<small>244 reviews on BloomNation</small></div>
+    </div>
+    <div class="quotes">
+      <blockquote>“They made a point to make sure to deliver it directly to her. She lives on the third floor and had surgery and couldn’t meet the delivery person downstairs.”<cite>Rose S. · Sept 2026</cite></blockquote>
+      <blockquote>“A really beautiful set of flowers for my Mom’s funeral. Your delivery driver went above and beyond at the church.”<cite>Timothy C. · July 2026</cite></blockquote>
+      <blockquote>“I ordered flowers from Barcelona, Spain. Despite the rainy weather, they did an outstanding job.”<cite>Arturo N. · June 2026</cite></blockquote>
+    </div>
+  </div>
+</section>
+
+<section class="sec visit" id="visit" aria-labelledby="visit-h">
+  <div class="wrap">
+    <div class="v-addr">
+      <h2 id="visit-h">741A Bergen Ave.</h2>
+      <p>Jersey City, NJ 07306</p>
+      <a class="textlink" href="https://www.google.com/maps/search/?api=1&amp;query=Hudson+Florist+741A+Bergen+Ave+Jersey+City+NJ">Get directions →</a>
+    </div>
+    <ul class="v-hours num" data-hours>
+      <li data-day="1"><span>Monday</span><span>9–4</span></li>
+      <li data-day="2"><span>Tuesday</span><span>9–5</span></li>
+      <li data-day="3"><span>Wednesday</span><span>9–5</span></li>
+      <li data-day="4"><span>Thursday</span><span>9–5</span></li>
+      <li data-day="5"><span>Friday</span><span>9–5</span></li>
+      <li data-day="6"><span>Saturday</span><span>9–3</span></li>
+      <li data-day="0"><span>Sunday</span><span>Closed</span></li>
+    </ul>
+    <div class="v-contact">
+      <div><span class="lab">Call</span><a class="tel num" href="tel:+12014332868">(201) 433-2868</a></div>
+      <div><span class="lab">Email</span><a href="mailto:hudsonfloristjc@gmail.com">hudsonfloristjc@gmail.com</a></div>
+      <div><span class="lab">Follow</span><a href="https://www.instagram.com/hudsonflorist/">Instagram @hudsonflorist</a><br><a href="https://www.facebook.com/HudsonFlorist">Facebook</a></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap"><span>© Hudson Florist · Family-owned in Jersey City since 1991</span><span>Concept by Sam &amp; Banks — not affiliated with Hudson Florist yet.</span></div></footer>
+
+<script src="main.js"></script>
+</body>
+</html>

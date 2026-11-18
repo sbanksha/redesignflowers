@@ -1,0 +1,196 @@
+<!doctype html>
+<!--
+DESIGN PLAN: House of Margot Blair (demo by Sam & Banks)
+Concept: "Austin's gateway to luxury entertaining" as a party invitation. Ivory ground, ink type, three hot accents pulled from her own product photography (poppy orange, tulip pink, emerald from the marble-tile flat-lay).
+Fonts: Bodoni Moda (her theme already loads it) + Inter.
+Sections: delivery bar, nav, hero, Margot Minis (3 real prices), more flowers, events, workshops, the table (retail), about, contact.
+All Order buttons deep-link to real product pages on houseofmargotblair.com (Shopify). Nothing about checkout changes.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>House of Margot Blair · Luxury florist &amp; event design, Austin</title>
+<meta name="description" content="Margot Minis, flowers by delivery, full-service event production and tabletop retail from House of Margot Blair in Austin, TX.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='32' fill='%23ff5a1f'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='38' font-style='italic' text-anchor='middle' fill='%23fbf6ee'%3EM%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--ivory:#fbf6ee;--ink:#17120f;--orange:#ff5a1f;--pink:#f4577f;--green:#0e5e46;--sand:#f1e8d9;--serif:"Bodoni Moda",Didot,Georgia,serif;--sans:Inter,system-ui,sans-serif;--pad:clamp(18px,5vw,64px)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:64px;-webkit-text-size-adjust:100%}
+body{background:var(--ivory);color:var(--ink);font:400 16px/1.55 var(--sans);overflow-x:hidden}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1;text-wrap:balance}
+.wrap{padding-inline:var(--pad);max-width:1360px;margin-inline:auto}
+.eyebrow{font:600 11px/1.3 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--pink)}
+.btn{display:inline-block;font:600 13px/1 var(--sans);letter-spacing:.08em;text-transform:uppercase;text-decoration:none;padding:15px 22px;border:1.5px solid var(--ink);border-radius:99px;transition:.2s}
+.btn:hover{background:var(--ink);color:var(--ivory)}
+.btn--solid{background:var(--orange);border-color:var(--orange);color:#fff}
+.btn--solid:hover{background:var(--ink);border-color:var(--ink)}
+.bar{background:var(--green);color:var(--ivory);font:500 12px/1.3 var(--sans);letter-spacing:.06em;text-align:center;padding:9px 14px}
+.nav{position:sticky;top:0;z-index:20;background:rgba(251,246,238,.94);backdrop-filter:blur(8px);border-bottom:1px solid rgba(23,18,15,.1)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:16px}
+.logo{font:italic 500 24px/1 var(--serif);text-decoration:none;white-space:nowrap}
+.nav ul{display:none;list-style:none;gap:26px;font:500 13px/1 var(--sans)}
+.nav ul a{text-decoration:none}.nav ul a:hover{color:var(--pink)}
+.nav .btn{padding:11px 16px;font-size:12px}
+@media(min-width:900px){.nav ul{display:flex}}
+.hero{padding:34px 0 56px}
+.hero .wrap{display:grid;gap:28px}
+.hero h1{font-size:clamp(46px,12vw,128px);letter-spacing:-.03em;line-height:.9;margin:14px 0 20px}
+.hero h1 em{color:var(--orange);font-weight:400}
+.hero p{max-width:34em;font-size:18px}
+.hero .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+.hero .imgs{display:grid;grid-template-columns:1.2fr 1fr;gap:12px;align-items:end}
+.hero .imgs img{border-radius:200px 200px 14px 14px;object-fit:cover;width:100%}
+.hero .imgs img:first-child{aspect-ratio:3/4.2}
+.hero .imgs img:last-child{aspect-ratio:3/3.6;border-radius:14px 14px 200px 200px}
+@media(min-width:900px){.hero .wrap{grid-template-columns:1.1fr 1fr;align-items:center;gap:56px}}
+section{padding:64px 0}
+.head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:14px 30px;margin-bottom:30px}
+.head h2{font-size:clamp(34px,7vw,72px);letter-spacing:-.02em;margin-top:10px}
+.head h2 em{color:var(--pink)}
+.head p{max-width:30em;color:#4a4039}
+.grid{display:grid;gap:22px 16px;grid-template-columns:repeat(2,1fr)}
+@media(min-width:900px){.grid.g3{grid-template-columns:repeat(3,1fr)}.grid.g4{grid-template-columns:repeat(4,1fr)}}
+.card img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:14px;background:var(--sand)}
+.card.contain img{object-fit:contain;padding:10%;background:#fff}
+.card h3{font-size:22px;margin:12px 0 4px}
+.card .price{font:500 15px/1 var(--sans);color:var(--green)}
+.card .buy{display:inline-block;margin-top:10px;font:600 12px/1 var(--sans);letter-spacing:.1em;text-transform:uppercase;text-decoration:none;border-bottom:2px solid var(--orange);padding-bottom:3px}
+.card .buy:hover{color:var(--orange)}
+.minis{background:var(--sand)}
+.minis .card img{aspect-ratio:1/1.1}
+.events{background:var(--ink);color:var(--ivory)}
+.events .head p{color:#cfc6b9}
+.events .mosaic{display:grid;gap:10px;grid-template-columns:repeat(2,1fr)}
+.events .mosaic img{width:100%;height:100%;object-fit:cover;border-radius:12px;aspect-ratio:3/4}
+@media(min-width:900px){.events .mosaic{grid-template-columns:repeat(4,1fr)}}
+.svc{display:grid;gap:14px;margin-top:30px;list-style:none}
+.svc li{border-top:1px solid rgba(251,246,238,.25);padding-top:14px;font-size:15px;color:#cfc6b9}
+.svc b{display:block;font:italic 500 24px/1.1 var(--serif);color:var(--ivory);margin-bottom:4px}
+@media(min-width:900px){.svc{grid-template-columns:repeat(3,1fr)}}
+.ws{display:grid;gap:26px}
+.ws img{border-radius:14px;width:100%;aspect-ratio:4/3;object-fit:cover}
+.ws h2{font-size:clamp(34px,6vw,64px);margin:10px 0 14px}
+@media(min-width:900px){.ws{grid-template-columns:1fr 1fr;align-items:center;gap:56px}}
+.about{background:var(--green);color:var(--ivory)}
+.about .wrap{display:grid;gap:30px}
+.about h2{font-size:clamp(34px,6vw,64px)}
+.about p{max-width:36em;margin-top:14px;color:#dfe9e2}
+.about img{border-radius:14px;width:100%;aspect-ratio:4/3;object-fit:cover}
+@media(min-width:900px){.about .wrap{grid-template-columns:1fr 1fr;align-items:center;gap:56px}}
+.contact .wrap{display:grid;gap:18px;text-align:center;justify-items:center}
+.contact h2{font-size:clamp(36px,8vw,84px)}
+.contact dl{display:grid;gap:4px;font-size:17px}
+footer{border-top:1px solid rgba(23,18,15,.12);padding:26px 0 36px;font-size:13px;color:#5b4f46}
+footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+:focus-visible{outline:2px solid var(--pink);outline-offset:3px}
+</style>
+</head>
+<body>
+<div class="bar">Local flower deliveries Monday to Friday, 9am to 2:30pm · Austin, TX · Online ordering open</div>
+<header class="nav"><div class="wrap">
+  <a class="logo" href="#top">House of Margot Blair</a>
+  <ul>
+    <li><a href="#minis">Margot Minis</a></li><li><a href="#flowers">Flowers</a></li><li><a href="#events">Events</a></li><li><a href="#workshops">Workshops</a></li><li><a href="#table">Tabletop</a></li><li><a href="#about">About</a></li>
+  </ul>
+  <a class="btn btn--solid" href="https://houseofmargotblair.com/collections/margot-minis">Shop flowers</a>
+</div></header>
+
+<main id="top">
+<div class="hero"><div class="wrap">
+  <div>
+    <p class="eyebrow">Austin's gateway to luxury entertaining</p>
+    <h1>Everyday life shouldn't be <em>ordinary.</em></h1>
+    <p>Flowers, full-service event production and a tabletop shop, all from the Austin brand that started in a downtown apartment in 2009.</p>
+    <div class="cta"><a class="btn btn--solid" href="https://houseofmargotblair.com/collections/margot-minis">Shop Margot Minis</a><a class="btn" href="https://houseofmargotblair.com/pages/contact">Book an event</a></div>
+  </div>
+  <div class="imgs">
+    <img src="img/the-original-mini-1-1.jpg" alt="The Original Mini in a glass vase against a pink backdrop" width="900" height="1125">
+    <img src="img/ig01.jpg" alt="Ceremony under a live oak with tall white pedestals of spring florals" width="900" height="1125" loading="lazy">
+  </div>
+</div></div>
+
+<section class="minis" id="minis"><div class="wrap">
+  <div class="head"><div><p class="eyebrow">Our best seller, the one that started it all</p><h2>Margot <em>Minis</em></h2></div><p>Small arrangements in a glass vase, delivered locally. Three sizes, same signature palette.</p></div>
+  <div class="grid g3">
+    <article class="card"><img src="img/the-skiny-mini-0.jpg" alt="The Skinny Mini arrangement" width="900" height="900" loading="lazy"><h3>The Skinny Mini</h3><span class="price">$80</span><br><a class="buy" href="https://houseofmargotblair.com/products/the-skiny-mini">Order</a></article>
+    <article class="card"><img src="img/the-original-mini-1-0.jpg" alt="The Original Mini arrangement" width="900" height="900" loading="lazy"><h3>The Original Mini</h3><span class="price">$125</span><br><a class="buy" href="https://houseofmargotblair.com/products/the-original-mini-1">Order</a></article>
+    <article class="card"><img src="img/the-voluptuous-mini-0.jpg" alt="The Voluptuous Mini arrangement" width="900" height="900" loading="lazy"><h3>The Voluptuous Mini</h3><span class="price">$175</span><br><a class="buy" href="https://houseofmargotblair.com/products/the-voluptuous-mini">Order</a></article>
+  </div>
+</div></section>
+
+<section id="flowers"><div class="wrap">
+  <div class="head"><div><p class="eyebrow">More from the flower shop</p><h2>Wrapped, <em>wild</em> or custom</h2></div><a class="btn" href="https://houseofmargotblair.com/collections/all">All flowers</a></div>
+  <div class="grid g3">
+    <article class="card"><img src="img/ranunculus-bouquet-0.jpg" alt="Ranunculus bouquet in striped paper" width="900" height="1125" loading="lazy"><h3>Ranunculus Bouquet</h3><span class="price">$40</span><br><a class="buy" href="https://houseofmargotblair.com/products/ranunculus-bouquet">Order</a></article>
+    <article class="card"><img src="img/rose-bouquet-0.jpg" alt="Rose bouquet wrapped in striped paper" width="900" height="1125" loading="lazy"><h3>Rose Bouquet</h3><span class="price">$60</span><br><a class="buy" href="https://houseofmargotblair.com/products/rose-bouquet">Order</a></article>
+    <article class="card"><img src="img/custom-arrangement-0.jpg" alt="Custom arrangement of garden flowers" width="900" height="1125" loading="lazy"><h3>Custom Arrangement</h3><span class="price">$250</span><br><a class="buy" href="https://houseofmargotblair.com/products/custom-arrangement">Order</a></article>
+  </div>
+</div></section>
+
+<section class="events" id="events"><div class="wrap">
+  <div class="head"><div><p class="eyebrow" style="color:var(--orange)">Weddings and every other reason to celebrate</p><h2>Full-service <em>event production</em></h2></div><p>Florals, rentals, planning and design under one roof. Your guests remember how it felt, not who the vendors were.</p></div>
+  <div class="mosaic">
+    <img src="img/ig01.jpg" alt="Oak-tree ceremony" width="900" height="1125" loading="lazy">
+    <img src="img/ig02.jpg" alt="Couple under a hydrangea arch" width="900" height="1125" loading="lazy">
+    <img src="img/ig04.jpg" alt="Aisle lined with wildflowers on white plinths" width="900" height="1125" loading="lazy">
+    <img src="img/ig09.jpg" alt="Long table in a clear tent set with small bud vases" width="900" height="1125" loading="lazy">
+  </div>
+  <ul class="svc">
+    <li><b>Weddings &amp; events</b>Floral design and full production, from ceremony to reception.</li>
+    <li><b>Flower cart rental</b>A mobile flower bar for your party.</li>
+    <li><b>Portfolio</b>See more of our past events.</li>
+  </ul>
+  <p style="margin-top:28px"><a class="btn btn--solid" href="https://houseofmargotblair.com/pages/contact">Start an inquiry</a> <a class="btn" style="color:var(--ivory);border-color:var(--ivory)" href="https://houseofmargotblair.com/pages/flower-cart-rental">Flower cart rental</a></p>
+</div></section>
+
+<section id="workshops"><div class="wrap ws">
+  <img src="img/flowers-cocktails-workshop-1.jpg" alt="Guests making arrangements at a long white table" width="900" height="600" loading="lazy">
+  <div>
+    <p class="eyebrow">Hands-on and design-forward</p>
+    <h2>Flowers + <em style="color:var(--pink)">Cocktails</em> workshop</h2>
+    <p>Create a signature Margot Mini in a guided evening made for beginners and beauty lovers alike. Seasonal stems, hands-on instruction and effortless elegance.</p>
+    <p style="margin:16px 0 22px" class="price"><b>$150</b> per seat</p>
+    <a class="btn btn--solid" href="https://houseofmargotblair.com/products/flowers-cocktails-workshop">Reserve a seat</a> <a class="btn" href="https://houseofmargotblair.com/pages/workshops">All workshops</a>
+  </div>
+</div></section>
+
+<section id="table" class="minis"><div class="wrap">
+  <div class="head"><div><p class="eyebrow">Shop the look</p><h2>Set a <em>better</em> table</h2></div><a class="btn" href="https://houseofmargotblair.com/pages/retail">All retail</a></div>
+  <div class="grid g4">
+    <article class="card contain"><img src="img/mafalda-dinner-plate-0.jpg" alt="Mafalda dinner plate" width="900" height="900" loading="lazy"><h3>Mafalda Dinner Plate</h3><span class="price">$37.50</span><br><a class="buy" href="https://houseofmargotblair.com/products/mafalda-dinner-plate">Order</a></article>
+    <article class="card contain"><img src="img/medici-flatware-5-piece-0.jpg" alt="Medici flatware" width="900" height="900" loading="lazy"><h3>Medici Flatware, 5-piece</h3><span class="price">$240</span><br><a class="buy" href="https://houseofmargotblair.com/products/medici-flatware-5-piece">Order</a></article>
+    <article class="card contain"><img src="img/quinn-citrine-coupe-set-of-2-0.jpg" alt="Quinn Citrine coupes" width="900" height="900" loading="lazy"><h3>Quinn Citrine Coupe, set of 2</h3><span class="price">$133</span><br><a class="buy" href="https://houseofmargotblair.com/products/quinn-citrine-coupe-set-of-2">Order</a></article>
+    <article class="card contain"><img src="img/vermillion-dinner-napkin-set-of-4-0.jpg" alt="Vermillion dinner napkins" width="900" height="900" loading="lazy"><h3>Vermillion Napkins, set of 4</h3><span class="price">$88</span><br><a class="buy" href="https://houseofmargotblair.com/products/vermillion-dinner-napkin-set-of-4">Order</a></article>
+  </div>
+</div></section>
+
+<section class="about" id="about"><div class="wrap">
+  <img src="img/ig09.jpg" alt="Long tent table with colorful bud vases" width="900" height="1125" loading="lazy" style="aspect-ratio:4/3">
+  <div>
+    <p class="eyebrow" style="color:var(--orange)">Est. 2009</p>
+    <h2>A business of <em>revelers</em></h2>
+    <p>Carly Blair started House of Margot Blair in her downtown Austin apartment in 2009, becoming the go-to florist and event planner for couples who wanted something at once edgy and romantic. Demand grew past weddings, and so did the company: today it covers every part of luxury entertaining, no matter the occasion.</p>
+  </div>
+</div></section>
+
+<section class="contact" id="contact"><div class="wrap">
+  <p class="eyebrow">Get in touch</p>
+  <h2>Let's throw something <em style="color:var(--orange)">unforgettable.</em></h2>
+  <dl><dt style="display:none">Phone</dt><dd><a href="tel:5127099578">512.709.9578</a></dd><dd><a href="mailto:margot@houseofmargotblair.com">margot@houseofmargotblair.com</a></dd><dd>Based in Austin, TX · A new showroom is coming soon</dd></dl>
+  <a class="btn btn--solid" href="https://houseofmargotblair.com/pages/contact">Send an inquiry</a>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+  <span>© 2026 House of Margot Blair · Austin, TX</span>
+  <span>Concept by Sam &amp; Banks — not affiliated with House of Margot Blair yet.</span>
+</div></footer>
+</body>
+</html>

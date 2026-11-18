@@ -1,0 +1,162 @@
+<!doctype html>
+<!--
+DESIGN PLAN — The Laughing Petal (concept by Sam & Banks)
+Concept: "The Earth Laughs in Flowers" (their own About line). Playful, color-forward, a little retro: peach, delphinium blue and leaf green on warm cream, with brick-and-disco-ball photos from Anna's recent Nashville weddings.
+Fonts: Fraunces (soft serif display) / DM Sans (body).
+Sections: nav · hero · tagline · recent work gallery (their own Instagram photos) · flower bars and events · about Anna · inquire · footer.
+Replaces: a 46-word homepage, a 6-photo gallery and a footer frozen at 2022-2024.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>The Laughing Petal · Nashville wedding &amp; event florals</title>
+<meta name="description" content="Wedding and event florals in Nashville, Tennessee by Anna Dux. Playful, colorful, fully custom.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#fbf6ec;--ink:#1f2a24;--peach:#f2a07b;--blue:#6f8fd0;--leaf:#4f6b49;--pink:#f6d2cc;--mute:#5c6660;--serif:"Fraunces",Georgia,serif;--sans:"DM Sans",system-ui,sans-serif;--pad:clamp(18px,5vw,64px)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:70px;-webkit-text-size-adjust:100%}
+body{background:var(--cream);color:var(--ink);font:400 17px/1.6 var(--sans);overflow-x:hidden}
+img{display:block;max-width:100%;height:auto}a{color:inherit}
+.wrap{padding-inline:var(--pad);max-width:1260px;margin-inline:auto}
+header{position:sticky;top:0;z-index:20;background:var(--cream);border-bottom:2px solid var(--ink)}
+header .wrap{display:flex;justify-content:space-between;align-items:center;height:62px;gap:14px}
+.logo{font:600 22px var(--serif);text-decoration:none}
+.logo i{color:var(--peach)}
+nav{display:flex;gap:24px;font-weight:500;font-size:15px}nav a{text-decoration:none}nav a:hover{color:var(--leaf)}
+.cta{background:var(--ink);color:var(--cream);text-decoration:none;padding:9px 18px;border-radius:99px;font-weight:700;font-size:14px;white-space:nowrap}
+@media(max-width:760px){nav{display:none}}
+.hero{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,4vw,56px);padding-block:clamp(28px,5vw,64px);align-items:center}
+.tag{display:inline-block;background:var(--pink);padding:6px 14px;border-radius:99px;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+h1{font:600 clamp(46px,7.5vw,100px)/.95 var(--serif);margin:18px 0}
+h1 em{color:var(--peach);font-weight:400}
+.lede{max-width:44ch;color:var(--mute);font-size:19px}
+.hero .btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.btn{display:inline-block;padding:14px 26px;border-radius:99px;border:2px solid var(--ink);text-decoration:none;font-weight:700;font-size:15px}
+.btn.fill{background:var(--peach)}.btn:hover{background:var(--blue);color:#fff;border-color:var(--blue)}
+.photos{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.photos img{width:100%;height:100%;object-fit:cover;border-radius:200px 200px 16px 16px}
+.photos img:nth-child(2){border-radius:16px 16px 200px 200px;margin-top:40px}
+.photos div{aspect-ratio:3/4}
+@media(max-width:860px){.hero{grid-template-columns:1fr}}
+.band{background:var(--leaf);color:var(--cream);padding:22px 0;overflow:hidden;white-space:nowrap}
+.band p{font:italic 400 clamp(22px,3vw,34px) var(--serif);display:inline-block;padding-left:100%;animation:slide 28s linear infinite}
+@keyframes slide{to{transform:translateX(-100%)}}
+@media(prefers-reduced-motion:reduce){.band p{animation:none;padding-left:0;white-space:normal;display:block;text-align:center}.band{white-space:normal}}
+.sec{padding:clamp(56px,9vw,110px) 0}
+h2{font:600 clamp(34px,5vw,62px)/1.02 var(--serif);margin-bottom:14px}
+h2 em{color:var(--blue);font-weight:400}
+.head{max-width:56ch;margin-bottom:34px}.head p{color:var(--mute)}
+.gal{columns:4 220px;column-gap:14px}
+.gal figure{margin:0 0 14px;break-inside:avoid;position:relative}
+.gal img{width:100%;border-radius:14px}
+.gal figcaption{font-size:13px;color:var(--mute);margin-top:5px}
+.events{background:var(--pink)}
+.ev{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(24px,5vw,64px);align-items:center}
+.ev .row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.ev .row img{aspect-ratio:3/4;object-fit:cover;width:100%;border-radius:12px}
+.ev ul{list-style:none;margin:18px 0;display:grid;gap:10px}
+.ev li{padding-left:28px;position:relative}
+.ev li:before{content:"✿";position:absolute;left:0;color:var(--leaf)}
+@media(max-width:860px){.ev{grid-template-columns:1fr}}
+.about{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(24px,5vw,64px);align-items:center}
+.about img{border-radius:20px;width:100%;aspect-ratio:4/5;object-fit:cover}
+.about p{margin-bottom:14px}
+@media(max-width:860px){.about{grid-template-columns:1fr}}
+.inq{background:var(--ink);color:var(--cream)}
+.inq h2 em{color:var(--peach)}
+form{display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:760px;margin-top:22px}
+form .full{grid-column:1/-1}
+label{display:block;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-bottom:4px}
+input,textarea,select{width:100%;padding:12px;border-radius:10px;border:1px solid #5a655e;background:#2a352e;color:var(--cream);font:inherit}
+button{grid-column:1/-1;padding:15px;border:0;border-radius:99px;background:var(--peach);color:var(--ink);font:700 16px var(--sans);cursor:pointer}
+@media(max-width:600px){form{grid-template-columns:1fr}}
+footer{background:#121a15;color:#9aa59d;padding:22px 0;font-size:13px}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
+footer a{color:#cfd8d1}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <a class="logo" href="#top">The Laughing <i>Petal</i></a>
+  <nav aria-label="Main"><a href="#work">Work</a><a href="#events">Events</a><a href="#about">Anna</a><a href="#inquire">Inquire</a></nav>
+  <a class="cta" href="#inquire">Inquire</a>
+</div></header>
+<main id="top">
+<section class="wrap hero">
+  <div>
+    <span class="tag">Nashville, Tennessee</span>
+    <h1>Wedding &amp; event florals that <em>laugh</em> out loud.</h1>
+    <p class="lede">Color, texture and a little mischief for Nashville weddings and events. Fully custom, designed by Anna Dux, with an eye for the room you are actually in.</p>
+    <div class="btns"><a class="btn fill" href="#inquire">Start an inquiry</a><a class="btn" href="#work">See recent work</a></div>
+  </div>
+  <div class="photos" aria-hidden="false">
+    <div><img src="img/lp06.jpg" alt="Peach, cream and blue flowers on a brick windowsill" fetchpriority="high"></div>
+    <div><img src="img/lp26.jpg" alt="Garden flowers in peach, orange and blue on a tall frame"></div>
+  </div>
+</section>
+<div class="band" aria-label="Tagline"><p>The earth laughs in flowers &nbsp;✿&nbsp; The earth laughs in flowers &nbsp;✿&nbsp; The earth laughs in flowers &nbsp;✿&nbsp;</p></div>
+
+<section class="sec" id="work"><div class="wrap">
+  <div class="head"><h2>Recent <em>work</em></h2><p>Straight from Anna's own Instagram: a brick-warehouse wedding with hanging disco balls, tall floral frames and a whole lot of color.</p></div>
+  <div class="gal">
+    <figure><img src="img/lp05.jpg" alt="A ceremony in a brick loft with floral frames" loading="lazy"></figure>
+    <figure><img src="img/lp04.jpg" alt="Greenery and mirrored disco balls hanging from the ceiling" loading="lazy"></figure>
+    <figure><img src="img/lp21.jpg" alt="A tall white frame covered in peach and blue flowers" loading="lazy"></figure>
+    <figure><img src="img/lp33.jpg" alt="Close-up of a floral frame with garden roses and delphinium" loading="lazy"></figure>
+    <figure><img src="img/lp11.jpg" alt="A lounge with white furniture and trailing greenery" loading="lazy"></figure>
+    <figure><img src="img/lp14.jpg" alt="A reception room set with round tables" loading="lazy"></figure>
+    <figure><img src="img/lp22.jpg" alt="A couple in a light blue suit and wedding dress" loading="lazy"></figure>
+    <figure><img src="img/lp35.jpg" alt="A long reception table with candles and flowers" loading="lazy"></figure>
+    <figure><img src="img/lp37.jpg" alt="Another view of a tall floral frame on a dark tablecloth" loading="lazy"></figure>
+    <figure><img src="img/lp12.jpg" alt="Wall of greenery above a white sofa" loading="lazy"></figure>
+    <figure><img src="img/lp28.jpg" alt="Disco ball ornaments in greenery" loading="lazy"></figure>
+    <figure><img src="img/lp38.jpg" alt="A bride and groom dancing under disco balls" loading="lazy"></figure>
+  </div>
+</div></section>
+
+<section class="sec events" id="events"><div class="wrap ev">
+  <div>
+    <h2>Flower bars, <em>parties</em> &amp; weekday joy.</h2>
+    <p>Anna also designs events beyond the wedding day. Her flower bar was part of a Nashville Goo Goo Cluster party, where guests built their own bouquets.</p>
+    <ul><li>Flower bars and bouquet-building parties</li><li>Rehearsal dinners and welcome parties</li><li>Tented garden receptions</li></ul>
+    <a class="btn" href="#inquire">Ask about your event</a>
+  </div>
+  <div class="row">
+    <img src="img/lp48.jpg" alt="A flower bar with buckets of pink and orange flowers" loading="lazy">
+    <img src="img/lp52.jpg" alt="Flyer for a flower bar event" loading="lazy">
+    <img src="img/lp54.jpg" alt="A tented garden reception with long tables" loading="lazy">
+  </div>
+</div></section>
+
+<section class="sec" id="about"><div class="wrap about">
+  <img src="img/lp61.jpg" alt="A couple holding a bright bouquet outdoors" loading="lazy">
+  <div>
+    <h2>Hi, I'm <em>Anna.</em></h2>
+    <p>I was born and raised in Sylva, North Carolina, and moved to Nashville in 2003. My mother set up florals for weddings and I spent hours in her studio playing with flowers.</p>
+    <p>When the pandemic hit, I missed having a creative outlet. I started gathering grocery-store flowers and delivering arrangements, and The Laughing Petal grew from there.</p>
+    <p>Featured in People.</p>
+  </div>
+</div></section>
+
+<section class="sec inq" id="inquire"><div class="wrap">
+  <h2>Tell Anna about <em>your day.</em></h2>
+  <p>Date, venue, guest count and the vibe you are after. Or email thelaughingpetal@gmail.com.</p>
+  <form name="inquiry" method="POST" action="#inquire" data-netlify="true">
+    <input type="hidden" name="form-name" value="inquiry">
+    <div><label for="a">Name</label><input id="a" name="name" required></div>
+    <div><label for="b">Email</label><input id="b" type="email" name="email" required></div>
+    <div><label for="c">Date</label><input id="c" name="date"></div>
+    <div><label for="d">Venue</label><input id="d" name="venue"></div>
+    <div class="full"><label for="f">The vibe</label><textarea id="f" name="message" rows="4"></textarea></div>
+    <button type="submit">Send to Anna</button>
+  </form>
+</div></section>
+</main>
+<footer><div class="wrap"><span>© The Laughing Petal · Nashville · <a href="mailto:thelaughingpetal@gmail.com">thelaughingpetal@gmail.com</a></span><span>Concept by Sam &amp; Banks — not affiliated with The Laughing Petal yet.</span></div></footer>
+</body>
+</html>

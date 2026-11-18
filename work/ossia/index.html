@@ -1,0 +1,344 @@
+<!doctype html>
+<!--
+  OSSIA — DESIGN PLAN
+  1. Concept: a fashion-house lookbook lit like a Dutch still life. Black room, one candle, flowers as the only light source.
+  2. Palette: ink #0d0c0b, soot #171513, bone #e8e1d4, ash #8f877c (secondary text), garnet #8c1c26 (single accent, used as a full colour field once).
+  3. Fonts: Imbue (condensed high-contrast didone, optical sizes, set at 30vw+) + Hanken Grotesk (small caps labels, body). Tabular figures for stems, dates, prices.
+  4. Grid: 12 columns, 24px gutters, generous outer margin; content deliberately hangs off-centre (cols 2–8, 7–12) with scale jumps between giant and 11px type.
+  5. Signature 1: hero — OSSIA set at 34vw *behind* a peony on black; image uses mix-blend lighten so petals fall in front of the letters. Slow scale-in on load (CSS, works w/o JS).
+  6. Signature 2: Selected Weddings as a catalogue index; hovering a row summons a floating photograph that trails the cursor (inline thumbnails on touch).
+  7. Signature 3: pinned horizontal gallery of installations with catalogue captions and a live “No. 03 / 07” counter (native scroll-snap fallback on mobile / no-JS).
+  8. Rhythm: dark → dark → dark → one garnet field (planner quote) → dark form. Grain overlay throughout. Nothing else animates.
+  9. Sections: Nav · Hero · Manifesto · Selected weddings · Installations · Process (I–IV) · Quote · Inquiry (sentence-form) · Footer.
+  10. Copy voice: Ines Varga, blunt and specific — stem counts, load-in times, no foam, booking window 9–14 months.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Ossia — Wedding & Event Flowers, Gowanus, Brooklyn</title>
+<meta name="description" content="Ossia is a Gowanus studio doing about thirty weddings a year: hanging installations, candlelit tables, moody seasonal flowers. Now booking autumn 2027.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230d0c0b'/%3E%3Cellipse cx='32' cy='32' rx='13' ry='21' fill='none' stroke='%23e8e1d4' stroke-width='3'/%3E%3Ccircle cx='32' cy='32' r='3.5' fill='%238c1c26'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,300..700;1,300..500&family=Imbue:opsz,wght@10..100,100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="preload" as="image" href="img/dark-10.jpg">
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+
+<header class="nav" id="top">
+  <a class="nav__mark" href="#top" aria-label="Ossia, back to top">Ossia</a>
+  <nav class="nav__links" aria-label="Primary">
+    <a href="#weddings">Weddings</a>
+    <a href="#installations">Installations</a>
+    <a href="#process">Process</a>
+  </nav>
+  <a class="nav__cta" href="#inquire"><span class="dot" aria-hidden="true"></span>Booking Sept. 2027 →</a>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero" aria-labelledby="hero-title">
+    <h1 id="hero-title" class="sr-only">Ossia — wedding and event flowers, Gowanus, Brooklyn</h1>
+    <div class="hero__word" aria-hidden="true">
+      <span style="--i:0">O</span><span style="--i:1">S</span><span style="--i:2">S</span><span style="--i:3">I</span><span style="--i:4">A</span>
+    </div>
+    <div class="hero__media">
+      <img src="img/dark-10.jpg" width="1600" height="2400" alt="A single deep-pink peony on black, its loose petals falling away to the left" fetchpriority="high">
+    </div>
+    <p class="hero__lede">Flowers for rooms<br>that go dark at nine.</p>
+    <dl class="hero__meta">
+      <div><dt>Studio</dt><dd>Gowanus, Brooklyn</dd></div>
+      <div><dt>Weddings / yr</dt><dd class="num">≈ 30</dd></div>
+      <div><dt>Now booking</dt><dd>Sept. 2027 →</dd></div>
+    </dl>
+    <p class="hero__plate">Pl. I — <i>Paeonia lactiflora</i> ‘Karl Rosenfield’, studio, 11 p.m.</p>
+  </section>
+
+  <!-- MANIFESTO -->
+  <section class="manifesto" aria-label="About the studio">
+    <p class="label">§ 01 &nbsp; The studio</p>
+    <p class="manifesto__text">We do about thirty weddings a year. That’s the ceiling if every one gets <em>Ines on-site</em> from load-in to strike. No floral foam, no pastel “garden party,” and nobody’s getting a cloud of baby’s breath.</p>
+    <p class="manifesto__sign">— Ines Varga, founder &amp; lead designer. Trained in Utrecht, twelve years in Brooklyn.</p>
+    <figure class="manifesto__fig">
+      <img src="img/sm/dark-25.jpg" width="800" height="1200" loading="lazy" alt="A king protea and dried leaves in warm low light, mostly shadow">
+      <figcaption>Protea &amp; dried banksia, studio bench, Nov.</figcaption>
+    </figure>
+    <ul class="manifesto__facts">
+      <li><span class="num">9–14</span> months out is when the good dates go</li>
+      <li><span class="num">$18k</span> where full-service weddings start</li>
+      <li><span class="num">0</span> blocks of foam since 2019</li>
+    </ul>
+  </section>
+
+  <!-- WEDDINGS INDEX -->
+  <section class="weddings" id="weddings" aria-labelledby="weddings-title">
+    <div class="sec-head">
+      <p class="label">§ 02 &nbsp; Index</p>
+      <h2 id="weddings-title" class="sec-title">Selected<br><em>weddings</em></h2>
+      <p class="sec-note">Eight of last year’s thirty-one.<span class="hover-hint"> Hover a row to see the room.</span></p>
+    </div>
+    <ol class="index" role="list">
+      <li class="index__row" data-img="img/sm/dark-76.jpg">
+        <a href="#inquire">
+          <span class="c-no num">01</span>
+          <span class="c-couple">Priya &amp; Tom</span>
+          <span class="c-venue">Former ropewalk, Red Hook</span>
+          <span class="c-season">Oct. 2025</span>
+          <span class="c-stems num">4,200 stems</span>
+          <img class="c-thumb" src="img/sm/dark-76.jpg" width="800" height="1158" loading="lazy" alt="A long table runner of red ranunculus and garden roses between wine glasses">
+        </a>
+      </li>
+      <li class="index__row" data-img="img/sm/dark-29.jpg">
+        <a href="#inquire">
+          <span class="c-no num">02</span>
+          <span class="c-couple">Lou &amp; Margaux</span>
+          <span class="c-venue">Candlelit barn, Hudson Valley</span>
+          <span class="c-season">Nov. 2025</span>
+          <span class="c-stems num">2,850 stems</span>
+          <img class="c-thumb" src="img/sm/dark-29.jpg" width="800" height="1200" loading="lazy" alt="A sweetheart table under draped linen, surrounded by marigold-toned flowers and dozens of candles">
+        </a>
+      </li>
+      <li class="index__row" data-img="img/sm/dark-43.jpg">
+        <a href="#inquire">
+          <span class="c-no num">03</span>
+          <span class="c-couple">Ade &amp; Jonah</span>
+          <span class="c-venue">Brownstone parlour, Fort Greene</span>
+          <span class="c-season">Dec. 2025</span>
+          <span class="c-stems num">1,100 stems</span>
+          <img class="c-thumb" src="img/sm/dark-43.jpg" width="800" height="1200" loading="lazy" alt="Burnt-orange garden roses and waxflower beside a mercury-glass votive">
+        </a>
+      </li>
+      <li class="index__row" data-img="img/sm/dark-69.jpg">
+        <a href="#inquire">
+          <span class="c-no num">04</span>
+          <span class="c-couple">Sasha &amp; Ben</span>
+          <span class="c-venue">Supper club, Tribeca</span>
+          <span class="c-season">Feb. 2026</span>
+          <span class="c-stems num">1,900 stems</span>
+          <img class="c-thumb" src="img/sm/dark-69.jpg" width="800" height="1200" loading="lazy" alt="Anthurium, poppies and ranunculus massed along the end of a yellow-clothed table in a dark room">
+        </a>
+      </li>
+      <li class="index__row" data-img="img/sm/dark-70.jpg">
+        <a href="#inquire">
+          <span class="c-no num">05</span>
+          <span class="c-couple">Noor &amp; Eli</span>
+          <span class="c-venue">Glasshouse, Rhinebeck</span>
+          <span class="c-season">May 2026</span>
+          <span class="c-stems num">3,600 stems</span>
+          <img class="c-thumb" src="img/sm/dark-70.jpg" width="800" height="534" loading="lazy" alt="Long farmhouse tables with low arrangements inside a greenhouse">
+        </a>
+      </li>
+      <li class="index__row" data-img="img/sm/dark-63.jpg">
+        <a href="#inquire">
+          <span class="c-no num">06</span>
+          <span class="c-couple">Hana &amp; Will</span>
+          <span class="c-venue">Old bank hall, Downtown Brooklyn</span>
+          <span class="c-season">June 2026</span>
+          <span class="c-stems num">5,400 stems</span>
+          <img class="c-thumb" src="img/sm/dark-63.jpg" width="800" height="1198" loading="lazy" alt="A banquet table under crystal chandeliers with a continuous runner of blush roses">
+        </a>
+      </li>
+      <li class="index__row" data-img="img/sm/dark-68.jpg">
+        <a href="#inquire">
+          <span class="c-no num">07</span>
+          <span class="c-couple">Celia &amp; Kofi</span>
+          <span class="c-venue">Orchard, North Fork</span>
+          <span class="c-season">Aug. 2026</span>
+          <span class="c-stems num">2,300 stems</span>
+          <img class="c-thumb" src="img/sm/dark-68.jpg" width="800" height="1200" loading="lazy" alt="White-clothed table at dusk with loose green and white arrangements">
+        </a>
+      </li>
+      <li class="index__row" data-img="img/sm/dark-33.jpg">
+        <a href="#inquire">
+          <span class="c-no num">08</span>
+          <span class="c-couple">Rae &amp; Tomás</span>
+          <span class="c-venue">Canal-side warehouse, Gowanus</span>
+          <span class="c-season">Sept. 2026</span>
+          <span class="c-stems num">3,050 stems</span>
+          <img class="c-thumb" src="img/sm/dark-33.jpg" width="800" height="1200" loading="lazy" alt="Peach garden roses and dahlias in glass with floating candles">
+        </a>
+      </li>
+    </ol>
+    <div class="float" aria-hidden="true"><img src="img/sm/dark-76.jpg" alt=""><span class="float__tag">View the room</span></div>
+  </section>
+
+  <!-- INSTALLATIONS -->
+  <section class="install" id="installations" aria-labelledby="install-title">
+    <div class="install__pin">
+      <div class="install__head">
+        <p class="label">§ 03 &nbsp; Installations</p>
+        <h2 id="install-title" class="sec-title sec-title--caps">Hung from<br>the ceiling</h2>
+        <p class="install__count num" aria-hidden="true"><span class="js-count">01</span> / 07</p>
+      </div>
+      <div class="install__track" tabindex="0" aria-label="Installations gallery, scroll horizontally">
+        <figure class="plate plate--a">
+          <img src="img/dark-52.jpg" width="1600" height="3088" loading="lazy" alt="A fourteen-foot suspended column of amaranthus and hydrangea above candlelight">
+          <figcaption><span class="num">No. 01</span> — Hanging amaranthus &amp; hydrangea column, 14 ft. Old bank hall, Downtown Brooklyn, June.</figcaption>
+        </figure>
+        <figure class="plate plate--b">
+          <img src="img/sm/dark-26.jpg" width="800" height="1422" loading="lazy" alt="Red cymbidium orchids bursting from the edge of a black frame">
+          <figcaption><span class="num">No. 02</span> — Cymbidium spray off a lacquered beam. Supper club, Tribeca, Feb.</figcaption>
+        </figure>
+        <figure class="plate plate--c">
+          <img src="img/sm/dark-17.jpg" width="800" height="1200" loading="lazy" alt="Viburnum, hellebores and green figs in a celadon urn on a dark table">
+          <figcaption><span class="num">No. 03</span> — Viburnum, hellebore &amp; green figs, celadon urn. Private dinner, Cobble Hill, Mar.</figcaption>
+        </figure>
+        <figure class="plate plate--d">
+          <img src="img/sm/dark-22.jpg" width="800" height="1066" loading="lazy" alt="Dried palm, bleached fern and white phalaenopsis reaching across black">
+          <figcaption><span class="num">No. 04</span> — Bleached fern, dried palm, phalaenopsis. Gallery opening, Chelsea, Jan.</figcaption>
+        </figure>
+        <figure class="plate plate--e">
+          <img src="img/sm/dark-18.jpg" width="800" height="1422" loading="lazy" alt="A cascade of red orchids and amaranthus spilling from a black vessel">
+          <figcaption><span class="num">No. 05</span> — Red cascade, 600 stems, one vessel. Canal-side warehouse, Gowanus, Sept.</figcaption>
+        </figure>
+        <figure class="plate plate--f">
+          <img src="img/sm/dark-28.jpg" width="800" height="1198" loading="lazy" alt="A single bare branch of quince and sweet pea against black">
+          <figcaption><span class="num">No. 06</span> — Quince &amp; sweet pea, one branch. Ceremony arch study, Apr.</figcaption>
+        </figure>
+        <figure class="plate plate--g">
+          <img src="img/sm/dark-11.jpg" width="800" height="1200" loading="lazy" alt="A meadow of ranunculus, scabiosa and Queen Anne’s lace on a dark blue ground">
+          <figcaption><span class="num">No. 07</span> — Ranunculus, scabiosa, Queen Anne’s lace. Glasshouse, Rhinebeck, May.</figcaption>
+        </figure>
+        <div class="plate plate--end">
+          <p>Your room<br><em>could be No. 08.</em></p>
+          <a class="link-arrow" href="#inquire">Start an inquiry →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="process" id="process" aria-labelledby="process-title">
+    <div class="process__aside">
+      <p class="label">§ 04 &nbsp; Process</p>
+      <h2 id="process-title" class="sec-title sec-title--count"><span class="big-n" aria-hidden="true">4</span><span>chapters,<br>one crew.</span></h2>
+      <figure class="process__fig">
+        <img src="img/sm/dark-24.jpg" width="800" height="1066" loading="lazy" alt="A white bouquet in a steel vase on a black table in a dim studio, an angled lamp overhead">
+        <figcaption>The mock-up table, Gowanus studio.</figcaption>
+      </figure>
+    </div>
+    <ol class="chapters" role="list">
+      <li class="chapter">
+        <span class="chapter__n" aria-hidden="true">I</span>
+        <div>
+          <p class="chapter__when">12–9 months out</p>
+          <h3>Consult</h3>
+          <p>A ninety-minute call, then we walk the room at the hour you’ll actually be in it. Four p.m. light and ten p.m. light are two different weddings.</p>
+        </div>
+      </li>
+      <li class="chapter">
+        <span class="chapter__n" aria-hidden="true">II</span>
+        <div>
+          <p class="chapter__when">6 months out</p>
+          <h3>Design</h3>
+          <p>One proposal, not three. Then a full mock-up table at the studio: real linens, real candles, the wine you picked. You tell us what’s wrong. Something always is.</p>
+        </div>
+      </li>
+      <li class="chapter">
+        <span class="chapter__n" aria-hidden="true">III</span>
+        <div>
+          <p class="chapter__when">The day, from 6 a.m.</p>
+          <h3>Install</h3>
+          <p>Crew of four to eleven. Six to nine hours. Ines stays until the first course goes out, then fixes the one centrepiece someone leaned on.</p>
+        </div>
+      </li>
+      <li class="chapter">
+        <span class="chapter__n" aria-hidden="true">IV</span>
+        <div>
+          <p class="chapter__when">Midnight</p>
+          <h3>Strike</h3>
+          <p>We take every stem down. Spent material goes to compost in Red Hook; anything still good is re-bunched and at two Park Slope hospices by ten the next morning.</p>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <!-- QUOTE -->
+  <section class="quote" aria-label="What planners say">
+    <img class="quote__img" src="img/sm/dark-19.jpg" width="800" height="1200" loading="lazy" alt="Rust and oxblood dahlias massed together in warm light">
+    <blockquote>
+      <p>“Ines turned a parking garage into a chapel, then had it swept clean by one a.m. I’ve stopped sending couples anywhere else.”</p>
+      <footer>Maren Okafor — planner, Okafor &amp; Lane Events <span>· eleven weddings with Ossia since 2021</span></footer>
+    </blockquote>
+  </section>
+
+  <!-- INQUIRY -->
+  <section class="inquire" id="inquire" aria-labelledby="inquire-title">
+    <div class="inquire__head">
+      <p class="label">§ 05 &nbsp; Inquire</p>
+      <h2 id="inquire-title" class="sec-title">Tell us about<br><em>the room.</em></h2>
+      <p class="sec-note">We reply within two working days, usually with one question you hadn’t thought of. Autumn 2027 has four Saturdays left.</p>
+    </div>
+
+    <form class="form" novalidate>
+      <p class="sentence">
+        We’re getting married on
+        <label class="field field--date"><span class="sr-only">Date</span><input type="text" name="date" placeholder="a Saturday in Oct. 2027" autocomplete="off"></label>
+        at
+        <label class="field field--venue"><span class="sr-only">Venue</span><input type="text" name="venue" placeholder="the venue, or “not sure yet”"></label>
+        with about
+        <label class="field field--guests"><span class="sr-only">Guest count</span><input type="number" name="guests" placeholder="120" min="10" max="600" inputmode="numeric"></label>
+        guests.
+      </p>
+
+      <fieldset class="chips">
+        <legend>Flower budget</legend>
+        <label><input type="radio" name="budget" value="18-30"><span>$18–30k</span></label>
+        <label><input type="radio" name="budget" value="30-60"><span>$30–60k</span></label>
+        <label><input type="radio" name="budget" value="60+"><span>$60k +</span></label>
+        <label><input type="radio" name="budget" value="unsure"><span>Tell me what’s realistic</span></label>
+      </fieldset>
+
+      <label class="area">
+        <span class="area__label">The room — ceiling height, light, the thing you’re worried about</span>
+        <textarea name="room" rows="4" placeholder="Brick, 22-foot ceilings, one huge window that faces west. We want it to feel like the end of a long dinner."></textarea>
+      </label>
+
+      <div class="form__row">
+        <label class="line"><span>Your names</span><input type="text" name="name" autocomplete="name" required></label>
+        <label class="line"><span>Email</span><input type="email" name="email" autocomplete="email" required></label>
+      </div>
+
+      <div class="form__foot">
+        <button type="submit" class="send">Send it to Ines <span aria-hidden="true">→</span></button>
+        <p class="form__fine">Or write to <a href="#inquire">studio@ossia.example</a></p>
+      </div>
+    </form>
+
+    <div class="sent" role="status" aria-live="polite" hidden>
+      <p class="label">Received</p>
+      <p class="sent__big">Thank you<span class="js-name"></span>.</p>
+      <p class="sent__small">Ines reads every inquiry herself. Expect a reply by <span class="js-day">Wednesday</span>, probably with a question about the ceiling.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="foot__grid">
+    <div>
+      <p class="label">Studio</p>
+      <p>Unit 4, 233 Butler St.<br>Gowanus, Brooklyn 11217<br>By appointment only</p>
+    </div>
+    <div>
+      <p class="label">Elsewhere</p>
+      <p><a href="#top">Instagram — @ossia.studio</a><br><a href="#inquire">studio@ossia.example</a></p>
+    </div>
+    <div>
+      <p class="label">Season</p>
+      <p>Booking Sept. 2027 onward.<br>Studio closed Jan. 6–27.</p>
+    </div>
+    <a class="foot__top" href="#top">Back to top ↑</a>
+  </div>
+  <p class="foot__word" aria-hidden="true">Ossia</p>
+  <p class="credit">A concept study by <a href="../../index.html">Sam &amp; Banks</a>. Ossia is a fictional florist.</p>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script src="main.js" defer></script>
+</body>
+</html>

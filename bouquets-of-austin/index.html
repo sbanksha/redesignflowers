@@ -1,0 +1,187 @@
+<!doctype html>
+<!--
+DESIGN PLAN: Bouquets of Austin (demo by Sam & Banks)
+Concept: a wedding-only florist since 1996 should look like the work: tall, white, green, and unhurried. Large photography, a plain three-step process, one clear way to start (the consultation).
+Fixes the two things we noticed on the live homepage: this page has a real <title>, and the years-in-business copy reads "since 1996" instead of a number that goes stale.
+Palette: ivory, forest green (their MENU ribbon is green), brass, blush. Fonts: Cormorant Garamond + Jost.
+Sections: nav, hero, intro, venues, process (their 3 steps), gallery, what we design, testimonial, inquire.
+Contact: their real phone, team email and Cedar Park studio address (by appointment).
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Bouquets of Austin · Wedding florist since 1996</title>
+<meta name="description" content="Austin wedding florist since 1996. Floral design for weddings and special events across Central Texas, with a complimentary consultation and no minimum spend.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%2323392e'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='34' font-style='italic' text-anchor='middle' fill='%23f3ece0'%3EB%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--ivory:#fbfaf6;--green:#23392e;--brass:#a98550;--blush:#efe3dc;--ink:#1d1f1c;--serif:"Cormorant Garamond",Georgia,serif;--sans:Jost,system-ui,sans-serif;--pad:clamp(18px,5vw,72px)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:70px;-webkit-text-size-adjust:100%}
+body{background:var(--ivory);color:var(--ink);font:400 17px/1.65 var(--sans);overflow-x:hidden}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1;text-wrap:balance}
+.wrap{padding-inline:var(--pad);max-width:1280px;margin-inline:auto}
+.label{font:500 11px/1.3 var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--brass)}
+.btn{display:inline-block;font:500 12px/1 var(--sans);letter-spacing:.18em;text-transform:uppercase;text-decoration:none;padding:16px 26px;border:1px solid var(--green);color:var(--green);transition:.2s}
+.btn:hover{background:var(--green);color:var(--ivory)}
+.btn--solid{background:var(--green);color:var(--ivory)}
+.btn--solid:hover{background:var(--brass);border-color:var(--brass)}
+.nav{position:sticky;top:0;z-index:20;background:rgba(251,250,246,.95);backdrop-filter:blur(8px);border-bottom:1px solid rgba(35,57,46,.14)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:14px}
+.logo{font:italic 500 26px/1 var(--serif);text-decoration:none;color:var(--green);white-space:nowrap}
+.nav ul{display:none;list-style:none;gap:28px;font:500 12px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase}
+.nav ul a{text-decoration:none}.nav ul a:hover{color:var(--brass)}
+.nav .btn{padding:11px 14px;font-size:11px}
+@media(min-width:860px){.nav ul{display:flex}}
+.hero .wrap{display:grid;gap:30px;padding-block:34px 56px}
+.hero h1{font-size:clamp(46px,11vw,120px);letter-spacing:-.02em;line-height:.92;color:var(--green);margin:14px 0 20px}
+.hero h1 em{color:var(--brass);font-weight:400}
+.hero p.sub{max-width:30em;font-size:18px;margin-bottom:26px}
+.hero .imgs{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.hero .imgs img{width:100%;aspect-ratio:3/4.4;object-fit:cover}
+.hero .imgs img:last-child{margin-top:44px}
+@media(min-width:900px){.hero .wrap{grid-template-columns:1fr 1fr;align-items:center;gap:60px}}
+.band{background:var(--green);color:var(--ivory);text-align:center;padding:30px 0}
+.band .wrap{display:flex;flex-wrap:wrap;gap:8px 34px;justify-content:center;font:italic 500 21px/1.3 var(--serif)}
+.band span{color:#d9c8a8}
+section{padding:70px 0}
+.intro .wrap{display:grid;gap:30px}
+.intro h2{font-size:clamp(34px,6vw,64px);color:var(--green);margin-top:12px}
+.intro p+p{margin-top:14px}
+.intro p{max-width:34em;color:#3d443f}
+.intro img{width:100%;aspect-ratio:4/5;object-fit:cover}
+@media(min-width:900px){.intro .wrap{grid-template-columns:1fr 1fr;gap:72px;align-items:center}}
+.steps{background:var(--blush)}
+.steps h2{font-size:clamp(34px,6vw,64px);color:var(--green);margin:12px 0 34px}
+.steps ol{list-style:none;display:grid;gap:26px}
+.steps li{border-top:1px solid rgba(35,57,46,.35);padding-top:16px}
+.steps .n{font:italic 500 22px var(--serif);color:var(--brass)}
+.steps h3{font-size:30px;color:var(--green);margin:4px 0 8px}
+.steps p{max-width:28em;color:#4b4642}
+@media(min-width:860px){.steps ol{grid-template-columns:repeat(3,1fr);gap:40px}}
+.gal h2{font-size:clamp(34px,6vw,64px);color:var(--green);margin:12px 0 30px}
+.mas{columns:2;column-gap:10px}
+.mas img{width:100%;margin-bottom:10px;break-inside:avoid}
+@media(min-width:860px){.mas{columns:3;column-gap:14px}.mas img{margin-bottom:14px}}
+.do{background:var(--green);color:var(--ivory)}
+.do h2{font-size:clamp(34px,6vw,64px);margin:12px 0 30px}
+.do .cols{display:grid;gap:28px}
+.do h3{font:italic 500 26px/1.1 var(--serif);color:#d9c8a8;margin-bottom:8px}
+.do ul{list-style:none;color:#e4eae4;font-size:16px}
+.do li{padding:5px 0;border-bottom:1px solid rgba(251,250,246,.15)}
+@media(min-width:860px){.do .cols{grid-template-columns:repeat(4,1fr)}}
+.do .note{margin-top:34px;max-width:38em;color:#d6dfd7}
+.quote{text-align:center}
+.quote blockquote{font:italic 500 clamp(26px,4.5vw,46px)/1.2 var(--serif);color:var(--green);max-width:24em;margin:0 auto 18px}
+.quote cite{font:500 12px/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;font-style:normal;color:var(--brass)}
+.cta{background:var(--blush)}
+.cta .wrap{display:grid;gap:22px;justify-items:center;text-align:center}
+.cta h2{font-size:clamp(38px,8vw,88px);color:var(--green)}
+.cta h2 em{color:var(--brass)}
+.cta .row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.cta address{font-style:normal;color:#4b4642}
+footer{padding:26px 0 36px;font-size:13px;color:#5b5a55}
+footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+:focus-visible{outline:2px solid var(--brass);outline-offset:3px}
+</style>
+</head>
+<body>
+<header class="nav"><div class="wrap">
+  <a class="logo" href="#top">Bouquets of Austin</a>
+  <ul><li><a href="#about">About</a></li><li><a href="#process">Process</a></li><li><a href="#galleries">Galleries</a></li><li><a href="#services">Services</a></li></ul>
+  <a class="btn btn--solid" href="#inquire">Start here</a>
+</div></header>
+
+<main id="top">
+<div class="hero"><div class="wrap">
+  <div>
+    <p class="label">Est. 1996 · Austin, Texas · Weddings &amp; special events</p>
+    <h1>Your vision, <em>even better.</em></h1>
+    <p class="sub">Beautiful floral designs rooted in your vision, for weddings across Austin and Central Texas. We do one thing, and we do it well.</p>
+    <a class="btn btn--solid" href="#inquire">Book a complimentary consultation</a>
+  </div>
+  <div class="imgs">
+    <img src="img/b28.jpg" alt="Bride holding a bouquet of white garden roses" width="1200" height="1600">
+    <img src="img/b06.jpg" alt="Couple beneath a tall white floral arch on a lawn" width="1371" height="2057">
+  </div>
+</div></div>
+
+<div class="band"><div class="wrap"><span>30 years of Austin weddings</span><span>Complimentary consultation</span><span>No minimum spend</span><span>Same designer on site</span></div></div>
+
+<section class="intro" id="about"><div class="wrap">
+  <img src="img/b02.jpg" alt="Wedding ceremony beneath live oaks with hanging white florals and an arch" width="956" height="1340" loading="lazy">
+  <div>
+    <p class="label">Wedding florals, since 1996</p>
+    <h2>Designing your dream wedding</h2>
+    <p>When you close your eyes and picture your wedding, what do you see? A traditional ballroom in green and white? An outdoor setting with pops of pink and orange? A historic venue in berry and burgundy? Whatever it is, we have you covered.</p>
+    <p>For three decades we've focused solely on weddings and special events, so each one gets the time, attention and care it deserves. Our designers have 50+ years of combined experience in floral and events, and we know Austin's top venues: how many pew markers a ceremony needs, which arch survives a windy lawn, which centerpieces fill the tables.</p>
+  </div>
+</div></section>
+
+<section class="steps" id="process"><div class="wrap">
+  <p class="label">Articulating your vision</p>
+  <h2>Feel at ease from the first call</h2>
+  <ol>
+    <li><span class="n">01</span><h3>Initial inquiry</h3><p>A quick call with our office coordinator to share a general sense of your vision. We pair you with the designer who best matches your style.</p></li>
+    <li><span class="n">02</span><h3>Complimentary consultation</h3><p>Meet your designer virtually or in person, about an hour to an hour and a half. They listen, take detailed notes, and you leave with a personalized proposal.</p></li>
+    <li><span class="n">03</span><h3>Your wedding day</h3><p>The same designer is on site throughout setup, so what you imagined, what you saw in our photos and what's in your proposal are what you get.</p></li>
+  </ol>
+</div></section>
+
+<section class="gal" id="galleries"><div class="wrap">
+  <p class="label">Galleries</p>
+  <h2>Timeless designs</h2>
+  <div class="mas">
+    <img src="img/b04.jpg" alt="Aisle runner of pink, orange and green blooms along a lawn" width="1024" height="1536" loading="lazy">
+    <img src="img/b03.jpg" alt="Clear tent reception with hanging florals and white centerpieces" width="1024" height="1536" loading="lazy">
+    <img src="img/b05.jpg" alt="Bridal bouquet of burgundy dahlias, blush roses and greenery" width="1067" height="1600" loading="lazy">
+    <img src="img/b07.jpg" alt="Long candlelit table beneath hanging greenery" width="1371" height="2057" loading="lazy">
+    <img src="img/b08.jpg" alt="Grand entrance with columns wrapped in greenery and candles on the steps" width="1024" height="1536" loading="lazy">
+    <img src="img/b26.jpg" alt="Brick arch covered in coral and pink flowers" width="892" height="1340" loading="lazy">
+    <img src="img/b14.jpg" alt="Tall white floral centerpiece in an ornate ballroom" width="1280" height="1920" loading="lazy">
+    <img src="img/b29.jpg" alt="Ceremony chairs with a wildflower aisle arrangement" width="1536" height="2048" loading="lazy">
+    <img src="img/b30.jpg" alt="Floral arches at a mirrored aisle in front of tall windows" width="912" height="1370" loading="lazy">
+    <img src="img/b13.jpg" alt="Reception table with white hydrangea centerpiece and candles" width="1280" height="1920" loading="lazy">
+    <img src="img/b09.jpg" alt="Bridesmaids holding red and blush bouquets" width="1024" height="683" loading="lazy">
+    <img src="img/b27.jpg" alt="Bright bouquets in pink, orange and green" width="2010" height="1340" loading="lazy">
+  </div>
+  <p style="margin-top:24px"><a class="btn" href="#inquire">Ask about your venue</a></p>
+</div></section>
+
+<section class="do" id="services"><div class="wrap">
+  <p class="label">Services</p>
+  <h2>We do it all</h2>
+  <div class="cols">
+    <div><h3>Personals</h3><ul><li>Bouquets</li><li>Boutonnieres</li><li>Corsages</li></ul></div>
+    <div><h3>Ceremony</h3><ul><li>Custom ceremony structures</li><li>Altar arrangements</li><li>Aisle decor</li></ul></div>
+    <div><h3>Reception</h3><ul><li>Table centerpieces</li><li>Ceiling installations</li><li>Cake decor</li></ul></div>
+    <div><h3>Table top</h3><ul><li>Vases and votives</li><li>Candles</li><li>Candelabras</li></ul></div>
+  </div>
+  <p class="note">No minimum spend requirement: beautiful flowers regardless of budget, with suggestions that respect it. Classic all-white bridal bouquets start at $250.</p>
+</div></section>
+
+<section class="quote"><div class="wrap">
+  <blockquote>"Bouquets of Austin will over-deliver and exceed your expectations!"</blockquote>
+  <cite>Jessica, bride</cite>
+</div></section>
+
+<section class="cta" id="inquire"><div class="wrap">
+  <p class="label">Together, we'll design your dream wedding</p>
+  <h2>Let's get <em>started.</em></h2>
+  <div class="row"><a class="btn btn--solid" href="mailto:team@bouquetsofaustin.com">team@bouquetsofaustin.com</a><a class="btn" href="tel:5122572395">512.257.2395</a></div>
+  <address>12800 Anderson Mill Rd, C1 Suite 300, Cedar Park, TX 78613 · by appointment only</address>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+  <span>© 2026 Bouquets of Austin</span>
+  <span>Concept by Sam &amp; Banks — not affiliated with Bouquets of Austin yet.</span>
+</div></footer>
+</body>
+</html>

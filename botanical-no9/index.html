@@ -1,0 +1,155 @@
+<!doctype html>
+<!--
+DESIGN PLAN: Botanical No.9 (demo by Sam & Banks)
+Concept: the studio's work IS the homepage. Their current homepage is ~58 words and sends visitors to Instagram; this one puts the vineyard tables, orchid runners and lakeside dinners right on the page, with the inquiry one tap away.
+Palette from the photos: oxblood (rose-red place settings), dusk pink linen, garden green, warm cream.
+Fonts: Cormorant Garamond + DM Sans.
+Sections: nav, hero, three services (weddings and celebrations, corporate, balloons), gallery, about (Wendee), inquire, footer.
+Contact goes to their real email and phone; Instagram link kept.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Botanical No.9 · Austin wedding florist &amp; event design</title>
+<meta name="description" content="Floral and event design for Austin weddings, corporate events and celebrations, plus organic balloon installations. Botanical No.9.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%235a1f2e'/%3E%3Ctext x='32' y='46' font-family='Georgia,serif' font-size='36' text-anchor='middle' fill='%23f6efe4'%3E9%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#f6efe4;--wine:#5a1f2e;--rose:#d9a5a0;--sage:#6c7a5c;--ink:#221a18;--serif:"Cormorant Garamond",Georgia,serif;--sans:"DM Sans",system-ui,sans-serif;--pad:clamp(18px,5vw,72px)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:70px;-webkit-text-size-adjust:100%}
+body{background:var(--cream);color:var(--ink);font:400 16px/1.6 var(--sans);overflow-x:hidden}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1;text-wrap:balance}
+.wrap{padding-inline:var(--pad);max-width:1320px;margin-inline:auto}
+.label{font:500 11px/1.3 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--sage)}
+.btn{display:inline-block;font:500 12px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;text-decoration:none;padding:16px 24px;border:1px solid var(--wine);color:var(--wine);transition:.2s}
+.btn:hover{background:var(--wine);color:var(--cream)}
+.btn--solid{background:var(--wine);color:var(--cream)}
+.btn--solid:hover{background:var(--ink);border-color:var(--ink)}
+.nav{position:sticky;top:0;z-index:20;background:rgba(246,239,228,.94);backdrop-filter:blur(8px);border-bottom:1px solid rgba(90,31,46,.14)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:62px;gap:14px}
+.logo{font:500 24px/1 var(--serif);text-decoration:none;letter-spacing:.02em;white-space:nowrap}
+.logo i{color:var(--wine)}
+.nav ul{display:none;list-style:none;gap:28px;font:500 12px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase}
+.nav ul a{text-decoration:none}.nav ul a:hover{color:var(--wine)}
+.nav .btn{padding:11px 14px;font-size:11px}
+@media(min-width:860px){.nav ul{display:flex}}
+.hero{position:relative;color:var(--cream);background:#2b1b1d}
+.hero img{width:100%;height:min(86vh,760px);min-height:520px;object-fit:cover;opacity:.72}
+.hero::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(26,14,16,.1) 0%,rgba(26,14,16,.55) 45%,rgba(26,14,16,.88) 100%)}
+.hero .txt{position:absolute;z-index:2;inset:auto 0 0 0;padding:0 0 clamp(30px,6vw,70px)}
+.hero h1{font-size:clamp(46px,11vw,132px);letter-spacing:-.02em;line-height:.92;margin:12px 0 22px;font-weight:500}
+.hero h1 em{font-weight:400;color:var(--rose)}
+.hero .label{color:#f0c6c0}
+.hero p.sub{max-width:30em;font-size:17px;margin-bottom:24px;color:#efe4d6}
+.hero .btn{border-color:var(--cream);color:var(--cream)}
+.hero .btn--solid{background:var(--cream);color:var(--wine)}
+.hero .btn--solid:hover{background:var(--rose);border-color:var(--rose)}
+section{padding:68px 0}
+.head h2{font-size:clamp(36px,7vw,76px);letter-spacing:-.015em;margin-top:10px}
+.head h2 em{color:var(--wine)}
+.svc{display:grid;gap:30px;margin-top:36px}
+.svc article{border-top:1px solid rgba(90,31,46,.3);padding-top:18px}
+.svc h3{font-size:34px;margin-bottom:8px}
+.svc p{color:#4b3f3b;max-width:30em}
+.svc .n{font:italic 500 18px var(--serif);color:var(--wine)}
+@media(min-width:860px){.svc{grid-template-columns:repeat(3,1fr);gap:40px}}
+.gal{background:#efe5d6}
+.mas{columns:2;column-gap:12px;margin-top:32px}
+.mas img{width:100%;margin-bottom:12px;break-inside:avoid;border-radius:2px}
+@media(min-width:860px){.mas{columns:3;column-gap:16px}.mas img{margin-bottom:16px}}
+.about .wrap{display:grid;gap:34px}
+.about img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.about h2{font-size:clamp(34px,6vw,64px);margin:10px 0 18px}
+.about p+p{margin-top:14px}
+.about p{max-width:34em;color:#44383a}
+@media(min-width:860px){.about .wrap{grid-template-columns:.9fr 1.1fr;align-items:center;gap:72px}}
+.cta{background:var(--wine);color:var(--cream);text-align:center}
+.cta .wrap{display:grid;gap:20px;justify-items:center}
+.cta h2{font-size:clamp(38px,8vw,92px)}
+.cta h2 em{color:var(--rose)}
+.cta .label{color:var(--rose)}
+.cta .btn{border-color:var(--cream);color:var(--cream)}
+.cta .btn--solid{background:var(--cream);color:var(--wine)}
+.cta .btn--solid:hover{background:var(--rose);border-color:var(--rose)}
+.cta .row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.cta address{font-style:normal;font-size:17px;color:#ecd9d3}
+footer{padding:26px 0 36px;font-size:13px;color:#5a4a46}
+footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+:focus-visible{outline:2px solid var(--wine);outline-offset:3px}
+</style>
+</head>
+<body>
+<header class="nav"><div class="wrap">
+  <a class="logo" href="#top">Botanical <i>No.9</i></a>
+  <ul><li><a href="#services">Services</a></li><li><a href="#work">Our work</a></li><li><a href="#about">About</a></li><li><a href="#inquire">Contact</a></li></ul>
+  <a class="btn btn--solid" href="#inquire">Inquire</a>
+</div></header>
+
+<main id="top">
+<div class="hero">
+  <img src="img/w03.jpg" alt="Long reception table with white orchid centerpieces, taupe linens and gold-rimmed plates" width="900" height="1200">
+  <div class="txt"><div class="wrap">
+    <p class="label">Floral and event design · Austin, TX</p>
+    <h1>Rooms worth <em>remembering.</em></h1>
+    <p class="sub">From gentle, romantic florals layered with candlelight to big, playful balloon installations. Weddings, corporate events and celebrations across Austin and Central Texas.</p>
+    <a class="btn btn--solid" href="#inquire">Tell us about your event</a> <a class="btn" href="#work">See our work</a>
+  </div></div>
+</div>
+
+<section id="services"><div class="wrap">
+  <div class="head"><p class="label">What we design</p><h2>Every kind of <em>celebration</em></h2></div>
+  <div class="svc">
+    <article><span class="n">01</span><h3>Weddings &amp; celebrations</h3><p>Ceremony pieces, tablescapes and bouquets, customized to your style, from vintage to modern and whimsical to refined.</p></article>
+    <article><span class="n">02</span><h3>Corporate events</h3><p>Networking parties, launches and dinners with intentional, timeless decor that makes the space feel special.</p></article>
+    <article><span class="n">03</span><h3>Balloons</h3><p>Organic balloon installations that make a big impact, from a small porch birthday to a large-scale grand opening.</p></article>
+  </div>
+</div></section>
+
+<section class="gal" id="work"><div class="wrap">
+  <div class="head"><p class="label">Our work</p><h2>Tables, arches and <em>golden hour</em></h2></div>
+  <div class="mas">
+    <img src="img/w20.jpg" alt="Long dining table set up between rows of grapevines at a vineyard" width="720" height="900" loading="lazy">
+    <img src="img/w36.jpg" alt="Green hydrangea and iris runner on a dark table" width="720" height="900" loading="lazy">
+    <img src="img/w28.jpg" alt="Pink linen place setting with red scalloped plate and striped napkin" width="720" height="900" loading="lazy">
+    <img src="img/w43.jpg" alt="Waterfront dinner table lit at dusk" width="720" height="960" loading="lazy">
+    <img src="img/w21.jpg" alt="Couple at a vineyard ceremony framed by red roses" width="720" height="900" loading="lazy">
+    <img src="img/w40.jpg" alt="Botanical plate on a sage scalloped napkin" width="720" height="900" loading="lazy">
+    <img src="img/w33.jpg" alt="Greenery garland down a long black table beside tall windows" width="720" height="900" loading="lazy">
+    <img src="img/w46.jpg" alt="Seaside table with rattan chairs and pink tablecloth" width="720" height="960" loading="lazy">
+    <img src="img/w73.jpg" alt="Neutral floral arrangement with pampas and sunflowers" width="720" height="900" loading="lazy">
+    <img src="img/w72.jpg" alt="Lakeside table with pale blue linen and balloon accents" width="720" height="960" loading="lazy">
+  </div>
+  <p style="margin-top:22px"><a class="btn" href="https://www.instagram.com/botanicalno9/">More on Instagram @botanicalno9</a></p>
+</div></section>
+
+<section class="about" id="about"><div class="wrap">
+  <img src="img/w40.jpg" alt="Hand-finished place setting from a Botanical No.9 table" width="720" height="900" loading="lazy">
+  <div>
+    <p class="label">13+ years in event design</p>
+    <h2>Meet <em style="color:var(--wine)">Wendee</em></h2>
+    <p>Wendee is the owner and lead designer. She started in hospitality, working with major hotel brands, then founded Lucie's Weddings &amp; Events in 2005, where floral design became her passion.</p>
+    <p>She has worked mainly across Austin and San Antonio, and has traveled throughout Texas "and pretty much anywhere a good margarita could be found." Favorite things: giant dahlias, donuts and puppies of all ages, shapes and sizes.</p>
+  </div>
+</div></section>
+
+<section class="cta" id="inquire"><div class="wrap">
+  <p class="label">Can't wait to hear about your event</p>
+  <h2>Let's design <em>yours.</em></h2>
+  <div class="row"><a class="btn btn--solid" href="mailto:hello@botanicalno9.com">hello@botanicalno9.com</a><a class="btn" href="tel:5127892723">512.789.2723</a></div>
+  <address>Austin, Texas · Weddings · Corporate events · Balloons</address>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+  <span>© 2026 Botanical No.9 · Austin, TX</span>
+  <span>Concept by Sam &amp; Banks — not affiliated with Botanical No.9 yet.</span>
+</div></footer>
+</body>
+</html>

@@ -1,0 +1,592 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!--
+DESIGN PLAN — Bloom & Sol Blissful (demo, concept by Sam & Banks)
+Concept: the ramo buchón counter meets a fashion lookbook. Black wrap paper, red roses, blush tissue: the site is built from their own wrapping language.
+Palette: ink #170F11 · paper #FFF7F5 (blush-white, not cream) · blush #F6CFD8 · rojo #D7192F (accent) · sol #FFC13B (tiny sun accents only).
+Type: Bodoni Moda (echoes their Didone logo; italic replaces the script) + Hanken Grotesk for everything functional. Tabular figures on prices.
+Grid: 12-col editorial, asymmetric hero; shop grid with 2x2 feature cards.
+Signature moments: (1) hero photo "wrapped" in fanned paper layers that open on load; (2) budget slider that filters the real Square catalog live;
+(3) event inquiry form that writes a live party card as you fill it (Netlify Forms). Plus live open/closed status in Central time.
+Sections: status bar · header · hero · shop · flower bar · events index · quotes · workshop ticket · inquiry · sympathy · visit · footer.
+Real data: Square catalog JSON (names, prices, photos, product URLs), store-location JSON (hours, 70-mi radius, $5–$60 fee), site copy, IG photos.
+-->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bloom &amp; Sol Blissful — Flowers, Flower Bar &amp; Events · Brownsville, TX</title>
+<meta name="description" content="Ecuadorian-rose bouquets, a build-your-own flower bar, and full event styling — balloons, rentals, snack carts — from our studio at 853 Palm Blvd, Brownsville. Pickup or delivery across the RGV.">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#170F11">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23170F11'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='38' text-anchor='middle' fill='%23F6CFD8'%3EB%3C/text%3E%3Ccircle cx='48' cy='16' r='6' fill='%23FFC13B'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#shop">Skip to the shop</a>
+
+<div class="status" role="note">
+  <div class="wrap status__in">
+    <p class="status__open" id="openState"><span class="dot" aria-hidden="true"></span><span id="openText">Mon–Fri 10–5 · Sat 9–7 · Sun 1–7</span></p>
+    <p class="status__addr"><a href="https://maps.google.com/?q=853+Palm+Blvd+Brownsville+TX+78520" target="_blank" rel="noopener">853 Palm Blvd, Brownsville</a></p>
+    <p class="status__es" lang="es">Hablamos español</p>
+  </div>
+</div>
+
+<header class="head" id="top">
+  <div class="wrap head__in">
+    <a class="head__logo" href="#top" aria-label="Bloom &amp; Sol Blissful, home"><img src="img/logo.png" alt="Bloom &amp; Sol Blissful" width="883" height="253"></a>
+    <nav class="head__nav" aria-label="Main">
+      <a href="#shop">Shop</a><a href="#bar">Flower Bar</a><a href="#events">Events</a><a href="#workshop">Workshop</a><a href="#sympathy">Sympathy</a><a href="#visit">Visit</a>
+    </nav>
+    <a class="btn btn--rojo head__cta" href="#inquire">Book an event</a>
+  </div>
+</header>
+
+<main>
+<section class="hero" aria-labelledby="h1">
+  <div class="wrap hero__grid">
+    <div class="hero__copy">
+      <p class="label">RGV floral creative studio · Brownsville, Texas</p>
+      <h1 id="h1" class="hero__title">From bouquets <span class="l2">to the whole</span> <em>party.</em></h1>
+      <p class="hero__lede">Ecuadorian-rose bouquets, a build-your-own flower bar, and the rest of the party: styling, rentals, balloons, snack carts. One studio on Palm Blvd.</p>
+      <div class="hero__ctas">
+        <a class="btn btn--ink" href="#shop">Shop bouquets</a>
+        <a class="link-arrow" href="#inquire">Plan an event <span aria-hidden="true">→</span></a>
+      </div>
+      <ul class="hero__facts">
+        <li><b>Pickup</b> at the studio</li>
+        <li><b>Delivery</b> up to 70 miles</li>
+        <li><b>Checkout</b> stays on Square</li>
+      </ul>
+    </div>
+    <figure class="hero__art">
+      <div class="hero__frame">
+        <div class="wrapfan" aria-hidden="true"><i class="w1"></i><i class="w2"></i><i class="w3"></i></div>
+        <img class="hero__img" src="img/hero-lily.jpg" alt="Pink-wrapped bouquet of lilies, roses and baby’s breath held up in the Bloom &amp; Sol studio" width="1080" height="1440" fetchpriority="high">
+        <svg class="sticker" viewBox="0 0 200 200" aria-hidden="true"><defs><path id="circ" d="M100,100 m-74,0 a74,74 0 1,1 148,0 a74,74 0 1,1 -148,0"/></defs><circle cx="100" cy="100" r="98" fill="#FFC13B"/><text><textPath href="#circ">BUILD YOUR OWN BOUQUET ✿ FLOWER BAR ✿ </textPath></text><text class="sticker__c" x="100" y="114" text-anchor="middle">B&amp;S</text></svg>
+      </div>
+    </figure>
+  </div>
+  <div class="hero__rail wrap" aria-hidden="true">
+    <span>$20 <i>Budget Bouquet</i></span><span class="rail__line"></span><span>$520 <i>Standing Heart, 175 roses</i></span>
+  </div>
+</section>
+
+<section class="shop" id="shop" aria-labelledby="shop-h">
+  <div class="wrap">
+    <div class="shop__head">
+      <div>
+        <p class="label">The menu · 31 designs</p>
+        <h2 id="shop-h" class="h2">Pick a <em>ramo.</em></h2>
+        <p class="shop__note">Prices start at the smallest size. Choose size, wrap color and your ribbon message at checkout on Square. Ready in as little as 2 hours.</p>
+      </div>
+      <div class="budget" id="budget">
+        <label for="budgetRange" class="budget__q">What’s your budget?</label>
+        <output class="budget__out" id="budgetOut" for="budgetRange">Any</output>
+        <input type="range" id="budgetRange" min="20" max="520" step="5" value="520" aria-describedby="budgetCount">
+        <p class="budget__ends num" aria-hidden="true"><span>$20</span><span>$520</span></p>
+        <p class="budget__count" id="budgetCount" aria-live="polite">Showing everything. Slide to see what fits.</p>
+      </div>
+    </div>
+    <div class="chips" role="group" aria-label="Filter by style">
+      <button class="chip is-on" data-cat="all" aria-pressed="true">All</button>
+      <button class="chip" data-cat="roses" aria-pressed="false">Roses</button>
+      <button class="chip" data-cat="hearts" aria-pressed="false">Hearts</button>
+      <button class="chip" data-cat="mixed" aria-pressed="false">Mixed &amp; garden</button>
+      <button class="chip" data-cat="trend" aria-pressed="false">Cheetah, Kitty &amp; purses</button>
+    </div>
+    <ul class="grid" id="grid">
+      <li class="card-p card-p--big" data-cat="hearts" data-low="520">
+        <a href="https://bloomandsolblissful.square.site/product/standing-heart-bouquet/IHRKBAW6GL6243BMTXJYLWE7" target="_blank" rel="noopener" data-note="links to existing Square checkout">
+          <span class="card-p__img"><img src="img/p-standing-heart-bouquet.jpg" alt="Standing Heart Bouquet by Bloom &amp; Sol" width="1280" height="1280" loading="lazy"></span>
+          <span class="tag num">$520</span>
+          <span class="card-p__name">Standing Heart Bouquet</span>
+          <span class="card-p__line">100–175 Ecuadorian roses on a wooden heart frame. Stems out, bow on.</span>
+          <span class="card-p__go">Order on Square <span aria-hidden="true">↗</span></span>
+        </a>
+      </li>
+      <li class="card-p" data-cat="roses" data-low="105">
+        <a href="https://bloomandsolblissful.square.site/product/the-bloom-sol-signature/6ZZVOBHGSOEZMZVJJX75GAMA" target="_blank" rel="noopener" data-note="links to existing Square checkout">
+          <span class="card-p__img"><img src="img/sm/p-the-bloom-sol-signature.jpg" alt="The Bloom &amp; Sol Signature by Bloom &amp; Sol" width="800" height="800" loading="lazy"></span>
+          <span class="tag num">from $105</span>
+          <span class="card-p__name">The Bloom &amp; Sol Signature</span>
+          <span class="card-p__line">Our signature: pearls, tissue, a ribbon with your message, all color-matched.</span>
+          <span class="card-p__go">Order on Square <span aria-hidden="true">↗</span></span>
+        </a>
+      </li>
+      <li class="card-p card-p--big" data-cat="trend" data-low="170">
+        <a href="https://bloomandsolblissful.square.site/product/cheetah-bouquet-/CR6WMQJMXUGLDZKEFBKLDSDD" target="_blank" rel="noopener" data-note="links to existing Square checkout">
+          <span class="card-p__img"><img src="img/p-cheetah-bouquet.jpg" alt="Cheetah Bouquet by Bloom &amp; Sol" width="1280" height="1280" loading="lazy"></span>
+          <span class="tag num">$170</span>
+          <span class="card-p__name">Cheetah Bouquet</span>
+          <span class="card-p__line">50 roses, 25 red and 25 pink, cheetah detailing, wrapped Korean-style in cheetah fabric.</span>
+          <span class="card-p__go">Order on Square <span aria-hidden="true">↗</span></span>
+        </a>
+      </li>
+      <li class="card-p" data-cat="roses" data-low="160">
+        <a href="https://bloomandsolblissful.square.site/product/initial-rose-bouquet/6WINCAQONZM5SRQ6FNDRTWAP" target="_blank" rel="noopener" data-note="links to existing Square checkout">
+          <span class="card-p__img"><img src="img/sm/p-initial-rose-bouquet.jpg" alt="Initial Rose Bouquet by Bloom &amp; Sol" width="800" height="800" loading="lazy"></span>
+          <span class="tag num">from $160</span>
+          <span class="card-p__name">Initial Rose Bouquet</span>
+          <span class="card-p__line">A baby’s-breath initial or number set into the roses.</span>
+          <span class="card-p__go">Order on Square <span aria-hidden="true">↗</span></span>
+        </a>
+      </li>
+      <li class="card-p" data-cat="trend" data-low="100">
+        <a href="https://bloomandsolblissful.square.site/product/hello-kitty-bouquet/XUL337DUCTY6UH6IKRYD2EST" target="_blank" rel="noopener" data-note="links to existing Square checkout">
+          <span class="card-p__img"><img src="img/sm/p-hello-kitty-bouquet.jpg" alt="Hello Kitty Bouquet by Bloom &amp; Sol" width="800" height="800" loading="lazy"></span>
+          <span class="tag num">from $100</span>
+          <span class="card-p__name">Hello Kitty Bouquet</span>
+          <span class="card-p__line">White carnation Hello Kitty, mixed blooms, topper included.</span>
+          <span class="card-p__go">Order on Square <span aria-hidden="true">↗</span></span>
+        </a>
+      </li>
+      <li class="card-p" data-cat="roses" data-low="125">
+        <a href="https://bloomandsolblissful.square.site/product/cloudy/THRLJZTNPAGVKKP6YXLEFXYW" target="_blank" rel="noopener" data-note="links to existing Square checkout">
+          <span class="card-p__img"><img src="img/sm/p-cloudy.jpg" alt="Cloudy by Bloom &amp; Sol" width="800" height="800" loading="lazy"></span>
+          <span class="tag num">from $125</span>
+          <span class="card-p__name">Cloudy</span>
+          <span class="card-p__line">Roses in a cloud of baby’s breath, one butterfly.</span>
+          <span class="card-p__go">Order on Square <span aria-hidden="true">↗</span></span>
+        </a>
+      </li>
+      <li class="card-p card-p--big" data-cat="mixed" data-low="225">
+        <a href="https://bloomandsolblissful.square.site/product/luxe-mixed-bouquet/6QG4W3G3NGIRB26CP3LT7AEK" target="_blank" rel="noopener" data-note="links to existing Square checkout">
+          <span class="card-p__img"><img src="img/p-luxe-mixed-bouquet.jpg" alt="Luxe Mixed Bouquet by Bloom &amp; Sol" width="1280" height="1280" loading="lazy"></span>
+          <span class="tag num">from $225</span>
+          <span class="card-p__name">Luxe Mixed Bouquet</span>
+          <span class="card-p__line">Peonies, tulips, dahlias or cremones, roses, carnations, cushion poms.</span>
+          <span class="card-p__go">Order on Square <span aria-hidden="true">↗</span></span>
+        </a>
+      </li>
+      <li class="card-p" data-cat="trend" data-low="50">
+        <a href="https://bloomandsolblissful.square.site/product/purse-bouquet/JLSPGQ4TMAC7U4YO77LCQYNB" target="_blank" rel="noopener" data-note="links to existing Square checkout">
+          <span class="card-p__img"><img src="img/sm/p-purse-bouquet.jpg" alt="Purse Bouquet by Bloom &amp; Sol" width="800" height="800" loading="lazy"></span>
+          <span class="tag num">from $50</span>
+          <span class="card-p__name">Purse Bouquet</span>
+          <span class="card-p__line">A purse full of roses or mixed blooms. Foam inside, water every 2–3 days.</span>
+          <span class="card-p__go">Order on Square <span aria-hidden="true">↗</span></span>
+        </a>
+      </li>
+      <li class="card-p" data-cat="roses" data-low="135">
+        <a href="https://bloomandsolblissful.square.site/product/delicate-lily-rose-bouquet-/MY57IMJ3RAPH5SXKPKBRB3ED" target="_blank" rel="noopener" data-note="links to existing Square checkout">
+          <span class="card-p__img"><img src="img/sm/p-delicate-lily-rose-bouquet.jpg" alt="Delicate Lily Rose Bouquet by Bloom &amp; Sol" width="800" height="800" loading="lazy"></span>
+          <span class="tag num">from $135</span>
+          <span class="card-p__name">Delicate Lily Rose Bouquet</span>
+          <span class="card-p__line">Roses, lilies, a baby’s-breath rim and a ribbon message.</span>
+          <span class="card-p__go">Order on Square <span aria-hidden="true">↗</span></span>
+        </a>
+      </li>
+      <li class="card-p" data-cat="roses" data-low="149">
+        <a href="https://bloomandsolblissful.square.site/product/flat-rose-olla/RI35RFEVWRRP5A3U2PNIU7TS" target="_blank" rel="noopener" data-note="links to existing Square checkout">
+          <span class="card-p__img"><img src="img/sm/p-flat-rose-olla.jpg" alt="Flat Rose Olla by Bloom &amp; Sol" width="800" height="800" loading="lazy"></span>
+          <span class="tag num">from $149</span>
+          <span class="card-p__name">Flat Rose Olla</span>
+          <span class="card-p__line">Roses in a handmade ceramic olla from Mexico.</span>
+          <span class="card-p__go">Order on Square <span aria-hidden="true">↗</span></span>
+        </a>
+      </li>
+      <li class="card-p" data-cat="hearts" data-low="120">
+        <a href="https://bloomandsolblissful.square.site/product/cloudy-heart/XQH54WZ6QO5S2DTJAPRTWR2B" target="_blank" rel="noopener" data-note="links to existing Square checkout">
+          <span class="card-p__img"><img src="img/sm/p-cloudy-heart.jpg" alt="Cloudy Heart by Bloom &amp; Sol" width="800" height="800" loading="lazy"></span>
+          <span class="tag num">from $120</span>
+          <span class="card-p__name">Cloudy Heart</span>
+          <span class="card-p__line">A rose heart with a baby’s-breath rim.</span>
+          <span class="card-p__go">Order on Square <span aria-hidden="true">↗</span></span>
+        </a>
+      </li>
+      <li class="card-p" data-cat="mixed" data-low="20">
+        <a href="https://bloomandsolblissful.square.site/product/the-budget-bouquet/RJYK3PA3WQ7QJKPLPOYSY2XQ" target="_blank" rel="noopener" data-note="links to existing Square checkout">
+          <span class="card-p__img"><img src="img/sm/p-the-budget-bouquet.jpg" alt="The Budget Bouquet by Bloom &amp; Sol" width="800" height="1067" loading="lazy"></span>
+          <span class="tag num">from $20</span>
+          <span class="card-p__name">The Budget Bouquet</span>
+          <span class="card-p__line">Give us a number. We freestyle it from the flower bar.</span>
+          <span class="card-p__go">Order on Square <span aria-hidden="true">↗</span></span>
+        </a>
+      </li>
+      <li class="card-p" data-cat="mixed" data-low="120">
+        <a href="https://bloomandsolblissful.square.site/product/tulip-love/SXSKWXGUH5GMGFYF5BCPOEMB" target="_blank" rel="noopener" data-note="links to existing Square checkout">
+          <span class="card-p__img"><img src="img/sm/p-tulip-love.jpg" alt="Tulip Love by Bloom &amp; Sol" width="800" height="800" loading="lazy"></span>
+          <span class="tag num">from $120</span>
+          <span class="card-p__name">Tulip Love</span>
+          <span class="card-p__line">Tulips and baby’s breath, wrap of your choice.</span>
+          <span class="card-p__go">Order on Square <span aria-hidden="true">↗</span></span>
+        </a>
+      </li>
+      <li class="card-p" data-cat="hearts" data-low="410">
+        <a href="https://bloomandsolblissful.square.site/product/standing-heart-sign/RNRSWB75THXQP2V2RVEXBJZB" target="_blank" rel="noopener" data-note="links to existing Square checkout">
+          <span class="card-p__img"><img src="img/sm/p-standing-heart-sign.jpg" alt="Standing Heart Sign by Bloom &amp; Sol" width="800" height="800" loading="lazy"></span>
+          <span class="tag num">$410</span>
+          <span class="card-p__name">Standing Heart Sign</span>
+          <span class="card-p__line">Wooden heart base, premium roses, butterfly add-ons.</span>
+          <span class="card-p__go">Order on Square <span aria-hidden="true">↗</span></span>
+        </a>
+      </li>
+      <li class="card-p" data-cat="roses" data-low="185">
+        <a href="https://bloomandsolblissful.square.site/product/gerbera-rose/SWNY3WN4ZTPD4YXDLG45WOKG" target="_blank" rel="noopener" data-note="links to existing Square checkout">
+          <span class="card-p__img"><img src="img/sm/p-gerbera-rose.jpg" alt="Gerbera Rose by Bloom &amp; Sol" width="800" height="800" loading="lazy"></span>
+          <span class="tag num">from $185</span>
+          <span class="card-p__name">Gerbera Rose</span>
+          <span class="card-p__line">Roses and bright gerberas.</span>
+          <span class="card-p__go">Order on Square <span aria-hidden="true">↗</span></span>
+        </a>
+      </li>
+      <li class="card-p" data-cat="mixed" data-low="185">
+        <a href="https://bloomandsolblissful.square.site/product/garden-party-blooms/2U3WJUH6RJWPSH5A76QQHL36" target="_blank" rel="noopener" data-note="links to existing Square checkout">
+          <span class="card-p__img"><img src="img/sm/p-garden-party-blooms.jpg" alt="Garden Party Blooms by Bloom &amp; Sol" width="800" height="800" loading="lazy"></span>
+          <span class="tag num">from $185</span>
+          <span class="card-p__name">Garden Party Blooms</span>
+          <span class="card-p__line">Hydrangea, garden roses, gerberas, poms and solidago.</span>
+          <span class="card-p__go">Order on Square <span aria-hidden="true">↗</span></span>
+        </a>
+      </li>
+      <li class="card-p" data-cat="hearts" data-low="95">
+        <a href="https://bloomandsolblissful.square.site/product/heart-rose/IF5JBZ4236YJWQCUT7JCAZJN" target="_blank" rel="noopener" data-note="links to existing Square checkout">
+          <span class="card-p__img"><img src="img/sm/p-heart-rose.jpg" alt="Heart Rose by Bloom &amp; Sol" width="800" height="800" loading="lazy"></span>
+          <span class="tag num">from $95</span>
+          <span class="card-p__name">Heart Rose</span>
+          <span class="card-p__line">Ecuadorian roses set in a heart, wrap of your choice.</span>
+          <span class="card-p__go">Order on Square <span aria-hidden="true">↗</span></span>
+        </a>
+      </li>
+      <li class="card-p" data-cat="roses" data-low="129">
+        <a href="https://bloomandsolblissful.square.site/product/blooming-rose-box/FH7R5OXIW4NKP2HDULOULOCR" target="_blank" rel="noopener" data-note="links to existing Square checkout">
+          <span class="card-p__img"><img src="img/sm/p-blooming-rose-box.jpg" alt="Blooming Rose Box by Bloom &amp; Sol" width="800" height="800" loading="lazy"></span>
+          <span class="tag num">from $129</span>
+          <span class="card-p__name">Blooming Rose Box</span>
+          <span class="card-p__line">Flexed roses and eucalyptus in a round box.</span>
+          <span class="card-p__go">Order on Square <span aria-hidden="true">↗</span></span>
+        </a>
+      </li>
+      <li class="card-p" data-cat="hearts" data-low="110">
+        <a href="https://bloomandsolblissful.square.site/product/mini-standing-heart/4X6AVJAW3GTIYRKBNT77JWHB" target="_blank" rel="noopener" data-note="links to existing Square checkout">
+          <span class="card-p__img"><img src="img/sm/p-mini-standing-heart.jpg" alt="Mini Standing Heart by Bloom &amp; Sol" width="800" height="800" loading="lazy"></span>
+          <span class="tag num">$110</span>
+          <span class="card-p__name">Mini Standing Heart</span>
+          <span class="card-p__line">The standing heart, smaller: roses on top, your pick on the rim.</span>
+          <span class="card-p__go">Order on Square <span aria-hidden="true">↗</span></span>
+        </a>
+      </li>
+      <li class="card-p" data-cat="roses" data-low="115">
+        <a href="https://bloomandsolblissful.square.site/product/daisy-rose/H6IB65AJVS6HOWEMKJOHCFSA" target="_blank" rel="noopener" data-note="links to existing Square checkout">
+          <span class="card-p__img"><img src="img/sm/p-daisy-rose.jpg" alt="Daisy Rose by Bloom &amp; Sol" width="800" height="800" loading="lazy"></span>
+          <span class="tag num">from $115</span>
+          <span class="card-p__name">Daisy Rose</span>
+          <span class="card-p__line">Ecuadorian roses ringed in daisy poms.</span>
+          <span class="card-p__go">Order on Square <span aria-hidden="true">↗</span></span>
+        </a>
+      </li>
+      <li class="card-p" data-cat="trend" data-low="70">
+        <a href="https://bloomandsolblissful.square.site/product/tall-blooming-purse/D6ROMS7LSDYY24IXLCSYTAH5" target="_blank" rel="noopener" data-note="links to existing Square checkout">
+          <span class="card-p__img"><img src="img/sm/p-tall-blooming-purse.jpg" alt="Tall Blooming Purse by Bloom &amp; Sol" width="800" height="800" loading="lazy"></span>
+          <span class="tag num">$70</span>
+          <span class="card-p__name">Tall Blooming Purse</span>
+          <span class="card-p__line">The tall version of the purse.</span>
+          <span class="card-p__go">Order on Square <span aria-hidden="true">↗</span></span>
+        </a>
+      </li>
+      <li class="card-p" data-cat="roses" data-low="235">
+        <a href="https://bloomandsolblissful.square.site/product/lux-rose-mix-bouquet/SBHKS7HNMWG3QTTDI3ZMGPPR" target="_blank" rel="noopener" data-note="links to existing Square checkout">
+          <span class="card-p__img"><img src="img/sm/p-lux-rose-mix-bouquet.jpg" alt="Lux Rose Mix Bouquet by Bloom &amp; Sol" width="800" height="800" loading="lazy"></span>
+          <span class="tag num">from $235</span>
+          <span class="card-p__name">Lux Rose Mix Bouquet</span>
+          <span class="card-p__line">Roses, lilies and premium mixed blooms.</span>
+          <span class="card-p__go">Order on Square <span aria-hidden="true">↗</span></span>
+        </a>
+      </li>
+      <li class="card-p" data-cat="hearts" data-low="185">
+        <a href="https://bloomandsolblissful.square.site/product/blushed-heart-mix/ZVDFHOS4C3W5V7XAWXUDGY6I" target="_blank" rel="noopener" data-note="links to existing Square checkout">
+          <span class="card-p__img"><img src="img/sm/p-blushed-heart-mix.jpg" alt="Blushed Heart Mix by Bloom &amp; Sol" width="800" height="800" loading="lazy"></span>
+          <span class="tag num">$185</span>
+          <span class="card-p__name">Blushed Heart Mix</span>
+          <span class="card-p__line">Garden roses, mini gerberas, cushion daisies, in a heart.</span>
+          <span class="card-p__go">Order on Square <span aria-hidden="true">↗</span></span>
+        </a>
+      </li>
+      <li class="card-p" data-cat="mixed" data-low="89">
+        <a href="https://bloomandsolblissful.square.site/product/mix-blooms-bouquet/LI4Q7NVNOV5DMLO7WV2IRHV3" target="_blank" rel="noopener" data-note="links to existing Square checkout">
+          <span class="card-p__img"><img src="img/sm/p-mix-blooms-bouquet.jpg" alt="Mix Blooms Bouquet by Bloom &amp; Sol" width="800" height="1067" loading="lazy"></span>
+          <span class="tag num">from $89</span>
+          <span class="card-p__name">Mix Blooms Bouquet</span>
+          <span class="card-p__line">Designer’s freestyle in your color palette.</span>
+          <span class="card-p__go">Order on Square <span aria-hidden="true">↗</span></span>
+        </a>
+      </li>
+      <li class="card-p" data-cat="roses" data-low="95">
+        <a href="https://bloomandsolblissful.square.site/product/the-signature-rose-bouquet/2NTEFMIVATZDSKE5GIWWGPN5" target="_blank" rel="noopener" data-note="links to existing Square checkout">
+          <span class="card-p__img"><img src="img/sm/p-the-signature-rose-bouquet.jpg" alt="The Signature Rose Bouquet by Bloom &amp; Sol" width="800" height="800" loading="lazy"></span>
+          <span class="tag num">from $95</span>
+          <span class="card-p__name">The Signature Rose Bouquet</span>
+          <span class="card-p__line">Ecuadorian roses, your wrap, your custom ribbon message.</span>
+          <span class="card-p__go">Order on Square <span aria-hidden="true">↗</span></span>
+        </a>
+      </li>
+      <li class="card-p" data-cat="hearts" data-low="139">
+        <a href="https://bloomandsolblissful.square.site/product/heart-mix-garden/N6PWY55WMCBJSRM2HNCXIYJF" target="_blank" rel="noopener" data-note="links to existing Square checkout">
+          <span class="card-p__img"><img src="img/sm/p-heart-mix-garden.jpg" alt="Heart Mix Garden by Bloom &amp; Sol" width="800" height="800" loading="lazy"></span>
+          <span class="tag num">$139</span>
+          <span class="card-p__name">Heart Mix Garden</span>
+          <span class="card-p__line">Roses, gerberas, carnations and spray roses in a heart.</span>
+          <span class="card-p__go">Order on Square <span aria-hidden="true">↗</span></span>
+        </a>
+      </li>
+      <li class="card-p" data-cat="roses" data-low="85">
+        <a href="https://bloomandsolblissful.square.site/product/rose-bouquet/MMMTOJEVQU4LPKF2I54I63ZQ" target="_blank" rel="noopener" data-note="links to existing Square checkout">
+          <span class="card-p__img"><img src="img/sm/p-rose-bouquet.jpg" alt="Rose Bouquet by Bloom &amp; Sol" width="800" height="800" loading="lazy"></span>
+          <span class="tag num">from $85</span>
+          <span class="card-p__name">Rose Bouquet</span>
+          <span class="card-p__line">Just roses. Ecuadorian, any color.</span>
+          <span class="card-p__go">Order on Square <span aria-hidden="true">↗</span></span>
+        </a>
+      </li>
+      <li class="card-p" data-cat="roses" data-low="120">
+        <a href="https://bloomandsolblissful.square.site/product/fall-rim-rose-bouquet/2XUCMPHH2PRRMG2K3YJJIAWM" target="_blank" rel="noopener" data-note="links to existing Square checkout">
+          <span class="card-p__img"><img src="img/sm/p-fall-rim-rose-bouquet.jpg" alt="Fall Rim Rose Bouquet by Bloom &amp; Sol" width="800" height="800" loading="lazy"></span>
+          <span class="tag num">from $120</span>
+          <span class="card-p__name">Fall Rim Rose Bouquet</span>
+          <span class="card-p__line">Roses ringed in fall blooms, with pumpkin toppers.</span>
+          <span class="card-p__go">Order on Square <span aria-hidden="true">↗</span></span>
+        </a>
+      </li>
+      <li class="card-p" data-cat="mixed" data-low="80">
+        <a href="https://bloomandsolblissful.square.site/product/autumn-mix-blooms/H5DRIAWNQ2O6T5U5M3ZOI3UP" target="_blank" rel="noopener" data-note="links to existing Square checkout">
+          <span class="card-p__img"><img src="img/sm/p-autumn-mix-blooms.jpg" alt="Autumn Mix Blooms by Bloom &amp; Sol" width="800" height="800" loading="lazy"></span>
+          <span class="tag num">from $80</span>
+          <span class="card-p__name">Autumn Mix Blooms</span>
+          <span class="card-p__line">Warm fall flowers in white, brown or nude wrap.</span>
+          <span class="card-p__go">Order on Square <span aria-hidden="true">↗</span></span>
+        </a>
+      </li>
+      <li class="card-p" data-cat="mixed" data-low="129">
+        <a href="https://bloomandsolblissful.square.site/product/-garden-vase-arrangement-/KBHNUWPZGFOOWWICIDCKP275" target="_blank" rel="noopener" data-note="links to existing Square checkout">
+          <span class="card-p__img"><img src="img/sm/p-garden-vase-arrangement.jpg" alt="Garden Vase Arrangement by Bloom &amp; Sol" width="800" height="800" loading="lazy"></span>
+          <span class="tag num">from $129</span>
+          <span class="card-p__name">Garden Vase Arrangement</span>
+          <span class="card-p__line">Hydrangea, carnations, spray roses and alstroemeria in a vase.</span>
+          <span class="card-p__go">Order on Square <span aria-hidden="true">↗</span></span>
+        </a>
+      </li>
+      <li class="card-p" data-cat="mixed" data-low="115">
+        <a href="https://bloomandsolblissful.square.site/product/classic-rose-carnations-vase/O5Z5CJ5OAYMLH6CBPEZTLKDG" target="_blank" rel="noopener" data-note="links to existing Square checkout">
+          <span class="card-p__img"><img src="img/sm/p-classic-rose-carnations-vase.jpg" alt="Classic Rose &amp; Carnations Vase by Bloom &amp; Sol" width="800" height="800" loading="lazy"></span>
+          <span class="tag num">from $115</span>
+          <span class="card-p__name">Classic Rose &amp; Carnations Vase</span>
+          <span class="card-p__line">Roses, carnations and eucalyptus in a vase.</span>
+          <span class="card-p__go">Order on Square <span aria-hidden="true">↗</span></span>
+        </a>
+      </li>
+    </ul>
+    <p class="grid__more" id="moreWrap" hidden><button class="btn btn--ink" id="moreBtn" type="button">See all 31 designs</button></p>
+    <p class="grid__empty" id="gridEmpty" hidden>Nothing that small in this style — try the <a href="https://bloomandsolblissful.square.site/product/the-budget-bouquet/RJYK3PA3WQ7QJKPLPOYSY2XQ" target="_blank" rel="noopener">Budget Bouquet</a>: you name the number.</p>
+  </div>
+</section>
+
+<section class="bar" id="bar" aria-labelledby="bar-h">
+  <div class="wrap bar__grid">
+    <div class="bar__copy">
+      <p class="label label--sol">Flower Bar</p>
+      <h2 id="bar-h" class="h2 h2--light">Build your <em>own</em> bouquet.</h2>
+      <p>We bring the wall. Your guests pull their own stems and leave holding a bouquet they made. Weddings, bridal showers, birthdays, corporate events, grand openings.</p>
+      <dl class="bar__facts">
+        <div><dt>To hold your date</dt><dd><span class="num">$50</span> non-refundable deposit</dd></div>
+        <div><dt>In the studio</dt><dd>The wall on Palm Blvd feeds the <a href="https://bloomandsolblissful.square.site/product/the-budget-bouquet/RJYK3PA3WQ7QJKPLPOYSY2XQ" target="_blank" rel="noopener">Budget Bouquet</a>: tell us a number from <span class="num">$20</span> and we freestyle it.</dd></div>
+      </dl>
+      <a class="btn btn--blush" href="#inquire" data-service="Flower bar">Check your date</a>
+    </div>
+    <div class="bar__photos">
+      <figure class="ph ph--a"><img src="img/sm/bar-outdoor.jpg" alt="Bloom &amp; Sol flower bar wall with buckets of carnations, roses and lilies set up outdoors" width="800" height="1067" loading="lazy"></figure>
+      <figure class="ph ph--b"><img src="img/sm/ev-snowwhite.jpg" alt="Little girl in a Snow White dress choosing flowers at a white flower bar stand" width="800" height="1067" loading="lazy"><figcaption class="cap cap--light">A first birthday, Snow White theme</figcaption></figure>
+      <figure class="ph ph--c"><img src="img/sm/ev-sleeves.jpg" alt="Three guest-made bouquets in printed paper sleeves" width="800" height="1067" loading="lazy"></figure>
+      <figure class="ph ph--d"><img src="img/sm/bar-you.jpg" alt="A tag that says ‘you’ held up against the studio flower wall" width="800" height="1422" loading="lazy"></figure>
+    </div>
+  </div>
+</section>
+
+<section class="events" id="events" aria-labelledby="ev-h">
+  <div class="wrap">
+    <div class="events__head">
+      <p class="label">Events · <span lang="es">fiestas, bodas, todo</span></p>
+      <h2 id="ev-h" class="h2">And the rest <em>of the party.</em></h2>
+    </div>
+    <div class="events__grid">
+      <ol class="svc" id="svc">
+        <li class="svc__row is-on" data-img="img/sm/rose-arch.jpg" data-alt="Pink rose arch over a white consultation table"><span class="svc__n">01</span><div><h3>Event styling</h3><p>Intimate to grand. Cohesive spaces, custom décor, the details people photograph.</p></div><img class="svc__thumb" src="img/sm/rose-arch.jpg" alt="" width="800" height="1200" loading="lazy"></li>
+        <li class="svc__row" data-img="img/sm/rental-table.jpg" data-alt="Long white table with crystal chandelier centerpieces and white florals"><span class="svc__n">02</span><div><h3>Rentals</h3><p>Backdrops, arches, draping, shimmer walls, pedestals, cake stands, signage.</p></div><img class="svc__thumb" src="img/sm/rental-table.jpg" alt="" width="800" height="1066" loading="lazy"></li>
+        <li class="svc__row" data-img="img/sm/wedding-couple.jpg" data-alt="Bride with a blue and white bouquet walking with the groom under string lights"><span class="svc__n">03</span><div><h3>Wedding florals</h3><p>Bridal and bridesmaid bouquets, boutonnières, corsages, ceremony and reception.</p></div><img class="svc__thumb" src="img/sm/wedding-couple.jpg" alt="" width="800" height="1200" loading="lazy"></li>
+        <li class="svc__row" data-img="img/sm/snack-cart.jpg" data-alt="White snack cart with a neon ‘let’s party’ sign, drinks and treats under a balloon garland"><span class="svc__n">04</span><div><h3>Snack carts &amp; dessert tables</h3><p>Elotes, nachos, fruit cups, Maruchan bars, cake pops, chocolate-covered strawberries, shooters.</p></div><img class="svc__thumb" src="img/sm/snack-cart.jpg" alt="" width="800" height="1200" loading="lazy"></li>
+        <li class="svc__row" data-img="img/sm/ev-wildflower.jpg" data-alt="Pink and cream arched backdrops with sage, pink and butter-yellow balloon garlands reading ‘Our little wildflower is turning one’"><span class="svc__n">05</span><div><h3>Balloons</h3><p>Garlands and installs matched to your palette.</p></div><img class="svc__thumb" src="img/sm/ev-wildflower.jpg" alt="" width="800" height="1067" loading="lazy"></li>
+        <li class="svc__row" data-img="img/sm/bar-studio-umbrella.jpg" data-alt="White cart with a pink fringed umbrella, stocked with fresh flowers"><span class="svc__n">06</span><div><h3>Cart rentals</h3><p>Desserts, drinks, favors, flowers, champagne, coffee — dressed to match.</p></div><img class="svc__thumb" src="img/sm/bar-studio-umbrella.jpg" alt="" width="800" height="1422" loading="lazy"></li>
+        <li class="svc__row" data-img="img/sm/ev-red-balloons.jpg" data-alt="Red and silver balloon installation around a white arch with a neon Happy Birthday sign"><span class="svc__n">07</span><div><h3>All-inclusive packages</h3><p>Bundle any of it into one plan built around your date, style and budget.</p></div><img class="svc__thumb" src="img/sm/ev-red-balloons.jpg" alt="" width="800" height="1065" loading="lazy"></li>
+      </ol>
+      <figure class="svc__stage" aria-hidden="true"><img id="svcImg" src="img/sm/rose-arch.jpg" alt="" width="800" height="1200" loading="lazy"></figure>
+    </div>
+  </div>
+</section>
+
+<section class="quotes" aria-label="What clients said">
+  <div class="wrap quotes__grid">
+    <blockquote class="q q--big"><p>“Thank you sooo much for everything, it was a wonderful experience. We are still talking about you girls.”</p><footer>— Yvette, baby shower</footer></blockquote>
+    <blockquote class="q"><p>“I just wanted to say thank you with all your work you did. We loved it.”</p><footer>— Bethany, wedding</footer></blockquote>
+  </div>
+</section>
+
+<section class="workshop" id="workshop" aria-labelledby="ws-h">
+  <div class="wrap">
+    <article class="ticket">
+      <figure class="ticket__img"><img src="img/sm/p-3d-floral-art-workshop.jpg" alt="Finished 3D floral canvas: a painted vase with real sunflower, roses and greenery on an easel" width="800" height="800" loading="lazy"></figure>
+      <div class="ticket__body">
+        <p class="label">Workshop · our first one</p>
+        <h2 id="ws-h" class="ticket__title">3D Floral Art <em>Workshop</em></h2>
+        <p>Paint a canvas, then build real flowers into it. No painting experience needed.</p>
+        <ul class="ticket__inc"><li>Canvas &amp; 3D vase</li><li>Florals &amp; greenery</li><li>Paint &amp; tools</li><li>Step-by-step guidance</li><li>Drinks &amp; snacks</li></ul>
+      </div>
+      <div class="ticket__stub">
+        <p class="stub__day">Wed</p>
+        <p class="stub__date">Nov <b>25</b></p>
+        <p class="stub__time">6:00 PM · the studio</p>
+        <p class="stub__price num">$50–$90</p>
+        <p class="stub__count" id="wsCount">Spaces are limited</p>
+        <a class="btn btn--ink" id="wsBtn" href="https://bloomandsolblissful.square.site/product/3d-floral-art-workshop/LMAEYLNGA2X34WGJ5O72CZZF" target="_blank" rel="noopener">Get a ticket</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="inquire" id="inquire" aria-labelledby="inq-h">
+  <div class="wrap inquire__grid">
+    <div class="inquire__intro">
+      <p class="label">Event inquiry</p>
+      <h2 id="inq-h" class="h2">Tell us about <em>your party.</em></h2>
+      <p>Date, headcount, what you want, what you want to spend. We’ll come back with a plan and a quote — usually faster than a DM thread.</p>
+    </div>
+    <form class="form" id="form" name="event-inquiry" method="POST" action="thanks.html" data-netlify="true" netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="event-inquiry">
+      <p class="hp"><label>Don’t fill this out <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+      <fieldset class="f-row f-row--2">
+        <legend class="sr">About you</legend>
+        <label class="fld"><span>Your name</span><input name="name" required autocomplete="name" data-card="name"></label>
+        <label class="fld"><span>Phone <small>(texting is fine)</small></span><input name="phone" type="tel" required autocomplete="tel"></label>
+        <label class="fld f-span"><span>Email</span><input name="email" type="email" autocomplete="email"></label>
+      </fieldset>
+      <fieldset class="f-row f-row--2">
+        <legend class="sr">The event</legend>
+        <label class="fld"><span>What’s the occasion?</span>
+          <select name="occasion" data-card="occasion">
+            <option value="">Choose one</option><option>Wedding</option><option>Quinceañera</option><option>Birthday</option><option>Baby shower</option><option>Bridal shower</option><option>Gender reveal</option><option>Corporate / grand opening</option><option>Something else</option>
+          </select></label>
+        <label class="fld"><span>Date</span><input name="date" type="date" data-card="date"></label>
+        <label class="fld"><span>Venue or city</span><input name="venue" placeholder="e.g. backyard in Harlingen" data-card="venue"></label>
+        <label class="fld"><span>Guests <output id="guestOut" class="num">80</output></span><input name="guests" type="range" min="10" max="400" step="10" value="80" data-card="guests"></label>
+      </fieldset>
+      <fieldset class="f-group">
+        <legend>What do you want? <small>Pick all that apply</small></legend>
+        <div class="pills">
+          <label class="pill"><input type="checkbox" name="services[]" value="Flower bar"><span>Flower bar</span></label>
+          <label class="pill"><input type="checkbox" name="services[]" value="Event styling"><span>Event styling</span></label>
+          <label class="pill"><input type="checkbox" name="services[]" value="Rentals"><span>Rentals</span></label>
+          <label class="pill"><input type="checkbox" name="services[]" value="Wedding florals"><span>Wedding florals</span></label>
+          <label class="pill"><input type="checkbox" name="services[]" value="Snack cart / dessert table"><span>Snack cart / desserts</span></label>
+          <label class="pill"><input type="checkbox" name="services[]" value="Balloons"><span>Balloons</span></label>
+          <label class="pill"><input type="checkbox" name="services[]" value="Cart rental"><span>Cart rental</span></label>
+          <label class="pill"><input type="checkbox" name="services[]" value="All-inclusive package"><span>All-inclusive</span></label>
+        </div>
+      </fieldset>
+      <fieldset class="f-group">
+        <legend>Budget</legend>
+        <div class="pills">
+          <label class="pill"><input type="radio" name="budget" value="Under $500"><span>Under $500</span></label>
+          <label class="pill"><input type="radio" name="budget" value="$500–$1,500"><span>$500–1,500</span></label>
+          <label class="pill"><input type="radio" name="budget" value="$1,500–$3,000"><span>$1,500–3,000</span></label>
+          <label class="pill"><input type="radio" name="budget" value="$3,000+"><span>$3,000+</span></label>
+          <label class="pill"><input type="radio" name="budget" value="Not sure yet"><span>Not sure yet</span></label>
+        </div>
+      </fieldset>
+      <label class="fld"><span>Anything else? Colors, theme, Pinterest link</span><textarea name="message" rows="3"></textarea></label>
+      <label class="check"><input type="checkbox" name="spanish" value="yes"> <span lang="es">Prefiero que me contacten en español</span></label>
+      <div class="form__foot">
+        <button class="btn btn--rojo" type="submit">Send inquiry</button>
+        <p class="fine">Flower bar dates hold with a $50 non-refundable deposit. All bookings are final.</p>
+      </div>
+    </form>
+    <aside class="card" aria-live="polite" aria-label="Your event so far">
+      <p class="card__k">Your party, so far</p>
+      <p class="card__occ" id="cOcc">Something good</p>
+      <dl>
+        <div><dt>For</dt><dd id="cName">—</dd></div>
+        <div><dt>When</dt><dd id="cDate">Pick a date</dd></div>
+        <div><dt>Where</dt><dd id="cVenue">—</dd></div>
+        <div><dt>Guests</dt><dd id="cGuests" class="num">80</dd></div>
+        <div><dt>Wants</dt><dd id="cSvc">—</dd></div>
+        <div><dt>Budget</dt><dd id="cBudget">—</dd></div>
+      </dl>
+      <p class="card__sig">Bloom &amp; Sol Blissful</p>
+    </aside>
+    <div class="done" id="done" hidden tabindex="-1">
+      <p class="label label--sol">Sent</p>
+      <p class="done__t">Got it. <em>¡Gracias!</em></p>
+      <p>We’ll reach out by text or email within a day or two. Need it sooner? Call <a href="tel:+19566392162">(956) 639-2162</a>.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sympathy" id="sympathy" aria-labelledby="sym-h">
+  <div class="wrap sym__grid">
+    <div class="sym__copy">
+      <p class="label">Sympathy</p>
+      <h2 id="sym-h" class="h3">For the service.</h2>
+      <p>Standing sprays, a cross, a wreath and a garden basket, delivered to the funeral home or the family. If it’s needed today, call us: <a href="tel:+19566392162">(956) 639-2162</a>.</p>
+    </div>
+    <ul class="sym__list">
+      <li><a href="https://bloomandsolblissful.square.site/product/red-white-memorial-spray-/2GFOVHA6563MLLOYKVZ7RQRC" target="_blank" rel="noopener" data-note="links to existing Square checkout"><img src="img/sm/p-red-white-memorial-spray.jpg" alt="Red &amp; White Memorial Spray" width="800" height="800" loading="lazy"><span class="sym__n">Red &amp; White Memorial Spray</span><span class="sym__l">Red roses, white spider mums, cascading white florals.</span><span class="sym__p num">$225</span></a></li>
+      <li><a href="https://bloomandsolblissful.square.site/product/vibrant-serenity-wreath-/2MTFVGM7U7EGBWQXXYEWWABZ" target="_blank" rel="noopener" data-note="links to existing Square checkout"><img src="img/sm/p-vibrant-serenity-wreath.jpg" alt="Vibrant Serenity Wreath" width="800" height="800" loading="lazy"><span class="sym__n">Vibrant Serenity Wreath</span><span class="sym__l">A wreath of vivid fresh blooms on an easel.</span><span class="sym__p num">$300</span></a></li>
+      <li><a href="https://bloomandsolblissful.square.site/product/sympathy-cross-/6ENNF6XDI4UOYT5TTW4D2PGL" target="_blank" rel="noopener" data-note="links to existing Square checkout"><img src="img/sm/p-sympathy-cross.jpg" alt="Sympathy Cross" width="800" height="800" loading="lazy"><span class="sym__n">Sympathy Cross</span><span class="sym__l">Fresh flowers and roses in the color you choose.</span><span class="sym__p num">$250</span></a></li>
+      <li><a href="https://bloomandsolblissful.square.site/product/vibrant-sympathy-spray-/AE3TFUZIEXW2KZDPGBFVTJCK" target="_blank" rel="noopener" data-note="links to existing Square checkout"><img src="img/sm/p-vibrant-sympathy-spray.jpg" alt="Vibrant sympathy Spray" width="800" height="800" loading="lazy"><span class="sym__n">Vibrant sympathy Spray</span><span class="sym__l">Sunflowers, red roses, orange lilies, delphinium.</span><span class="sym__p num">$300</span></a></li>
+      <li><a href="https://bloomandsolblissful.square.site/product/sympathy-garden-basket/5BVGSIC7LLNAYJEE6VBXSXUD" target="_blank" rel="noopener" data-note="links to existing Square checkout"><img src="img/sm/p-sympathy-garden-basket.jpg" alt="Sympathy Garden  Basket" width="800" height="800" loading="lazy"><span class="sym__n">Sympathy Garden  Basket</span><span class="sym__l">Cremones, daisies, alstroemeria, baby’s breath.</span><span class="sym__p num">$135</span></a></li>
+    </ul>
+  </div>
+</section>
+
+<section class="visit" id="visit" aria-labelledby="visit-h">
+  <div class="wrap visit__grid">
+    <figure class="visit__img"><img src="img/sm/studio-door.jpg" alt="Someone holding a black-wrapped bouquet in front of the Bloom &amp; Sol studio door at 853 Palm Blvd" width="800" height="1422" loading="lazy"></figure>
+    <div class="visit__copy">
+      <p class="label">Visit the studio</p>
+      <h2 id="visit-h" class="h2">853 Palm Blvd.</h2>
+      <p class="visit__addr"><a href="https://maps.google.com/?q=853+Palm+Blvd+Brownsville+TX+78520" target="_blank" rel="noopener">Brownsville, TX 78520 <span aria-hidden="true">↗</span></a></p>
+      <table class="hours" id="hours">
+        <caption class="sr">Studio hours, Central time</caption>
+        <tbody>
+          <tr data-d="1"><th>Monday</th><td class="num">10 – 5</td></tr>
+          <tr data-d="2"><th>Tuesday</th><td class="num">10 – 5</td></tr>
+          <tr data-d="3"><th>Wednesday</th><td class="num">10 – 5</td></tr>
+          <tr data-d="4"><th>Thursday</th><td class="num">10 – 5</td></tr>
+          <tr data-d="5"><th>Friday</th><td class="num">10 – 5</td></tr>
+          <tr data-d="6"><th>Saturday</th><td class="num">9 – 7</td></tr>
+          <tr data-d="0"><th>Sunday</th><td class="num">1 – 7</td></tr>
+        </tbody>
+      </table>
+      <div class="visit__cols">
+        <div><h3>Delivery</h3><p>Anywhere within 70 miles of the studio. Fee is <span class="num">$5–$60</span> depending on the address, calculated at checkout.</p></div>
+        <div><h3>Talk to us</h3><p><a href="tel:+19566392162">(956) 639-2162</a><br><a href="mailto:bloomandsolbr@gmail.com">bloomandsolbr@gmail.com</a><br><a href="https://www.instagram.com/bloomandsol.florals/" target="_blank" rel="noopener">@bloomandsol.florals</a><br><a href="https://www.instagram.com/bloomandsol.events/" target="_blank" rel="noopener">@bloomandsol.events</a></p></div>
+      </div>
+      <p class="visit__es" lang="es"><b>¿Prefieres español?</b> Escríbenos o llámanos — hablamos español.</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot__in">
+    <img class="foot__logo" src="img/logo.png" alt="Bloom &amp; Sol Blissful" width="883" height="253" loading="lazy">
+    <p class="foot__tag">Florals · gifts · event services. Brownsville &amp; the Rio Grande Valley.</p>
+    <nav class="foot__nav" aria-label="Footer"><a href="#shop">Shop</a><a href="#bar">Flower Bar</a><a href="#events">Events</a><a href="#workshop">Workshop</a><a href="#inquire">Inquire</a><a href="#visit">Visit</a></nav>
+    <p class="foot__fine">All sales and bookings are final; deposits are non-refundable. Online checkout by Square.</p>
+    <p class="foot__credit">Concept by Sam &amp; Banks — not affiliated with Bloom &amp; Sol Blissful yet.</p>
+  </div>
+</footer>
+<script src="main.js"></script>
+</body>
+</html>

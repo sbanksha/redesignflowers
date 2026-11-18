@@ -1,0 +1,170 @@
+<!doctype html>
+<!--
+DESIGN PLAN — Sparrow & Lily Florals (concept by Sam & Banks)
+Concept: "Your Story: In Flowers" (their Instagram line). Quiet, editorial, sage and cream with rust and burgundy from the autumn weddings.
+Fonts: Gilda Display (display) / Karla (body).
+Sections: nav · hero · welcome · portfolio (their own Instagram photos, newest weddings included) · how it works · kind words (their real reviews) · about Ellie · inquire · footer.
+Fixes: homepage Instagram feed that stops at June 2026; portfolio of about 17 images vs 125 posts.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Sparrow &amp; Lily Florals · Nashville wedding florist</title>
+<meta name="description" content="Timeless, elegant, organic wedding and event florals in Nashville and Middle Tennessee, by Ellie Mae. Booking 2027 and 2028.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gilda+Display&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#f7f3ea;--sage:#8a9a7b;--deep:#2f3b2c;--rust:#a8552f;--wine:#6b2432;--ink:#252a22;--mute:#656b5f;--serif:"Gilda Display",Georgia,serif;--sans:"Karla",system-ui,sans-serif;--pad:clamp(18px,5vw,64px)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:64px;-webkit-text-size-adjust:100%}
+body{background:var(--cream);color:var(--ink);font:400 17px/1.65 var(--sans);overflow-x:hidden}
+img{display:block;max-width:100%;height:auto}a{color:inherit}
+.wrap{padding-inline:var(--pad);max-width:1240px;margin-inline:auto}
+header{position:absolute;top:0;left:0;right:0;z-index:10;color:#fff}
+header .wrap{display:flex;justify-content:space-between;align-items:center;height:72px}
+.logo{font:400 22px var(--serif);text-decoration:none;letter-spacing:.04em}
+nav{display:flex;gap:26px;font-size:14px;letter-spacing:.14em;text-transform:uppercase}nav a{text-decoration:none}
+.book{border:1px solid #fff;padding:9px 18px;text-decoration:none;font-size:13px;letter-spacing:.14em;text-transform:uppercase}
+@media(max-width:760px){nav{display:none}}
+.hero{position:relative;min-height:92vh;display:flex;align-items:flex-end;color:#fff}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(rgba(20,24,18,.15),rgba(20,24,18,.65))}
+.hero .wrap{position:relative;z-index:2;padding-bottom:clamp(36px,7vw,84px)}
+.kick{font-size:12px;letter-spacing:.26em;text-transform:uppercase;opacity:.9}
+h1{font:400 clamp(44px,8vw,104px)/1 var(--serif);margin:14px 0 18px}
+.hero p{max-width:48ch;font-size:19px}
+.btn{display:inline-block;margin-top:22px;background:var(--cream);color:var(--deep);padding:14px 28px;text-decoration:none;font-weight:700;letter-spacing:.08em;font-size:14px;text-transform:uppercase}
+.btn:hover{background:var(--rust);color:#fff}
+.sec{padding:clamp(56px,9vw,112px) 0}
+h2{font:400 clamp(32px,4.6vw,56px)/1.08 var(--serif);margin-bottom:16px;color:var(--deep)}
+.welcome{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,72px);align-items:center}
+.welcome img{aspect-ratio:4/5;object-fit:cover;width:100%}
+.welcome p{margin-bottom:14px;color:var(--mute)}
+@media(max-width:860px){.welcome{grid-template-columns:1fr}}
+.facts{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:20px;font-size:14px;letter-spacing:.1em;text-transform:uppercase;color:var(--deep)}
+.port{background:#fff}
+.mas{columns:4 200px;column-gap:12px;margin-top:30px}
+.mas img{width:100%;margin-bottom:12px;break-inside:avoid}
+.how{background:var(--deep);color:#eef0e6}
+.how h2{color:#fff}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:26px;margin-top:30px}
+.steps div{border-top:1px solid rgba(255,255,255,.3);padding-top:14px}
+.steps b{font:400 26px var(--serif);display:block;margin-bottom:6px}
+.steps small{color:#b9c3a8;letter-spacing:.14em;text-transform:uppercase;font-size:12px}
+.words{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;margin-top:30px}
+blockquote{border:1px solid #d9d2c1;padding:26px;background:#fff}
+blockquote p{font:400 20px/1.4 var(--serif);color:var(--wine)}
+blockquote cite{display:block;margin-top:12px;font-style:normal;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+.about{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(24px,5vw,72px);align-items:center}
+.about img{aspect-ratio:3/4;object-fit:cover;width:100%}
+.about p{margin-bottom:14px;color:var(--mute)}
+@media(max-width:860px){.about{grid-template-columns:1fr}.about img{order:-1;max-height:480px}}
+.inq{background:var(--sage);color:#17200f}
+.inq h2{color:#17200f}
+form{display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:760px;margin-top:22px}
+form .full{grid-column:1/-1}
+label{display:block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px;font-weight:700}
+input,textarea{width:100%;padding:12px;border:1px solid rgba(0,0,0,.3);background:rgba(255,255,255,.65);font:inherit}
+button{grid-column:1/-1;padding:15px;background:var(--deep);color:#fff;border:0;font:700 14px var(--sans);letter-spacing:.14em;text-transform:uppercase;cursor:pointer}
+@media(max-width:600px){form{grid-template-columns:1fr}}
+footer{background:#1a2017;color:#a3ab98;padding:22px 0;font-size:13px}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}footer a{color:#d4dac9}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <a class="logo" href="#top">Sparrow &amp; Lily Florals</a>
+  <nav aria-label="Main"><a href="#portfolio">Portfolio</a><a href="#how">Process</a><a href="#words">Kind words</a><a href="#about">About</a></nav>
+  <a class="book" href="#inquire">Book now</a>
+</div></header>
+<main id="top">
+<section class="hero">
+  <img src="img/sl11.jpg" alt="A bride and her father at an arched brick entrance wrapped in rust, cream and peach flowers" fetchpriority="high">
+  <div class="wrap">
+    <span class="kick">Nashville wedding florist</span>
+    <h1>Your story, in flowers.</h1>
+    <p>Timeless, elegant, organic, intentional florals for weddings and events in Nashville and Middle Tennessee. Booking 2027 and 2028.</p>
+    <a class="btn" href="#inquire">Inquire</a>
+  </div>
+</section>
+
+<section class="sec"><div class="wrap welcome">
+  <img src="img/sl03.jpg" alt="A bride and bridesmaids holding white and green bouquets" loading="lazy">
+  <div>
+    <h2>Flowers should do more than decorate a space.</h2>
+    <p>They should tell your story. Every bouquet, centerpiece and installation is crafted with intentional beauty, reflecting your personality and the atmosphere you have envisioned.</p>
+    <p>From the first consultation to the final arrangement placed on your day, the goal is a seamless, joyful experience.</p>
+    <div class="facts"><span>Weddings &amp; events</span><span>Nashville + Middle TN</span><span>Delivery to your venue</span></div>
+  </div>
+</div></section>
+
+<section class="sec port" id="portfolio"><div class="wrap">
+  <h2>Portfolio</h2>
+  <p style="color:var(--mute);max-width:56ch">Pulled from Ellie's own Instagram, from sage-green garden receptions to autumn burgundy and rust. More of the work, all in one place.</p>
+  <div class="mas">
+    <img src="img/sl02.jpg" alt="A clear tent reception with long tables and white and green centerpieces" loading="lazy">
+    <img src="img/sl19.jpg" alt="A bride and groom at an entrance arch of orange and blush flowers" loading="lazy">
+    <img src="img/sl06.jpg" alt="Place setting with white blooms, gold flatware and a toile napkin" loading="lazy">
+    <img src="img/sl13.jpg" alt="A wall of hydrangea, dahlia and roses in warm tones" loading="lazy">
+    <img src="img/sl07.jpg" alt="A bridal party leaving a church under clear umbrellas" loading="lazy">
+    <img src="img/sl17.jpg" alt="A bridal bouquet of burgundy and orange flowers" loading="lazy">
+    <img src="img/sl14.jpg" alt="A hanging floral chandelier under a tent" loading="lazy">
+    <img src="img/sl16.jpg" alt="A large arrangement of foliage and orange blooms in a white urn" loading="lazy">
+    <img src="img/sl10.jpg" alt="Wedding invitation suite with white flowers" loading="lazy">
+    <img src="img/sl20.jpg" alt="A flower-lined arched hallway with a bride at the end" loading="lazy">
+    <img src="img/sl30.jpg" alt="A ceremony in a wooden chapel with arrangements at the front" loading="lazy">
+    <img src="img/sl33.jpg" alt="A couple in a field showing the bride's ring and burgundy bouquet" loading="lazy">
+    <img src="img/sl22.jpg" alt="A bride on the steps of a brick chapel with flowers on the door" loading="lazy">
+    <img src="img/sl26.jpg" alt="A black and white photo of a couple embracing" loading="lazy">
+  </div>
+</div></section>
+
+<section class="sec how" id="how"><div class="wrap">
+  <h2>Clear communication is key.</h2>
+  <p style="max-width:56ch;color:#c9d2bb">It makes sure every detail is understood and executed seamlessly, and it helps capture your vision in the designs.</p>
+  <div class="steps">
+    <div><small>Step 1</small><b>Inquire</b>Tell us your date, venue and the feeling you are after.</div>
+    <div><small>Step 2</small><b>Mood board</b>Ellie sends a mood board with her ideas before the wedding, so you see the plan first.</div>
+    <div><small>Step 3</small><b>Delivery &amp; setup</b>Flowers are delivered to your venue, including out-of-town ones.</div>
+  </div>
+</div></section>
+
+<section class="sec" id="words"><div class="wrap">
+  <h2>Kind words</h2>
+  <div class="words">
+    <blockquote><p>"Sparrow and Lily florals did my wedding and it turned out better than I imagined!"</p><cite>Cameryn, bride</cite></blockquote>
+    <blockquote><p>"From the very beginning, Ellie listened to our vision and brought it to life even better than we imagined."</p><cite>Morgan, bride</cite></blockquote>
+    <blockquote><p>"I am so glad I found her, she was so easy to work with and made our wedding look beautiful."</p><cite>Rachel, bride</cite></blockquote>
+  </div>
+</div></section>
+
+<section class="sec" id="about" style="padding-top:0"><div class="wrap about">
+  <div>
+    <h2>Hi, I'm Ellie Mae.</h2>
+    <p>My love for flowers began young, shaped by art classes and my family's gardens, something I have always gathered, grown and created with.</p>
+    <p>In 2020 I designed my first wedding and was instantly hooked. I went full-time in 2021, working in a wholesale shop and alongside talented florists. After welcoming my son, Atticus, in 2023, I launched Sparrow &amp; Lily.</p>
+    <p>I am a Tennessee native, living on two peaceful acres with my husband and our two children.</p>
+  </div>
+  <img src="img/sl25.jpg" alt="A bridal party in burgundy outside a brick chapel" loading="lazy">
+</div></section>
+
+<section class="sec inq" id="inquire"><div class="wrap">
+  <h2>Let's work together.</h2>
+  <p>Fill out a little info and Ellie will be in touch shortly. Or email tnsunflowers1@gmail.com.</p>
+  <form name="inquiry" method="POST" action="#inquire" data-netlify="true">
+    <input type="hidden" name="form-name" value="inquiry">
+    <div><label for="a">Name</label><input id="a" name="name" required></div>
+    <div><label for="b">Email</label><input id="b" type="email" name="email" required></div>
+    <div><label for="c">Wedding date</label><input id="c" name="date"></div>
+    <div><label for="d">Venue</label><input id="d" name="venue"></div>
+    <div class="full"><label for="f">Your vision</label><textarea id="f" name="message" rows="4"></textarea></div>
+    <button type="submit">Send</button>
+  </form>
+</div></section>
+</main>
+<footer><div class="wrap"><span>© Sparrow &amp; Lily Florals · Nashville · <a href="mailto:tnsunflowers1@gmail.com">tnsunflowers1@gmail.com</a></span><span>Concept by Sam &amp; Banks — not affiliated with Sparrow &amp; Lily Florals yet.</span></div></footer>
+</body>
+</html>

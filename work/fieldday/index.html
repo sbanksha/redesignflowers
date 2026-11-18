@@ -1,0 +1,421 @@
+<!doctype html>
+<!--
+  FIELD DAY FLOWER CO. — design plan
+  1. Concept: a Swiss sports-day poster for a corner flower shop. Lanes, numbers, heats, ribbons. Loud, but on a strict grid.
+  2. Palette: green-grey paper #E9EDE3, field ink #121A12, tomato #FF4B1F, cobalt #1F3FD6, chartreuse #D9F24B (the one sharp accent on dark/cobalt fields).
+  3. Type: Archivo variable (wdth 62–125, wght 400–900) for everything display + body; IBM Plex Mono for prices, times, labels.
+  4. Grid: 12 columns, 20px gutter, clamp(16px,3.2vw,48px) margins. Headlines break the grid; body never does.
+  5. Signature 1: live "today" bar + hero headline that knows the weekday ("Flowers for a Sunday."), ticking countdown to the 1pm cutoff.
+  6. Signature 2: the cooler marquee, a full-bleed ticker whose speed and skew react to scroll velocity; words alternate Archivo widths.
+  7. Signature 3: subscription cadence toggle with a rolling odometer price; shop cards with peel-on sticker price tags + image swap.
+  8. Load moment: the hero headline stretches from condensed to expanded width (variable-font axis morph). Everything else stays still.
+  9. Sections: Today bar + nav · Hero · Marquee · Shop (8, filter chips) · Subscriptions · Flower Bar · Visit (timetable + SVG map + zones) · Footer.
+ 10. No-JS / reduced-motion: every word and image visible, static copy for the clock, marquee becomes a static strip.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Field Day Flower Co. — Flowers in Union Square, Somerville</title>
+<meta name="description" content="Walk-in bunches, same-day delivery (order by 1pm), weekly flower subscriptions and a Saturday flower bar in Union Square, Somerville.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23FF4B1F'/%3E%3Cg fill='%23121A12'%3E%3Ccircle cx='32' cy='18' r='10'/%3E%3Ccircle cx='46' cy='32' r='10'/%3E%3Ccircle cx='32' cy='46' r='10'/%3E%3Ccircle cx='18' cy='32' r='10'/%3E%3C/g%3E%3Ccircle cx='32' cy='32' r='7' fill='%23D9F24B'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,400..900;1,62..125,400..900&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script>document.documentElement.classList.add("js");setTimeout(function(){var h=document.querySelector(".hero");if(h)h.classList.add("is-in")},1800);</script>
+</head>
+<body>
+<a class="skip" href="#shop">Skip to the shop</a>
+
+<!-- TODAY BAR -->
+<div class="today" id="today" role="status" aria-live="off">
+  <div class="today__in">
+    <span class="today__day mono" data-today-day>Mon–Sat</span>
+    <span class="today__msg" data-today-msg>Order by 1pm for same-day delivery.</span>
+    <span class="today__clock mono" data-today-clock aria-hidden="true"></span>
+  </div>
+</div>
+
+<header class="nav" id="top">
+  <a class="wordmark" href="#top" aria-label="Field Day Flower Co., back to top">
+    <span class="wordmark__a">Field Day</span>
+    <span class="wordmark__b mono">Flower Co.</span>
+  </a>
+  <nav class="nav__links" aria-label="Main">
+    <a href="#shop"><span class="mono">01</span> Shop</a>
+    <a href="#subscribe"><span class="mono">02</span> Subscriptions</a>
+    <a href="#flowerbar"><span class="mono">03</span> Flower Bar</a>
+    <a href="#visit"><span class="mono">04</span> Visit</a>
+  </nav>
+  <a class="nav__cta" href="#shop">Order<span class="hide-s"> flowers</span> <span aria-hidden="true">→</span></a>
+</header>
+
+<main>
+<!-- HERO -->
+<section class="hero" aria-labelledby="hero-h">
+  <h1 class="hero__h" id="hero-h">
+    <span class="hl hl--1"><span class="hl__in">Flowers</span></span>
+    <span class="hl hl--2"><span class="hl__in">for <span data-article>any</span></span></span>
+    <span class="hl hl--3"><span class="hl__in"><span data-weekday>day</span>.</span></span>
+  </h1>
+
+  <div class="hero__collage" aria-hidden="false">
+    <figure class="ph ph--a">
+      <img src="img/bright-36.jpg" width="1600" height="2240" alt="A florist in overalls holding a big bunch of yellow ranunculus" fetchpriority="high">
+    </figure>
+    <figure class="ph ph--b">
+      <img src="img/sm/bright-24.jpg" width="800" height="1012" alt="A peach paper-wrapped bouquet with a white anemone, spray roses and billy balls">
+    </figure>
+    <div class="sticker sticker--hero" aria-hidden="true">
+      <span class="mono">Same day</span>
+      <b>1pm</b>
+      <span class="mono">cutoff</span>
+    </div>
+  </div>
+
+  <div class="hero__foot">
+    <p class="hero__lede">A tiny, loud flower shop on Bow Street. Bunches you can carry home, delivery to eight zip codes before dinner, and a cooler that turns over every Monday morning when the wholesaler’s truck pulls up.</p>
+    <div class="hero__ctas">
+      <a class="btn btn--ink" href="#shop">Shop today’s flowers</a>
+      <a class="btn btn--line" href="#subscribe">Start a subscription</a>
+    </div>
+    <dl class="hero__facts mono">
+      <div><dt>Bunches from</dt><dd>$24</dd></div>
+      <div><dt>Delivery</dt><dd>Mon–Sat</dd></div>
+      <div><dt>Open since</dt><dd>2019</dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<section class="cooler" aria-label="In the cooler this week">
+  <p class="cooler__label mono"><span>In the cooler</span><span>New cooler Mon., Nov. 16</span></p>
+  <div class="marquee" data-marquee>
+    <div class="marquee__track" data-track>
+      <ul class="marquee__list">
+        <li class="w-x">Japanese ranunculus</li>
+        <li class="w-c">Café au Lait dahlias</li>
+        <li class="w-i">Hellebores</li>
+        <li class="w-x">Sweet pea</li>
+        <li class="w-c">Spray roses</li>
+        <li class="w-i">Anemones, black-eyed</li>
+        <li class="w-x">Ilex berry</li>
+        <li class="w-c">Parrot tulips</li>
+        <li class="w-i">Lisianthus</li>
+        <li class="w-x">Billy balls</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- SHOP -->
+<section class="shop" id="shop" aria-labelledby="shop-h">
+  <div class="sec-head">
+    <p class="kicker mono"><span>01</span> The shop</p>
+    <h2 class="sec-h" id="shop-h">Pick one.<br><em>We’ll wrap it.</em></h2>
+    <p class="sec-note">Checkout runs through our usual ordering system, so your saved cards and addresses still work. Every bunch can be picked up in-store too.</p>
+  </div>
+
+  <div class="chips" role="group" aria-label="Filter the shop">
+    <button class="chip is-on" data-filter="all" aria-pressed="true">Everything <span class="mono">8</span></button>
+    <button class="chip" data-filter="under50" aria-pressed="false">Under $50 <span class="mono">4</span></button>
+    <button class="chip" data-filter="showy" aria-pressed="false">Big &amp; showy <span class="mono">3</span></button>
+    <button class="chip" data-filter="sub" aria-pressed="false">Subscription <span class="mono">2</span></button>
+  </div>
+
+  <ul class="grid-shop">
+    <li class="card c1" data-tags="under50 sub">
+      <a class="card__img" href="#" data-note="links to existing checkout" style="--bg:var(--chart)">
+        <img src="img/sm/bright-31.jpg" width="800" height="1200" alt="Peach, white and butter-yellow ranunculus" loading="lazy">
+        <img class="alt" src="img/sm/bright-38.jpg" width="800" height="533" alt="" loading="lazy">
+        <span class="tag" aria-hidden="true"><b>$38</b></span>
+      </a>
+      <div class="card__meta">
+        <p class="card__no mono">No. 01</p>
+        <h3>The Monday Bunch</h3>
+        <p class="card__d mono">15 stems · whatever just came off the truck</p>
+      </div>
+      <a class="order" href="#" data-note="links to existing checkout">Order <span class="mono">$38</span><span aria-hidden="true">→</span></a>
+    </li>
+
+    <li class="card c2" data-tags="showy">
+      <a class="card__img" href="#" data-note="links to existing checkout" style="--bg:var(--tomato)">
+        <img src="img/sm/bright-42.jpg" width="800" height="1200" alt="Two pink Japanese ranunculus against a pink wall" loading="lazy">
+        <img class="alt" src="img/sm/bright-41.jpg" width="800" height="534" alt="" loading="lazy">
+        <span class="tag" aria-hidden="true"><b>$64</b></span>
+      </a>
+      <div class="card__meta">
+        <p class="card__no mono">No. 02</p>
+        <h3>Ranunculus, Straight Up</h3>
+        <p class="card__d mono">10 Japanese ranunculus · no filler, no notes</p>
+      </div>
+      <a class="order" href="#" data-note="links to existing checkout">Order <span class="mono">$64</span><span aria-hidden="true">→</span></a>
+    </li>
+
+    <li class="card c3" data-tags="under50">
+      <a class="card__img" href="#" data-note="links to existing checkout" style="--bg:var(--cobalt)">
+        <img src="img/sm/bright-65.jpg" width="800" height="1006" alt="Red tulips wrapped in brown kraft paper" loading="lazy">
+        <img class="alt" src="img/sm/bright-11.jpg" width="800" height="1200" alt="" loading="lazy">
+        <span class="tag" aria-hidden="true"><b>$32</b></span>
+      </a>
+      <div class="card__meta">
+        <p class="card__no mono">No. 03</p>
+        <h3>Paper Bag Tulips</h3>
+        <p class="card__d mono">20 Dutch tulips · kraft wrap · they will droop, it’s fine</p>
+      </div>
+      <a class="order" href="#" data-note="links to existing checkout">Order <span class="mono">$32</span><span aria-hidden="true">→</span></a>
+    </li>
+
+    <li class="card c4" data-tags="showy">
+      <a class="card__img" href="#" data-note="links to existing checkout" style="--bg:var(--ink)">
+        <img src="img/sm/bright-26.jpg" width="800" height="1066" alt="A tall arrangement of sunflowers, pink hydrangea, orange roses and blue delphinium" loading="lazy">
+        <img class="alt" src="img/sm/bright-16.jpg" width="800" height="1208" alt="" loading="lazy">
+        <span class="tag" aria-hidden="true"><b>$145</b></span>
+      </a>
+      <div class="card__meta">
+        <p class="card__no mono">No. 04</p>
+        <h3>The Big Deal</h3>
+        <p class="card__d mono">40+ stems · vase included · needs two hands</p>
+      </div>
+      <a class="order" href="#" data-note="links to existing checkout">Order <span class="mono">$145</span><span aria-hidden="true">→</span></a>
+    </li>
+
+    <li class="card c5" data-tags="under50">
+      <a class="card__img" href="#" data-note="links to existing checkout" style="--bg:var(--tomato)">
+        <img src="img/sm/bright-59.jpg" width="800" height="800" alt="A hand holding a bouquet of dahlias, sweet pea and greenery in kraft paper" loading="lazy">
+        <img class="alt" src="img/sm/bright-05.jpg" width="800" height="1206" alt="" loading="lazy">
+        <span class="tag" aria-hidden="true"><b>$48</b></span>
+      </a>
+      <div class="card__meta">
+        <p class="card__no mono">No. 05</p>
+        <h3>Market Wrap</h3>
+        <p class="card__d mono">Designer’s choice · ~25 stems · trust us</p>
+      </div>
+      <a class="order" href="#" data-note="links to existing checkout">Order <span class="mono">$48</span><span aria-hidden="true">→</span></a>
+    </li>
+
+    <li class="card c6" data-tags="">
+      <a class="card__img" href="#" data-note="links to existing checkout" style="--bg:var(--chart)">
+        <img src="img/sm/bright-62.jpg" width="800" height="1193" alt="Blush garden roses and eucalyptus tied with an oxblood ribbon" loading="lazy">
+        <img class="alt" src="img/sm/bright-57.jpg" width="800" height="1066" alt="" loading="lazy">
+        <span class="tag" aria-hidden="true"><b>$85</b></span>
+      </a>
+      <div class="card__meta">
+        <p class="card__no mono">No. 06</p>
+        <h3>The Apology</h3>
+        <p class="card__d mono">Garden roses · ribbon · we won’t ask</p>
+      </div>
+      <a class="order" href="#" data-note="links to existing checkout">Order <span class="mono">$85</span><span aria-hidden="true">→</span></a>
+    </li>
+
+    <li class="card c7" data-tags="showy">
+      <a class="card__img" href="#" data-note="links to existing checkout" style="--bg:var(--cobalt)">
+        <img src="img/sm/bright-17.jpg" width="800" height="711" alt="A dense mix of yellow roses, purple stock, foxglove and orange ranunculus" loading="lazy">
+        <img class="alt" src="img/sm/bright-12.jpg" width="800" height="1066" alt="" loading="lazy">
+        <span class="tag" aria-hidden="true"><b>$110</b></span>
+      </a>
+      <div class="card__meta">
+        <p class="card__no mono">No. 07</p>
+        <h3>Loud Neighbor</h3>
+        <p class="card__d mono">30 stems · every color we have · no beige</p>
+      </div>
+      <a class="order" href="#" data-note="links to existing checkout">Order <span class="mono">$110</span><span aria-hidden="true">→</span></a>
+    </li>
+
+    <li class="card c8" data-tags="under50 sub">
+      <a class="card__img" href="#" data-note="links to existing checkout" style="--bg:var(--ink)">
+        <img src="img/sm/bright-64.jpg" width="800" height="1200" alt="A hand holding a loose bunch with a single sunflower and dried grasses" loading="lazy">
+        <img class="alt" src="img/sm/bright-67.jpg" width="800" height="1198" alt="" loading="lazy">
+        <span class="tag tag--sub" aria-hidden="true"><b>$35</b><i>/wk</i></span>
+      </a>
+      <div class="card__meta">
+        <p class="card__no mono">No. 08</p>
+        <h3>Weekly Stems</h3>
+        <p class="card__d mono">Subscription · fresh bunch every week · pause anytime</p>
+      </div>
+      <a class="order" href="#subscribe">Set it up <span class="mono">$35</span><span aria-hidden="true">→</span></a>
+    </li>
+  </ul>
+</section>
+
+<!-- SUBSCRIPTIONS -->
+<section class="sub" id="subscribe" aria-labelledby="sub-h">
+  <div class="sub__img">
+    <img src="img/sm/bright-32.jpg" width="800" height="1200" alt="Pink and peach ranunculus floating against a pink wall" loading="lazy">
+    <p class="sub__cap mono">Last week’s bunch: Japanese ranunculus ‘Hanoi’ &amp; ‘Pon Pon’</p>
+  </div>
+  <div class="sub__body">
+    <p class="kicker mono"><span>02</span> Subscriptions</p>
+    <h2 class="sub__h" id="sub-h">Flowers<br>on repeat.</h2>
+    <p class="sub__p">Same day, same doorstep, different flowers every time. We pick what’s best that week, you stop having to think about it. Skip a week with one text.</p>
+
+    <div class="sub__ctrl">
+      <p class="ctrl-label mono" id="cad-l">How often</p>
+      <div class="seg" role="radiogroup" aria-labelledby="cad-l" data-seg="cadence">
+        <button role="radio" aria-checked="true" class="is-on" data-v="weekly">Weekly</button>
+        <button role="radio" aria-checked="false" data-v="biweekly">Every 2 wks</button>
+        <button role="radio" aria-checked="false" data-v="monthly">Monthly</button>
+      </div>
+      <p class="ctrl-label mono" id="size-l">How much</p>
+      <div class="seg seg--size" role="radiogroup" aria-labelledby="size-l" data-seg="size">
+        <button role="radio" aria-checked="false" data-v="s">Kitchen table <i class="mono">10 stems</i></button>
+        <button role="radio" aria-checked="true" class="is-on" data-v="m">Dining table <i class="mono">18 stems</i></button>
+        <button role="radio" aria-checked="false" data-v="l">Showing off <i class="mono">30 stems</i></button>
+      </div>
+    </div>
+
+    <div class="price">
+      <div class="price__big" aria-live="polite">
+        <span class="price__cur">$</span><span class="odo" data-odo>45</span>
+        <span class="price__per mono" data-per>/ delivery</span>
+      </div>
+      <p class="price__math mono" data-math>≈ $195 a month · free delivery in zone</p>
+      <a class="btn btn--ink" href="#" data-note="links to existing checkout">Start my flowers <span aria-hidden="true">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- FLOWER BAR -->
+<section class="bar" id="flowerbar" aria-labelledby="bar-h">
+  <div class="bar__top">
+    <p class="kicker mono kicker--light"><span>03</span> Saturday flower bar</p>
+    <h2 class="bar__h" id="bar-h"><span>Sat.</span> <span class="bar__time">10<i>–</i>2</span></h2>
+  </div>
+  <div class="bar__grid">
+    <figure class="bar__ph bar__ph--1">
+      <img src="img/sm/bright-48.jpg" width="800" height="1185" alt="Buckets of pink carnations, blue hydrangea and lisianthus at the flower bar" loading="lazy">
+      <figcaption class="mono">Buckets out front, 10am sharp</figcaption>
+    </figure>
+    <div class="bar__copy">
+      <p class="bar__lead">Grab a jar, walk the buckets, build your own. We’ll tie it off and tell you if it’s ugly.</p>
+      <ol class="bar__rules mono">
+        <li><b>$3</b><span>a stem, any stem</span></li>
+        <li><b>$1</b><span>stems picked by anyone under 10</span></li>
+        <li><b>$8</b><span>jar, or bring your own</span></li>
+      </ol>
+    </div>
+    <figure class="bar__ph bar__ph--2">
+      <img src="img/sm/bright-47.jpg" width="800" height="1000" alt="An outdoor market table under trees, covered in plants and flowers" loading="lazy">
+      <figcaption class="mono">Private bars: birthdays, offices, showers</figcaption>
+    </figure>
+    <div class="bar__private">
+      <h3>Bring the bar to your thing.</h3>
+      <p>We show up with 12 buckets, jars and two very patient florists. 15 people minimum, $35 a head, Greater Boston.</p>
+      <a class="btn btn--chart" href="#visit">Ask about a date <span aria-hidden="true">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- VISIT -->
+<section class="visit" id="visit" aria-labelledby="visit-h">
+  <div class="sec-head sec-head--visit">
+    <p class="kicker mono"><span>04</span> Visit</p>
+    <h2 class="sec-h" id="visit-h">41 Bow St.<br><em>Union Square.</em></h2>
+  </div>
+
+  <div class="visit__grid">
+    <div class="hours">
+      <p class="ctrl-label mono">Hours</p>
+      <table class="tt">
+        <caption class="sr">Shop hours</caption>
+        <tbody>
+          <tr data-d="1"><th scope="row">Mon</th><td class="tt__closed">No walk-ins <span class="mono">(restocking; deliveries still run)</span></td></tr>
+          <tr data-d="2"><th scope="row">Tue</th><td class="mono">10am<i>–</i>7pm</td></tr>
+          <tr data-d="3"><th scope="row">Wed</th><td class="mono">10am<i>–</i>7pm</td></tr>
+          <tr data-d="4"><th scope="row">Thu</th><td class="mono">10am<i>–</i>8pm</td></tr>
+          <tr data-d="5"><th scope="row">Fri</th><td class="mono">10am<i>–</i>8pm</td></tr>
+          <tr data-d="6"><th scope="row">Sat</th><td class="mono">9am<i>–</i>6pm</td></tr>
+          <tr data-d="0"><th scope="row">Sun</th><td class="mono">10am<i>–</i>4pm</td></tr>
+        </tbody>
+      </table>
+      <p class="hours__note mono">Delivery Mon–Sat, 2–7pm. Order by 1pm. New flowers land Monday morning.</p>
+    </div>
+
+    <div class="where">
+      <div class="map">
+        <svg viewBox="0 0 600 600" role="img" aria-labelledby="map-t">
+          <title id="map-t">Stylized map: Field Day Flower Co. at 41 Bow Street, just off Union Square, Somerville</title>
+          <defs>
+            <path id="r-som" d="M -20 432 L 620 252"/>
+            <path id="r-wash" d="M -20 168 L 620 494"/>
+            <path id="r-web" d="M 128 -20 C 178 150, 262 262, 300 336 S 372 520, 392 620"/>
+            <path id="r-bow" d="M 300 336 C 360 306, 428 246, 462 128 L 492 -20"/>
+            <path id="r-pro" d="M 300 336 C 236 372, 150 440, 70 620"/>
+          </defs>
+          <rect width="600" height="600" fill="var(--cobalt)"/>
+          <g fill="none" stroke="var(--paper)" stroke-linecap="butt">
+            <use href="#r-som" stroke-width="30"/>
+            <use href="#r-wash" stroke-width="24"/>
+            <use href="#r-web" stroke-width="24"/>
+            <use href="#r-bow" stroke-width="22"/>
+            <use href="#r-pro" stroke-width="20"/>
+          </g>
+          <rect x="262" y="306" width="78" height="58" fill="var(--chart)" transform="rotate(-16 301 335)"/>
+          <g font-family="IBM Plex Mono, monospace" font-size="11" font-weight="600" fill="var(--ink)" letter-spacing="2" dominant-baseline="central">
+            <text><textPath href="#r-som" startOffset="9%">SOMERVILLE AVE</textPath></text>
+            <text><textPath href="#r-wash" startOffset="4%">WASHINGTON ST</textPath></text>
+            <text><textPath href="#r-wash" startOffset="66%">WASHINGTON ST</textPath></text>
+            <text><textPath href="#r-web" startOffset="70%">WEBSTER AVE</textPath></text>
+            <text><textPath href="#r-pro" startOffset="40%">PROSPECT ST</textPath></text>
+            <text><textPath href="#r-som" startOffset="80%">SOMERVILLE</textPath></text>
+          </g>
+          <text x="301" y="335" text-anchor="middle" dominant-baseline="central" transform="rotate(-16 301 335)" font-family="Archivo, sans-serif" font-weight="900" font-size="12" letter-spacing="1" fill="var(--ink)">THE SQUARE</text>
+          <g transform="translate(446 196)">
+            <g class="pin">
+              <circle r="30" fill="var(--tomato)" stroke="var(--ink)" stroke-width="3"/>
+              <text y="1" text-anchor="middle" dominant-baseline="central" font-family="Archivo, sans-serif" font-weight="900" font-size="13" fill="var(--ink)">US</text>
+            </g>
+          </g>
+          <g font-family="IBM Plex Mono, monospace" font-size="13" font-weight="600">
+            <text x="404" y="150" text-anchor="end" fill="var(--paper)">41 BOW ST</text>
+            <text x="404" y="168" text-anchor="end" fill="var(--chart)">FLOWERS →</text>
+          </g>
+        </svg>
+      </div>
+      <figure class="visit__ph">
+        <img src="img/sm/bright-52.jpg" width="800" height="1200" alt="A shop front with ribbons over the door, buckets of delphinium and crates of marigolds out front" loading="lazy">
+      </figure>
+      <p class="where__cap mono">Sidewalk buckets go out at 10. Park in the Bow St. lot, or bike.</p>
+    </div>
+
+    <div class="zones">
+      <p class="ctrl-label mono">Delivery zones</p>
+      <ul class="zones__list">
+        <li><span>Somerville</span><b class="mono">Free</b></li>
+        <li><span>Cambridge</span><b class="mono">$8</b></li>
+        <li><span>Medford · Arlington</span><b class="mono">$12</b></li>
+        <li><span>Charlestown · Allston</span><b class="mono">$14</b></li>
+        <li><span>Back Bay · South End</span><b class="mono">$16</b></li>
+      </ul>
+      <p class="zones__note">Farther than that? Call the shop at <a href="tel:+16175550142" class="nw">617-555-0142</a>. We’ll figure it out or tell you who will.</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="foot__top">
+    <form class="news" data-news novalidate>
+      <label for="em" class="news__l">The Thursday List. <span>What’s coming in the next week, in four lines or fewer.</span></label>
+      <div class="news__row">
+        <input id="em" type="email" name="email" placeholder="you@somewhere.com" autocomplete="email" required>
+        <button class="btn btn--tomato" type="submit">Sign up</button>
+      </div>
+      <p class="news__ok mono" data-news-ok hidden>You’re on it. First list lands Thursday at 8am.</p>
+    </form>
+    <ul class="foot__links mono">
+      <li><a href="#" aria-label="Instagram (concept link)">Instagram</a></li>
+      <li><a href="mailto:hello@fielddayflowers.example">hello@fielddayflowers.example</a></li>
+      <li><a href="tel:+16175550142">617-555-0142</a></li>
+    </ul>
+  </div>
+  <p class="foot__mark" aria-hidden="true"><span>Field Day</span></p>
+  <p class="foot__credit mono">A concept study by <a href="../../index.html">Sam &amp; Banks</a>. Field Day Flower Co. is a fictional florist.</p>
+</footer>
+
+<div class="toast" data-toast role="status" aria-live="polite" aria-atomic="true"></div>
+<script src="main.js"></script>
+</body>
+</html>

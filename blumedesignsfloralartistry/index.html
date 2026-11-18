@@ -1,0 +1,223 @@
+<!doctype html>
+<!--
+  BLUME DESIGNS — DESIGN PLAN v2 (preview by Sam & Banks)
+  1. Concept: a maison lookbook. One image at a time, a lot of air, type that whispers. Hermès restraint, Apple-smooth scroll.
+  2. Palette: porcelain #f6f1ef, blush #ecd9dc, ink #17121a, mauve #8f4f64 accent, stone #6e6468. The page background itself glides between them as you scroll.
+  3. Fonts: Bodoni Moda (display, italic voice) + Familjen Grotesk (tiny tracked caps, body).
+  4. Signature 1: hero — the peonies sit in an arch; scrolling opens the arch to a full-bleed photograph (CSS scroll-driven, no library).
+  5. Signature 2: the statement lights up word by word as you read it.
+  6. Signature 3: the page colour shifts porcelain → blush → ink → porcelain, like walking from the studio into evening.
+  7. Supporting motion only: images unveil from the bottom with a slow settle; collage layers drift at different speeds.
+  8. No rules, no boxes, no section numbers. Sections separate by space and colour.
+  9. Sections: Hero · Statement · Luxe collection · Lately (collage) · After dark · Weddings · Beyond the vase · Footer (visit, hours, delivery).
+  10. Reduced motion / older browsers: every element renders in its final state.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Blume Designs — Luxury Florist, Daniel Island, Charleston</title>
+<meta name="description" content="Blume Designs Floral Artistry: luxury flowers, weddings and floral concierge from the studio on Seven Farms Drive, Daniel Island. Delivering Daniel Island to Downtown Charleston.">
+<meta name="theme-color" content="#f6f1ef">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23f6f1ef' stroke='%2317121a' stroke-width='2'/%3E%3Ctext x='19' y='40' font-family='Georgia,serif' font-size='22' fill='%2317121a'%3EB%3C/text%3E%3Cpath d='M40 18 L26 47' stroke='%238f4f64' stroke-width='2'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..600;1,6..96,400..600&family=Familjen+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="preload" as="image" href="img/artisan-peonies.jpg">
+</head>
+<body>
+
+<header class="nav" id="top">
+  <nav class="nav__left" aria-label="Primary">
+    <a href="#collection">Collection</a>
+    <a href="#weddings">Weddings</a>
+    <a href="#beyond">Concierge</a>
+  </nav>
+  <a class="nav__mark" href="#top" aria-label="Blume Designs, back to top">Blume<span>Designs · Daniel Island</span></a>
+  <div class="nav__right">
+    <span class="nav__open js-open">Mon–Fri 10–4 · Sat 9–1</span>
+    <a class="nav__cta" href="https://blume-designs.com/flowers.html" data-note="their existing Floranext shop">Order flowers</a>
+  </div>
+</header>
+
+<main>
+  <!-- HERO: arch opens to full bleed on scroll -->
+  <section class="hero" data-bg="porcelain" aria-labelledby="hero-title">
+    <div class="hero__stage">
+      <p class="hero__eyebrow">Charleston’s luxury floral atelier</p>
+      <div class="hero__frame">
+        <img src="img/artisan-peonies.jpg" width="1216" height="1216" alt="Coral peonies massed loosely in a clear glass vase" fetchpriority="high">
+      </div>
+      <h1 id="hero-title" class="hero__title">Live in <em>Full</em> Blume</h1>
+      <p class="hero__cue" aria-hidden="true">Scroll</p>
+    </div>
+  </section>
+
+  <!-- STATEMENT -->
+  <section class="statement" data-bg="porcelain" aria-label="About Blume">
+    <p class="statement__text js-words">Blume opened on Daniel Island in 2020 to do one thing: deliver happiness. Colour, texture, depth and the best stems we can find, arranged so they look like nobody else’s.</p>
+    <p class="statement__award">Named Best of South Carolina <span>·</span> Lowcountry Region</p>
+  </section>
+
+  <!-- COLLECTION -->
+  <section class="collection" id="collection" data-bg="porcelain" aria-labelledby="col-title">
+    <header class="col-head">
+      <h2 id="col-title" class="display">The Luxe <em>Collection</em></h2>
+      <a class="quiet" href="https://blume-designs.com/flowers.html">View everything</a>
+    </header>
+    <ul class="grid" role="list">
+      <li class="card">
+        <a href="https://blume-designs.com/christian-dior.html" data-note="their existing product page">
+          <span class="card__img unveil"><img src="img/sm/christian-dior.jpg" width="800" height="800" loading="lazy" alt="Blush and mauve roses with green hydrangea in a low glass cylinder"></span>
+          <span class="card__name">Christian Dior</span><span class="card__price num">$500</span>
+        </a>
+      </li>
+      <li class="card">
+        <a href="https://blume-designs.com/the-daniel-island.html" data-note="their existing product page">
+          <span class="card__img unveil"><img src="img/sm/the-daniel-island.jpg" width="800" height="800" loading="lazy" alt="An all-white arrangement of roses, ranunculus, anemones and orchids in glass"></span>
+          <span class="card__name">The Daniel Island</span><span class="card__price num">$375</span>
+        </a>
+      </li>
+      <li class="card">
+        <a href="https://blume-designs.com/vogue.html" data-note="their existing product page">
+          <span class="card__img unveil"><img src="img/sm/vogue.jpg" width="800" height="800" loading="lazy" alt="Pink peonies, tulips and lime-green cymbidium orchids over white hydrangea"></span>
+          <span class="card__name">Vogue</span><span class="card__price num">$250</span>
+        </a>
+      </li>
+      <li class="card">
+        <a href="https://blume-designs.com/hydrangeas-in-blume.html" data-note="their existing product page">
+          <span class="card__img unveil"><img src="img/sm/hydrangeas-in-blume.jpg" width="800" height="800" loading="lazy" alt="A dome of white hydrangea in a clear glass cylinder"></span>
+          <span class="card__name">Hydrangeas in Blume</span><span class="card__price num">$250</span>
+        </a>
+      </li>
+      <li class="card">
+        <a href="https://blume-designs.com/amelia.html" data-note="their existing product page">
+          <span class="card__img unveil"><img src="img/sm/amelia.jpg" width="800" height="800" loading="lazy" alt="Yellow and peach roses with white blooms in a tall glass vase"></span>
+          <span class="card__name">Amelia</span><span class="card__price num">$250</span>
+        </a>
+      </li>
+      <li class="card">
+        <a href="https://blume-designs.com/2-dozen-long-stem-roses-wrapped.html" data-note="their existing product page">
+          <span class="card__img unveil"><img src="img/sm/2-dozen-long-stem-roses-wrapped.jpg" width="800" height="800" loading="lazy" alt="Two dozen pink long-stem roses wrapped with dark green leaves"></span>
+          <span class="card__name">Two Dozen Long Stems</span><span class="card__price num">$175</span>
+        </a>
+      </li>
+    </ul>
+    <p class="col-note">Delivered to Daniel Island, Mount Pleasant, Sullivan’s Island, Isle of Palms and Downtown Charleston.</p>
+  </section>
+
+  <!-- LATELY: collage, background turns blush -->
+  <section class="lately" data-bg="blush" aria-labelledby="lately-title">
+    <div class="lately__copy">
+      <p class="eyebrow">Lately at the studio</p>
+      <h2 id="lately-title" class="display">“A touch of fall, with a little <em>romance.</em>”</h2>
+      <p class="lately__note">Berry tones, blush garden roses, peonies. From the feed, November.</p>
+      <a class="quiet" href="https://www.instagram.com/blumedesignsfloralartistry/">@blumedesignsfloralartistry</a>
+    </div>
+    <figure class="lately__a drift" style="--d:-60px"><span class="unveil"><img src="img/sm/touch-of-fall.jpg" width="513" height="640" loading="lazy" alt="Berry-toned dahlias, blush garden roses and pink peonies in a glass vase"></span></figure>
+    <figure class="lately__b drift" style="--d:90px"><span class="unveil"><img src="img/sm/delphinium.jpg" width="502" height="640" loading="lazy" alt="Blue delphinium and hanging green amaranthus in a white hobnail vase"></span></figure>
+    <figure class="lately__c drift" style="--d:30px"><span class="unveil"><img src="img/sm/autumn-apples.jpg" width="361" height="640" loading="lazy" alt="A tall autumn arrangement with red apples, pink dahlias and peach roses"></span></figure>
+    <figure class="lately__d drift" style="--d:-30px"><span class="unveil"><img src="img/sm/studio-front.jpg" width="640" height="640" loading="lazy" alt="The Blume Designs studio window framed by a wall of pink and white roses"></span><figcaption>The studio &amp; mercantile, Seven Farms Drive.</figcaption></figure>
+  </section>
+
+  <!-- AFTER DARK: background turns ink -->
+  <section class="dark" data-bg="ink" aria-labelledby="dark-title">
+    <figure class="dark__a"><span class="unveil"><img src="img/sm/blume-archives.jpg" width="640" height="640" loading="lazy" alt="A moody arrangement of peach garden roses and chocolate cosmos in a black urn"></span></figure>
+    <div class="dark__copy">
+      <p class="eyebrow">From the Blume archives</p>
+      <h2 id="dark-title" class="display">A little dark, a little dramatic, and still every bit <em>Blume.</em></h2>
+    </div>
+    <figure class="dark__b drift" style="--d:-70px"><span class="unveil"><img src="img/sm/midnight-in-blume.jpg" width="800" height="800" loading="lazy" alt="Deep burgundy dahlias and blush roses by candlelight"></span><figcaption>Midnight in Blume, an October workshop.</figcaption></figure>
+  </section>
+
+  <!-- WEDDINGS: back to porcelain -->
+  <section class="weddings" id="weddings" data-bg="porcelain" aria-labelledby="weddings-title">
+    <figure class="weddings__img"><span class="unveil"><img src="img/sm/bridal-bouquet.jpg" width="640" height="640" loading="lazy" alt="A bride holding a cascading bouquet of blush garden roses and white anthurium"></span><figcaption>A Blume Bride’s bouquet.</figcaption></figure>
+    <div class="weddings__copy">
+      <p class="eyebrow">Weddings &amp; events</p>
+      <h2 id="weddings-title" class="display">A select few, <em>each year.</em></h2>
+      <p class="lede">We take on a limited number of weddings so every one gets our whole attention. Tell us about yours.</p>
+
+      <form class="form" novalidate data-note="wire to Netlify Forms">
+        <p class="sentence">
+          We marry on
+          <label class="field field--date"><span class="sr-only">Date</span><input type="text" name="date" placeholder="the date" autocomplete="off"></label>
+          at
+          <label class="field field--venue"><span class="sr-only">Venue</span><input type="text" name="venue" placeholder="the venue"></label>
+          with
+          <label class="field field--guests"><span class="sr-only">Guest count</span><input type="number" name="guests" placeholder="150" min="2" max="800" inputmode="numeric"></label>
+          guests.
+        </p>
+        <div class="form__row">
+          <label class="line"><span>Your names</span><input type="text" name="name" autocomplete="name" required></label>
+          <label class="line"><span>Email</span><input type="email" name="email" autocomplete="email" required></label>
+        </div>
+        <div class="form__foot">
+          <button type="submit" class="btn">Begin a consultation</button>
+          <a class="quiet" href="tel:+18437907189">or call (843) 790-7189</a>
+        </div>
+      </form>
+      <div class="sent" role="status" aria-live="polite" hidden>
+        <p class="display">Thank you<span class="js-name"></span>.</p>
+        <p class="lede">The Blume team will be in touch by <span class="js-day">Wednesday</span> to set up a consultation.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BEYOND THE VASE -->
+  <section class="beyond" id="beyond" data-bg="porcelain" aria-label="Floral concierge and workshops">
+    <article class="beyond__item">
+      <span class="unveil"><img src="img/sm/designers-choice-wrapped.jpg" width="800" height="800" loading="lazy" alt="A hand-tied bouquet of white roses and hydrangea wrapped in black-and-white striped paper with an ivory ribbon"></span>
+      <p class="eyebrow">Floral concierge</p>
+      <h3 class="display display--s">The art of <em>remembering.</em></h3>
+      <p>Give us the dates once: anniversaries, birthdays, the just-because. We remember them, choose the flowers and handle the delivery. You get the credit.</p>
+      <a class="quiet" href="https://blume-designs.com/floral-concierge" data-note="their existing concierge page">Set up your concierge</a>
+    </article>
+    <article class="beyond__item beyond__item--low">
+      <span class="unveil"><img src="img/sm/sugar-plum-fairy.jpg" width="800" height="800" loading="lazy" alt="Blush roses, pink carnations and glass ornaments in a vase tied with a velvet bow"></span>
+      <p class="eyebrow">Workshop · Wed, Dec 16 · 2–4 PM</p>
+      <h3 class="display display--s">Sugar Plum <em>Fairy.</em></h3>
+      <p>A Nutcracker floral workshop for about 10–12 guests. Flowers, a vase to keep, a designer at your elbow, light bites and a glass of rosé. <span class="num">$165</span></p>
+      <a class="quiet" href="https://blume-designs.com/sugar-plum-fairy-nutcracker-floral-workshop-december-16th.html" data-note="their existing booking page">Reserve a seat</a>
+    </article>
+  </section>
+</main>
+
+<footer class="foot" data-bg="ink" id="visit">
+  <div class="foot__grid">
+    <div>
+      <p class="eyebrow">The studio &amp; mercantile</p>
+      <p class="foot__big">250 Seven Farms Drive<br>Daniel Island, SC 29492</p>
+      <a class="quiet" href="https://maps.google.com/?q=Blume+Designs+250+Seven+Farms+Drive+Daniel+Island+SC">Directions</a>
+    </div>
+    <div>
+      <p class="eyebrow">Hours</p>
+      <dl class="hours num">
+        <div data-days="1,2,3,4,5"><dt>Monday – Friday</dt><dd>10 – 4</dd></div>
+        <div data-days="6"><dt>Saturday</dt><dd>9 – 1</dd></div>
+        <div data-days="0"><dt>Sunday</dt><dd>Closed</dd></div>
+      </dl>
+    </div>
+    <div>
+      <p class="eyebrow">Say hello</p>
+      <p class="foot__contact"><a href="tel:+18437907189">(843) 790-7189</a><br><a href="mailto:hello@blume-designs.com">hello@blume-designs.com</a><br><a href="https://www.instagram.com/blumedesignsfloralartistry/">Instagram</a></p>
+    </div>
+    <div>
+      <p class="eyebrow">Blume It Forward</p>
+      <p class="foot__small">Take one, give one. Our flower bar at WaterFest gave blooms away in pairs, with donations to Charleston Waterkeeper.</p>
+    </div>
+  </div>
+  <p class="foot__word" aria-hidden="true">Blume</p>
+  <p class="credit">Preview built by Sam &amp; Banks for Blume Designs Floral Artistry. Not live, not affiliated, just a look at what your site could be.</p>
+</footer>
+
+<nav class="dock" aria-label="Quick actions">
+  <a href="tel:+18437907189">Call</a>
+  <a class="dock__main" href="https://blume-designs.com/flowers.html">Order flowers</a>
+</nav>
+
+<script src="main.js" defer></script>
+</body>
+</html>

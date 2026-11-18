@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="es-MX" data-branch="gdl">
+<head>
+<!--
+  DESIGN PLAN — Blanc Dahlia Estudio Floral (demo, Sam & Banks)
+  Concept: "the studio wall". Their photos all share one set: warm-grey wall, white pedestal, window light. The site IS that wall.
+  Palette: wall #e7e2dd, deeper wall #d8d0c9, paper #f6f3f0, espresso ink #2b1f19, logo taupe #7a6355, one accent rosa gerbera #c4466f. Night #1d1714 for events.
+  Fonts: Oswald (matches their tall condensed logo) for display + prices; Hanken Grotesk for body.
+  Grid: 12-col editorial on desktop, 2-col catalog on phones (wide cards for products with sizes).
+  Signature moments: (1) soft window-light panes drifting across the wall like their photos; (2) size chips that re-price + re-write the WhatsApp message live;
+  (3) GDL / Chihuahua switch: one site, every button routes to the right branch.
+  Sections: topbar + switch · nav · hero · cómo pedir · catálogo (13) · crear mi arreglo + antes de pedir · bodas y eventos · PartyFlowers · Preserva + Workshops · nosotros · sucursales · footer.
+-->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>Blanc Dahlia · Estudio Floral · Flores a domicilio en Guadalajara y Zapopan</title>
+<meta name="description" content="Estudio floral en Guadalajara desde 2015. Ramos y arreglos a domicilio en Guadalajara y Zapopan, bodas, eventos y sucursal en Chihuahua. Pide por WhatsApp.">
+<meta name="theme-color" content="#e7e2dd">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23e7e2dd'/%3E%3Ctext x='32' y='44' font-family='Arial Narrow,Arial' font-size='30' font-weight='700' text-anchor='middle' fill='%237a6355'%3EBD%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=Oswald:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="preload" as="image" href="img/sm/hero-olivia.jpg" media="(max-width: 899px)">
+</head>
+<body>
+<a class="skip" href="#catalogo">Saltar al catálogo</a>
+
+<div class="topbar">
+  <p class="topbar__msg">
+    <span class="only-gdl">Envío desde $80 · GDL y Zapopan</span>
+    <span class="only-cuu">Sucursal Chihuahua · Plaza 31 Cero Seis</span>
+  </p>
+  <div class="switch" role="radiogroup" aria-label="Elige tu sucursal">
+    <button type="button" role="radio" aria-checked="true" data-set-branch="gdl">GDL</button>
+    <button type="button" role="radio" aria-checked="false" data-set-branch="cuu">Chihuahua</button>
+  </div>
+</div>
+
+<header class="nav" id="top">
+  <a class="logo" href="#top" aria-label="Blanc Dahlia, inicio">
+    <span class="logo__word">BLANC DAHLIA</span>
+    <span class="logo__sub">ESTUDIO FLORAL</span>
+  </a>
+  <nav class="nav__links" aria-label="Secciones">
+    <a href="#catalogo">Catálogo</a>
+    <a href="#bodas">Bodas y eventos</a>
+    <a href="#partyflowers">PartyFlowers</a>
+    <a href="#preserva">Preserva</a>
+    <a href="#workshops">Workshops</a>
+    <a href="#nosotros">Nosotros</a>
+  </nav>
+  <a class="wa nav__cta" href="https://wa.me/523338749589?text=Hola%20Blancdahlia%20%F0%9F%8C%BC%2C%20quiero%20hacer%20un%20pedido." data-msg="Hola Blancdahlia 🌼, quiero hacer un pedido." target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2a9.8 9.8 0 0 0-8.4 14.9L2.3 21.7l4.7-1.2A9.8 9.8 0 1 0 12 2.2Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M8.6 7.4c.3-.3.7-.3.9 0l1.1 1.6c.2.3.1.6-.1.9l-.5.6c.5 1.2 1.6 2.3 2.9 2.9l.6-.5c.3-.2.6-.3.9-.1l1.6 1.1c.3.2.3.6 0 .9l-.7.8c-.5.5-1.3.6-2 .3a9.6 9.6 0 0 1-5.3-5.3c-.3-.7-.2-1.5.3-2Z" fill="currentColor"/></svg><span class="wa__label">Pedir</span></a>
+  <button class="nav__menu" type="button" aria-expanded="false" aria-controls="drawer">Menú</button>
+</header>
+<div class="drawer" id="drawer" hidden>
+  <a href="#catalogo">Catálogo</a>
+  <a href="#crear">Crear mi arreglo</a>
+  <a href="#bodas">Bodas y eventos</a>
+  <a href="#partyflowers">PartyFlowers</a>
+  <a href="#preserva">Preserva</a>
+  <a href="#workshops">Workshops</a>
+  <a href="#nosotros">Nosotros</a>
+  <a href="#sucursales">Sucursales</a>
+</div>
+
+<main>
+<!-- HERO -->
+<section class="hero wall" aria-labelledby="hero-title">
+  <div class="light" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+  <div class="hero__copy">
+    <p class="label">Estudio floral · Guadalajara · desde 2015</p>
+    <h1 id="hero-title" class="hero__title">Flores a tu estilo, <span>pero con nuestro toque.</span></h1>
+    <p class="hero__lede only-gdl">Ramos y arreglos a domicilio en Guadalajara y Zapopan. Eliges aquí, nos escribes por WhatsApp con el pedido ya escrito, y lo armamos.</p>
+    <p class="hero__lede only-cuu">Estás en la sucursal Chihuahua. Mismo estudio, mismas manos, desde 2020 en Plaza 31 Cero Seis. Llámanos y armamos tu pedido.</p>
+    <div class="hero__ctas">
+      <a class="btn btn--ink" href="#catalogo">Ver catálogo</a>
+      <a class="btn btn--line wa" href="https://wa.me/523338749589?text=Hola%20Blancdahlia%20%F0%9F%8C%BC%2C%20quiero%20crear%20mi%20arreglo.%0AOcasi%C3%B3n%3A%20%0AColores%3A%20%0APresupuesto%3A%20%0A%0AFecha%20de%20entrega%3A%20%0AColonia%20%2F%20zona%3A%20" data-msg="Hola Blancdahlia 🌼, quiero crear mi arreglo.&#10;Ocasión: &#10;Colores: &#10;Presupuesto: &#10;&#10;Fecha de entrega: &#10;Colonia / zona: " target="_blank" rel="noopener"><span class="wa__label">Crear mi arreglo</span></a>
+    </div>
+  </div>
+  <figure class="hero__main">
+    <picture>
+      <source media="(min-width: 900px)" srcset="img/hero-encantado.jpg">
+      <img src="img/sm/hero-olivia.jpg" width="800" height="1200" alt="Arreglo de Blanc Dahlia frente a una pared gris con luz de ventana" fetchpriority="high">
+    </picture>
+    <figcaption class="tag">
+      <span class="tag__name"><span class="hero-m">Olivia</span><span class="hero-d">Jardín Encantado</span></span>
+      <span class="tag__price"><span class="hero-m">$1,500</span><span class="hero-d">$2,200</span></span>
+      <a class="tag__go hero-m" href="#p-olivia">Ver en catálogo</a><a class="tag__go hero-d" href="#p-jardin-encantado">Ver en catálogo</a>
+    </figcaption>
+  </figure>
+  <p class="hero__note" aria-hidden="true">Hago arte<br>con flores.</p>
+</section>
+
+<!-- CÓMO PEDIR -->
+<section class="steps" aria-label="Cómo pedir">
+  <ol>
+    <li><b>01</b><span>Elige tu arreglo <em>o crea el tuyo</em></span></li>
+    <li><b>02</b><span class="only-gdl">Toca “Pedir por WhatsApp” <em>el mensaje ya va escrito</em></span><span class="only-cuu">Llama a Chihuahua <em>(614) 441-2538</em></span></li>
+    <li><b>03</b><span>Envía tu ficha de pago <em>y empezamos a armarlo</em></span></li>
+    <li><b>04</b><span>Lo recibes <em>con guía de cuidados</em></span></li>
+  </ol>
+</section>
+
+<!-- CATÁLOGO -->
+<section class="catalog" id="catalogo" aria-labelledby="cat-title">
+  <header class="catalog__head">
+    <h2 id="cat-title" class="display">Catálogo</h2>
+    <p class="catalog__meta"><span>13 arreglos</span><span>Precios en MXN</span><span class="only-gdl">Envío desde $80</span></p>
+    <div class="chips" role="toolbar" aria-label="Filtrar catálogo">
+      <button type="button" class="chip" aria-pressed="true" data-filter="all">Todo</button>
+      <button type="button" class="chip" aria-pressed="false" data-filter="ramos">Ramos</button>
+      <button type="button" class="chip" aria-pressed="false" data-filter="arreglos">Arreglos</button>
+      <button type="button" class="chip" aria-pressed="false" data-filter="tamanos">Elige tamaño</button>
+      <button type="button" class="chip" aria-pressed="false" data-filter="under1000">Hasta $1,000</button>
+    </div>
+  </header>
+  <p class="branch-note only-cuu" role="note">Precios del catálogo Guadalajara. Para pedir en Chihuahua, llama al <a href="tel:+526144412538">(614) 441-2538</a> y confirma precio y disponibilidad.</p>
+  <div class="grid" id="grid">
+<article class="card" id="p-only-daisies" data-cat="ramos" data-min="650">
+  <figure class="card__media"><img class="card__img" src="img/sm/daisies-1.jpg" width="800" height="1000" alt="Ramo de gerberas rosa pastel envuelto en papel negro" loading="lazy" style="object-position:50% 40%"><img class="card__img card__img--alt" src="img/sm/daisies-2.jpg" width="800" height="1000" alt="" loading="lazy"></figure>
+  <div class="card__body">
+    <p class="card__kind">Ramo</p>
+    <h3 class="card__name">Only Daisies</h3>
+    <p class="card__desc">Gerberas especiales rosa pastel en papel negro con listón. Para quedar bien sin pensarlo mucho.</p>
+    
+    <p class="price"><span class="price__n">$650</span></p>
+    <a class="wa btn-order" href="https://wa.me/523338749589?text=Hola%20Blancdahlia%20%F0%9F%8C%BC%2C%20quiero%20el%20arreglo%20%2AOnly%20Daisies%20%28%24650%29%2A.%0A%0AFecha%20de%20entrega%3A%20%0AColonia%20%2F%20zona%3A%20" target="_blank" rel="noopener" data-name="Only Daisies" data-variant="" data-price="650"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2a9.8 9.8 0 0 0-8.4 14.9L2.3 21.7l4.7-1.2A9.8 9.8 0 1 0 12 2.2Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M8.6 7.4c.3-.3.7-.3.9 0l1.1 1.6c.2.3.1.6-.1.9l-.5.6c.5 1.2 1.6 2.3 2.9 2.9l.6-.5c.3-.2.6-.3.9-.1l1.6 1.1c.3.2.3.6 0 .9l-.7.8c-.5.5-1.3.6-2 .3a9.6 9.6 0 0 1-5.3-5.3c-.3-.7-.2-1.5.3-2Z" fill="currentColor"/></svg><span class="wa__label">Pedir por WhatsApp</span></a>
+  </div>
+</article>
+<article class="card" id="p-canasta-picnic" data-cat="arreglos" data-min="950">
+  <figure class="card__media"><img class="card__img" src="img/sm/canasta-1.jpg" width="800" height="1000" alt="Canasta tejida con rosas rosas y alhelí fucsia, cargada del brazo" loading="lazy" style="object-position:50% 35%"><img class="card__img card__img--alt" src="img/sm/canasta-2.jpg" width="800" height="1000" alt="" loading="lazy"></figure>
+  <div class="card__body">
+    <p class="card__kind">Canasta</p>
+    <h3 class="card__name">Canasta Picnic</h3>
+    <p class="card__desc">Canasta tejida con rosas de jardín, rosa spray, clavel y alhelí. Se lleva del brazo, como de picnic.</p>
+    
+    <p class="price"><span class="price__n">$950</span></p>
+    <a class="wa btn-order" href="https://wa.me/523338749589?text=Hola%20Blancdahlia%20%F0%9F%8C%BC%2C%20quiero%20el%20arreglo%20%2ACanasta%20Picnic%20%28%24950%29%2A.%0A%0AFecha%20de%20entrega%3A%20%0AColonia%20%2F%20zona%3A%20" target="_blank" rel="noopener" data-name="Canasta Picnic" data-variant="" data-price="950"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2a9.8 9.8 0 0 0-8.4 14.9L2.3 21.7l4.7-1.2A9.8 9.8 0 1 0 12 2.2Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M8.6 7.4c.3-.3.7-.3.9 0l1.1 1.6c.2.3.1.6-.1.9l-.5.6c.5 1.2 1.6 2.3 2.9 2.9l.6-.5c.3-.2.6-.3.9-.1l1.6 1.1c.3.2.3.6 0 .9l-.7.8c-.5.5-1.3.6-2 .3a9.6 9.6 0 0 1-5.3-5.3c-.3-.7-.2-1.5.3-2Z" fill="currentColor"/></svg><span class="wa__label">Pedir por WhatsApp</span></a>
+  </div>
+</article>
+<article class="card card--wide" id="p-only-tulips" data-cat="ramos tamanos" data-min="950">
+  <figure class="card__media"><img class="card__img" src="img/sm/tulips-1.jpg" width="794" height="990" alt="Ramo enorme de tulipanes rosas y blancos en papel rosa" loading="lazy" style="object-position:50% 45%"></figure>
+  <div class="card__body">
+    <p class="card__kind">Ramo · elige tamaño</p>
+    <h3 class="card__name">Only Tulips</h3>
+    <p class="card__desc">Puros tulipanes en tonos rosa, envueltos en papel. De 10 a 100: tú dices qué tan grande.</p>
+    <div class="variants" role="radiogroup" aria-label="Tamaño de Only Tulips"><button type="button" role="radio" aria-checked="false" data-label="10 tulipanes" data-price="950">10</button><button type="button" role="radio" aria-checked="true" data-label="20 tulipanes" data-price="1800">20</button><button type="button" role="radio" aria-checked="false" data-label="40 tulipanes" data-price="3500">40</button><button type="button" role="radio" aria-checked="false" data-label="50 tulipanes" data-price="4200">50</button><button type="button" role="radio" aria-checked="false" data-label="100 tulipanes" data-price="7500">100</button></div>
+    <p class="price"><span class="price__n">$1,800</span></p>
+    <a class="wa btn-order" href="https://wa.me/523338749589?text=Hola%20Blancdahlia%20%F0%9F%8C%BC%2C%20quiero%20el%20arreglo%20%2AOnly%20Tulips%20%E2%80%93%2020%20tulipanes%20%28%241%2C800%29%2A.%0A%0AFecha%20de%20entrega%3A%20%0AColonia%20%2F%20zona%3A%20" target="_blank" rel="noopener" data-name="Only Tulips" data-variant="20 tulipanes" data-price="1800"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2a9.8 9.8 0 0 0-8.4 14.9L2.3 21.7l4.7-1.2A9.8 9.8 0 1 0 12 2.2Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M8.6 7.4c.3-.3.7-.3.9 0l1.1 1.6c.2.3.1.6-.1.9l-.5.6c.5 1.2 1.6 2.3 2.9 2.9l.6-.5c.3-.2.6-.3.9-.1l1.6 1.1c.3.2.3.6 0 .9l-.7.8c-.5.5-1.3.6-2 .3a9.6 9.6 0 0 1-5.3-5.3c-.3-.7-.2-1.5.3-2Z" fill="currentColor"/></svg><span class="wa__label">Pedir por WhatsApp</span></a>
+  </div>
+</article>
+<article class="card" id="p-olivia" data-cat="ramos" data-min="1500">
+  <figure class="card__media"><img class="card__img" src="img/sm/olivia-1.jpg" width="800" height="1000" alt="Ramo con anturios blancos, gerberas rosas y amaranto verde" loading="lazy" style="object-position:50% 30%"></figure>
+  <div class="card__body">
+    <p class="card__kind">Ramo</p>
+    <h3 class="card__name">Olivia</h3>
+    <p class="card__desc">Anturios blancos, gerberas rosas y amaranto colgante en papel verde salvia.</p>
+    
+    <p class="price"><span class="price__n">$1,500</span></p>
+    <a class="wa btn-order" href="https://wa.me/523338749589?text=Hola%20Blancdahlia%20%F0%9F%8C%BC%2C%20quiero%20el%20arreglo%20%2AOlivia%20%28%241%2C500%29%2A.%0A%0AFecha%20de%20entrega%3A%20%0AColonia%20%2F%20zona%3A%20" target="_blank" rel="noopener" data-name="Olivia" data-variant="" data-price="1500"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2a9.8 9.8 0 0 0-8.4 14.9L2.3 21.7l4.7-1.2A9.8 9.8 0 1 0 12 2.2Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M8.6 7.4c.3-.3.7-.3.9 0l1.1 1.6c.2.3.1.6-.1.9l-.5.6c.5 1.2 1.6 2.3 2.9 2.9l.6-.5c.3-.2.6-.3.9-.1l1.6 1.1c.3.2.3.6 0 .9l-.7.8c-.5.5-1.3.6-2 .3a9.6 9.6 0 0 1-5.3-5.3c-.3-.7-.2-1.5.3-2Z" fill="currentColor"/></svg><span class="wa__label">Pedir por WhatsApp</span></a>
+  </div>
+</article>
+<article class="card" id="p-rosas-inglesas" data-cat="arreglos" data-min="1600">
+  <figure class="card__media"><img class="card__img" src="img/sm/inglesas-1.jpg" width="800" height="1200" alt="Rosas inglesas durazno y lisianthus rosa en florero de cerámica sobre mesa de madera" loading="lazy" style="object-position:50% 30%"><img class="card__img card__img--alt" src="img/sm/inglesas-2.jpg" width="800" height="1200" alt="" loading="lazy"></figure>
+  <div class="card__body">
+    <p class="card__kind">Florero</p>
+    <h3 class="card__name">Rosas Inglesas</h3>
+    <p class="card__desc">Rosas de jardín en durazno y palo de rosa con lisianthus, en florero de cerámica.</p>
+    
+    <p class="price"><span class="price__n">$1,600</span></p>
+    <a class="wa btn-order" href="https://wa.me/523338749589?text=Hola%20Blancdahlia%20%F0%9F%8C%BC%2C%20quiero%20el%20arreglo%20%2ARosas%20Inglesas%20%28%241%2C600%29%2A.%0A%0AFecha%20de%20entrega%3A%20%0AColonia%20%2F%20zona%3A%20" target="_blank" rel="noopener" data-name="Rosas Inglesas" data-variant="" data-price="1600"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2a9.8 9.8 0 0 0-8.4 14.9L2.3 21.7l4.7-1.2A9.8 9.8 0 1 0 12 2.2Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M8.6 7.4c.3-.3.7-.3.9 0l1.1 1.6c.2.3.1.6-.1.9l-.5.6c.5 1.2 1.6 2.3 2.9 2.9l.6-.5c.3-.2.6-.3.9-.1l1.6 1.1c.3.2.3.6 0 .9l-.7.8c-.5.5-1.3.6-2 .3a9.6 9.6 0 0 1-5.3-5.3c-.3-.7-.2-1.5.3-2Z" fill="currentColor"/></svg><span class="wa__label">Pedir por WhatsApp</span></a>
+  </div>
+</article>
+<article class="card" id="p-mix-floral" data-cat="arreglos" data-min="1800">
+  <figure class="card__media"><img class="card__img" src="img/sm/mix-1.jpg" width="800" height="640" alt="Arreglo de tulipanes, rosas fucsia y protea naranja en florero de cristal" loading="lazy" style="object-position:58% 50%"></figure>
+  <div class="card__body">
+    <p class="card__kind">Florero</p>
+    <h3 class="card__name">Mix Floral</h3>
+    <p class="card__desc">Tulipanes, rosas, alstroemeria y protea naranja en florero de cristal. Mucho color, a propósito.</p>
+    
+    <p class="price"><span class="price__n">$1,800</span></p>
+    <a class="wa btn-order" href="https://wa.me/523338749589?text=Hola%20Blancdahlia%20%F0%9F%8C%BC%2C%20quiero%20el%20arreglo%20%2AMix%20Floral%20%28%241%2C800%29%2A.%0A%0AFecha%20de%20entrega%3A%20%0AColonia%20%2F%20zona%3A%20" target="_blank" rel="noopener" data-name="Mix Floral" data-variant="" data-price="1800"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2a9.8 9.8 0 0 0-8.4 14.9L2.3 21.7l4.7-1.2A9.8 9.8 0 1 0 12 2.2Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M8.6 7.4c.3-.3.7-.3.9 0l1.1 1.6c.2.3.1.6-.1.9l-.5.6c.5 1.2 1.6 2.3 2.9 2.9l.6-.5c.3-.2.6-.3.9-.1l1.6 1.1c.3.2.3.6 0 .9l-.7.8c-.5.5-1.3.6-2 .3a9.6 9.6 0 0 1-5.3-5.3c-.3-.7-.2-1.5.3-2Z" fill="currentColor"/></svg><span class="wa__label">Pedir por WhatsApp</span></a>
+  </div>
+</article>
+<article class="card" id="p-jardin-encantado" data-cat="arreglos" data-min="2200">
+  <figure class="card__media"><img class="card__img" src="img/sm/encantado-2.jpg" width="800" height="640" alt="Arreglo bajo con anturio blanco, orquídea, tulipanes y alhelí morado" loading="lazy" style="object-position:42% 50%"></figure>
+  <div class="card__body">
+    <p class="card__kind">Centro de mesa</p>
+    <h3 class="card__name">Jardín Encantado</h3>
+    <p class="card__desc">Anturio, orquídea vanda, tulipanes, scabiosa, alhelí morado y amaranto en bowl blanco.</p>
+    
+    <p class="price"><span class="price__n">$2,200</span></p>
+    <a class="wa btn-order" href="https://wa.me/523338749589?text=Hola%20Blancdahlia%20%F0%9F%8C%BC%2C%20quiero%20el%20arreglo%20%2AJard%C3%ADn%20Encantado%20%28%242%2C200%29%2A.%0A%0AFecha%20de%20entrega%3A%20%0AColonia%20%2F%20zona%3A%20" target="_blank" rel="noopener" data-name="Jardín Encantado" data-variant="" data-price="2200"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2a9.8 9.8 0 0 0-8.4 14.9L2.3 21.7l4.7-1.2A9.8 9.8 0 1 0 12 2.2Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M8.6 7.4c.3-.3.7-.3.9 0l1.1 1.6c.2.3.1.6-.1.9l-.5.6c.5 1.2 1.6 2.3 2.9 2.9l.6-.5c.3-.2.6-.3.9-.1l1.6 1.1c.3.2.3.6 0 .9l-.7.8c-.5.5-1.3.6-2 .3a9.6 9.6 0 0 1-5.3-5.3c-.3-.7-.2-1.5.3-2Z" fill="currentColor"/></svg><span class="wa__label">Pedir por WhatsApp</span></a>
+  </div>
+</article>
+<article class="card card--wide" id="p-only-roses" data-cat="arreglos tamanos" data-min="950">
+  <figure class="card__media"><img class="card__img" src="img/sm/roses-1.jpg" width="800" height="1151" alt="Rosas rojas en pecera de cristal sobre pedestal" loading="lazy" style="object-position:50% 30%"><img class="card__img card__img--alt" src="img/sm/roses-2.jpg" width="800" height="1200" alt="" loading="lazy"></figure>
+  <div class="card__body">
+    <p class="card__kind">Pecera · elige tamaño</p>
+    <h3 class="card__name">Only Roses</h3>
+    <p class="card__desc">Rosas rojas en pecera de cristal con listón. Tres tamaños, cero dudas.</p>
+    <div class="variants" role="radiogroup" aria-label="Tamaño de Only Roses"><button type="button" role="radio" aria-checked="true" data-label="Chica · 24 rosas" data-price="950">CH · 24</button><button type="button" role="radio" aria-checked="false" data-label="Mediana · 50 rosas" data-price="1500">M · 50</button><button type="button" role="radio" aria-checked="false" data-label="Grande · 100 rosas" data-price="2500">G · 100</button></div>
+    <p class="price"><span class="price__n">$950</span></p>
+    <a class="wa btn-order" href="https://wa.me/523338749589?text=Hola%20Blancdahlia%20%F0%9F%8C%BC%2C%20quiero%20el%20arreglo%20%2AOnly%20Roses%20%E2%80%93%20Chica%20%C2%B7%2024%20rosas%20%28%24950%29%2A.%0A%0AFecha%20de%20entrega%3A%20%0AColonia%20%2F%20zona%3A%20" target="_blank" rel="noopener" data-name="Only Roses" data-variant="Chica · 24 rosas" data-price="950"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2a9.8 9.8 0 0 0-8.4 14.9L2.3 21.7l4.7-1.2A9.8 9.8 0 1 0 12 2.2Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M8.6 7.4c.3-.3.7-.3.9 0l1.1 1.6c.2.3.1.6-.1.9l-.5.6c.5 1.2 1.6 2.3 2.9 2.9l.6-.5c.3-.2.6-.3.9-.1l1.6 1.1c.3.2.3.6 0 .9l-.7.8c-.5.5-1.3.6-2 .3a9.6 9.6 0 0 1-5.3-5.3c-.3-.7-.2-1.5.3-2Z" fill="currentColor"/></svg><span class="wa__label">Pedir por WhatsApp</span></a>
+  </div>
+</article>
+<article class="card" id="p-alberta" data-cat="arreglos" data-min="2200">
+  <figure class="card__media"><img class="card__img" src="img/sm/alberta-1.jpg" width="800" height="1001" alt="Arreglo de anturios rosas, rosas de jardín y gerberas" loading="lazy" style="object-position:50% 40%"></figure>
+  <div class="card__body">
+    <p class="card__kind">Base</p>
+    <h3 class="card__name">Alberta</h3>
+    <p class="card__desc">Anturios rosas, rosas de jardín, gerberas y flor de cera en base blanca.</p>
+    
+    <p class="price"><span class="price__n">$2,200</span></p>
+    <a class="wa btn-order" href="https://wa.me/523338749589?text=Hola%20Blancdahlia%20%F0%9F%8C%BC%2C%20quiero%20el%20arreglo%20%2AAlberta%20%28%242%2C200%29%2A.%0A%0AFecha%20de%20entrega%3A%20%0AColonia%20%2F%20zona%3A%20" target="_blank" rel="noopener" data-name="Alberta" data-variant="" data-price="2200"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2a9.8 9.8 0 0 0-8.4 14.9L2.3 21.7l4.7-1.2A9.8 9.8 0 1 0 12 2.2Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M8.6 7.4c.3-.3.7-.3.9 0l1.1 1.6c.2.3.1.6-.1.9l-.5.6c.5 1.2 1.6 2.3 2.9 2.9l.6-.5c.3-.2.6-.3.9-.1l1.6 1.1c.3.2.3.6 0 .9l-.7.8c-.5.5-1.3.6-2 .3a9.6 9.6 0 0 1-5.3-5.3c-.3-.7-.2-1.5.3-2Z" fill="currentColor"/></svg><span class="wa__label">Pedir por WhatsApp</span></a>
+  </div>
+</article>
+<article class="card" id="p-baul-de-girasoles" data-cat="arreglos" data-min="1900">
+  <figure class="card__media"><img class="card__img" src="img/sm/girasoles-1.jpg" width="800" height="1000" alt="Baúl rojo con girasoles, lisianthus blanco y margaritas" loading="lazy" style="object-position:50% 45%"><img class="card__img card__img--alt" src="img/sm/girasoles-2.jpg" width="800" height="1000" alt="" loading="lazy"></figure>
+  <div class="card__body">
+    <p class="card__kind">Baúl</p>
+    <h3 class="card__name">Baúl de Girasoles</h3>
+    <p class="card__desc">Girasoles, lisianthus blanco y margaritas en baúl rojo. Alegre sin pedir permiso.</p>
+    
+    <p class="price"><span class="price__n">$1,900</span></p>
+    <a class="wa btn-order" href="https://wa.me/523338749589?text=Hola%20Blancdahlia%20%F0%9F%8C%BC%2C%20quiero%20el%20arreglo%20%2ABa%C3%BAl%20de%20Girasoles%20%28%241%2C900%29%2A.%0A%0AFecha%20de%20entrega%3A%20%0AColonia%20%2F%20zona%3A%20" target="_blank" rel="noopener" data-name="Baúl de Girasoles" data-variant="" data-price="1900"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2a9.8 9.8 0 0 0-8.4 14.9L2.3 21.7l4.7-1.2A9.8 9.8 0 1 0 12 2.2Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M8.6 7.4c.3-.3.7-.3.9 0l1.1 1.6c.2.3.1.6-.1.9l-.5.6c.5 1.2 1.6 2.3 2.9 2.9l.6-.5c.3-.2.6-.3.9-.1l1.6 1.1c.3.2.3.6 0 .9l-.7.8c-.5.5-1.3.6-2 .3a9.6 9.6 0 0 1-5.3-5.3c-.3-.7-.2-1.5.3-2Z" fill="currentColor"/></svg><span class="wa__label">Pedir por WhatsApp</span></a>
+  </div>
+</article>
+<article class="card" id="p-pink-and-red" data-cat="ramos" data-min="1600">
+  <figure class="card__media"><img class="card__img" src="img/sm/pinkred-1.jpg" width="800" height="1200" alt="Ramo de rosas rojas y rosas en papel blanco" loading="lazy" style="object-position:50% 25%"><img class="card__img card__img--alt" src="img/sm/pinkred-2.jpg" width="800" height="534" alt="" loading="lazy"></figure>
+  <div class="card__body">
+    <p class="card__kind">Ramo</p>
+    <h3 class="card__name">Pink & Red</h3>
+    <p class="card__desc">Rosas rojas y rosas con gerberas, en papel blanco y rosa.</p>
+    
+    <p class="price"><span class="price__n">$1,600</span></p>
+    <a class="wa btn-order" href="https://wa.me/523338749589?text=Hola%20Blancdahlia%20%F0%9F%8C%BC%2C%20quiero%20el%20arreglo%20%2APink%20%26%20Red%20%28%241%2C600%29%2A.%0A%0AFecha%20de%20entrega%3A%20%0AColonia%20%2F%20zona%3A%20" target="_blank" rel="noopener" data-name="Pink & Red" data-variant="" data-price="1600"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2a9.8 9.8 0 0 0-8.4 14.9L2.3 21.7l4.7-1.2A9.8 9.8 0 1 0 12 2.2Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M8.6 7.4c.3-.3.7-.3.9 0l1.1 1.6c.2.3.1.6-.1.9l-.5.6c.5 1.2 1.6 2.3 2.9 2.9l.6-.5c.3-.2.6-.3.9-.1l1.6 1.1c.3.2.3.6 0 .9l-.7.8c-.5.5-1.3.6-2 .3a9.6 9.6 0 0 1-5.3-5.3c-.3-.7-.2-1.5.3-2Z" fill="currentColor"/></svg><span class="wa__label">Pedir por WhatsApp</span></a>
+  </div>
+</article>
+<article class="card" id="p-jardin-de-orquideas" data-cat="plantas tamanos" data-min="950">
+  <figure class="card__media"><img class="card__img" src="img/sm/orquideas-1.jpg" width="800" height="1000" alt="Orquídeas blancas phalaenopsis en maceta blanca" loading="lazy" style="object-position:50% 40%"></figure>
+  <div class="card__body">
+    <p class="card__kind">Planta · elige tamaño</p>
+    <h3 class="card__name">Jardín de Orquídeas</h3>
+    <p class="card__desc">Orquídeas phalaenopsis blancas en maceta de cerámica. Es planta, no ramo: dura mucho más.</p>
+    <div class="variants" role="radiogroup" aria-label="Tamaño de Jardín de Orquídeas"><button type="button" role="radio" aria-checked="true" data-label="2 varas" data-price="950" data-img="img/sm/orquideas-1.jpg">2 varas</button><button type="button" role="radio" aria-checked="false" data-label="4 varas" data-price="1500" data-img="img/sm/orquideas-2.jpg">4 varas</button></div>
+    <p class="price"><span class="price__n">$950</span></p>
+    <a class="wa btn-order" href="https://wa.me/523338749589?text=Hola%20Blancdahlia%20%F0%9F%8C%BC%2C%20quiero%20el%20arreglo%20%2AJard%C3%ADn%20de%20Orqu%C3%ADdeas%20%E2%80%93%202%20varas%20%28%24950%29%2A.%0A%0AFecha%20de%20entrega%3A%20%0AColonia%20%2F%20zona%3A%20" target="_blank" rel="noopener" data-name="Jardín de Orquídeas" data-variant="2 varas" data-price="950"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2a9.8 9.8 0 0 0-8.4 14.9L2.3 21.7l4.7-1.2A9.8 9.8 0 1 0 12 2.2Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M8.6 7.4c.3-.3.7-.3.9 0l1.1 1.6c.2.3.1.6-.1.9l-.5.6c.5 1.2 1.6 2.3 2.9 2.9l.6-.5c.3-.2.6-.3.9-.1l1.6 1.1c.3.2.3.6 0 .9l-.7.8c-.5.5-1.3.6-2 .3a9.6 9.6 0 0 1-5.3-5.3c-.3-.7-.2-1.5.3-2Z" fill="currentColor"/></svg><span class="wa__label">Pedir por WhatsApp</span></a>
+  </div>
+</article>
+<article class="card card--wide card--florista" id="p-eleccion-del-florista" data-cat="ramos arreglos" data-min="0">
+  <figure class="card__media"><img class="card__img" src="img/sm/florista-1.jpg" width="360" height="480" alt="Florista cargando un ramo grande de rosas amarillas, durazno y blancas" loading="lazy" style="object-position:50% 30%"></figure>
+  <div class="card__body">
+    <p class="card__kind">Tú pones el presupuesto</p>
+    <h3 class="card__name">Elección del florista</h3>
+    <p class="card__desc">Cuéntanos qué estás buscando y confía en nosotros al 100%. Flores a tu estilo, pero con nuestro toque.</p>
+    <p class="price"><span class="price__n">Tu presupuesto</span></p>
+    <a class="wa btn-order" href="https://wa.me/523338749589?text=Hola%20Blancdahlia%20%F0%9F%8C%BC%2C%20quiero%20el%20arreglo%20%2AElecci%C3%B3n%20del%20florista%20%28presupuesto%3A%20%24____%29%2A.%0AOcasi%C3%B3n%3A%20%0AColores%20que%20le%20gustan%3A%20%0A%0AFecha%20de%20entrega%3A%20%0AColonia%20%2F%20zona%3A%20" target="_blank" rel="noopener" data-msg="Hola Blancdahlia 🌼, quiero el arreglo *Elección del florista (presupuesto: $____)*.&#10;Ocasión: &#10;Colores que le gustan: &#10;&#10;Fecha de entrega: &#10;Colonia / zona: "><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2a9.8 9.8 0 0 0-8.4 14.9L2.3 21.7l4.7-1.2A9.8 9.8 0 1 0 12 2.2Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M8.6 7.4c.3-.3.7-.3.9 0l1.1 1.6c.2.3.1.6-.1.9l-.5.6c.5 1.2 1.6 2.3 2.9 2.9l.6-.5c.3-.2.6-.3.9-.1l1.6 1.1c.3.2.3.6 0 .9l-.7.8c-.5.5-1.3.6-2 .3a9.6 9.6 0 0 1-5.3-5.3c-.3-.7-.2-1.5.3-2Z" fill="currentColor"/></svg><span class="wa__label">Pedir por WhatsApp</span></a>
+  </div>
+</article>
+  </div>
+  <p class="grid__empty" hidden>Nada en este filtro. <button type="button" data-filter="all" class="linkish">Ver todo</button></p>
+</section>
+
+<!-- CREAR MI ARREGLO + POLÍTICAS -->
+<section class="create" id="crear" aria-labelledby="crear-title">
+  <div class="create__cta">
+    <p class="label label--light">¿No ves el tuyo?</p>
+    <h2 id="crear-title" class="display display--light">¿Estás listo para mandar flores?</h2>
+    <p>Dinos la ocasión, los colores y tu presupuesto. Nosotros nos encargamos del toque.</p>
+    <a class="btn btn--rosa wa" href="https://wa.me/523338749589?text=Hola%20Blancdahlia%20%F0%9F%8C%BC%2C%20quiero%20crear%20mi%20arreglo.%0AOcasi%C3%B3n%3A%20%0AColores%3A%20%0APresupuesto%3A%20%0A%0AFecha%20de%20entrega%3A%20%0AColonia%20%2F%20zona%3A%20" data-msg="Hola Blancdahlia 🌼, quiero crear mi arreglo.&#10;Ocasión: &#10;Colores: &#10;Presupuesto: &#10;&#10;Fecha de entrega: &#10;Colonia / zona: " target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2a9.8 9.8 0 0 0-8.4 14.9L2.3 21.7l4.7-1.2A9.8 9.8 0 1 0 12 2.2Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M8.6 7.4c.3-.3.7-.3.9 0l1.1 1.6c.2.3.1.6-.1.9l-.5.6c.5 1.2 1.6 2.3 2.9 2.9l.6-.5c.3-.2.6-.3.9-.1l1.6 1.1c.3.2.3.6 0 .9l-.7.8c-.5.5-1.3.6-2 .3a9.6 9.6 0 0 1-5.3-5.3c-.3-.7-.2-1.5.3-2Z" fill="currentColor"/></svg><span class="wa__label">Crear mi arreglo</span></a>
+  </div>
+  <div class="create__rules">
+    <h3 class="label label--light">Antes de pedir</h3>
+    <ol class="rules">
+      <li><b class="only-gdl">Envío desde $80.</b><b class="only-cuu">Envío en Chihuahua.</b> El costo depende de la distancia; te lo confirmamos por mensaje.</li>
+      <li><b>Primero el pago.</b> Empezamos a trabajar tu pedido cuando nos envías tu ficha de pago. Tómalo en cuenta para el horario.</li>
+      <li><b>Datos completos.</b> Nombre, dirección completa y teléfono de quien recibe. Sin eso no podemos entregar.</li>
+      <li><b>Guía de cuidados.</b> Cada arreglo sale con su guía. Una vez entregado, el cuidado queda en tus manos (y en las de la guía).</li>
+      <li><b>Flores naturales.</b> Cada temporada cambia; tu arreglo puede variar un poco respecto a la foto.</li>
+    </ol>
+  </div>
+</section>
+
+<!-- BODAS Y EVENTOS -->
+<section class="bodas" id="bodas" aria-labelledby="bodas-title">
+  <div class="bodas__head">
+    <p class="label label--light">Bodas · eventos · bridal</p>
+    <h2 id="bodas-title" class="display display--light">Bodas y eventos</h2>
+    <p class="bodas__lede">Del ramo de novia al techo del salón. Las flores personales —ramos y boutonnieres— son nuestra especialidad: trabajo detallado, hecho para cada pareja.</p>
+  </div>
+  <figure class="bodas__big">
+    <img src="img/bodas-noche.jpg" width="1600" height="1066" alt="Banquete de noche en jardín con mesas largas, velas y foquitos colgando" loading="lazy">
+    <figcaption>Mesas largas, velas y luz cálida. Montaje de noche.</figcaption>
+  </figure>
+  <figure class="bodas__ramo">
+    <img src="img/sm/bodas-ramo.jpg" width="800" height="1067" alt="Ramo de novia en cascada con orquídeas blancas y rosas" loading="lazy">
+    <figcaption>Ramo en cascada · orquídea phalaenopsis, rosa blanca</figcaption>
+  </figure>
+  <figure class="bodas__dia">
+    <img src="img/sm/bodas-dia.jpg" width="800" height="612" alt="Salón abierto con piso de damero verde, mesas largas y esferas de cristal colgando" loading="lazy">
+    <figcaption>De día · esferas de cristal y mesa imperial</figcaption>
+  </figure>
+  <div class="bodas__list">
+    <h3 class="label label--light">Lo que floreamos</h3>
+    <p class="services">Ramos de novia <i>/</i> Boutonnieres <i>/</i> Centros de mesa <i>/</i> Arcos <i>/</i> Instalaciones <i>/</i> Aéreos <i>/</i> Pérgolas <i>/</i> Entradas <i>/</i> Barras <i>/</i> Escaleras <i>/</i> Sitting plans</p>
+    <a class="btn btn--paper wa" href="https://wa.me/523338749589?text=Hola%20Blancdahlia%20%F0%9F%8C%BC%2C%20quiero%20cotizar%20flores%20para%20mi%20boda.%0AFecha%3A%20%0ALugar%3A%20%0AN%C3%BAmero%20de%20invitados%3A%20%0ALo%20que%20tengo%20en%20mente%3A%20" data-msg="Hola Blancdahlia 🌼, quiero cotizar flores para mi boda.&#10;Fecha: &#10;Lugar: &#10;Número de invitados: &#10;Lo que tengo en mente: " target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2a9.8 9.8 0 0 0-8.4 14.9L2.3 21.7l4.7-1.2A9.8 9.8 0 1 0 12 2.2Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M8.6 7.4c.3-.3.7-.3.9 0l1.1 1.6c.2.3.1.6-.1.9l-.5.6c.5 1.2 1.6 2.3 2.9 2.9l.6-.5c.3-.2.6-.3.9-.1l1.6 1.1c.3.2.3.6 0 .9l-.7.8c-.5.5-1.3.6-2 .3a9.6 9.6 0 0 1-5.3-5.3c-.3-.7-.2-1.5.3-2Z" fill="currentColor"/></svg><span class="wa__label">Cotizar mi boda</span></a>
+  </div>
+</section>
+
+<!-- PARTYFLOWERS -->
+<section class="party" id="partyflowers" aria-labelledby="party-title">
+  <figure class="party__img">
+    <img src="img/party-mesa.jpg" width="1600" height="1066" alt="Mesa redonda con centro de flores rojas y follaje, iluminada con luz cálida" loading="lazy">
+  </figure>
+  <div class="party__copy">
+    <h2 id="party-title" class="display">Party<wbr>Flowers</h2>
+    <p>Flores para la fiesta, no solo para la boda: cumpleaños, baby showers, cenas, graduaciones. Centros de mesa, barras y ese rincón para la foto.</p>
+    <a class="btn btn--ink wa" href="https://wa.me/523338749589?text=Hola%20Blancdahlia%20%F0%9F%8C%BC%2C%20quiero%20cotizar%20PartyFlowers%20para%20una%20fiesta.%0ATipo%20de%20fiesta%3A%20%0AFecha%3A%20%0AN%C3%BAmero%20de%20mesas%3A%20" data-msg="Hola Blancdahlia 🌼, quiero cotizar PartyFlowers para una fiesta.&#10;Tipo de fiesta: &#10;Fecha: &#10;Número de mesas: " target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2a9.8 9.8 0 0 0-8.4 14.9L2.3 21.7l4.7-1.2A9.8 9.8 0 1 0 12 2.2Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M8.6 7.4c.3-.3.7-.3.9 0l1.1 1.6c.2.3.1.6-.1.9l-.5.6c.5 1.2 1.6 2.3 2.9 2.9l.6-.5c.3-.2.6-.3.9-.1l1.6 1.1c.3.2.3.6 0 .9l-.7.8c-.5.5-1.3.6-2 .3a9.6 9.6 0 0 1-5.3-5.3c-.3-.7-.2-1.5.3-2Z" fill="currentColor"/></svg><span class="wa__label">Cotizar mi fiesta</span></a>
+  </div>
+</section>
+
+<!-- PRESERVA + WORKSHOPS -->
+<section class="duo" aria-label="Preserva y Workshops">
+  <article class="preserva" id="preserva">
+    <img class="mark" src="img/mark.png" width="800" height="800" alt="" aria-hidden="true">
+    <h2 class="display">Preserva</h2>
+    <p class="preserva__big">Tu ramo no tiene por qué acabar en la basura.</p>
+    <p>Preservamos tus flores —el ramo de tu boda, el de tus XV, ese que no quieres soltar— para que se queden contigo mucho después de la fecha.</p>
+    <a class="btn btn--ink wa" href="https://wa.me/523338749589?text=Hola%20Blancdahlia%20%F0%9F%8C%BC%2C%20quiero%20preguntar%20por%20Preserva.%20Tengo%20un%20ramo%20que%20quiero%20conservar." data-msg="Hola Blancdahlia 🌼, quiero preguntar por Preserva. Tengo un ramo que quiero conservar." target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2a9.8 9.8 0 0 0-8.4 14.9L2.3 21.7l4.7-1.2A9.8 9.8 0 1 0 12 2.2Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M8.6 7.4c.3-.3.7-.3.9 0l1.1 1.6c.2.3.1.6-.1.9l-.5.6c.5 1.2 1.6 2.3 2.9 2.9l.6-.5c.3-.2.6-.3.9-.1l1.6 1.1c.3.2.3.6 0 .9l-.7.8c-.5.5-1.3.6-2 .3a9.6 9.6 0 0 1-5.3-5.3c-.3-.7-.2-1.5.3-2Z" fill="currentColor"/></svg><span class="wa__label">Preguntar por Preserva</span></a>
+  </article>
+  <article class="workshop" id="workshops">
+    <figure><img src="img/sm/taller.jpg" width="800" height="800" alt="Florista con mandil armando un arreglo con alium y rosas" loading="lazy"></figure>
+    <div class="workshop__copy">
+      <h2 class="display">Workshops</h2>
+      <p>Una tarde con nosotros, flores en la mesa y tijeras en mano. Aprendes a armar un arreglo de principio a fin. Fechas y lugares por WhatsApp y en <a href="https://www.instagram.com/blancdahlia/" target="_blank" rel="noopener">@blancdahlia</a>.</p>
+      <a class="btn btn--line wa" href="https://wa.me/523338749589?text=Hola%20Blancdahlia%20%F0%9F%8C%BC%2C%20quiero%20apartar%20lugar%20en%20el%20pr%C3%B3ximo%20workshop." data-msg="Hola Blancdahlia 🌼, quiero apartar lugar en el próximo workshop." target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2a9.8 9.8 0 0 0-8.4 14.9L2.3 21.7l4.7-1.2A9.8 9.8 0 1 0 12 2.2Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M8.6 7.4c.3-.3.7-.3.9 0l1.1 1.6c.2.3.1.6-.1.9l-.5.6c.5 1.2 1.6 2.3 2.9 2.9l.6-.5c.3-.2.6-.3.9-.1l1.6 1.1c.3.2.3.6 0 .9l-.7.8c-.5.5-1.3.6-2 .3a9.6 9.6 0 0 1-5.3-5.3c-.3-.7-.2-1.5.3-2Z" fill="currentColor"/></svg><span class="wa__label">Quiero ir al próximo</span></a>
+    </div>
+  </article>
+</section>
+
+<!-- NOSOTROS -->
+<section class="about wall" id="nosotros" aria-labelledby="about-title">
+  <div class="light light--soft" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+  <figure class="about__img">
+    <img src="img/sm/nosotros.jpg" width="800" height="1087" alt="Florista de Blanc Dahlia armando un arreglo en el estudio" loading="lazy">
+  </figure>
+  <div class="about__copy">
+    <p class="label">Nosotros</p>
+    <h2 id="about-title" class="about__quote">“Hago arte con flores.”</h2>
+    <p>Blanc Dahlia nació en Guadalajara en 2015 como un estudio floral creativo: flores para regalar, para casarse y para que cualquier espacio se sienta distinto. La idea siempre fue la misma: acercar la naturaleza a la gente y cambiarle el día a quien las recibe.</p>
+    <p>En 2020, siguiendo la visión de nuestra fundadora, abrimos la segunda casa en Chihuahua.</p>
+    <ol class="timeline">
+      <li><b>2015</b><span>Guadalajara</span></li>
+      <li><b>2020</b><span>Chihuahua</span></li>
+      <li><b>Hoy</b><span>GDL · Zapopan · CUU</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- SUCURSALES -->
+<section class="branches" id="sucursales" aria-labelledby="suc-title">
+  <h2 id="suc-title" class="display">Dos casas, un estudio</h2>
+  <div class="branches__grid">
+    <article class="branch" data-branch-card="gdl">
+      <p class="branch__state"><span class="only-gdl">Estás aquí</span><button type="button" class="linkish only-cuu" data-set-branch="gdl">Cambiar a Guadalajara</button></p>
+      <h3>Guadalajara</h3>
+      <p class="branch__big">Estudio + entregas en Guadalajara y Zapopan</p>
+      <dl>
+        <dt>Pedidos</dt><dd><a href="https://wa.me/523338749589" target="_blank" rel="noopener">WhatsApp 33 3874 9589</a></dd>
+        <dt>Envío</dt><dd>Desde $80, según distancia</dd>
+        <dt>Instagram</dt><dd><a href="https://www.instagram.com/blancdahlia/" target="_blank" rel="noopener">@blancdahlia</a></dd>
+      </dl>
+    </article>
+    <article class="branch" data-branch-card="cuu">
+      <p class="branch__state"><span class="only-cuu">Estás aquí</span><button type="button" class="linkish only-gdl" data-set-branch="cuu">Cambiar a Chihuahua</button></p>
+      <h3>Chihuahua</h3>
+      <p class="branch__big">Plaza 31 Cero Seis, Perif. de la Juventud 3102, Local 8B, Haciendas Sta. Fe</p>
+      <dl>
+        <dt>Teléfono</dt><dd><a href="tel:+526144412538">(614) 441-2538</a></dd>
+        <dt>Horario</dt><dd>Lun–Vie 9:00–17:00 · Sáb 9:00–14:00 · Dom cerrado</dd>
+        <dt>Instagram</dt><dd><a href="https://www.instagram.com/blancdahlia.cuu/" target="_blank" rel="noopener">@blancdahlia.cuu</a></dd>
+      </dl>
+    </article>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <p class="footer__word" aria-hidden="true">BLANC DAHLIA</p>
+  <div class="footer__row">
+    <p>Estudio floral · Guadalajara desde 2015 · Chihuahua desde 2020</p>
+    <p><a href="https://www.instagram.com/blancdahlia/" target="_blank" rel="noopener">Instagram GDL</a> · <a href="https://www.instagram.com/blancdahlia.cuu/" target="_blank" rel="noopener">Instagram CUU</a> · <a href="https://www.tiktok.com/@blancdahlia" target="_blank" rel="noopener">TikTok</a></p>
+  </div>
+  <p class="credit">Concepto por Sam &amp; Banks — aún sin afiliación con Blanc Dahlia.</p>
+</footer>
+
+<a class="fab wa" href="https://wa.me/523338749589?text=Hola%20Blancdahlia%20%F0%9F%8C%BC%2C%20quiero%20hacer%20un%20pedido." data-msg="Hola Blancdahlia 🌼, quiero hacer un pedido." target="_blank" rel="noopener" aria-label="Pedir por WhatsApp"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2a9.8 9.8 0 0 0-8.4 14.9L2.3 21.7l4.7-1.2A9.8 9.8 0 1 0 12 2.2Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M8.6 7.4c.3-.3.7-.3.9 0l1.1 1.6c.2.3.1.6-.1.9l-.5.6c.5 1.2 1.6 2.3 2.9 2.9l.6-.5c.3-.2.6-.3.9-.1l1.6 1.1c.3.2.3.6 0 .9l-.7.8c-.5.5-1.3.6-2 .3a9.6 9.6 0 0 1-5.3-5.3c-.3-.7-.2-1.5.3-2Z" fill="currentColor"/></svg><span class="wa__label">Pedir</span></a>
+
+<script src="main.js" defer></script>
+</body>
+</html>

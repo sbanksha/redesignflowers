@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!--
+DESIGN PLAN — Hummingbirds Flowers & Events (demo, concept by Sam & Banks)
+Concept: one front door for three sites. The shop on Spencer Field Rd at night: lavender sign, painted windows, "life is better with flowers".
+Palette: plum ink #2B2233 · paper #FAF8FB · lavender #B9A5DC (their sign) · lav-pale #ECE5F5 · rose #C2787A (their logo) · sun #F2C14E (painted sunflowers, tiny accents).
+Type: Young Serif (warm, sturdy, close to their slab logo) + Figtree. No script.
+Grid: 12-col; three "doors" accordion; menu-board price list; calendar list.
+Signature moments: (1) Three doors (Shop / Weddings / Flower School) that open on hover/focus and hand off to their existing sites;
+(2) live class calendar (past classes strike through, next one counts down); (3) real review threads with Mollie's replies. Plus open/closed status in Central time.
+Sections: status · header · hero · doors · shop · weddings · flower school · sympathy · reviews · about Mollie · visit · footer.
+Real data: FSN site (products, prices, hours, about, classes, 224 reviews), weddingsbyhummingbirds.com (paths, palettes, FAQ, testimonials), school site, IG photos.
+-->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hummingbirds Flowers &amp; Events — Florist in Pace, FL · Weddings · Flower School</title>
+<meta name="description" content="Pace’s neighborhood florist for 20+ years. Same-day flowers across Pace, Milton and Pensacola, wedding florals, and hands-on Flower School classes on Spencer Field Road.">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#2B2233">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23B9A5DC'/%3E%3Ctext x='32' y='46' font-family='Georgia,serif' font-weight='700' font-size='40' text-anchor='middle' fill='%232B2233'%3EH%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#doors">Skip to content</a>
+
+<div class="status">
+  <div class="wrap status__in">
+    <p id="openState"><span class="dot" aria-hidden="true"></span><span id="openText">Mon–Fri 9–5 · Sat 10–2 · Sun closed</span></p>
+    <p class="status__r">4861 W Spencer Field Rd, Pace · <a href="tel:+18509959620">(850) 995-9620</a></p>
+  </div>
+</div>
+
+<header class="head">
+  <div class="wrap head__in">
+    <a class="head__logo" href="#top" aria-label="Hummingbirds Flowers &amp; Events, home"><img src="img/logo.png" alt="Hummingbirds Flowers + Events" width="900" height="171"></a>
+    <nav class="head__nav" aria-label="Main">
+      <a href="#shop">Shop</a><a href="#weddings">Weddings</a><a href="#school">Flower School</a><a href="#sympathy">Sympathy</a><a href="#about">About</a><a href="#visit">Visit</a>
+    </nav>
+    <a class="btn btn--plum head__cta" href="https://www.flowersbyhummingbirds.com/" target="_blank" rel="noopener" data-note="links to existing FSN shop">Send flowers</a>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero" aria-labelledby="h1">
+  <div class="wrap hero__grid">
+    <div class="hero__copy">
+      <p class="label">Your neighborhood florist · Pace, Florida</p>
+      <h1 id="h1">Birthdays, <em>I do’s</em> &amp; plain old Tuesdays.</h1>
+      <p class="hero__lede">Weddings and everyday flowers that feel like you. Easy, thoughtful, never overwhelming — from the shop on Spencer Field Road, 20+ years and counting.</p>
+      <div class="hero__ctas">
+        <a class="btn btn--plum" href="#shop">Send flowers today</a>
+        <a class="link" href="#weddings">Planning a wedding? <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+    <div class="hero__art">
+      <figure class="h-ph h-ph--1"><img src="img/garden-brick.jpg" alt="Garden-style arrangement of dahlias, roses, hypericum and thistle in a glass vase against a brick wall" width="1080" height="1260" fetchpriority="high"></figure>
+      <figure class="h-ph h-ph--2"><img src="img/sm/flame-wall.jpg" alt="Hand holding a burgundy, orange and peach fall bouquet against a sunset-orange wall" width="800" height="1422"></figure>
+      <figure class="h-ph h-ph--3"><img src="img/sm/pink-wall.jpg" alt="Pink roses, carnations and lavender roses against a pink wall" width="800" height="1035"></figure>
+    </div>
+  </div>
+  <div class="wrap">
+    <ul class="proof">
+      <li><b>20+</b> years in Pace</li>
+      <li><b class="num">4.8</b> out of 5 from <b class="num">224</b> reviews</li>
+      <li>Delivery to Pace, Milton, Pensacola &amp; the beaches</li>
+    </ul>
+  </div>
+</section>
+
+<section class="doors-sec" id="doors" aria-labelledby="doors-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="label">Hummingbirds, all in one place</p>
+      <h2 id="doors-h" class="h2">One shop. <em>Three ways in.</em></h2>
+    </div>
+    <div class="doors">
+      <a class="door is-open" href="https://www.flowersbyhummingbirds.com/" target="_blank" rel="noopener" data-note="links to existing FSN shop">
+        <img src="img/sm/plum-roses.jpg" alt="Mauve and magenta roses with carnations in a glass vase" width="800" height="1064" loading="lazy">
+        <span class="door__body">
+          <span class="door__n">01</span>
+          <span class="door__t">The Shop</span>
+          <span class="door__d">Birthdays, get-wells, just-becauses. Order online, delivered across Santa Rosa &amp; Escambia.</span>
+          <span class="door__go">flowersbyhummingbirds.com <span aria-hidden="true">↗</span></span>
+        </span>
+      </a>
+      <a class="door" href="https://www.weddingsbyhummingbirds.com/" target="_blank" rel="noopener" data-note="links to existing wedding site">
+        <img src="img/sm/bride-window.jpg" alt="Bride in a fitted gown holding a white bouquet by tall sunlit windows" width="800" height="1067" loading="lazy">
+        <span class="door__body">
+          <span class="door__n">02</span>
+          <span class="door__t">Weddings</span>
+          <span class="door__d">Fully custom design, or pick a palette and order à la carte. No minimum for custom.</span>
+          <span class="door__go">weddingsbyhummingbirds.com <span aria-hidden="true">↗</span></span>
+        </span>
+      </a>
+      <a class="door" href="https://www.hummingbirdsflowerschool.com/" target="_blank" rel="noopener" data-note="links to existing school site">
+        <img src="img/sm/workshop.jpg" alt="A long table of people arranging flowers together at a Hummingbirds workshop" width="800" height="1422" loading="lazy">
+        <span class="door__body">
+          <span class="door__n">03</span>
+          <span class="door__t">Flower School</span>
+          <span class="door__d">Hands-on workshops, private Flower Hours, and free Little Hummingbirds crafts for kids.</span>
+          <span class="door__go">hummingbirdsflowerschool.com <span aria-hidden="true">↗</span></span>
+        </span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="shop" id="shop" aria-labelledby="shop-h">
+  <div class="wrap shop__grid">
+    <div class="shop__intro">
+      <p class="label">The Shop</p>
+      <h2 id="shop-h" class="h2">Send something <em>today.</em></h2>
+      <p>Plenty of our reviews come from people in Mississippi, Arkansas and Alabama sending love to Pace. Same-day delivery happens a lot — call <a href="tel:+18509959620">(850) 995-9620</a> and ask.</p>
+      <ul class="cats">
+        <li><a href="https://www.flowersbyhummingbirds.com/birthday.php" target="_blank" rel="noopener"><img src="img/sm/sunflowers.jpg" alt="Sunflowers with magenta roses" width="800" height="899" loading="lazy"><span>Birthday</span></a></li>
+        <li><a href="https://www.flowersbyhummingbirds.com/thanksgiving-flowers-usa.php" target="_blank" rel="noopener"><img src="img/sm/coral-centerpiece.jpg" alt="Coral roses and hot-pink carnations in a low centerpiece" width="800" height="821" loading="lazy"><span>Thanksgiving</span></a></li>
+        <li><a href="https://www.flowersbyhummingbirds.com/roses.php" target="_blank" rel="noopener"><img src="img/sm/pink-carn.jpg" alt="Pink roses and carnations with snapdragons" width="800" height="800" loading="lazy"><span>Roses</span></a></li>
+        <li><a href="https://www.flowersbyhummingbirds.com/custom_orders.php" target="_blank" rel="noopener"><img src="img/sm/fuchsia.jpg" alt="Dense arrangement of red ranunculus, dahlias and fuchsia blooms" width="800" height="1422" loading="lazy"><span>Custom order</span></a></li>
+      </ul>
+    </div>
+    <div class="menu" aria-labelledby="menu-h">
+      <p class="menu__k" id="menu-h">On the shop right now</p>
+      <ul class="menu__list">
+        <li><a href="https://www.flowersbyhummingbirds.com/product/66402ff7311bf7.00505/florists-deal-of-the-day" target="_blank" rel="noopener" data-note="links to existing FSN checkout"><span class="menu__n">Florist’s Deal of the Day</span><span class="menu__dots"></span><span class="menu__p num">$49</span></a></li>
+        <li><a href="https://www.flowersbyhummingbirds.com/product/66416fbf81cdc6.97854/rosy-sunflowers" target="_blank" rel="noopener" data-note="links to existing FSN checkout"><span class="menu__n">Rosy Sunflowers</span><span class="menu__dots"></span><span class="menu__p num">$75</span></a></li>
+        <li><a href="https://www.flowersbyhummingbirds.com/product/664016d8639fb5.96172/canary-light" target="_blank" rel="noopener" data-note="links to existing FSN checkout"><span class="menu__n">Canary Light</span><span class="menu__dots"></span><span class="menu__p num">$75</span></a></li>
+        <li><a href="https://www.flowersbyhummingbirds.com/product/6a4e6984df0221.48783/sunshine-spritz" target="_blank" rel="noopener" data-note="links to existing FSN checkout"><span class="menu__n">Sunshine Spritz</span><span class="menu__dots"></span><span class="menu__p num">$85</span></a></li>
+        <li><a href="https://www.flowersbyhummingbirds.com/product/6a4e64f2c6ff74.26310/citrine-solstice" target="_blank" rel="noopener" data-note="links to existing FSN checkout"><span class="menu__n">Citrine Solstice</span><span class="menu__dots"></span><span class="menu__p num">$85</span></a></li>
+        <li><a href="https://www.flowersbyhummingbirds.com/product/6a73489c6d1f47.50614/designers-choice-fall-design" target="_blank" rel="noopener" data-note="links to existing FSN checkout"><span class="menu__n">Designer’s Choice Fall Design</span><span class="menu__dots"></span><span class="menu__p num">$89</span></a></li>
+        <li><a href="https://www.flowersbyhummingbirds.com/product/66381603a5ef81.66468/half-dozen-free-spirit-rose-symphony" target="_blank" rel="noopener" data-note="links to existing FSN checkout"><span class="menu__n">Half Dozen Free Spirit Rose Symphony</span><span class="menu__dots"></span><span class="menu__p num">$89</span></a></li>
+        <li><a href="https://www.flowersbyhummingbirds.com/product/6a4e6220b71f72.66615/amethyst-moon" target="_blank" rel="noopener" data-note="links to existing FSN checkout"><span class="menu__n">Amethyst Moon</span><span class="menu__dots"></span><span class="menu__p num">$99</span></a></li>
+        <li><a href="https://www.flowersbyhummingbirds.com/product/6a4e5b8c45f950.60835/persimmon-glow-centerpiece" target="_blank" rel="noopener" data-note="links to existing FSN checkout"><span class="menu__n">Persimmon Glow Centerpiece</span><span class="menu__dots"></span><span class="menu__p num">$105</span></a></li>
+        <li><a href="https://www.flowersbyhummingbirds.com/product/6644fddeb8ecf0.66587/garden-of-juliette" target="_blank" rel="noopener" data-note="links to existing FSN checkout"><span class="menu__n">Garden of Juliette</span><span class="menu__dots"></span><span class="menu__p num">$239</span></a></li>
+        <li><a href="https://www.flowersbyhummingbirds.com/product/6a4e5e5908db13.17413/hearthstone-lantern" target="_blank" rel="noopener" data-note="links to existing FSN checkout"><span class="menu__n">Hearthstone Lantern</span><span class="menu__dots"></span><span class="menu__p num">$249</span></a></li>
+        <li><a href="https://www.flowersbyhummingbirds.com/product/6aad6bd7595ee9.11334/mango-escape" target="_blank" rel="noopener" data-note="links to existing FSN checkout"><span class="menu__n">Mango Escape</span><span class="menu__dots"></span><span class="menu__p num">$349</span></a></li>
+      </ul>
+      <a class="btn btn--plum menu__all" href="https://www.flowersbyhummingbirds.com/" target="_blank" rel="noopener" data-note="links to existing FSN shop">Browse the whole shop <span aria-hidden="true">↗</span></a>
+      <p class="menu__towns"><b>We deliver to</b> Pace · Milton · Pensacola · Pensacola Beach · Gulf Breeze · Cantonment · Ensley · Jay · Molino</p>
+    </div>
+  </div>
+</section>
+
+<section class="weddings" id="weddings" aria-labelledby="wed-h">
+  <div class="wrap">
+    <div class="wed__top">
+      <div>
+        <p class="label label--lav">Weddings by Hummingbirds</p>
+        <h2 id="wed-h" class="h2 h2--light">Two ways to <em>say yes.</em></h2>
+      </div>
+      <figure class="wed__hero"><img src="img/sm/pine-arch.jpg" alt="Wooden ceremony arch with white draping and white florals among tall pines" width="800" height="1067" loading="lazy"></figure>
+    </div>
+    <div class="paths">
+      <article class="path">
+        <p class="path__k">Path one</p>
+        <h3>Fully custom</h3>
+        <p>Start with a complimentary consultation. You get a floral proposal with recipes and budget options, then delivery, on-site installation and rentals — arches, pedestals, compotes, candles.</p>
+        <ul class="ticks"><li>No minimum spend</li><li>50% retainer holds your date</li><li>Changes welcome up to six weeks out</li></ul>
+        <a class="btn btn--lav" href="https://www.weddingsbyhummingbirds.com/request-a-consultation" target="_blank" rel="noopener">Request a consultation <span aria-hidden="true">↗</span></a>
+      </article>
+      <article class="path">
+        <p class="path__k">Path two</p>
+        <h3>À la carte</h3>
+        <p>Pick one of seven palettes, choose the pieces you need, order online. No consultation, no overwhelm. Good for small weddings and tight timelines.</p>
+        <ul class="ticks"><li>Seven curated palettes</li><li>Order online, we invoice</li><li>Pickup or delivery</li></ul>
+        <a class="btn btn--line" href="https://www.weddingsbyhummingbirds.com/wedding-collections" target="_blank" rel="noopener">See the palettes <span aria-hidden="true">↗</span></a>
+      </article>
+    </div>
+    <div class="palettes" aria-label="À la carte palettes">
+      <figure><img src="img/sm/pal-1.jpg" alt="All-white roses and greenery with white, cream and silver swatches" width="800" height="640" loading="lazy"><figcaption>White · cream · soft green · silver</figcaption></figure>
+      <figure><img src="img/sm/pal-3.jpg" alt="White roses with soft blue accents and seafoam swatches" width="800" height="640" loading="lazy"><figcaption>Ivory · sage · seafoam · soft blue</figcaption></figure>
+      <figure><img src="img/sm/pal-4.jpg" alt="Blush and ivory roses with champagne swatches" width="800" height="640" loading="lazy"><figcaption>Blush · ivory · champagne</figcaption></figure>
+      <figure><img src="img/sm/pal-2.jpg" alt="Cloud of baby’s breath with white swatches" width="800" height="640" loading="lazy"><figcaption>All-white baby’s breath</figcaption></figure>
+      <figure><img src="img/sm/pal-5.jpg" alt="Butter yellow, lavender and sky blue spring flowers with pastel swatches" width="800" height="640" loading="lazy"><figcaption>Butter yellow · lavender · sky</figcaption></figure>
+      <figure><img src="img/sm/pal-7.jpg" alt="Orange, peach and burgundy blooms with sunset swatches" width="800" height="640" loading="lazy"><figcaption>Gulf Coast sunset</figcaption></figure>
+      <figure><img src="img/sm/pal-6.jpg" alt="Café-toned roses and dahlias with terracotta and rust swatches" width="800" height="640" loading="lazy"><figcaption>Terracotta · peach · rust</figcaption></figure>
+    </div>
+    <div class="wed__bottom">
+      <blockquote class="wq"><p>“They were my first vendor I picked and since that day they made everything so easy. Mollie and her team are nothing short of amazing.”</p><footer>— Erin, bride</footer></blockquote>
+      <figure class="wed__ph"><img src="img/sm/beach-arch.jpg" alt="Driftwood ceremony arch with white draping and florals on Pensacola-area sand" width="800" height="849" loading="lazy"></figure>
+      <figure class="wed__ph"><img src="img/sm/cascade-blue.jpg" alt="Cascading bridal bouquet of white roses, blue hydrangea and palm leaves" width="800" height="1000" loading="lazy"></figure>
+    </div>
+  </div>
+</section>
+
+<section class="school" id="school" aria-labelledby="school-h">
+  <div class="wrap school__grid">
+    <div class="school__intro">
+      <p class="label">Flower School</p>
+      <h2 id="school-h" class="h2">Come make <em>something.</em></h2>
+      <p>Hands-on classes for every skill level — girls’ night, date night, or an hour with your hands in flowers. Kids get Little Hummingbirds, free.</p>
+      <figure class="school__ph"><img src="img/sm/kid-pumpkin.jpg" alt="A toddler in a pumpkin costume painting a small pumpkin at a Little Hummingbirds craft" width="720" height="1280" loading="lazy"><figcaption>Little Hummingbirds, Halloween</figcaption></figure>
+    </div>
+    <div class="cal">
+      <p class="cal__k">Coming up at the shop</p>
+      <ol class="cal__list" id="cal">
+        <li class="ev" data-date="2026-11-24">
+          <p class="ev__d"><span class="ev__m">Nov</span><span class="ev__day">24</span></p>
+          <div class="ev__b"><h3>Thanksgiving Centerpiece Workshop</h3><p>Make your own fresh centerpiece for the holiday table. Our designers walk you through it.</p><p class="ev__meta"><span>5:30–6:30 PM</span><span class="num">$65 per person</span><span class="ev__when"></span></p></div>
+          <a class="btn btn--plum ev__go" href="https://www.hummingbirdsflowerschool.com/product/thanksgiving-centerpiece-class/G456YMSX5MDWHQ7WW6W7BFY5" target="_blank" rel="noopener">Register</a>
+        </li>
+        <li class="ev" data-date="2026-12-03">
+          <p class="ev__d"><span class="ev__m">Dec</span><span class="ev__day">3</span></p>
+          <div class="ev__b"><h3>Fresh Evergreen Wreath Workshop</h3><p>Seasonal greenery, ribbon and accents. Leave with a wreath ready for the door.</p><p class="ev__meta"><span>5:30–6:30 PM</span><span class="num">$85 per person</span><span class="ev__when"></span></p></div>
+          <a class="btn btn--plum ev__go" href="https://www.hummingbirdsflowerschool.com/product/fresh-christmas-wreath-class/IHII77IJ56CWYIX74XQJVIAS" target="_blank" rel="noopener">Register</a>
+        </li>
+        <li class="ev ev--kids" data-date="2026-12-19">
+          <p class="ev__d"><span class="ev__m">Dec</span><span class="ev__day">19</span></p>
+          <div class="ev__b"><h3>Little Hummingbirds: Flower Confetti Frame Ornaments</h3><p>The last kids’ craft of the year — a pressed-flower ornament for the tree.</p><p class="ev__meta"><span>11 AM–12 PM</span><span>Free</span><span class="ev__when"></span></p></div>
+          <a class="btn btn--line-dark ev__go" href="https://www.flowersbyhummingbirds.com/classes" target="_blank" rel="noopener">Details</a>
+        </li>
+      </ol>
+      <div class="private">
+        <h3>Book a private Flower Hour</h3>
+        <p>DIY bridal flower parties, team-building, girls’ nights and birthdays, right here in the studio. Local maker with a skill to share? You can teach a class, too.</p>
+        <a class="link" href="https://www.hummingbirdsflowerschool.com/" target="_blank" rel="noopener">Plan one on the Flower School site <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sympathy" id="sympathy" aria-labelledby="sym-h">
+  <div class="wrap sym__grid">
+    <figure class="sym__ph"><img src="img/sm/sym-white.jpg" alt="White spider mums, green button mums and white stock in a sympathy arrangement" width="800" height="800" loading="lazy"></figure>
+    <div class="sym__copy">
+      <p class="label">Sympathy</p>
+      <h2 id="sym-h" class="h3">When you can’t be there.</h2>
+      <p>We deliver to funeral homes across the area and we’ll help you choose. If the service is soon, call us at <a href="tel:+18509959620">(850) 995-9620</a>.</p>
+      <ul class="sym__links">
+        <li><a href="https://www.flowersbyhummingbirds.com/sympathy-flowers/standing-sprays" target="_blank" rel="noopener">Standing sprays &amp; wreaths</a></li>
+        <li><a href="https://www.flowersbyhummingbirds.com/sympathy-flowers/casket-flowers" target="_blank" rel="noopener">Casket flowers</a></li>
+        <li><a href="https://www.flowersbyhummingbirds.com/sympathy-flowers/cremation-and-memorial" target="_blank" rel="noopener">Cremation &amp; memorial</a></li>
+        <li><a href="https://www.flowersbyhummingbirds.com/sympathy-flowers/sympathy-arrangements" target="_blank" rel="noopener">Sympathy arrangements</a></li>
+        <li><a href="https://www.flowersbyhummingbirds.com/sympathy-flowers/for-the-home" target="_blank" rel="noopener">For the family’s home</a></li>
+        <li><a href="https://www.flowersbyhummingbirds.com/funeral-home-delivery.php" target="_blank" rel="noopener">Funeral home delivery</a></li>
+      </ul>
+      <blockquote class="sym__q"><p>“I called and talked with Michelle. Michelle went above and beyond to be sure the plant was delivered in time for the funeral. She even sent me a picture.”</p><footer>— Julia G., Alabama</footer></blockquote>
+    </div>
+  </div>
+</section>
+
+<section class="reviews" aria-labelledby="rev-h">
+  <div class="wrap">
+    <div class="rev__head">
+      <p class="rev__score"><span class="num">4.8</span><small>out of 5 · 224 reviews</small></p>
+      <h2 id="rev-h" class="h2">People write back. <em>So does Mollie.</em></h2>
+    </div>
+    <div class="threads">
+      <article class="thread">
+        <p class="thread__q">“Ordered a last minute gift for my mom, thinking it wouldn’t be delivered until the next day… but nope, they made sure that she got her flowers on her birthday! I live 10 hours away and didn’t have to worry about a thing.”</p>
+        <p class="thread__who">Shana N. · Arkansas</p>
+        <p class="thread__r"><b>Reply from Hummingbirds</b> It’s hard to be away from people you love on their special days, and we’re so happy to have been a part of celebrating your Mama!</p>
+      </article>
+      <article class="thread">
+        <p class="thread__q">“I ordered an arrangement for my family who had just lost their pet that morning. I asked for a custom rainbow assortment and they absolutely nailed it.”</p>
+        <p class="thread__who">Barbara F. · New York</p>
+        <p class="thread__r"><b>Reply from Hummingbirds</b> We are all pet parents, and we know how hard it is when they cross the rainbow bridge. It was our honor to help you send love!</p>
+      </article>
+      <article class="thread">
+        <p class="thread__q">“I’m in MS but my family is in Pace. Hummingbird always has something for me to send them. Whether birthday, dance recital or just because.”</p>
+        <p class="thread__who">Brenda C. · Mississippi</p>
+        <p class="thread__r"><b>Reply from Hummingbirds</b> We are here to help you celebrate all of life’s occasions!</p>
+      </article>
+    </div>
+    <a class="link" href="https://www.flowersbyhummingbirds.com/reviews.php" target="_blank" rel="noopener">Read all 224 <span aria-hidden="true">↗</span></a>
+  </div>
+</section>
+
+<section class="about" id="about" aria-labelledby="about-h">
+  <div class="wrap about__grid">
+    <figure class="about__ph"><img src="img/storefront.jpg" alt="The Hummingbirds storefront at night: lavender sign, painted windows reading ‘life is better with flowers’ and ‘weddings, events, gifts’" width="746" height="799" loading="lazy"></figure>
+    <div class="about__copy">
+      <p class="label">About</p>
+      <h2 id="about-h" class="h2">Meet <em>Mollie.</em></h2>
+      <p>Mollie Johnson started Hummingbirds to feed a genuine love for giving. She came to flowers by way of a biology degree, and it shows: every bouquet is worked out in color, shape and scent.</p>
+      <p>She’s Pace and Pensacola through and through. As her family has grown, so has the shop: weddings, a Flower School, kids’ crafts on Saturday mornings, and homecoming corsages for Tate, Gulf Breeze and Central.</p>
+      <p class="about__sig">Her favorite thing in the world? Putting smiles on people’s faces.</p>
+    </div>
+  </div>
+</section>
+
+<section class="visit" id="visit" aria-labelledby="visit-h">
+  <div class="wrap visit__grid">
+    <div>
+      <p class="label label--lav">Visit</p>
+      <h2 id="visit-h" class="h2 h2--light">4861 W Spencer <em>Field Rd.</em></h2>
+      <p class="visit__addr">Pace, FL 32571 · <a href="https://maps.google.com/?q=4861+West+Spencer+Field+Road+Pace+FL+32571" target="_blank" rel="noopener">Directions <span aria-hidden="true">↗</span></a></p>
+      <p class="visit__c"><a href="tel:+18509959620">(850) 995-9620</a><br><a href="mailto:hummingbirdsflowers@gmail.com">hummingbirdsflowers@gmail.com</a><br><a href="https://www.instagram.com/hummingbirdsflowers/" target="_blank" rel="noopener">@hummingbirdsflowers</a> · <a href="https://www.facebook.com/Hummingbirdsflowers" target="_blank" rel="noopener">Facebook</a></p>
+    </div>
+    <table class="hours" id="hours">
+      <caption class="sr">Shop hours, Central time</caption>
+      <tbody>
+        <tr data-d="1"><th>Monday</th><td class="num">9 – 5</td></tr>
+        <tr data-d="2"><th>Tuesday</th><td class="num">9 – 5</td></tr>
+        <tr data-d="3"><th>Wednesday</th><td class="num">9 – 5</td></tr>
+        <tr data-d="4"><th>Thursday</th><td class="num">9 – 5</td></tr>
+        <tr data-d="5"><th>Friday</th><td class="num">9 – 5</td></tr>
+        <tr data-d="6"><th>Saturday</th><td class="num">10 – 2</td></tr>
+        <tr data-d="0"><th>Sunday</th><td>Closed</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot__in">
+    <img class="foot__logo" src="img/logo.png" alt="Hummingbirds Flowers + Events" width="900" height="171" loading="lazy">
+    <nav class="foot__nav" aria-label="Our sites">
+      <a href="https://www.flowersbyhummingbirds.com/" target="_blank" rel="noopener">Shop ↗</a>
+      <a href="https://www.weddingsbyhummingbirds.com/" target="_blank" rel="noopener">Weddings ↗</a>
+      <a href="https://www.hummingbirdsflowerschool.com/" target="_blank" rel="noopener">Flower School ↗</a>
+      <a href="https://www.flowersbyhummingbirds.com/contact_us.php" target="_blank" rel="noopener">Contact ↗</a>
+    </nav>
+    <p class="foot__fine">Hummingbirds Flowers &amp; Events · Locally owned &amp; operated in Pace, Florida.</p>
+    <p class="foot__credit">Concept by Sam &amp; Banks — not affiliated with Hummingbirds Flowers &amp; Events yet.</p>
+  </div>
+</footer>
+<script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,530 @@
+{
+"p-standing-heart-sign": {
+"sm": [
+800,
+800
+]
+},
+"p-red-white-memorial-spray": {
+"sm": [
+800,
+800
+]
+},
+"p-purse-bouquet": {
+"sm": [
+800,
+800
+]
+},
+"p-standing-heart-bouquet": {
+"full": [
+1280,
+1280
+],
+"sm": [
+800,
+800
+]
+},
+"p-initial-rose-bouquet": {
+"sm": [
+800,
+800
+]
+},
+"p-mini-standing-heart": {
+"sm": [
+800,
+800
+]
+},
+"p-heart-rose": {
+"sm": [
+800,
+800
+]
+},
+"p-garden-vase-arrangement": {
+"sm": [
+800,
+800
+]
+},
+"p-vibrant-sympathy-spray": {
+"sm": [
+800,
+800
+]
+},
+"p-classic-rose-carnations-vase": {
+"sm": [
+800,
+800
+]
+},
+"p-heart-mix-garden": {
+"sm": [
+800,
+800
+]
+},
+"p-mix-blooms-bouquet": {
+"sm": [
+800,
+1067
+]
+},
+"p-cloudy-heart": {
+"sm": [
+800,
+800
+]
+},
+"p-tulip-love": {
+"sm": [
+800,
+800
+]
+},
+"p-fall-rim-rose-bouquet": {
+"sm": [
+800,
+800
+]
+},
+"p-sympathy-cross": {
+"sm": [
+800,
+800
+]
+},
+"p-sympathy-garden-basket": {
+"sm": [
+800,
+800
+]
+},
+"p-the-budget-bouquet": {
+"sm": [
+800,
+1067
+]
+},
+"p-tall-blooming-purse": {
+"sm": [
+800,
+800
+]
+},
+"p-the-bloom-sol-signature": {
+"sm": [
+800,
+800
+]
+},
+"p-the-signature-rose-bouquet": {
+"sm": [
+800,
+800
+]
+},
+"p-3d-floral-art-workshop": {
+"full": [
+1280,
+1280
+],
+"sm": [
+800,
+800
+]
+},
+"p-gerbera-rose": {
+"sm": [
+800,
+800
+]
+},
+"p-delicate-lily-rose-bouquet": {
+"sm": [
+800,
+800
+]
+},
+"p-autumn-mix-blooms": {
+"sm": [
+800,
+800
+]
+},
+"p-flat-rose-olla": {
+"sm": [
+800,
+800
+]
+},
+"p-garden-party-blooms": {
+"sm": [
+800,
+800
+]
+},
+"p-cloudy": {
+"sm": [
+800,
+800
+]
+},
+"p-hello-kitty-bouquet": {
+"sm": [
+800,
+800
+]
+},
+"p-blushed-heart-mix": {
+"sm": [
+800,
+800
+]
+},
+"p-blooming-rose-box": {
+"sm": [
+800,
+800
+]
+},
+"p-luxe-mixed-bouquet": {
+"full": [
+1280,
+1280
+],
+"sm": [
+800,
+800
+]
+},
+"p-rose-bouquet": {
+"sm": [
+800,
+800
+]
+},
+"p-vibrant-serenity-wreath": {
+"sm": [
+800,
+800
+]
+},
+"p-lux-rose-mix-bouquet": {
+"sm": [
+800,
+800
+]
+},
+"p-daisy-rose": {
+"sm": [
+800,
+800
+]
+},
+"p-cheetah-bouquet": {
+"full": [
+1280,
+1280
+],
+"sm": [
+800,
+800
+]
+},
+"hero-lily": {
+"full": [
+1080,
+1440
+],
+"sm": [
+800,
+1067
+]
+},
+"lily-close": {
+"full": [
+1080,
+1440
+],
+"sm": [
+800,
+1067
+]
+},
+"pastel-studio": {
+"full": [
+1080,
+1440
+],
+"sm": [
+800,
+1067
+]
+},
+"bar-outdoor": {
+"full": [
+1080,
+1440
+],
+"sm": [
+800,
+1067
+]
+},
+"bar-outdoor-2": {
+"full": [
+1080,
+1440
+],
+"sm": [
+800,
+1067
+]
+},
+"bar-studio": {
+"full": [
+720,
+1280
+],
+"sm": [
+720,
+1280
+]
+},
+"bar-you": {
+"full": [
+1080,
+1920
+],
+"sm": [
+800,
+1422
+]
+},
+"studio-door": {
+"full": [
+1080,
+1920
+],
+"sm": [
+800,
+1422
+]
+},
+"studio-door-2": {
+"full": [
+1080,
+1920
+],
+"sm": [
+800,
+1422
+]
+},
+"jack": {
+"full": [
+1080,
+1440
+],
+"sm": [
+800,
+1067
+]
+},
+"ev-snowwhite": {
+"full": [
+1080,
+1440
+],
+"sm": [
+800,
+1067
+]
+},
+"ev-mom": {
+"full": [
+1080,
+1440
+],
+"sm": [
+800,
+1067
+]
+},
+"ev-hands": {
+"full": [
+1080,
+1440
+],
+"sm": [
+800,
+1067
+]
+},
+"ev-sleeves": {
+"full": [
+1080,
+1440
+],
+"sm": [
+800,
+1067
+]
+},
+"ev-wildflower": {
+"full": [
+1080,
+1440
+],
+"sm": [
+800,
+1067
+]
+},
+"ev-wildflower-close": {
+"full": [
+1080,
+1440
+],
+"sm": [
+800,
+1067
+]
+},
+"ev-red-balloons": {
+"full": [
+1080,
+1438
+],
+"sm": [
+800,
+1065
+]
+},
+"ev-backyard": {
+"full": [
+1080,
+1440
+],
+"sm": [
+800,
+1067
+]
+},
+"ev-star": {
+"full": [
+1080,
+1920
+],
+"sm": [
+800,
+1422
+]
+},
+"ev-cake": {
+"full": [
+1080,
+1440
+],
+"sm": [
+800,
+1067
+]
+},
+"ev-men": {
+"full": [
+1080,
+1440
+],
+"sm": [
+800,
+1067
+]
+},
+"snack-cart": {
+"full": [
+1024,
+1536
+],
+"sm": [
+800,
+1200
+]
+},
+"rental-table": {
+"full": [
+1600,
+2133
+],
+"sm": [
+800,
+1066
+]
+},
+"wedding-couple": {
+"full": [
+1080,
+1620
+],
+"sm": [
+800,
+1200
+]
+},
+"balloons-pink": {
+"full": [
+880,
+1168
+],
+"sm": [
+800,
+1062
+]
+},
+"rose-arch": {
+"full": [
+1024,
+1536
+],
+"sm": [
+800,
+1200
+]
+},
+"workshop-table": {
+"full": [
+1024,
+1536
+],
+"sm": [
+800,
+1200
+]
+},
+"bar-studio-umbrella": {
+"full": [
+1206,
+2144
+],
+"sm": [
+800,
+1422
+]
+},
+"hand-bouquet": {
+"full": [
+1206,
+1608
+],
+"sm": [
+800,
+1067
+]
+}
+}

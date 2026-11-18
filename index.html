@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!--
+  DESIGN PLAN — Sam & Banks hub
+  Concept: a quiet gallery wall that lets three loud pieces of work do the talking. The pitch IS the hero:
+           a drag slider from a 2017 template to the redesign.
+  Palette: cool paper #ECECE7, ink #141413, graphite #6B6B66, rule #CFCFC8, one highlighter accent #DAF45C.
+           Case studies take over the page in each concept's own colors as you scroll.
+  Type:    Host Grotesk (display + text, 400–800), Newsreader italic for the rare spoken aside, Fragment Mono for labels.
+  Grid:    12 columns, 24px gutters, 4vw outer margin. Display set huge and tight; labels tiny and spaced.
+  Moments: (1) before/after drag slider that auto-demos itself; (2) case studies recolor the whole page and
+           their site screenshots scroll inside the device frames as you scroll; (3) "what changes / what doesn't" ledger.
+  Sections: nav · hero + slider · work (3) · ledger · process · FAQ · CTA · footer
+-->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sam & Banks — Websites for florists</title>
+<meta name="description" content="We redesign florists’ websites so they look as good as their Instagram. Same ordering system, same domain. Live in seven days.">
+<meta name="robots" content="noindex,nofollow">
+<link rel="icon" href="/favicon.ico?v=2" sizes="any">
+<link rel="icon" href="/favicon.svg?v=2" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,500&family=Fragment+Mono&display=swap" rel="stylesheet">
+<!-- each case title is set in its own site's display face (subset to just those letters) -->
+<link href="https://fonts.googleapis.com/css2?family=Imbue:opsz,wght@10..100,300&family=Archivo:wdth,wght@125,900&family=Gloock&text=OssiaFIELDAYCazhr&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="hub.css">
+</head>
+<body data-theme="paper">
+
+<a class="skip" href="#work">Skip to the work</a>
+
+<header class="nav" id="top">
+  <a href="#top" class="brand" aria-label="Sam & Banks, home">Sam <span class="amp">&amp;</span> Banks</a>
+  <nav aria-label="Primary">
+    <a href="#work">Work</a>
+    <a href="#how">How it works</a>
+    <a href="#faq">Questions</a>
+  </nav>
+  <a href="#work" class="nav-cta">See the work</a>
+</header>
+
+<main>
+<!-- HERO -->
+<section class="hero">
+  <h1 class="hero-title">
+    <span class="line"><span>Your Instagram is gorgeous.</span></span>
+    <span class="line"><span>Your website <em class="hl">isn’t.</em></span></span>
+  </h1>
+  <div class="hero-foot">
+    <p class="hero-sub">We rebuild florists’ websites so they look like your feed. Your ordering system, domain and email stay exactly where they are. <strong>Live in seven days.</strong></p>
+    <p class="hero-hint label">Drag the handle <span aria-hidden="true">↓</span></p>
+  </div>
+
+  <figure class="compare" id="compare" aria-label="Before and after: a 2017 wedding florist template compared with our Ossia redesign">
+    <div class="chrome"><span></span><span></span><span></span><div class="url"><span class="url-text">ossiaflowers.com</span></div></div>
+    <div class="compare-stage">
+      <picture><source media="(max-width:900px)" srcset="assets/shots/ossia-hero-m.jpg"><img class="after" src="assets/shots/ossia-hero.jpg" alt="Redesigned Ossia homepage: a dark peony still life with the OSSIA wordmark set huge behind it" width="1440" height="900"></picture>
+      <div class="before-wrap"><picture><source media="(max-width:900px)" srcset="assets/shots/before-ossia-m.jpg"><img class="before" src="assets/shots/before-ossia.jpg" alt="The old site: a pink 2017 template with a sidebar, clip-art buttons and a ‘Welcome to our website!’ headline" width="1440" height="900"></picture></div>
+      <span class="tag tag-before">Before · 2017 template</span>
+      <span class="tag tag-after">After · 7 days later</span>
+      <div class="handle" role="slider" tabindex="0" aria-label="Reveal before or after" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50"><span class="grip" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M9 6l-6 6 6 6M15 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2"/></svg></span></div>
+    </div>
+    <figcaption class="label">Ossia, a concept rebuild. Same studio, same inquiry inbox, a website that finally looks like the work.</figcaption>
+  </figure>
+</section>
+
+<!-- WORK -->
+<section class="work" id="work" aria-label="Selected work">
+  <article class="case" data-theme="ossia" id="case-ossia">
+    <div class="case-text">
+      <p class="case-num label">01 / 03</p>
+      <h3 class="case-name">Ossia</h3>
+      <p class="case-kind">Wedding &amp; event florist · Brooklyn</p>
+      <p class="case-body">For studios that sell a feeling. Dark and cinematic, built around the work: an index of weddings, a gallery of installations, and an inquiry form that asks the questions a planner would.</p>
+      <ul class="case-list">
+        <li><span>Solves</span>Portfolio buried on page 4 of a template</li>
+        <li><span>Ordering</span>Inquiry form that filters for budget and date</li>
+        <li><span>Best for</span>Event florists who live on Instagram</li>
+      </ul>
+      <a class="case-link" href="work/ossia/index.html">Open the site <span aria-hidden="true">↗</span></a>
+    </div>
+    <div class="case-media">
+      <div class="device desktop"><div class="chrome"><span></span><span></span><span></span></div><div class="screen"><img src="assets/shots/ossia-desktop.jpg" alt="Ossia website, full page" loading="lazy" width="1000" height="6377"></div></div>
+      <div class="device phone"><div class="screen"><img src="assets/shots/ossia-mobile.jpg" alt="Ossia website on a phone" loading="lazy" width="480" height="12302"></div></div>
+    </div>
+  </article>
+
+  <article class="case" data-theme="fieldday" id="case-fieldday">
+    <div class="case-text">
+      <p class="case-num label">02 / 03</p>
+      <h3 class="case-name">Field Day</h3>
+      <p class="case-kind">Neighborhood flower shop · Somerville</p>
+      <p class="case-body">For shops that sell bunches every day. Loud, friendly and fast on a phone, with a live “order by 1pm” clock. Every Order button goes straight to the checkout they already use.</p>
+      <ul class="case-list">
+        <li><span>Solves</span>A wire-service template nobody can change</li>
+        <li><span>Ordering</span>Links to existing BloomNation / Square checkout</li>
+        <li><span>Best for</span>Retail florists with same-day delivery</li>
+      </ul>
+      <a class="case-link" href="work/fieldday/index.html">Open the site <span aria-hidden="true">↗</span></a>
+    </div>
+    <div class="case-media">
+      <div class="device desktop"><div class="chrome"><span></span><span></span><span></span></div><div class="screen"><img src="assets/shots/fieldday-desktop.jpg" alt="Field Day website, full page" loading="lazy" width="1000" height="6072"></div></div>
+      <div class="device phone"><div class="screen"><img src="assets/shots/fieldday-mobile.jpg" alt="Field Day website on a phone" loading="lazy" width="480" height="11745"></div></div>
+    </div>
+  </article>
+
+  <article class="case" data-theme="casa" id="case-casa">
+    <div class="case-text">
+      <p class="case-num label">03 / 03</p>
+      <h3 class="case-name">Casa Azahar</h3>
+      <p class="case-kind">Estudio floral · Guadalajara</p>
+      <p class="case-body">For florists who take orders in chat. The catalog that used to live in story highlights becomes a real one, and every “Pedir” button opens WhatsApp with the arrangement already typed in. Spanish first, English toggle.</p>
+      <ul class="case-list">
+        <li><span>Solves</span>A Canva slideshow standing in for a website</li>
+        <li><span>Ordering</span>One tap to WhatsApp, item pre-filled</li>
+        <li><span>Best for</span>Shops that sell through DMs, WhatsApp or Viber</li>
+      </ul>
+      <a class="case-link" href="work/casa-azahar/index.html">Abrir el sitio <span aria-hidden="true">↗</span></a>
+    </div>
+    <div class="case-media">
+      <div class="device desktop"><div class="chrome"><span></span><span></span><span></span></div><div class="screen"><img src="assets/shots/casa-azahar-desktop.jpg" alt="Casa Azahar website, full page" loading="lazy" width="1000" height="6960"></div></div>
+      <div class="device phone"><div class="screen"><img src="assets/shots/casa-azahar-mobile.jpg" alt="Casa Azahar website on a phone" loading="lazy" width="480" height="13998"></div></div>
+    </div>
+  </article>
+</section>
+
+<!-- LEDGER -->
+<section class="ledger" aria-labelledby="ledger-title">
+  <h2 id="ledger-title" class="section-title">We only touch what your customers see.</h2>
+  <div class="ledger-cols">
+    <div class="col">
+      <p class="label">What changes</p>
+      <ul>
+        <li>How your shop looks, on every screen</li>
+        <li>Your best photos actually on the homepage</li>
+        <li>Pages that load fast on a phone</li>
+        <li>Inquiries that arrive with date, venue and budget</li>
+        <li>Your name looks like you mean it on Google</li>
+      </ul>
+    </div>
+    <div class="col col-keep">
+      <p class="label">What stays exactly the same</p>
+      <ul>
+        <li>Your ordering system: Shopify, Square, BloomNation, WhatsApp</li>
+        <li>Your domain</li>
+        <li>Your email (we never touch it)</li>
+        <li>Your prices, products and payouts</li>
+        <li>Your Instagram. It’s already great.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process" id="how" aria-labelledby="how-title">
+  <p class="label">How it works</p>
+  <h2 id="how-title" class="section-title">Seven days, start to live.</h2>
+  <ol class="steps">
+    <li>
+      <span class="day">Day 0</span>
+      <h3>We build your demo first</h3>
+      <p>Before you pay anything, we build a working version of your new site from your public photos and info. If we messaged you, it already exists.</p>
+    </li>
+    <li>
+      <span class="day">Days 1–6</span>
+      <h3>You tell us what’s off</h3>
+      <p>One round of changes: the photos you love, the wording you’d never use, the page you need. Ten minutes of your time, maybe fifteen.</p>
+    </li>
+    <li>
+      <span class="day">Day 7</span>
+      <h3>We flip the switch</h3>
+      <p>We point your domain at the new site. Orders keep flowing through the system you already use. Nobody has to learn anything.</p>
+    </li>
+  </ol>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq" aria-labelledby="faq-title">
+  <h2 id="faq-title" class="section-title">Questions florists ask us</h2>
+  <div class="faq-list">
+    <details><summary>Do I have to switch my ordering system?</summary><p>No. That’s the point. Your Order buttons link to the checkout you already use (Shopify, Square, BloomNation, Teleflora, or a WhatsApp chat), so payments, payouts and your daily routine don’t change.</p></details>
+    <details><summary>What does it cost?</summary><p>One flat price, agreed before we start: half to begin, half the day it goes live. No monthly fee, unless you later want us to handle updates.</p></details>
+    <details><summary>Will my email stop working?</summary><p>No. We only change the record that points your domain at the website. Your email settings stay exactly where they are.</p></details>
+    <details><summary>Do you need my passwords?</summary><p>Never. The demo is built from public info. After you say yes, you add us as a collaborator or we do a ten-minute screen share. You stay the owner of everything.</p></details>
+    <details><summary>Who owns the site?</summary><p>You do: the files, the design, the domain. If you ever want to leave, you take it all with you.</p></details>
+    <details><summary>Can you write it in Spanish?</summary><p>Sí. Sites can be Spanish-first, English-first, or both with a toggle.</p></details>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="contact" aria-labelledby="cta-title">
+  <h2 id="cta-title" class="cta-title">Want to see <br>yours?</h2>
+  <div class="cta-side">
+    <p>If we messaged you, your demo is already built. The link is in our message. Reply there with what you love and what you’d change, and we’ll take it from there.</p>
+    <a class="cta-btn" href="#work">See the work again <span aria-hidden="true">↑</span></a>
+    <p class="label sig">Sam Iannone &amp; Banks Hayes</p>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <span>© 2026 Sam &amp; Banks</span>
+  <span>Ossia, Field Day and Casa Azahar are fictional concept studies. Photography via Unsplash.</span>
+  <a href="#top">Back to top ↑</a>
+</footer>
+
+<script src="hub.js"></script>
+</body>
+</html>
