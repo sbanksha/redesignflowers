@@ -1,0 +1,253 @@
+<!doctype html>
+<!--
+  PRETTY FLOWERS, preview by Sam & Banks. Concept "Noir Rose":
+  a luxury fashion house film built from their own identity. Opens in black like a perfume campaign
+  on their Signature Red Rose Bouquet, walks through the gold crowns and butterflies, spells their
+  baby's breath lettering, then the room warms to blush for the bright arrangements, and closes
+  back in oxblood with the way to order.
+  iPhone safety: one passive scroll listener + requestAnimationFrame, IntersectionObserver reveals,
+  transform / opacity / a few clip-path insets only. Nothing scroll-driven in CSS, no heavy GPU effects.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>Pretty Flowers | Luxury Floral Design, Everett MA</title>
+<meta name="description" content="Pretty Flowers, Everett MA. Elegant floral designs for life's most meaningful moments. Bouquets, gifts and events. Delivery available.">
+<meta name="theme-color" content="#0c0809">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230c0809'/%3E%3Cpath d='M14 44 12 22l10 9 10-15 10 15 10-9-2 22z' fill='none' stroke='%23c8a15a' stroke-width='3' stroke-linejoin='round'/%3E%3C/svg%3E">
+<script>document.documentElement.classList.add('js')</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Jost:wght@300;400;500&family=Pinyon+Script&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="preload" as="image" href="img/signature-red-rose.jpg" fetchpriority="high">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="butterfly" viewBox="0 0 64 50">
+    <g fill="currentColor" fill-opacity=".16" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round" stroke-linecap="round">
+      <path d="M31 22C25 6 10 0 4.5 6.5 0 12 6 22 30.5 25z"/>
+      <path d="M33 22C39 6 54 0 59.5 6.5 64 12 58 22 33.5 25z"/>
+      <path d="M30.5 26.5C19 27.5 9.5 35 13.5 43c3.6 6.5 13 0 17-12z"/>
+      <path d="M33.5 26.5C45 27.5 54.5 35 50.5 43c-3.6 6.5-13 0-17-12z"/>
+      <path d="M12 9.5c6 1.5 12 6 17 12M52 9.5c-6 1.5-12 6-17 12" fill="none" stroke-width=".8"/>
+    </g>
+    <path d="M32 15v26M32 15c-1.5-5-4-8-7-9.5M32 15c1.5-5 4-8 7-9.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="crown" viewBox="0 0 48 34">
+    <path d="M7 29 4.5 9.5l10 8L24 3l9.5 14.5 10-8L41 29z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+    <circle cx="4.5" cy="7" r="2.2" fill="currentColor"/><circle cx="24" cy="2.4" r="2.2" fill="currentColor"/><circle cx="43.5" cy="7" r="2.2" fill="currentColor"/>
+    <path d="M8 33h32" stroke="currentColor" stroke-width="2"/>
+  </symbol>
+</svg>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav">
+  <a class="nav__mark" href="#top" aria-label="Pretty Flowers, back to top">
+    <svg aria-hidden="true"><use href="#crown"/></svg><span>Pretty Flowers</span>
+  </a>
+  <nav class="nav__links" aria-label="Contact">
+    <a href="tel:+18573407701" data-todo="confirm">Call</a>
+    <a class="nav__ig" href="https://www.instagram.com/prettyflowersma/" target="_blank" rel="noopener">Instagram</a>
+  </nav>
+</header>
+
+<div class="cursor" aria-hidden="true"></div>
+
+<main id="main">
+
+  <!-- 1. HERO: the signature bouquet in an arch that opens to full bleed -->
+  <section class="hero" id="top" aria-labelledby="hero-title">
+    <div class="hero__stage">
+      <h1 id="hero-title" class="sr-only">Pretty Flowers. Luxury floral design in Everett, MA.</h1>
+      <span class="hero__word hero__word--a" aria-hidden="true"><span class="hw">Pretty</span></span>
+      <div class="hero__frame">
+        <img class="hero__img" src="img/signature-red-rose.jpg" width="1104" height="1200" alt="Pretty Flowers Signature Red Rose Bouquet: a dome of red roses with baby's breath in black wrap with a pearl edge" fetchpriority="high" decoding="async">
+      </div>
+      <span class="hero__word hero__word--b" aria-hidden="true"><span class="hw">Flowers</span></span>
+      <svg class="hero__fly" aria-hidden="true"><use href="#butterfly"/></svg>
+      <p class="hero__line">Luxury floral design<br>Everett, Massachusetts</p>
+      <p class="hero__cue" aria-hidden="true"><span></span>Scroll</p>
+      <p class="hero__caption" aria-hidden="true"><span>Signature</span> Red Rose Bouquet</p>
+    </div>
+  </section>
+
+  <!-- 2. STATEMENT: their bio, lit word by word -->
+  <section class="statement" aria-label="About">
+    <p class="kicker rv">Pretty Flowers <i></i> Everett, MA</p>
+    <p class="statement__text js-words">Elegant floral designs for <em>life's most meaningful</em> moments.</p>
+    <ul class="statement__trio rv" aria-label="What we make">
+      <li>Bouquets</li><li>Gifts</li><li>Events</li>
+    </ul>
+  </section>
+
+  <!-- 3. SIGNATURE: pinned, three details of the house bouquet -->
+  <section class="sig" id="signature" aria-labelledby="sig-title">
+    <div class="sig__stage">
+      <div class="sig__media">
+        <img class="sig__img is-on" data-i="0" src="img/white-wrap-roses-640.jpg" srcset="img/white-wrap-roses-640.jpg 609w, img/white-wrap-roses.jpg 1142w" sizes="(min-width: 900px) 44vw, 92vw" width="1142" height="1200" alt="A dome of red roses with baby's breath and greenery in a white wrap" loading="lazy" decoding="async">
+        <img class="sig__img" data-i="1" src="img/crown-butterflies-640.jpg" srcset="img/crown-butterflies-640.jpg 595w, img/crown-butterflies.jpg 1080w" sizes="(min-width: 900px) 44vw, 92vw" width="1080" height="1161" alt="Red rose dome in black and gold wrap topped with a gold crown and gold butterflies" loading="lazy" decoding="async">
+        <img class="sig__img" data-i="2" src="img/blue-roses-butterflies-640.jpg" srcset="img/blue-roses-butterflies-640.jpg 517w, img/blue-roses-butterflies.jpg 969w" sizes="(min-width: 900px) 44vw, 92vw" width="969" height="1200" alt="Blue roses, white mums and thistle in black and gold wrap with gold butterflies" loading="lazy" decoding="async">
+        <svg class="sig__fly" aria-hidden="true"><use href="#butterfly"/></svg>
+      </div>
+      <div class="sig__copy">
+        <p class="kicker">The house signature</p>
+        <h2 id="sig-title" class="sig__title">Pure luxury, <em>timeless</em> beauty.</h2>
+        <ol class="sig__steps">
+          <li class="is-on" data-i="0"><span>01</span><h3>A dome of roses</h3><p>Rose after rose, gathered into one full, perfect dome.</p></li>
+          <li data-i="1"><span>02</span><h3>A crown on top</h3><p>Gold crowns and gold butterflies, set right into the petals.</p></li>
+          <li data-i="2"><span>03</span><h3>Black and gold</h3><p>The wrap that says Pretty Flowers. In red, or any color you love.</p></li>
+        </ol>
+        <div class="sig__bar" aria-hidden="true"><i></i></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. LETTERING: their personalised bouquets -->
+  <section class="letters" id="lettering" aria-labelledby="letters-title">
+    <header class="letters__head">
+      <p class="kicker rv">Custom bouquets</p>
+      <h2 id="letters-title" class="display rv">Your words,<br><em>in flowers.</em></h2>
+      <p class="letters__lede rv">An initial, a sign, a name, a whole sentence. Written in baby's breath across the roses, in English or en español.</p>
+    </header>
+
+    <article class="lt lt--l">
+      <figure class="lt__fig"><img src="img/libra-640.jpg" srcset="img/libra-640.jpg 512w, img/libra.jpg 960w" sizes="(min-width: 900px) 40vw, 84vw" width="960" height="1200" alt="Red roses in black and white wrap with Libra and its zodiac symbol spelled in baby's breath, gold butterflies" loading="lazy" decoding="async"></figure>
+      <p class="lt__word" aria-hidden="true">Libra</p>
+      <p class="lt__note rv"><span>The zodiac</span>Their sign, in white, across a field of red.</p>
+    </article>
+
+    <article class="lt lt--r">
+      <figure class="lt__fig"><img src="img/initial-a-640.jpg" srcset="img/initial-a-640.jpg 512w, img/initial-a.jpg 960w" sizes="(min-width: 900px) 40vw, 84vw" width="960" height="1200" alt="Red rose dome ringed in baby's breath with a script letter A and a heart, gold butterflies" loading="lazy" decoding="async"></figure>
+      <p class="lt__word" aria-hidden="true">A</p>
+      <p class="lt__note rv"><span>The initial</span>One letter, ringed in white, with a heart for good measure.</p>
+    </article>
+
+    <article class="lt lt--l">
+      <figure class="lt__fig"><img src="img/initial-v-640.jpg" srcset="img/initial-v-640.jpg 640w, img/initial-v.jpg 1071w" sizes="(min-width: 900px) 40vw, 84vw" width="1071" height="1071" alt="Red roses with pink lilies and a V and heart in baby's breath, black and gold wrap" loading="lazy" decoding="async"></figure>
+      <p class="lt__word" aria-hidden="true">V</p>
+      <p class="lt__note rv"><span>The pair</span>A letter and a heart, with lilies all around.</p>
+    </article>
+
+    <article class="lt lt--r">
+      <figure class="lt__fig"><img src="img/congratulations-640.jpg" srcset="img/congratulations-640.jpg 569w, img/congratulations.jpg 1066w" sizes="(min-width: 900px) 40vw, 84vw" width="1066" height="1200" alt="Red and pink rose dome with a black Congratulations ribbon, Class of 2026, a gold crown and butterflies" loading="lazy" decoding="async"></figure>
+      <p class="lt__word lt__word--long" aria-hidden="true">Congratulations</p>
+      <p class="lt__note rv"><span>The ribbon</span>Satin, gold script, Class of 2026. Their big day, spelled out.</p>
+    </article>
+  </section>
+
+  <!-- 5. RIBBON: Feliz Aniversario, slides with the scroll -->
+  <section class="ribbon" aria-label="Ribbon lettering">
+    <div class="ribbon__band">
+      <p class="ribbon__track" aria-hidden="true">
+        <span>Feliz Aniversario</span><i></i><span>Congratulations</span><i></i><span>Te Amo</span><i></i><span>Libra</span><i></i><span>Feliz Aniversario</span><i></i><span>Congratulations</span><i></i><span>Te Amo</span><i></i>
+      </p>
+      <p class="sr-only">Satin ribbons in gold script: Feliz Aniversario, Congratulations, Te Amo, Libra.</p>
+    </div>
+    <p class="ribbon__note rv">Tell us what to write. <em>We will make it beautiful.</em></p>
+  </section>
+
+  <!-- 6. MORPH: noir warms into blush -->
+  <section class="morph" aria-labelledby="morph-title">
+    <h2 id="morph-title" class="morph__title rv">Not every moment<br>is <em>red.</em></h2>
+    <svg class="morph__fly" aria-hidden="true"><use href="#butterfly"/></svg>
+    <p class="morph__lede rv">Lilies, gerberas, roses, hydrangea, sunflowers. Bright arrangements in vases, baskets and hat boxes, made to light up a room.</p>
+  </section>
+
+  <!-- 7. COLOR GALLERY on blush -->
+  <section class="color" id="color" aria-label="Arrangements">
+    <div class="cols">
+      <div class="col" data-speed="-0.06">
+        <figure class="tile arch"><img src="img/pink-lily-box-640.jpg" width="512" height="640" alt="Pink lilies and red roses in a black hat box" loading="lazy" decoding="async"></figure>
+        <figure class="tile"><img src="img/hydrangea-basket-640.jpg" width="512" height="640" alt="Gerberas, lilies, roses and purple hydrangea in a basket" loading="lazy" decoding="async"></figure>
+        <figure class="tile"><img src="img/pink-tower-640.jpg" width="512" height="640" alt="Tall arrangement of orange and pink roses, snapdragons and gerberas" loading="lazy" decoding="async"></figure>
+        <figure class="tile arch"><img src="img/lavender-garden-640.jpg" width="567" height="640" alt="Lavender, pink and peach roses with mums in a woven basket" loading="lazy" decoding="async"></figure>
+      </div>
+      <div class="col" data-speed="0.05">
+        <figure class="tile"><img src="img/teal-vase-640.jpg" width="512" height="640" alt="Pink gerberas, roses and white spray roses in a mint vase" loading="lazy" decoding="async"></figure>
+        <figure class="tile arch"><img src="img/sunflower-butterfly-640.jpg" width="512" height="640" alt="Sunflower, blue roses and hydrangea in a vase with a gold butterfly" loading="lazy" decoding="async"></figure>
+        <figure class="tile"><img src="img/lily-hatbox-640.jpg" width="494" height="640" alt="Pink lilies and roses in a blush hat box" loading="lazy" decoding="async"></figure>
+        <figure class="tile"><img src="img/tropical-basket-640.jpg" width="572" height="640" alt="Yellow and pink roses, lilies and gerberas in a basket" loading="lazy" decoding="async"></figure>
+      </div>
+      <div class="col" data-speed="-0.1">
+        <figure class="tile"><img src="img/gerbera-vase-640.jpg" width="512" height="640" alt="Gerberas, orchids and roses in a gold vase with a pink bow" loading="lazy" decoding="async"></figure>
+        <figure class="tile"><img src="img/garden-mix-640.jpg" width="512" height="640" alt="Hydrangea, lilies, roses and carnations in a garden style vase" loading="lazy" decoding="async"></figure>
+        <figure class="tile arch"><img src="img/sunflower-basket-640.jpg" width="512" height="640" alt="Sunflowers, orange and red roses in a basket" loading="lazy" decoding="async"></figure>
+        <figure class="tile"><img src="img/pink-rose-lilies-640.jpg" width="512" height="640" alt="Pink roses and lilies in a tall glass vase" loading="lazy" decoding="async"></figure>
+      </div>
+    </div>
+    <p class="color__more rv">More every week on <a href="https://www.instagram.com/prettyflowersma/" target="_blank" rel="noopener">@prettyflowersma</a></p>
+  </section>
+
+  <!-- 8. BOUQUETS / GIFTS / EVENTS as an editorial index -->
+  <section class="menu" aria-labelledby="menu-title">
+    <h2 id="menu-title" class="sr-only">Bouquets, gifts and events</h2>
+    <article class="row rv">
+      <span class="row__n">I</span>
+      <h3 class="row__word">Bouquets</h3>
+      <p class="row__txt">Domed roses, mixed bouquets, lilies wrapped in pink. Custom bouquets for birthdays, anniversaries and just because.</p>
+      <figure class="row__fig"><img src="img/pink-lilies-bouquet-640.jpg" width="512" height="640" alt="Pink lilies and roses wrapped in pink paper with a gold butterfly" loading="lazy" decoding="async"></figure>
+    </article>
+    <article class="row rv">
+      <span class="row__n">II</span>
+      <h3 class="row__word"><em>Gifts</em></h3>
+      <p class="row__txt">A bouquet is already the gift. We like to make it even more personal: a name, a ribbon, a little surprise.</p>
+      <figure class="row__fig"><img src="img/money-roses-640.jpg" width="512" height="640" alt="Red roses with folded money flowers, a graduation cap and a Te Amo ribbon" loading="lazy" decoding="async"></figure>
+    </article>
+    <article class="row rv">
+      <span class="row__n">III</span>
+      <h3 class="row__word">Events</h3>
+      <p class="row__txt">Graduations, anniversaries, the days you will talk about for years. Tell us the date and the colors.</p>
+      <figure class="row__fig"><img src="img/calla-cascade-640.jpg" width="501" height="640" alt="Cascading bouquet of white and burgundy calla lilies, orchids and amaranthus" loading="lazy" decoding="async"></figure>
+    </article>
+  </section>
+
+  <!-- 9. HOW TO ORDER (their Instagram highlight) -->
+  <section class="order" id="order" aria-labelledby="order-title">
+    <p class="kicker rv">How to order</p>
+    <h2 id="order-title" class="display rv">Three messages<br><em>and it's yours.</em></h2>
+    <ol class="steps">
+      <li class="rv"><span>1</span><div><h3>Say hello</h3><p>Send us a DM on Instagram, or call the shop.</p></div></li>
+      <li class="rv"><span>2</span><div><h3>Tell us the moment</h3><p>Who it's for, the colors, the words, the date.</p></div></li>
+      <li class="rv"><span>3</span><div><h3>Pick up or delivery</h3><p>Collect it in Everett, or we bring it to them. Delivery available.</p></div></li>
+    </ol>
+    <figure class="quote rv">
+      <blockquote>For the Libra who loves a little luxury. A beautiful bouquet made to make someone feel extra special.</blockquote>
+      <figcaption><a href="https://www.instagram.com/prettyflowersma/" target="_blank" rel="noopener">@prettyflowersma</a>, November 2</figcaption>
+    </figure>
+  </section>
+
+  <!-- 10. VISIT / CONTACT -->
+  <section class="visit" id="visit" aria-labelledby="visit-title">
+    <svg class="visit__crown" aria-hidden="true"><use href="#crown"/></svg>
+    <h2 id="visit-title" class="visit__title rv">Everett,<br><em>Massachusetts.</em></h2>
+    <div class="visit__grid">
+      <figure class="visit__fig rv"><img src="img/shop-window.jpg" width="283" height="504" alt="The Pretty Flowers shop window with teddy bears, balloons and gift boxes" loading="lazy" decoding="async"><figcaption>The shop window</figcaption></figure>
+      <div class="visit__info rv">
+        <p class="visit__lead">Delivery available.<br><em>Con amor, desde Everett.</em></p>
+        <dl>
+          <div><dt>Shop</dt><dd data-todo="confirm">114 Ferry St, Everett, MA</dd></div>
+          <div><dt>Phone</dt><dd><a href="tel:+18573407701" data-todo="confirm">(857) 340-7701</a></dd></div>
+          <div><dt>Instagram</dt><dd><a href="https://www.instagram.com/prettyflowersma/" target="_blank" rel="noopener">@prettyflowersma</a></dd></div>
+        </dl>
+        <div class="ctas">
+          <a class="btn btn--gold" href="tel:+18573407701" data-todo="confirm">Call</a>
+          <a class="btn btn--line" href="https://www.instagram.com/prettyflowersma/" target="_blank" rel="noopener">Message us on Instagram</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <p class="foot__mark"><svg aria-hidden="true"><use href="#crown"/></svg>Pretty Flowers</p>
+  <p class="foot__credit">Preview built by Sam &amp; Banks for Pretty Flowers. Not live, not affiliated, just a look at what your site could be.</p>
+</footer>
+
+<script src="main.js" defer></script>
+</body>
+</html>
