@@ -1,0 +1,303 @@
+<!doctype html>
+<!--
+  THE ROSE CART, preview by Sam & Banks.
+  Concept "Under the umbrella": a sunny LA pop-up, built for an event planner to forward to a client.
+  Palette from the cart itself: white cart, umbrella pink, hot-pink lettering, kraft wrap, green stems, warm ink.
+  Fonts: Gloock (display, echoes the serif caps on the cart) + Bricolage Grotesque (body, labels).
+  Grid: mobile-first single column with deliberate offsets; 12 columns from 900px.
+  Signature: the pink-and-white fringe umbrella as the page's edge. Striped canopy, scalloped hem,
+  and a fringe that sways with your scroll speed. Second moment: loose stems gather into a kraft cone
+  in "How it works".
+  Sections: header, hero, planner strip, how it works, packages, past events, good for,
+  behind the scenes, check availability form, footer.
+  iPhone safety: one passive scroll listener + one rAF, IntersectionObserver, transform/opacity only.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>The Rose Cart | Build-your-own bouquet bar for LA events</title>
+<meta name="description" content="The Rose Cart is a mobile flower cart and build-your-own bouquet bar for baby showers, bridal showers, weddings, pop-ups and more. Los Angeles and surrounding areas.">
+<meta name="theme-color" content="#fde8ee">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M4 30a28 22 0 0 1 56 0z' fill='%23f4b3c6'/%3E%3Cpath d='M18 30 26 9h12l8 21z' fill='%23fff'/%3E%3Cpath d='M31 30h2v30h-2z' fill='%23c8336b'/%3E%3C/svg%3E">
+<script>document.documentElement.classList.add('js')</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,700&family=Gloock&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="preload" as="image" href="img/hero-cart.jpg" fetchpriority="high">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="bloom" viewBox="0 0 24 24">
+    <g fill="currentColor"><circle cx="12" cy="6" r="4.6"/><circle cx="17.7" cy="10.2" r="4.6"/><circle cx="15.5" cy="16.9" r="4.6"/><circle cx="8.5" cy="16.9" r="4.6"/><circle cx="6.3" cy="10.2" r="4.6"/></g>
+    <circle cx="12" cy="12" r="3" fill="#fff"/>
+  </symbol>
+</svg>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top">
+  <a class="wordmark" href="#top" aria-label="The Rose Cart, back to top">The Rose Cart</a>
+  <nav class="top__nav" aria-label="Sections">
+    <a href="#how">How it works</a>
+    <a href="#packages">Packages</a>
+    <a href="#events">Past events</a>
+    <a class="top__book" href="#book">Check availability</a>
+  </nav>
+</header>
+
+<!-- SIGNATURE: the umbrella canopy, scalloped hem and swaying fringe -->
+<div class="awning awning--hero" aria-hidden="true">
+  <div class="awning__stripes"></div>
+  <div class="awning__hem"></div>
+  <div class="awning__fringe"><i></i></div>
+</div>
+
+<main id="main">
+
+  <!-- 1. HERO -->
+  <section class="hero" id="top" aria-labelledby="hero-title">
+    <div class="hero__copy">
+      <p class="label">Flower cart + bloom bar, Los Angeles</p>
+      <h1 id="hero-title" class="hero__title">The Rose <span>Cart</span></h1>
+      <p class="hero__pitch">A build-your-own bouquet bar that rolls up to your event. Guests pick the stems, we wrap them in kraft.</p>
+      <div class="hero__ctas">
+        <a class="btn btn--rose" href="#book">Check availability</a>
+        <a class="btn btn--line" href="#how">How it works</a>
+      </div>
+    </div>
+    <figure class="hero__media">
+      <div class="arch"><img src="img/hero-cart.jpg" width="720" height="1280" alt="The Rose Cart set up on the grass: a white wooden cart with THE ROSE CART in pink, a pink and white fringe umbrella, baskets of baby's breath" fetchpriority="high" decoding="async"></div>
+      <svg class="sticker" viewBox="0 0 120 120" aria-hidden="true">
+        <defs><path id="ring" d="M60 60m-44 0a44 44 0 1 1 88 0a44 44 0 1 1-88 0"/></defs>
+        <circle cx="60" cy="60" r="58" fill="#fff"/>
+        <g class="sticker__spin"><text><textPath href="#ring" startOffset="0">BUILD YOUR OWN BOUQUET &#183; BUILD YOUR OWN BOUQUET &#183;</textPath></text></g>
+        <use href="#bloom" x="44" y="44" width="32" height="32" class="sticker__bloom"/>
+      </svg>
+      <figcaption class="hero__cap">The cart, set up for an event</figcaption>
+    </figure>
+  </section>
+
+  <!-- 2. PLANNER STRIP -->
+  <section class="planner" aria-labelledby="planner-title">
+    <div class="planner__inner">
+      <h2 id="planner-title" class="planner__title">Planning it for someone else?</h2>
+      <p>Forward this page to your client. What the cart is, how the bar works, the three packages and the date form are all on it.</p>
+      <button class="btn btn--ink js-share" type="button" data-url="https://www.redesignflowers.com/therosecartt/">Send this page to a client</button>
+      <p class="planner__done" role="status" aria-live="polite"></p>
+    </div>
+  </section>
+
+  <!-- 3. HOW IT WORKS: stems gather into a bouquet -->
+  <section class="how" id="how" aria-labelledby="how-title">
+    <div class="how__head">
+      <p class="label">The bloom bar</p>
+      <h2 id="how-title" class="h2">Three steps.<br><em>Zero skills needed.</em></h2>
+      <svg class="gather" viewBox="0 0 300 330" role="img" aria-label="Loose stems gathering into a bouquet wrapped in kraft paper">
+        <g class="gather__buckets">
+          <path d="M14 300h44l-6 30H20z M74 300h44l-6 30H80z M134 300h44l-6 30h-32z M194 300h44l-6 30h-32z M254 300h40l-6 30h-28z" fill="#fff" stroke="#2a1a20" stroke-width="1.5"/>
+        </g>
+        <g class="gather__stems" fill="none" stroke-linecap="round">
+          <g class="st" data-dx="-114" data-a="-16" transform="translate(0 -14) rotate(-16 150 312)"><path d="M150 312V138" stroke="#2f5a36" stroke-width="3"/><path d="M150 230c-14-6-22-16-24-28 12 2 21 12 24 28z" fill="#2f5a36"/><use href="#bloom" x="124" y="108" width="52" height="52" color="#f4b3c6"/></g>
+          <g class="st" data-dx="-56" data-a="-8" transform="translate(0 -14) rotate(-8 150 312)"><path d="M150 312V112" stroke="#2f5a36" stroke-width="3"/><use href="#bloom" x="122" y="80" width="56" height="56" color="#ffd76a"/></g>
+          <g class="st" data-dx="0" data-a="0" transform="translate(0 -14) rotate(0 150 312)"><path d="M150 312V96" stroke="#2f5a36" stroke-width="3"/><path d="M150 200c14-6 22-16 24-28-12 2-21 12-24 28z" fill="#2f5a36"/><use href="#bloom" x="120" y="62" width="60" height="60" color="#c8336b"/></g>
+          <g class="st" data-dx="58" data-a="9" transform="translate(0 -14) rotate(9 150 312)"><path d="M150 312V114" stroke="#2f5a36" stroke-width="3"/><use href="#bloom" x="124" y="84" width="52" height="52" color="#f7e9ee"/></g>
+          <g class="st" data-dx="114" data-a="17" transform="translate(0 -14) rotate(17 150 312)"><path d="M150 312V140" stroke="#2f5a36" stroke-width="3"/><path d="M150 236c-14-6-22-16-24-28 12 2 21 12 24 28z" fill="#2f5a36"/><use href="#bloom" x="126" y="112" width="48" height="48" color="#f2a0b8"/></g>
+        </g>
+        <g class="gather__wrap">
+          <path d="M96 196 150 326 204 196c-20 12-38 16-54 16s-34-4-54-16z" fill="#c99e6b"/>
+          <path d="M96 196c20 12 38 16 54 16s34-4 54-16" fill="none" stroke="#a87d4e" stroke-width="2"/>
+          <path d="M126 262c8 6 40 6 48 0M150 266c-10 10-16 22-14 30M150 266c10 10 16 22 14 30" fill="none" stroke="#f7e9ee" stroke-width="2.5" stroke-linecap="round"/>
+        </g>
+      </svg>
+    </div>
+    <ol class="steps">
+      <li class="step step--1">
+        <figure class="step__fig"><img src="img/step-pick.jpg" width="640" height="681" alt="A guest at a flea market pulling pink stems from the white buckets on the cart" loading="lazy" decoding="async"><figcaption>Silver Lake Flea</figcaption></figure>
+        <div class="step__txt"><span class="step__n" aria-hidden="true">1</span><h3>Pick your stems</h3><p>Rows of white buckets, full of loose stems. Guests walk up and pull whatever they like.</p></div>
+      </li>
+      <li class="step step--2">
+        <figure class="step__fig"><img src="img/step-build.jpg" width="640" height="796" alt="A hand holding a small bouquet of a yellow carnation, a pink carnation and a lilac spider mum over the buckets" loading="lazy" decoding="async"><figcaption>Baby shower, pastels only</figcaption></figure>
+        <div class="step__txt"><span class="step__n" aria-hidden="true">2</span><h3>Build it</h3><p>All pink, all yellow, one of everything. There is no wrong bouquet.</p></div>
+      </li>
+      <li class="step step--3">
+        <figure class="step__fig"><img src="img/step-wrap.jpg" width="640" height="727" alt="Our attendant tying twine around a bouquet of white hydrangea and pink stock in kraft paper" loading="lazy" decoding="async"><figcaption>Kraft paper and twine</figcaption></figure>
+        <div class="step__txt"><span class="step__n" aria-hidden="true">3</span><h3>We wrap it</h3><p>Hand it to our attendant. It comes back wrapped in kraft paper, ready to carry home.</p></div>
+      </li>
+    </ol>
+  </section>
+
+  <!-- divider: the umbrella again -->
+  <div class="awning awning--mid" aria-hidden="true">
+    <div class="awning__stripes"></div>
+    <div class="awning__hem"></div>
+    <div class="awning__fringe"><i></i></div>
+  </div>
+
+  <!-- 4. PACKAGES -->
+  <section class="packages" id="packages" aria-labelledby="pk-title">
+    <header class="packages__head">
+      <p class="label">Packages</p>
+      <h2 id="pk-title" class="h2">Three ways<br>to book <em>the cart.</em></h2>
+      <p class="lede">Every event is quoted on its own: tell us the date, the place and roughly how many guests, and we will send you a quote.</p>
+    </header>
+
+    <div class="pk-list">
+      <article class="pk pk--1">
+        <figure class="pk__fig"><img src="img/pkg-mini.jpg" width="640" height="783" alt="A basket of mini bouquets wrapped in kraft paper with round stickers, on the grass" loading="lazy" decoding="async"></figure>
+        <div class="pk__body">
+          <p class="pk__no">No. 1</p>
+          <h3 class="pk__name" data-todo="confirm">Mini bouquets</h3>
+          <p class="pk__for">For favors, place settings and thank-yous.</p>
+          <ul class="pk__inc" data-todo="confirm">
+            <li>Small bouquets made for your event before the day</li>
+            <li>Each one wrapped in kraft paper with our sticker</li>
+            <li>Ready to hand out or set at each seat</li>
+          </ul>
+          <a class="btn btn--rose js-pkg" href="#book" data-pkg="Mini bouquets">Request a quote</a>
+        </div>
+      </article>
+
+      <article class="pk pk--2">
+        <figure class="pk__fig"><img src="img/pkg-bar.jpg" width="720" height="551" alt="The bloom bar stand: rows of white buckets with pink roses, gerberas, hydrangea, lilac roses and yellow spray roses" loading="lazy" decoding="async"></figure>
+        <div class="pk__body">
+          <p class="pk__no">No. 2</p>
+          <h3 class="pk__name" data-todo="confirm">Build-your-own bloom bar</h3>
+          <p class="pk__for">For showers and any party where guests want something to do.</p>
+          <ul class="pk__inc" data-todo="confirm">
+            <li>The Rose Cart and the fringe umbrella</li>
+            <li>Buckets of fresh stems from the LA Flower District</li>
+            <li>Guests build their own bouquet</li>
+            <li>An attendant wraps every bouquet in kraft paper</li>
+          </ul>
+          <a class="btn btn--rose js-pkg" href="#book" data-pkg="Build-your-own bloom bar">Request a quote</a>
+        </div>
+      </article>
+
+      <article class="pk pk--3">
+        <figure class="pk__fig"><img src="img/pkg-full.jpg" width="640" height="909" alt="A tall gold stand of white buckets packed with snapdragons, gerberas, roses and stock" loading="lazy" decoding="async"></figure>
+        <div class="pk__body">
+          <p class="pk__no">No. 3</p>
+          <h3 class="pk__name" data-todo="confirm">Full cart takeover</h3>
+          <p class="pk__for">For pop-ups, markets, studios and brand events.</p>
+          <ul class="pk__inc" data-todo="confirm">
+            <li>The full set-up: cart, umbrella, baskets and signs</li>
+            <li>The bloom bar plus ready-made bouquets</li>
+            <li>Bouquets for your guests to take home or buy on the spot</li>
+          </ul>
+          <a class="btn btn--rose js-pkg" href="#book" data-pkg="Full cart takeover">Request a quote</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 5. PAST EVENTS -->
+  <section class="events" id="events" aria-labelledby="ev-title">
+    <header class="events__head">
+      <p class="label">Past events</p>
+      <h2 id="ev-title" class="h2">Where the cart<br><em>has parked.</em></h2>
+    </header>
+    <div class="ev-grid">
+      <figure class="rv ev ev--a"><img src="img/ev-sweatyoga.jpg" width="720" height="960" alt="The cart and umbrella outside a yoga studio, with a gold stand of flower buckets" loading="lazy" decoding="async"><figcaption><span>Mother's Day</span>Sweat Yoga</figcaption></figure>
+      <figure class="rv ev ev--b"><img src="img/ev-silverlake.jpg" width="720" height="960" alt="Close-up of THE ROSE CART lettering on the cart at an outdoor flea market, a basket of eucalyptus on top" loading="lazy" decoding="async"><figcaption><span>Flea market</span>Silver Lake Flea</figcaption></figure>
+      <figure class="rv ev ev--c"><img src="img/ev-amoura.jpg" width="900" height="1200" alt="The cart set up indoors at a studio with baskets of pink bouquets on white plinths" loading="lazy" decoding="async"><figcaption><span>Wellness studio</span>Adjust + Align x Amoura Haus</figcaption></figure>
+      <figure class="rv ev ev--d"><img src="img/ev-oldstump.jpg" width="720" height="960" alt="A kraft-wrapped bouquet of white hydrangea and red roses held up in front of a pink Old Stump Brewing sign" loading="lazy" decoding="async"><figcaption><span>Brewery pop-up</span>Old Stump Brewery</figcaption></figure>
+      <figure class="rv ev ev--e"><img src="img/ev-girlhood.jpg" width="720" height="1126" alt="The cart under the pink fringe umbrella at an indoor market, with baby's breath in baskets" loading="lazy" decoding="async"><figcaption><span>Girlhood market</span>I Love You Girlhood</figcaption></figure>
+      <div class="ev-next"><p>Your event, <em>next?</em></p><a class="btn btn--rose" href="#book">Check availability</a></div>
+    </div>
+  </section>
+
+  <!-- 6. GOOD FOR -->
+  <section class="good" aria-labelledby="good-title">
+    <h2 id="good-title" class="label">Good for</h2>
+    <ul class="good__list">
+      <li>Baby showers</li>
+      <li>Bridal showers</li>
+      <li>Weddings</li>
+      <li>Pop-ups</li>
+      <li>Wellness events</li>
+      <li>Brand events</li>
+      <li>Mother's Day</li>
+    </ul>
+    <figure class="good__fig"><img src="img/good-mothersday.jpg" width="640" height="658" alt="Buckets of orange gerberas, blue hydrangea and white snapdragons next to a Happy Mother's Day arch sign" loading="lazy" decoding="async"></figure>
+    <p class="good__more">&hellip;and so much more.</p>
+  </section>
+
+  <!-- 7. BEHIND THE SCENES -->
+  <section class="bts" aria-labelledby="bts-title">
+    <figure class="bts__a"><img src="img/bts-market.jpg" width="720" height="460" alt="Aisles of buckets at the LA Flower Market" loading="lazy" decoding="async"></figure>
+    <figure class="bts__b"><img src="img/bts-van.jpg" width="640" height="1136" alt="Buckets of hydrangea, roses, stock and chrysanthemums loaded up before an event" loading="lazy" decoding="async"></figure>
+    <div class="bts__copy">
+      <p class="label">Before the party</p>
+      <h2 id="bts-title" class="h3">Flower District run, buckets loaded, cart set up on site.</h2>
+      <p>We shop the LA Flower District for our events and post the whole prep on Instagram, from the market aisles to the time-lapse of the cart coming together.</p>
+      <a class="link" href="https://www.instagram.com/therosecartt/" target="_blank" rel="noopener">Watch the set-ups on @therosecartt</a>
+    </div>
+  </section>
+
+  <!-- 8. BOOKING -->
+  <section class="book" id="book" aria-labelledby="book-title">
+    <div class="book__head">
+      <p class="label">Check availability</p>
+      <h2 id="book-title" class="h2">Got a date?<br><em>Tell us about it.</em></h2>
+      <p class="lede">Send the details and we will reach out shortly with availability and a quote.</p>
+      <a class="ig" href="https://ig.me/m/therosecartt" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.4" cy="6.6" r="1.2" fill="currentColor"/></svg>
+        Or message us on Instagram
+      </a>
+    </div>
+
+    <form class="form" id="book-form" novalidate data-note="wire to form service">
+      <div class="form__ticket" aria-hidden="true"><span>The Rose Cart</span><span>Event request</span></div>
+      <div class="f"><label for="f-name">Your name</label><input id="f-name" name="name" type="text" autocomplete="name" required></div>
+      <div class="f"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+      <div class="f f--half"><label for="f-phone">Phone</label><input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel"></div>
+      <div class="f f--half"><label for="f-date">Event date</label><input id="f-date" name="date" type="date" required></div>
+      <div class="f"><label for="f-type">Event type</label>
+        <select id="f-type" name="event_type" required>
+          <option value="">Choose one</option>
+          <option>Baby shower</option><option>Bridal shower</option><option>Wedding</option><option>Pop-up or market</option><option>Wellness event</option><option>Brand event</option><option>Mother's Day</option><option>Something else</option>
+        </select></div>
+      <div class="f"><label for="f-pkg">Package</label>
+        <select id="f-pkg" name="package">
+          <option value="">Not sure yet</option><option>Mini bouquets</option><option>Build-your-own bloom bar</option><option>Full cart takeover</option>
+        </select></div>
+      <div class="f f--half"><label for="f-guests">Guest count</label><input id="f-guests" name="guests" type="number" min="1" inputmode="numeric" placeholder="Roughly is fine"></div>
+      <div class="f f--half"><label for="f-city">City</label><input id="f-city" name="city" type="text" autocomplete="address-level2" placeholder="LA or nearby"></div>
+      <div class="f"><label for="f-notes">Anything else</label><textarea id="f-notes" name="notes" rows="4" placeholder="Venue, colors, timing, or the client you are planning for"></textarea></div>
+      <p class="form__err" role="alert"></p>
+      <button class="btn btn--rose btn--big" type="submit">Check availability</button>
+    </form>
+
+    <div class="sent" hidden tabindex="-1">
+      <svg viewBox="0 0 120 140" aria-hidden="true"><use href="#bloom" x="22" y="10" width="40" height="40" color="#f4b3c6"/><use href="#bloom" x="58" y="6" width="44" height="44" color="#c8336b"/><use href="#bloom" x="40" y="30" width="40" height="40" color="#ffd76a"/><path d="M28 62 60 136 92 62c-12 7-22 9-32 9s-20-2-32-9z" fill="#c99e6b"/></svg>
+      <h3 class="h3">Got it<span class="sent__name"></span>.</h3>
+      <p class="sent__msg">Your request is in. We will reach out shortly about your date.</p>
+      <p class="sent__small">Preview only: this form is not connected yet, so nothing was sent.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="awning awning--foot" aria-hidden="true">
+    <div class="awning__stripes"></div>
+    <div class="awning__hem"></div>
+    <div class="awning__fringe"><i></i></div>
+  </div>
+  <div class="foot__inner">
+    <p class="foot__mark">The Rose Cart</p>
+    <p class="foot__where">Based in LA &amp; surrounding areas</p>
+    <p class="foot__links"><a href="https://www.instagram.com/therosecartt/" target="_blank" rel="noopener">Instagram @therosecartt</a><a href="#book">Check availability</a></p>
+    <p class="foot__credit">Preview built by Sam &amp; Banks for The Rose Cart. Not live, not affiliated, just a look at what your site could be.</p>
+  </div>
+</footer>
+
+<a class="dock" href="#book" aria-hidden="true" tabindex="-1">Check availability</a>
+
+<script src="main.js" defer></script>
+</body>
+</html>
