@@ -1,0 +1,641 @@
+<!doctype html>
+<!--
+  DELANO FLOWERS, preview by Sam & Banks. Concept "Satin Ribbon":
+  1. Concept: their ramo buchón domes are round and every one is finished with a satin ribbon that carries a message.
+     So the site is built from those two shapes: circles (the domes, which also hide the truck-seat backgrounds)
+     and swallowtail satin ribbons (names, buttons, and the customer's own message).
+  2. Palette from their logo: blush, ink black, gold foil, rose pink, deep red. Blush leads (Pretty Flowers led with noir).
+  3. Fonts: Bodoni Moda (display, heavy italic on ribbons) + Figtree (body, labels). Two families.
+  4. Grid: 390px first, single column with offset domes; 12 col on desktop.
+  5. Signature: the Ribbon Studio. Whatever you type in a ribbon field is set live, in gold foil, on a satin ribbon
+     across the bouquet you picked. Every shop card does it too.
+  6. Motion (2 moments): hero dome settles and the ribbon band drifts with scroll. Everything else is still.
+  7. Sections: hero (Falling For You), band, shop, order studio, seasonal, gallery, about, contact, footer.
+  8. iPhone safety: one passive scroll listener + rAF, IntersectionObserver, transform/opacity only,
+     no blur/backdrop-filter, reduced motion = static, all content visible without JS.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>Delano Flowers | Ramos and Rose Bouquets, Delano CA</title>
+<meta name="description" content="Delano Flowers, voted best florist in Delano, CA. 100 and 200 rose ramos, peonies, lilies and themed bouquets with plush and custom ribbons. Request your bouquet online.">
+<meta name="theme-color" content="#f9dfe3">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23150c0e'/%3E%3Ccircle cx='32' cy='32' r='25' fill='none' stroke='%23d4ad5c' stroke-width='2.5'/%3E%3Ccircle cx='32' cy='32' r='11' fill='%23e86f93'/%3E%3Cpath d='M32 25c4 0 7 3 7 7' fill='none' stroke='%23150c0e' stroke-width='2'/%3E%3C/svg%3E">
+<script>document.documentElement.classList.add('js')</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500..900;1,6..96,500..900&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="preload" as="image" href="img/falling-for-you.jpg" fetchpriority="high">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="mark" viewBox="0 0 64 64">
+      <circle cx="32" cy="32" r="30" fill="#150c0e"/>
+      <circle cx="32" cy="32" r="25.5" fill="none" stroke="currentColor" stroke-width="1.6"/>
+      <circle cx="32" cy="32" r="12" fill="#e86f93"/>
+      <path d="M32 24.5c4.4 0 7.5 3.3 7.5 7.5M32 39.5c-4.4 0-7.5-3.3-7.5-7.5M28 31c0-2.4 1.8-4 4-4" fill="none" stroke="#9e2342" stroke-width="1.6" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="spark" viewBox="0 0 20 20"><path d="M10 0l2.2 7.8L20 10l-7.8 2.2L10 20l-2.2-7.8L0 10l7.8-2.2z"/></symbol>
+  </defs>
+</svg>
+
+<a class="skip" href="#shop">Skip to the shop</a>
+
+<header class="nav">
+  <a class="brand" href="#top" aria-label="Delano Flowers, back to top">
+    <svg class="brand__mark" aria-hidden="true"><use href="#mark"/></svg>
+    <span class="brand__name">Delano <em>Flowers</em></span>
+  </a>
+  <nav class="nav__links" aria-label="Sections">
+    <a href="#shop">Shop</a>
+    <a href="#seasonal">Seasonal</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <a class="nav__cta ribbon-btn" href="#order">Order</a>
+</header>
+
+<main>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="hero__top">
+    <p class="eyebrow"><svg aria-hidden="true"><use href="#spark"/></svg>Voted Best Florist in Delano</p>
+    <p class="hero__date">New this week, Nov 18</p>
+    <p class="hero__claim">Ramos, roses and big bouquets, <em>made in Delano.</em></p>
+  </div>
+
+  <div class="hero__stage">
+    <div class="hero__rings" aria-hidden="true"></div>
+    <div class="hero__dome">
+      <img src="img/falling-for-you.jpg" width="1056" height="1056" fetchpriority="high"
+        alt="The Falling For You bouquet seen from above: cream and coral roses, deep red mums, baby's breath, a brown satin bow and two velvet pumpkins, in a scalloped tan wrap.">
+    </div>
+    <h1 class="ribbon ribbon--hero"><span class="ribbon__txt">Falling For You</span></h1>
+  </div>
+
+  <div class="hero__copy">
+    <p class="hero__lede">Fall roses with little pumpkins tucked in. Cream, coral and deep red, finished with a brown satin bow.</p>
+    <div class="hero__ctas">
+      <a class="btn btn--ink js-carry" href="#order" data-bouquet="falling-for-you">Customize yours</a>
+      <a class="btn btn--line" href="https://ig.me/m/delano_flowersss" rel="noopener">Order by DM</a>
+    </div>
+    <p class="policy-tag">Deposit required, non-refundable</p>
+  </div>
+</section>
+
+<!-- ============ BAND ============ -->
+<div class="band" aria-hidden="true">
+  <div class="band__track">
+    <span>Ramo buchón</span><svg><use href="#spark"/></svg>
+    <span>100 roses</span><svg><use href="#spark"/></svg>
+    <span>200 roses</span><svg><use href="#spark"/></svg>
+    <span>Peonies</span><svg><use href="#spark"/></svg>
+    <span>Lilies</span><svg><use href="#spark"/></svg>
+    <span>Plush &amp; characters</span><svg><use href="#spark"/></svg>
+    <span>Your words on the ribbon</span><svg><use href="#spark"/></svg>
+    <span>Hecho en Delano</span><svg><use href="#spark"/></svg>
+    <span>Ramo buchón</span><svg><use href="#spark"/></svg>
+    <span>100 roses</span><svg><use href="#spark"/></svg>
+    <span>200 roses</span><svg><use href="#spark"/></svg>
+    <span>Peonies</span><svg><use href="#spark"/></svg>
+    <span>Lilies</span><svg><use href="#spark"/></svg>
+    <span>Plush &amp; characters</span><svg><use href="#spark"/></svg>
+    <span>Your words on the ribbon</span><svg><use href="#spark"/></svg>
+    <span>Hecho en Delano</span><svg><use href="#spark"/></svg>
+  </div>
+</div>
+
+<!-- ============ SHOP ============ -->
+<section class="shop" id="shop" aria-labelledby="shop-h">
+  <header class="sec-head">
+    <p class="kicker">La tienda</p>
+    <h2 id="shop-h">Pick a ramo.<br><em>Make it theirs.</em></h2>
+    <p class="sec-head__p">Every bouquet here has already gone out the door in Delano. Tap Customize, choose a size and color, type what the ribbon should say, and send the request. No more back and forth in the DMs.</p>
+  </header>
+  <div class="grid">
+
+<article class="item" id="item-falling-for-you" data-id="falling-for-you">
+  <div class="item__dome">
+    <img src="img/falling-detail.jpg" width="800" height="800" alt="Close up of the Falling For You bouquet: cream and coral roses, burgundy mums, a brown satin ribbon and two small velvet pumpkins." loading="lazy" decoding="async">
+  </div>
+  <p class="ribbon ribbon--card"><span class="ribbon__txt" data-default="Falling For You" data-live="falling-for-you">Falling For You</span></p>
+  <div class="item__body">
+    <p class="item__num">01</p>
+    <h3 class="item__name">Falling For You</h3>
+    <p class="item__blurb">Cream and coral roses, deep red mums and baby’s breath, with two velvet pumpkins tucked in and a brown satin bow.</p>
+    <p class="item__price"><span class="lbl">Price</span> <span data-todo="confirm">confirm with Delano Flowers</span></p>
+    <details class="pick">
+      <summary><span>Customize</span><svg aria-hidden="true" viewBox="0 0 16 16"><path d="M3 6l5 5 5-5"/></svg></summary>
+      <div class="pick__in">
+        <fieldset><legend>Size</legend><div class="chips"><label class="chip"><input type="radio" name="falling-for-you-size" value="50 roses"><span>50 roses</span></label>
+<label class="chip"><input type="radio" name="falling-for-you-size" value="100 roses" checked><span>100 roses</span></label>
+<label class="chip"><input type="radio" name="falling-for-you-size" value="200 roses"><span>200 roses</span></label></div>
+          <p class="pick__note" data-todo="confirm">Sizes shown as examples. Prices per size go here.</p></fieldset>
+        <fieldset><legend>Color</legend><div class="chips"><label class="chip"><input type="radio" name="falling-for-you-color" value="Fall mix" checked><span>Fall mix</span></label>
+<label class="chip"><input type="radio" name="falling-for-you-color" value="Cream &amp; coral"><span>Cream &amp; coral</span></label>
+<label class="chip"><input type="radio" name="falling-for-you-color" value="Burgundy"><span>Burgundy</span></label></div></fieldset>
+        <label class="field"><span>Ribbon message</span>
+          <input type="text" maxlength="34" placeholder="Falling For You" data-ribbon="falling-for-you" autocomplete="off"></label>
+        <fieldset><legend>Pickup or delivery</legend><div class="chips">
+          <label class="chip"><input type="radio" name="falling-for-you-get" value="Pickup" checked><span>Pickup</span></label>
+          <label class="chip"><input type="radio" name="falling-for-you-get" value="Local delivery"><span>Local delivery</span></label></div>
+          <p class="pick__note" data-todo="confirm">Delivery area and fee to confirm.</p></fieldset>
+        <label class="field"><span>Date you need it</span><input type="date" class="js-date" data-pick-date></label>
+        <a class="btn btn--gold js-carry" href="#order" data-bouquet="falling-for-you">Request this bouquet</a>
+      </div>
+    </details>
+  </div>
+</article>
+<article class="item" id="item-100-roses" data-id="100-roses">
+  <div class="item__dome">
+    <img src="img/100-roses.jpg" width="800" height="800" alt="One hundred red, pink and white roses domed over a round black hatbox with a pink ribbon." loading="lazy" decoding="async">
+  </div>
+  <p class="ribbon ribbon--card"><span class="ribbon__txt" data-default="100 Roses" data-live="100-roses">100 Roses</span></p>
+  <div class="item__body">
+    <p class="item__num">02</p>
+    <h3 class="item__name">100 Roses</h3>
+    <p class="item__blurb">A full dome of red, pink and white roses sitting on a black hatbox, tied with a pink ribbon.</p>
+    <p class="item__price"><span class="lbl">Price</span> <span data-todo="confirm">confirm with Delano Flowers</span></p>
+    <details class="pick">
+      <summary><span>Customize</span><svg aria-hidden="true" viewBox="0 0 16 16"><path d="M3 6l5 5 5-5"/></svg></summary>
+      <div class="pick__in">
+        <fieldset><legend>Size</legend><div class="chips"><label class="chip"><input type="radio" name="100-roses-size" value="100 roses" checked><span>100 roses</span></label></div>
+          <p class="pick__note" data-todo="confirm">Sizes shown as examples. Prices per size go here.</p></fieldset>
+        <fieldset><legend>Color</legend><div class="chips"><label class="chip"><input type="radio" name="100-roses-color" value="Red &amp; pink" checked><span>Red &amp; pink</span></label>
+<label class="chip"><input type="radio" name="100-roses-color" value="All red"><span>All red</span></label>
+<label class="chip"><input type="radio" name="100-roses-color" value="All pink"><span>All pink</span></label></div></fieldset>
+        <label class="field"><span>Ribbon message</span>
+          <input type="text" maxlength="34" placeholder="100 Roses" data-ribbon="100-roses" autocomplete="off"></label>
+        <fieldset><legend>Pickup or delivery</legend><div class="chips">
+          <label class="chip"><input type="radio" name="100-roses-get" value="Pickup" checked><span>Pickup</span></label>
+          <label class="chip"><input type="radio" name="100-roses-get" value="Local delivery"><span>Local delivery</span></label></div>
+          <p class="pick__note" data-todo="confirm">Delivery area and fee to confirm.</p></fieldset>
+        <label class="field"><span>Date you need it</span><input type="date" class="js-date" data-pick-date></label>
+        <a class="btn btn--gold js-carry" href="#order" data-bouquet="100-roses">Request this bouquet</a>
+      </div>
+    </details>
+  </div>
+</article>
+<article class="item" id="item-200-roses" data-id="200-roses">
+  <div class="item__dome">
+    <img src="img/200-red.jpg" width="800" height="800" alt="A tightly packed dome of two hundred deep red roses." loading="lazy" decoding="async">
+  </div>
+  <p class="ribbon ribbon--card"><span class="ribbon__txt" data-default="200 Roses" data-live="200-roses">200 Roses</span></p>
+  <div class="item__body">
+    <p class="item__num">03</p>
+    <h3 class="item__name">200 Red Roses</h3>
+    <p class="item__blurb">Two hundred red roses, packed tight. The big one.</p>
+    <p class="item__price"><span class="lbl">Price</span> <span data-todo="confirm">confirm with Delano Flowers</span></p>
+    <details class="pick">
+      <summary><span>Customize</span><svg aria-hidden="true" viewBox="0 0 16 16"><path d="M3 6l5 5 5-5"/></svg></summary>
+      <div class="pick__in">
+        <fieldset><legend>Size</legend><div class="chips"><label class="chip"><input type="radio" name="200-roses-size" value="200 roses" checked><span>200 roses</span></label></div>
+          <p class="pick__note" data-todo="confirm">Sizes shown as examples. Prices per size go here.</p></fieldset>
+        <fieldset><legend>Color</legend><div class="chips"><label class="chip"><input type="radio" name="200-roses-color" value="Red" checked><span>Red</span></label>
+<label class="chip"><input type="radio" name="200-roses-color" value="Pink"><span>Pink</span></label>
+<label class="chip"><input type="radio" name="200-roses-color" value="White"><span>White</span></label></div></fieldset>
+        <label class="field"><span>Ribbon message</span>
+          <input type="text" maxlength="34" placeholder="200 Roses" data-ribbon="200-roses" autocomplete="off"></label>
+        <fieldset><legend>Pickup or delivery</legend><div class="chips">
+          <label class="chip"><input type="radio" name="200-roses-get" value="Pickup" checked><span>Pickup</span></label>
+          <label class="chip"><input type="radio" name="200-roses-get" value="Local delivery"><span>Local delivery</span></label></div>
+          <p class="pick__note" data-todo="confirm">Delivery area and fee to confirm.</p></fieldset>
+        <label class="field"><span>Date you need it</span><input type="date" class="js-date" data-pick-date></label>
+        <a class="btn btn--gold js-carry" href="#order" data-bouquet="200-roses">Request this bouquet</a>
+      </div>
+    </details>
+  </div>
+</article>
+<article class="item" id="item-pretty-in-pink" data-id="pretty-in-pink">
+  <div class="item__dome">
+    <img src="img/pretty-in-pink.jpg" width="800" height="800" alt="A round bouquet of pink and cream roses and carnations in white ruffled wrap." loading="lazy" decoding="async">
+  </div>
+  <p class="ribbon ribbon--card"><span class="ribbon__txt" data-default="Pretty in Pink" data-live="pretty-in-pink">Pretty in Pink</span></p>
+  <div class="item__body">
+    <p class="item__num">04</p>
+    <h3 class="item__name">Pretty in Pink</h3>
+    <p class="item__blurb">Pink and cream roses with carnations in a white ruffled wrap, finished with a pink bow.</p>
+    <p class="item__price"><span class="lbl">Price</span> <span data-todo="confirm">confirm with Delano Flowers</span></p>
+    <details class="pick">
+      <summary><span>Customize</span><svg aria-hidden="true" viewBox="0 0 16 16"><path d="M3 6l5 5 5-5"/></svg></summary>
+      <div class="pick__in">
+        <fieldset><legend>Size</legend><div class="chips"><label class="chip"><input type="radio" name="pretty-in-pink-size" value="50 roses"><span>50 roses</span></label>
+<label class="chip"><input type="radio" name="pretty-in-pink-size" value="100 roses" checked><span>100 roses</span></label>
+<label class="chip"><input type="radio" name="pretty-in-pink-size" value="200 roses"><span>200 roses</span></label></div>
+          <p class="pick__note" data-todo="confirm">Sizes shown as examples. Prices per size go here.</p></fieldset>
+        <fieldset><legend>Color</legend><div class="chips"><label class="chip"><input type="radio" name="pretty-in-pink-color" value="Pink &amp; cream" checked><span>Pink &amp; cream</span></label>
+<label class="chip"><input type="radio" name="pretty-in-pink-color" value="All pink"><span>All pink</span></label>
+<label class="chip"><input type="radio" name="pretty-in-pink-color" value="Blush"><span>Blush</span></label></div></fieldset>
+        <label class="field"><span>Ribbon message</span>
+          <input type="text" maxlength="34" placeholder="Pretty in Pink" data-ribbon="pretty-in-pink" autocomplete="off"></label>
+        <fieldset><legend>Pickup or delivery</legend><div class="chips">
+          <label class="chip"><input type="radio" name="pretty-in-pink-get" value="Pickup" checked><span>Pickup</span></label>
+          <label class="chip"><input type="radio" name="pretty-in-pink-get" value="Local delivery"><span>Local delivery</span></label></div>
+          <p class="pick__note" data-todo="confirm">Delivery area and fee to confirm.</p></fieldset>
+        <label class="field"><span>Date you need it</span><input type="date" class="js-date" data-pick-date></label>
+        <a class="btn btn--gold js-carry" href="#order" data-bouquet="pretty-in-pink">Request this bouquet</a>
+      </div>
+    </details>
+  </div>
+</article>
+<article class="item" id="item-roses-tulips" data-id="roses-tulips">
+  <div class="item__dome">
+    <img src="img/roses-tulips.jpg" width="800" height="800" alt="Red roses with pink tulips in red wrap with a white lace bow, photographed on a tile floor." loading="lazy" decoding="async">
+  </div>
+  <p class="ribbon ribbon--card"><span class="ribbon__txt" data-default="Roses &amp; Tulips" data-live="roses-tulips">Roses &amp; Tulips</span></p>
+  <div class="item__body">
+    <p class="item__num">05</p>
+    <h3 class="item__name">Roses &amp; Tulips</h3>
+    <p class="item__blurb">Red roses with pink tulips coming through, red wrap and a lace bow.</p>
+    <p class="item__price"><span class="lbl">Price</span> <span data-todo="confirm">confirm with Delano Flowers</span></p>
+    <details class="pick">
+      <summary><span>Customize</span><svg aria-hidden="true" viewBox="0 0 16 16"><path d="M3 6l5 5 5-5"/></svg></summary>
+      <div class="pick__in">
+        <fieldset><legend>Size</legend><div class="chips"><label class="chip"><input type="radio" name="roses-tulips-size" value="50 roses"><span>50 roses</span></label>
+<label class="chip"><input type="radio" name="roses-tulips-size" value="100 roses" checked><span>100 roses</span></label>
+<label class="chip"><input type="radio" name="roses-tulips-size" value="200 roses"><span>200 roses</span></label></div>
+          <p class="pick__note" data-todo="confirm">Sizes shown as examples. Prices per size go here.</p></fieldset>
+        <fieldset><legend>Color</legend><div class="chips"><label class="chip"><input type="radio" name="roses-tulips-color" value="Red &amp; pink" checked><span>Red &amp; pink</span></label>
+<label class="chip"><input type="radio" name="roses-tulips-color" value="Pink"><span>Pink</span></label>
+<label class="chip"><input type="radio" name="roses-tulips-color" value="White"><span>White</span></label></div></fieldset>
+        <label class="field"><span>Ribbon message</span>
+          <input type="text" maxlength="34" placeholder="Roses &amp; Tulips" data-ribbon="roses-tulips" autocomplete="off"></label>
+        <fieldset><legend>Pickup or delivery</legend><div class="chips">
+          <label class="chip"><input type="radio" name="roses-tulips-get" value="Pickup" checked><span>Pickup</span></label>
+          <label class="chip"><input type="radio" name="roses-tulips-get" value="Local delivery"><span>Local delivery</span></label></div>
+          <p class="pick__note" data-todo="confirm">Delivery area and fee to confirm.</p></fieldset>
+        <label class="field"><span>Date you need it</span><input type="date" class="js-date" data-pick-date></label>
+        <a class="btn btn--gold js-carry" href="#order" data-bouquet="roses-tulips">Request this bouquet</a>
+      </div>
+    </details>
+  </div>
+</article>
+<article class="item" id="item-peonies" data-id="peonies">
+  <div class="item__dome">
+    <img src="img/peonies.jpg" width="640" height="640" alt="A round bouquet of blush and white peonies with a white lace bow." loading="lazy" decoding="async">
+  </div>
+  <p class="ribbon ribbon--card"><span class="ribbon__txt" data-default="Peonies" data-live="peonies">Peonies</span></p>
+  <div class="item__body">
+    <p class="item__num">06</p>
+    <h3 class="item__name">Peonies</h3>
+    <p class="item__blurb">Blush and white peonies in a white wrap with a lace bow.</p>
+    <p class="item__price"><span class="lbl">Price</span> <span data-todo="confirm">confirm with Delano Flowers</span></p>
+    <details class="pick">
+      <summary><span>Customize</span><svg aria-hidden="true" viewBox="0 0 16 16"><path d="M3 6l5 5 5-5"/></svg></summary>
+      <div class="pick__in">
+        <fieldset><legend>Size</legend><div class="chips"><label class="chip"><input type="radio" name="peonies-size" value="50 peonies"><span>50 peonies</span></label>
+<label class="chip"><input type="radio" name="peonies-size" value="Other count" checked><span>Other count</span></label></div>
+          <p class="pick__note" data-todo="confirm">Sizes shown as examples. Prices per size go here.</p></fieldset>
+        <fieldset><legend>Color</legend><div class="chips"><label class="chip"><input type="radio" name="peonies-color" value="Blush" checked><span>Blush</span></label>
+<label class="chip"><input type="radio" name="peonies-color" value="Pink"><span>Pink</span></label>
+<label class="chip"><input type="radio" name="peonies-color" value="White"><span>White</span></label></div></fieldset>
+        <label class="field"><span>Ribbon message</span>
+          <input type="text" maxlength="34" placeholder="Peonies" data-ribbon="peonies" autocomplete="off"></label>
+        <fieldset><legend>Pickup or delivery</legend><div class="chips">
+          <label class="chip"><input type="radio" name="peonies-get" value="Pickup" checked><span>Pickup</span></label>
+          <label class="chip"><input type="radio" name="peonies-get" value="Local delivery"><span>Local delivery</span></label></div>
+          <p class="pick__note" data-todo="confirm">Delivery area and fee to confirm.</p></fieldset>
+        <label class="field"><span>Date you need it</span><input type="date" class="js-date" data-pick-date></label>
+        <a class="btn btn--gold js-carry" href="#order" data-bouquet="peonies">Request this bouquet</a>
+      </div>
+    </details>
+  </div>
+</article>
+<article class="item" id="item-lilies" data-id="lilies">
+  <div class="item__dome">
+    <img src="img/lilies.jpg" width="640" height="640" alt="Pink stargazer lilies with pink roses, close up." loading="lazy" decoding="async">
+  </div>
+  <p class="ribbon ribbon--card"><span class="ribbon__txt" data-default="Lilies" data-live="lilies">Lilies</span></p>
+  <div class="item__body">
+    <p class="item__num">07</p>
+    <h3 class="item__name">Lilies</h3>
+    <p class="item__blurb">Pink stargazer lilies with roses. They keep opening for days after pickup.</p>
+    <p class="item__price"><span class="lbl">Price</span> <span data-todo="confirm">confirm with Delano Flowers</span></p>
+    <details class="pick">
+      <summary><span>Customize</span><svg aria-hidden="true" viewBox="0 0 16 16"><path d="M3 6l5 5 5-5"/></svg></summary>
+      <div class="pick__in">
+        <fieldset><legend>Size</legend><div class="chips"><label class="chip"><input type="radio" name="lilies-size" value="Regular"><span>Regular</span></label>
+<label class="chip"><input type="radio" name="lilies-size" value="Big" checked><span>Big</span></label>
+<label class="chip"><input type="radio" name="lilies-size" value="Extra big"><span>Extra big</span></label></div>
+          <p class="pick__note" data-todo="confirm">Sizes shown as examples. Prices per size go here.</p></fieldset>
+        <fieldset><legend>Color</legend><div class="chips"><label class="chip"><input type="radio" name="lilies-color" value="Pink stargazer" checked><span>Pink stargazer</span></label>
+<label class="chip"><input type="radio" name="lilies-color" value="White"><span>White</span></label>
+<label class="chip"><input type="radio" name="lilies-color" value="Mix"><span>Mix</span></label></div></fieldset>
+        <label class="field"><span>Ribbon message</span>
+          <input type="text" maxlength="34" placeholder="Lilies" data-ribbon="lilies" autocomplete="off"></label>
+        <fieldset><legend>Pickup or delivery</legend><div class="chips">
+          <label class="chip"><input type="radio" name="lilies-get" value="Pickup" checked><span>Pickup</span></label>
+          <label class="chip"><input type="radio" name="lilies-get" value="Local delivery"><span>Local delivery</span></label></div>
+          <p class="pick__note" data-todo="confirm">Delivery area and fee to confirm.</p></fieldset>
+        <label class="field"><span>Date you need it</span><input type="date" class="js-date" data-pick-date></label>
+        <a class="btn btn--gold js-carry" href="#order" data-bouquet="lilies">Request this bouquet</a>
+      </div>
+    </details>
+  </div>
+</article>
+<article class="item" id="item-mix" data-id="mix">
+  <div class="item__dome">
+    <img src="img/mix.jpg" width="800" height="800" alt="A pink and white mixed bouquet of roses, carnations and white daisies in blush wrap." loading="lazy" decoding="async">
+  </div>
+  <p class="ribbon ribbon--card"><span class="ribbon__txt" data-default="Mix" data-live="mix">Mix</span></p>
+  <div class="item__body">
+    <p class="item__num">08</p>
+    <h3 class="item__name">Mix Bouquet</h3>
+    <p class="item__blurb">Pink roses, white blooms and carnations in a blush wrap. Send your colors and it gets built around them.</p>
+    <p class="item__price"><span class="lbl">Price</span> <span data-todo="confirm">confirm with Delano Flowers</span></p>
+    <details class="pick">
+      <summary><span>Customize</span><svg aria-hidden="true" viewBox="0 0 16 16"><path d="M3 6l5 5 5-5"/></svg></summary>
+      <div class="pick__in">
+        <fieldset><legend>Size</legend><div class="chips"><label class="chip"><input type="radio" name="mix-size" value="Regular"><span>Regular</span></label>
+<label class="chip"><input type="radio" name="mix-size" value="Big" checked><span>Big</span></label>
+<label class="chip"><input type="radio" name="mix-size" value="Extra big"><span>Extra big</span></label></div>
+          <p class="pick__note" data-todo="confirm">Sizes shown as examples. Prices per size go here.</p></fieldset>
+        <fieldset><legend>Color</legend><div class="chips"><label class="chip"><input type="radio" name="mix-color" value="Pink &amp; white" checked><span>Pink &amp; white</span></label>
+<label class="chip"><input type="radio" name="mix-color" value="Pastel"><span>Pastel</span></label>
+<label class="chip"><input type="radio" name="mix-color" value="Bright"><span>Bright</span></label></div></fieldset>
+        <label class="field"><span>Ribbon message</span>
+          <input type="text" maxlength="34" placeholder="Mix" data-ribbon="mix" autocomplete="off"></label>
+        <fieldset><legend>Pickup or delivery</legend><div class="chips">
+          <label class="chip"><input type="radio" name="mix-get" value="Pickup" checked><span>Pickup</span></label>
+          <label class="chip"><input type="radio" name="mix-get" value="Local delivery"><span>Local delivery</span></label></div>
+          <p class="pick__note" data-todo="confirm">Delivery area and fee to confirm.</p></fieldset>
+        <label class="field"><span>Date you need it</span><input type="date" class="js-date" data-pick-date></label>
+        <a class="btn btn--gold js-carry" href="#order" data-bouquet="mix">Request this bouquet</a>
+      </div>
+    </details>
+  </div>
+</article>
+<article class="item" id="item-im-sorry" data-id="im-sorry">
+  <div class="item__dome">
+    <img src="img/im-sorry.jpg" width="800" height="800" alt="Red roses in black wrap with a black satin ribbon that reads I&#x27;m Sorry Chula." loading="lazy" decoding="async">
+  </div>
+  <p class="ribbon ribbon--card"><span class="ribbon__txt" data-default="I’m Sorry" data-live="im-sorry">I’m Sorry</span></p>
+  <div class="item__body">
+    <p class="item__num">09</p>
+    <h3 class="item__name">I’m Sorry</h3>
+    <p class="item__blurb">Red roses, black wrap and a black satin ribbon that says it for you.</p>
+    <p class="item__price"><span class="lbl">Price</span> <span data-todo="confirm">confirm with Delano Flowers</span></p>
+    <details class="pick">
+      <summary><span>Customize</span><svg aria-hidden="true" viewBox="0 0 16 16"><path d="M3 6l5 5 5-5"/></svg></summary>
+      <div class="pick__in">
+        <fieldset><legend>Size</legend><div class="chips"><label class="chip"><input type="radio" name="im-sorry-size" value="50 roses"><span>50 roses</span></label>
+<label class="chip"><input type="radio" name="im-sorry-size" value="100 roses" checked><span>100 roses</span></label>
+<label class="chip"><input type="radio" name="im-sorry-size" value="200 roses"><span>200 roses</span></label></div>
+          <p class="pick__note" data-todo="confirm">Sizes shown as examples. Prices per size go here.</p></fieldset>
+        <fieldset><legend>Color</legend><div class="chips"><label class="chip"><input type="radio" name="im-sorry-color" value="Red" checked><span>Red</span></label>
+<label class="chip"><input type="radio" name="im-sorry-color" value="Pink"><span>Pink</span></label>
+<label class="chip"><input type="radio" name="im-sorry-color" value="White"><span>White</span></label></div></fieldset>
+        <label class="field"><span>Ribbon message</span>
+          <input type="text" maxlength="34" placeholder="I’m Sorry" data-ribbon="im-sorry" autocomplete="off"></label>
+        <fieldset><legend>Pickup or delivery</legend><div class="chips">
+          <label class="chip"><input type="radio" name="im-sorry-get" value="Pickup" checked><span>Pickup</span></label>
+          <label class="chip"><input type="radio" name="im-sorry-get" value="Local delivery"><span>Local delivery</span></label></div>
+          <p class="pick__note" data-todo="confirm">Delivery area and fee to confirm.</p></fieldset>
+        <label class="field"><span>Date you need it</span><input type="date" class="js-date" data-pick-date></label>
+        <a class="btn btn--gold js-carry" href="#order" data-bouquet="im-sorry">Request this bouquet</a>
+      </div>
+    </details>
+  </div>
+</article>
+  </div>
+</section>
+
+<!-- ============ ORDER / RIBBON STUDIO ============ -->
+<section class="order" id="order" aria-labelledby="order-h">
+  <header class="sec-head sec-head--order">
+    <p class="kicker">Pide tu ramo</p>
+    <h2 id="order-h">Request this bouquet</h2>
+  </header>
+
+  <div class="order__wrap">
+    <div class="studio" aria-hidden="true">
+      <div class="studio__dome">
+        <img class="studio__img" src="img/falling-detail.jpg" width="800" height="800" alt="">
+        <p class="studio__type"><span>Disney</span><span>Ramo</span></p>
+      </div>
+      <p class="ribbon ribbon--studio"><span class="ribbon__txt" id="studio-ribbon">Falling For You</span><span class="caret"></span></p>
+      <ul class="studio__sum">
+        <li id="sum-bouquet">Falling For You</li>
+        <li id="sum-size">100 roses</li>
+        <li id="sum-get">Pickup</li>
+      </ul>
+    </div>
+
+    <form class="form" id="order-form" novalidate data-note="wire to Square/Stripe deposit link">
+      <div class="form__fields">
+        <label class="field field--wide field--ribbon"><span>What should the ribbon say? <small>(watch it appear on the ribbon)</small></span>
+          <input type="text" name="ribbon" id="f-ribbon" maxlength="34" placeholder="Falling For You" data-ribbon="studio" autocomplete="off"></label>
+
+        <label class="field field--wide"><span>Bouquet</span>
+          <select name="bouquet" id="f-bouquet" required>
+<option value="falling-for-you" data-img="img/falling-detail.jpg" data-ribbon="Falling For You">Falling For You</option>
+<option value="100-roses" data-img="img/100-roses.jpg" data-ribbon="100 Roses">100 Roses</option>
+<option value="200-roses" data-img="img/200-red.jpg" data-ribbon="200 Roses">200 Red Roses</option>
+<option value="pretty-in-pink" data-img="img/pretty-in-pink.jpg" data-ribbon="Pretty in Pink">Pretty in Pink</option>
+<option value="roses-tulips" data-img="img/roses-tulips.jpg" data-ribbon="Roses &amp; Tulips">Roses &amp; Tulips</option>
+<option value="peonies" data-img="img/peonies.jpg" data-ribbon="Peonies">Peonies</option>
+<option value="lilies" data-img="img/lilies.jpg" data-ribbon="Lilies">Lilies</option>
+<option value="mix" data-img="img/mix.jpg" data-ribbon="Mix">Mix Bouquet</option>
+<option value="im-sorry" data-img="img/im-sorry.jpg" data-ribbon="I’m Sorry">I’m Sorry</option>
+<option value="christmas" data-img="img/light-up-my-world.jpg" data-ribbon="You light up my world">You light up my world (Christmas)</option>
+<option value="spooky" data-img="img/spooky.jpg" data-ribbon="Happy Birthday">Spooky Bouquet</option>
+<option value="proposal" data-img="img/proposal.jpg" data-ribbon="¿Quieres ser mi novia?">Proposal bouquet</option>
+<option value="minion" data-img="img/minion.jpg" data-ribbon="One in a Minion">One in a Minion</option>
+<option value="vaquita" data-img="img/vaquita.jpg" data-ribbon="Te quiero">Lilies w/ Vaquita</option>
+<option value="disney" data-img="" data-ribbon="Princess Day">Disney Ramo</option>
+<option value="custom" data-img="img/g-50-peonies.jpg" data-ribbon="Your message">Something custom</option>
+          </select></label>
+
+        <label class="field"><span>Size</span>
+          <select name="size" id="f-size">
+            <option>50 roses</option>
+            <option selected>100 roses</option>
+            <option>200 roses</option>
+            <option>50 peonies</option>
+            <option>Regular</option>
+            <option>Big</option>
+            <option>Extra big</option>
+            <option>Not sure, help me pick</option>
+          </select></label>
+
+        <label class="field"><span>Color</span>
+          <input type="text" name="color" id="f-color" placeholder="Red, pink, all white..." autocomplete="off"></label>
+
+        <fieldset class="field field--wide"><legend>Pickup or delivery</legend>
+          <div class="chips">
+            <label class="chip"><input type="radio" name="get" value="Pickup" checked><span>Pickup in Delano</span></label>
+            <label class="chip"><input type="radio" name="get" value="Local delivery"><span>Local delivery</span></label>
+          </div>
+          <p class="pick__note" data-todo="confirm">Pickup spot, delivery area and fee to confirm with Delano Flowers.</p>
+        </fieldset>
+
+        <label class="field"><span>Name</span>
+          <input type="text" name="name" id="f-name" autocomplete="name" required></label>
+        <label class="field"><span>Phone</span>
+          <input type="tel" name="phone" id="f-phone" autocomplete="tel" inputmode="tel" placeholder="(661)" required></label>
+        <label class="field"><span>Date you need it</span>
+          <input type="date" name="date" id="f-date" class="js-date" required></label>
+        <label class="field field--wide"><span>Notes <small>(plush, colors, a photo you saw on IG)</small></span>
+          <textarea name="notes" rows="3"></textarea></label>
+      </div>
+
+      <div class="policy">
+        <p class="policy__h">Deposit required.<br>Non-refundable.</p>
+        <p>Send the request and you get a text back with a deposit link. Your bouquet is booked once the deposit is paid.</p>
+        <p class="policy__price"><span class="lbl">Estimate</span> <span data-todo="confirm">shown here once prices are set</span></p>
+      </div>
+
+      <div class="form__go">
+        <button class="btn btn--gold" type="submit" data-note="wire to Square/Stripe deposit link">Send my request</button>
+        <a class="link link--ink" href="https://ig.me/m/delano_flowersss" rel="noopener">Rather DM? Order by DM</a>
+      </div>
+      <p class="form__err" id="form-err" role="alert" hidden>Add your name, phone and the date so we can text you back.</p>
+
+      <div class="done" id="form-done" hidden tabindex="-1">
+        <p class="done__k">Request received</p>
+        <p class="done__h">Gracias, <span id="done-name">friend</span>.</p>
+        <p class="done__p" id="done-sum"></p>
+        <p class="done__p">On the live site, Delano Flowers gets this order with every detail in one place and texts you the deposit link. In this preview nothing was sent.</p>
+        <button type="button" class="link link--ink" id="form-again">Request another</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- ============ SEASONAL ============ -->
+<section class="seasonal" id="seasonal" aria-labelledby="occ-h">
+  <header class="sec-head sec-head--dark">
+    <p class="kicker">Para cada ocasión</p>
+    <h2 id="occ-h">Every holiday<br><em>gets a ramo.</em></h2>
+    <p class="sec-head__p">Fall, Christmas, Halloween, Disney, the big question. Plush, characters and ribbons included.</p>
+  </header>
+  <div class="occ-row">
+
+<article class="occ occ--0" id="occ-fall">
+  <div class="occ__img"><img src="img/fall-teddy.jpg" width="800" height="800" alt="A fall bouquet of cream roses ringed with orange flowers, a plush cow with a plaid bow and small pumpkins." loading="lazy" decoding="async"></div>
+  <p class="occ__kick">Fall</p>
+  <h3 class="occ__name">Fall bouquets</h3>
+  <p class="occ__blurb">Cream roses ringed in orange and rust, a plush on top, plaid bow, little pumpkins.</p>
+  <a class="link js-carry" href="#order" data-bouquet="falling-for-you">Customize this one</a>
+</article>
+<article class="occ occ--1" id="occ-christmas">
+  <div class="occ__img"><img src="img/light-up-my-world.jpg" width="800" height="800" alt="A Christmas bouquet of red roses with two reindeer plush toys, small trees, a snowflake and a gold ribbon." loading="lazy" decoding="async"></div>
+  <p class="occ__kick">Christmas</p>
+  <h3 class="occ__name">“You light up my world”</h3>
+  <p class="occ__blurb">Red roses in brown wrap with a reindeer plush, mini trees and a snowflake. The first one of the season already went out.</p>
+  <a class="link js-carry" href="#order" data-bouquet="christmas">Customize this one</a>
+</article>
+<article class="occ occ--2" id="occ-halloween">
+  <div class="occ__img"><img src="img/spooky.jpg" width="627" height="627" alt="Red roses with a rhinestone Ghostface mask in the center and a black Birthday ribbon." loading="lazy" decoding="async"></div>
+  <p class="occ__kick">Halloween</p>
+  <h3 class="occ__name">Spooky Bouquet</h3>
+  <p class="occ__blurb">Ghostface in rhinestones on a bed of red roses. Yes, people order this for birthdays.</p>
+  <a class="link js-carry" href="#order" data-bouquet="spooky">Customize this one</a>
+</article>
+<article class="occ occ--disney" id="occ-disney">
+  <div class="occ__type" aria-hidden="true"><span>Disney</span><span>Ramos</span></div>
+  <p class="occ__kick">Disney</p>
+  <h3 class="occ__name">Disney Ramos</h3>
+  <p class="occ__blurb">Princess colors, crowns and characters. There’s a whole highlight of them on Instagram.</p>
+  <a class="link js-carry" href="#order" data-bouquet="disney">Customize this one</a>
+</article>
+<article class="occ occ--3" id="occ-proposal">
+  <div class="occ__img"><img src="img/proposal.jpg" width="800" height="800" alt="Red roses in black wrap with white butterflies and a black ribbon that reads Quieres Ser Mi Novia." loading="lazy" decoding="async"></div>
+  <p class="occ__kick">Proposals</p>
+  <h3 class="occ__name">¿Quieres ser mi novia?</h3>
+  <p class="occ__blurb">Red roses, white butterflies and the question on a black ribbon. Engagement ones too.</p>
+  <a class="link js-carry" href="#order" data-bouquet="proposal">Customize this one</a>
+</article>
+<article class="occ occ--4" id="occ-minion">
+  <div class="occ__img"><img src="img/minion.jpg" width="800" height="800" alt="Yellow and cream flowers with a Minion plush toy sitting on top, in white and gold wrap." loading="lazy" decoding="async"></div>
+  <p class="occ__kick">Characters</p>
+  <h3 class="occ__name">One in a Minion</h3>
+  <p class="occ__blurb">Yellow and cream roses with a Minion plush on top.</p>
+  <a class="link js-carry" href="#order" data-bouquet="minion">Customize this one</a>
+</article>
+<article class="occ occ--5" id="occ-vaquita">
+  <div class="occ__img"><img src="img/vaquita.jpg" width="800" height="800" alt="Pink lilies and roses with a small cow plush toy on top." loading="lazy" decoding="async"></div>
+  <p class="occ__kick">Characters</p>
+  <h3 class="occ__name">Lilies w/ Vaquita</h3>
+  <p class="occ__blurb">Pink lilies and roses with a little cow plush riding on top.</p>
+  <a class="link js-carry" href="#order" data-bouquet="vaquita">Customize this one</a>
+</article>
+  </div>
+</section>
+
+<!-- ============ GALLERY ============ -->
+<section class="gallery" id="gallery" aria-labelledby="gal-h">
+  <header class="sec-head sec-head--gal">
+    <p class="kicker">Recent ramos</p>
+    <h2 id="gal-h">Straight from<br><em>the feed.</em></h2>
+    <a class="link link--ink" href="https://www.instagram.com/delano_flowersss/" rel="noopener">All 1,130 posts on Instagram</a>
+  </header>
+  <div class="gal">
+    <figure class="g g--a"><img src="img/g-200-floor.jpg" width="1000" height="800" loading="lazy" decoding="async" alt="A dome of two hundred dark red roses sitting on a white floor, wrapped in black."><figcaption>200 red, finished</figcaption></figure>
+    <figure class="g g--b"><img src="img/g-50-peonies.jpg" width="800" height="800" loading="lazy" decoding="async" alt="Fifty pink, lilac and white peonies with a stargazer lily and a pink ribbon."><figcaption>50 Peonies</figcaption></figure>
+    <figure class="g g--c"><img src="img/g-engaged-top.jpg" width="800" height="800" loading="lazy" decoding="async" alt="Red roses with the word Engaged across the top, tied with white tulle."><figcaption>Engaged</figcaption></figure>
+    <figure class="g g--d"><img src="img/g-pink-m.jpg" width="800" height="800" loading="lazy" decoding="async" alt="A dome of pink roses with a rhinestone initial and bow in the center."><figcaption>100ct pink, with an initial</figcaption></figure>
+    <figure class="g g--e"><img src="img/g-jack.jpg" width="800" height="880" loading="lazy" decoding="async" alt="An orange lily and mum arrangement in a black vase with a Jack Skellington plush and a spider."><figcaption>Halloween, in a vase</figcaption></figure>
+    <figure class="g g--f"><img src="img/g-white-lilies.jpg" width="800" height="800" loading="lazy" decoding="async" alt="Cream roses and white lilies in a round bouquet on a wood floor."><figcaption>Cream roses &amp; white lilies</figcaption></figure>
+    <figure class="g g--g"><img src="img/g-pink-lilies.jpg" width="800" height="800" loading="lazy" decoding="async" alt="Pink stargazer lilies and roses in a white and pink wrap with a ribbon."><figcaption>Love love</figcaption></figure>
+    <figure class="g g--h"><img src="img/g-carnations.jpg" width="800" height="800" loading="lazy" decoding="async" alt="A tall arrangement of pink peonies and carnations in a painted pot."><figcaption>Peonies in a pot</figcaption></figure>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="about" id="about" aria-labelledby="about-h">
+  <div class="about__award">
+    <img src="img/award.jpg" width="600" height="600" loading="lazy" decoding="async" alt="A framed certificate of recognition naming Delano Flowers Voted Best Florist, set on pink gerbera daisies.">
+  </div>
+  <div class="about__copy">
+    <p class="kicker">About</p>
+    <h2 id="about-h">Voted best florist <em>in Delano.</em></h2>
+    <p>Delano Flowers is a home-based flower shop in Delano, California. November 2026 made it three years of ramos: birthdays, apologies, proposals, Halloween and a lot of 100-rose domes, all ordered one DM at a time.</p>
+    <p class="about__stats"><span><b>3</b> years</span><span><b>1,130</b> posts</span><span><b>9.1K</b> followers</span></p>
+    <p class="ribbon ribbon--about"><span class="ribbon__txt">Petals of Joy in Every Bouquet</span></p>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="contact" id="contact" aria-labelledby="contact-h">
+  <div class="contact__head">
+    <p class="kicker">Contact</p>
+    <h2 id="contact-h">Delano, <em>CA.</em></h2>
+    <p class="contact__p">Fill in the request form, or DM like always. Either way, deposit first.</p>
+    <div class="hero__ctas">
+      <a class="btn btn--gold" href="#order">Request a bouquet</a>
+      <a class="btn btn--line btn--line-light" href="https://ig.me/m/delano_flowersss" rel="noopener">Order by DM</a>
+    </div>
+  </div>
+  <dl class="facts">
+    <div><dt>Instagram</dt><dd><a href="https://www.instagram.com/delano_flowersss/" rel="noopener">@delano_flowersss</a></dd></div>
+    <div><dt>Where</dt><dd>Delano, California</dd></div>
+    <div><dt>Pickup spot</dt><dd><span class="todo" data-todo="confirm">Pickup address to confirm</span></dd></div>
+    <div><dt>Phone / text</dt><dd><span class="todo" data-todo="confirm">Number to confirm</span></dd></div>
+    <div><dt>Hours</dt><dd><span class="todo" data-todo="confirm">Order and pickup hours to confirm</span></dd></div>
+    <div><dt>Delivery</dt><dd><span class="todo" data-todo="confirm">Delivery area and fee to confirm</span></dd></div>
+  </dl>
+</section>
+
+</main>
+
+<footer class="foot">
+  <p class="foot__mark"><svg aria-hidden="true"><use href="#mark"/></svg>Delano Flowers<span>Petals of Joy in Every Bouquet</span></p>
+  <p class="foot__credit">Preview built by Sam &amp; Banks for Delano Flowers. Not live, not affiliated, just a look at what your site could be.</p>
+</footer>
+
+<div class="dock" aria-hidden="true">
+  <a class="dock__go" href="#order" tabindex="-1">Request a ramo</a>
+  <a class="dock__dm" href="https://ig.me/m/delano_flowersss" rel="noopener" tabindex="-1">DM</a>
+</div>
+
+<script src="main.js" defer></script>
+</body>
+</html>
